@@ -2,14 +2,14 @@
 <?xml-stylesheet ekr_test?>
 <leo_file>
 <leo_header file_format="2" tnodes="0" max_tnode_index="0" clone_windows="0"/>
-<globals body_outline_ratio="0.653878942882">
+<globals body_outline_ratio="0.373401534527">
 	<global_window_position top="10" left="10" height="978" width="1173"/>
 	<global_log_window_position top="0" left="0" height="0" width="0"/>
 </globals>
 <preferences/>
 <find_panel_settings/>
 <vnodes>
-<v t="pap.120703001453"><vh>Code</vh>
+<v t="pap.120703001453" a="E"><vh>Code</vh>
 <v t="pap.120703001453.1"><vh>__init__.py</vh></v>
 <v t="pap.120703001453.2"><vh>utils.py</vh>
 <v t="pap.120703001453.3"><vh>Path utils</vh></v>
@@ -260,7 +260,7 @@
 </v>
 </v>
 <v t="pap.120703001453.160" a="E"><vh>Parsing and converting code</vh>
-<v t="pap.120703001453.161" tnodeList="pap.120703001453.161,pap.120703001453.163,pap.120703001453.164,pap.120703001453.165,pap.120703001453.166,pap.120703001453.167,pap.120703001453.168,pap.120703001453.170,pap.120703001453.171,pap.120703001453.172,pap.120703001453.173,pap.120703001453.174,pap.120703001453.175,pap.120703001453.176,pap.120703001453.177,pap.120703001453.178,pap.120703001453.179,pap.120703001453.180,pap.120703001453.181,pap.120703001453.182,pap.120703001453.183,pap.120703001453.184,pap.120703001453.186,pap.120703001453.187,pap.120703001453.188,pap.120703001453.189,pap.120703001453.190,pap.120703001453.191,pap.120703001453.192,pap.120703001453.193,pap.120703001453.194,pap.120703001453.195,pap.120703001453.196,pap.120703001453.197,pap.120703001453.198,pap.120703001453.199"><vh>@file vbgrammar.txt</vh>
+<v t="pap.120703001453.161" a="E" tnodeList="pap.120703001453.161,pap.120703001453.163,pap.120703001453.164,pap.120703001453.165,pap.120703001453.166,pap.120703001453.167,pap.120703001453.168,pap.120703001453.170,pap.120703001453.171,pap.120703001453.172,pap.120703001453.173,pap.120703001453.174,pap.120703001453.175,pap.120703001453.176,pap.120703001453.177,pap.120703001453.178,pap.120703001453.179,pap.120703001453.180,pap.120703001453.181,pap.120703001453.182,pap.120703001453.183,pap.120703001453.184,pap.120703001453.186,pap.120703001453.187,pap.120703001453.188,pap.120703001453.189,pap.120703001453.190,pap.120703001453.191,pap.120703001453.192,pap.120703001453.193,pap.120703001453.194,pap.120703001453.195,pap.120703001453.196,pap.120703001453.197,pap.120703001453.198,pap.120703001453.199"><vh>@file vbgrammar.txt</vh>
 <v t="pap.120703001453.162"><vh>Basic building blocks</vh>
 <v t="pap.120703001453.163"><vh>Basic elements</vh></v>
 <v t="pap.120703001453.164"><vh>Blocks and lines</vh></v>
@@ -280,7 +280,7 @@
 <v t="pap.120703001453.177"><vh>Seek</vh></v>
 <v t="pap.120703001453.178"><vh>Open/Close</vh></v>
 <v t="pap.120703001453.179"><vh>Calls</vh></v>
-<v t="pap.120703001453.180"><vh>Resume statement</vh></v>
+<v t="pap.120703001453.180" a="TV"><vh>Resume statement</vh></v>
 <v t="pap.120703001453.181"><vh>Exit statement</vh></v>
 <v t="pap.120703001453.182"><vh>Name statement</vh></v>
 <v t="pap.120703001453.183"><vh>End statement</vh></v>
@@ -304,14 +304,13 @@
 <v t="pap.120703001453.199"><vh>option_statement</vh></v>
 </v>
 </v>
-<v t="pap.120703001453.200"><vh>vbparser.py</vh>
+<v t="pap.120703001453.200" a="E"><vh>vbparser.py</vh>
 <v t="pap.120703001453.201"><vh>&lt;&lt; Imports &gt;&gt;</vh></v>
 <v t="pap.120703001453.202"><vh>&lt;&lt; Error Classes &gt;&gt;</vh></v>
 <v t="pap.120703001453.203"><vh>&lt;&lt; Definitions &gt;&gt;</vh></v>
 <v t="pap.120703001453.204" a="E"><vh>Utility functions</vh>
 <v t="pap.120703001453.205"><vh>convertToElements</vh></v>
-<v t="pap.120703001453.206"><vh>buildParseTree</vh>
-<v t="pap.120703001453.207"><vh>&lt;&lt; Build a parser &gt;&gt;</vh></v>
+<v t="pap.120703001453.206" a="E"><vh>buildParseTree</vh>
 <v t="pap.120703001453.208"><vh>&lt;&lt; Handle failure &gt;&gt;</vh></v>
 </v>
 <v t="pap.120703001453.209"><vh>parseVB</vh></v>
@@ -829,7 +828,7 @@
 <v t="pap.120703001453.580"><vh>attributenames.py</vh></v>
 </v>
 </v>
-<v t="pap.120703001453.581" a="E"><vh>Package</vh>
+<v t="pap.120703001453.581"><vh>Package</vh>
 <v t="pap.120703001453.582"><vh>setup.py</vh>
 <v t="pap.120703001453.583"><vh>Supporting functions</vh></v>
 </v>
@@ -1195,7 +1194,7 @@
 <v t="pap.120703001453.861"><vh>testall.py</vh></v>
 <v t="PAP.20040123192735" tnodeList="PAP.20040123192735"><vh>@file test\vbtestfile.txt</vh></v>
 </v>
-<v t="pap.120703001453.862"><vh>Sandbox</vh>
+<v t="pap.120703001453.862" a="E"><vh>Sandbox</vh>
 <v t="pap.120703001453.863"><vh>__init__.py</vh></v>
 <v t="pap.120703001453.864"><vh>commandline.py</vh></v>
 <v t="pap.120703001453.865" a="E"><vh>makedocs.py</vh>
@@ -2530,7 +2529,7 @@
 </v>
 </v>
 </v>
-<v t="pap.120703001453.1280" a="TV"><vh>Currently working on</vh>
+<v t="pap.120703001453.1280" a="E"><vh>Currently working on</vh>
 <v t="PAP.20040426003228"><vh>Tree</vh>
 <v t="PAP.20040427013100.1"><vh>customimport.py</vh></v>
 <v t="PAP.20040427002644.1" a="E"><vh>comctllib.py</vh>
@@ -7502,12 +7501,7 @@ import utils
 
 declaration = open(utils.relativePath("vbgrammar.txt"), "r").read()
 
-from simpleparse import generator
-try:
-	from TextTools import TextTools
-except ImportError:
-	from mx.TextTools import TextTools
-
+from simpleparse.parser import Parser
 
 import logger
 log = logger.getLogger("VBParser")
@@ -7551,15 +7545,13 @@ def convertToElements(details, txt):
 
 def buildParseTree(vbtext, starttoken="line", verbose=0, returnpartial=0, returnast=0):
 	"""Parse some VB"""
-	
-	#
-	&lt;&lt; Build a parser &gt;&gt;
 
+	parser = Parser(declaration, starttoken)
 	txt = applyPlugins("preProcessVBText", vbtext)
 
 	nodes = []
 	while 1:
-		success, tree, next = TextTools.tag(txt, parser)
+		success, tree, next = parser.parse(txt) 
 		if not success:
 			if txt.strip():
 				&lt;&lt; Handle failure &gt;&gt;
@@ -7575,19 +7567,6 @@ def buildParseTree(vbtext, starttoken="line", verbose=0, returnpartial=0, return
 		txt = txt[next:]
 		
 	return nodes	
-</t>
-<t tx="pap.120703001453.207">@c
-
-#
-# Try to buid the parse - if this fails we probably have an early
-# version of Simpleparse
-try:
-	parser = generator.buildParser(declaration).parserbyname(starttoken)
-except Exception, err:
-	log.warn("Failed to build parse (%s) - trying case sensitive grammar" % err)
-	parser = generator.buildParser(declaration.replace('c"', ' "')).parserbyname(starttoken)
-	log.info("Downgraded to case sensitive grammar")
-	
 </t>
 <t tx="pap.120703001453.208">@c
 

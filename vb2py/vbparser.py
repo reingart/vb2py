@@ -13,12 +13,7 @@ import utils
 
 declaration = open(utils.relativePath("vbgrammar.txt"), "r").read()
 
-from simpleparse import generator
-try:
-    from TextTools import TextTools
-except ImportError:
-    from mx.TextTools import TextTools
-
+from simpleparse.parser import Parser
 
 import logger
 log = logger.getLogger("VBParser")
@@ -58,24 +53,12 @@ def convertToElements(details, txt):
 def buildParseTree(vbtext, starttoken="line", verbose=0, returnpartial=0, returnast=0):
     """Parse some VB"""
 
-    #
-    # << Build a parser >>
-    #
-    # Try to buid the parse - if this fails we probably have an early
-    # version of Simpleparse
-    try:
-        parser = generator.buildParser(declaration).parserbyname(starttoken)
-    except Exception, err:
-        log.warn("Failed to build parse (%s) - trying case sensitive grammar" % err)
-        parser = generator.buildParser(declaration.replace('c"', ' "')).parserbyname(starttoken)
-        log.info("Downgraded to case sensitive grammar")
-    # -- end -- << Build a parser >>
-
+    parser = Parser(declaration, starttoken)
     txt = applyPlugins("preProcessVBText", vbtext)
 
     nodes = []
     while 1:
-        success, tree, next = TextTools.tag(txt, parser)
+        success, tree, next = parser.parse(txt) 
         if not success:
             if txt.strip():
                 # << Handle failure >>
