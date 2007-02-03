@@ -1,5 +1,3 @@
-# Created by Leo from: C:\Development\Python23\Lib\site-packages\vb2py\vb2py.leo
-
 """
 Functions to mimic VB intrinsic functions or things
 """
@@ -348,14 +346,6 @@ def Right(text, number):
     """Return the right most characters in the text"""
     return text[-number:]
 # << VBFunctions >> (33 of 56)
-#	VB has some weird behaviour here. For instance, 
-#	
-#	- a call to Rnd with 0 returns the last number generated
-#	- a call to Rnd with < 0 seeds the random generator to return a consistent 
-#	sequence
-#	- a call to Randomize seeds the RNG but doesn't produce a consistent 
-#	sequence
-
 _last_rnd_number = random.random()
 
 def Rnd(value=1):

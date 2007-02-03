@@ -1,5 +1,3 @@
-# Created by Leo from: C:\Development\Python22\Lib\site-packages\vb2py\vb2py.leo
-
 from unittest import *
 from testframework import *
 
@@ -7,8 +5,8 @@ from testframework import *
 # Simple test
 tests.append(("""
 Type _Point
-	X As Single
-	Y As Single
+    X As Single
+    Y As Single
 End Type
 Dim _a As _Point
 _a.X = 10
@@ -19,12 +17,12 @@ b = _a.X + _a.Y
 # Nested Types
 tests.append(("""
 Type _Point
-	X As Single
-	Y As Single
+    X As Single
+    Y As Single
 End Type
 Type _Line
-	P1 As _Point
-	P2 As _Point
+    P1 As _Point
+    P2 As _Point
 End Type
 Dim _a As _Line
 _a.P1.X = 10
@@ -45,8 +43,8 @@ Dim _a As _Point
 # Arrays of a type
 tests.append(("""
 Type _Point
-	X As Single
-	Y As Single
+    X As Single
+    Y As Single
 End Type
 
 Dim _p(5) As _Point
@@ -54,10 +52,10 @@ Dim _p(5) As _Point
 tx = 0
 ty = 0
 For _i = 1 To 5
-	_p(_i).X = _i
-	_p(_i).Y = 2*_i
-	tx = tx + _p(_i).X
-	ty = ty + _p(_i).Y
+    _p(_i).X = _i
+    _p(_i).Y = 2*_i
+    tx = tx + _p(_i).X
+    ty = ty + _p(_i).Y
 Next _i
 """, {"tx" : 15, "ty" : 30}))
 # -- end -- << Type tests >>
@@ -67,4 +65,4 @@ vb2py.vbparser.log.setLevel(0) # Don't print all logging stuff
 TestClass = addTestsTo(BasicTest, tests)
 
 if __name__ == "__main__":
-	main()
+    main()

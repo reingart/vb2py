@@ -1,5 +1,3 @@
-# Created by Leo from: C:\Development\Python23\Lib\site-packages\vb2py\vb2py.leo
-
 from unittest import *
 from testframework import *
 
@@ -72,8 +70,8 @@ l = UBound(_a)
 a1 = _a(0)
 a3 = _a(3)
 """, { "l" : 3,
-	   "a1" : "ab",
-	   "a3" : "hijk"}),
+       "a1" : "ab",
+       "a3" : "hijk"}),
 
 ("""
 _a = Split("ab cd efg hijk", " ")
@@ -81,15 +79,15 @@ l = UBound(_a)
 a1 = _a(0)
 a3 = _a(3)
 """, { "l" : 3,
-	   "a1" : "ab",
-	   "a3" : "hijk"}),
+       "a1" : "ab",
+       "a3" : "hijk"}),
 
 ("""
 _a = Split("ab cd efg hijk", ",")
 l = UBound(_a)
 a1 = _a(0)
 """, { "l" : 0,
-	   "a1" : "ab cd efg hijk",}),
+       "a1" : "ab cd efg hijk",}),
 
 ("""
 _a = Split("ab,cd,efg,hijk", ",")
@@ -97,15 +95,15 @@ l = UBound(_a)
 a1 = _a(0)
 a3 = _a(3)
 """, { "l" : 3,
-	   "a1" : "ab",
-	   "a3" : "hijk"}),
+       "a1" : "ab",
+       "a3" : "hijk"}),
 
 ("""
 _a = Split("ab,cd,efg,hijk", ",", 1)
 l = UBound(_a)
 a1 = _a(0)
 """, { "l" : 0,
-	   "a1" : "ab,cd,efg,hijk",}),
+       "a1" : "ab,cd,efg,hijk",}),
 
 ("""
 _a = Split("ab,cd,efg,hijk", ",",2)
@@ -113,8 +111,8 @@ l = UBound(_a)
 a1 = _a(0)
 a2 = _a(1)
 """, { "l" : 1,
-	   "a1" : "ab",
-	   "a2" : "cd,efg,hijk"}),
+       "a1" : "ab",
+       "a2" : "cd,efg,hijk"}),
 
 ("""
 _a = Split("ab,cd,efg,hijk", ",", 10)
@@ -122,20 +120,20 @@ l = UBound(_a)
 a1 = _a(0)
 a3 = _a(3)
 """, { "l" : 3,
-	   "a1" : "ab",
-	   "a3" : "hijk"}),
+       "a1" : "ab",
+       "a3" : "hijk"}),
 
 ])
 # << Intrinsic tests >> (8 of 10)
 tests.extend([
 ("""
-a = FileLen("c:\\development\\python23\\lib\\site-packages\\vb2py\\test\\vbtestfile.txt")
+a = FileLen("c:\\development\\python24\\lib\\site-packages\\vb2py\\test\\vbtestfile.txt")
 """, { "a" : 164}),
 ])
 # << Intrinsic tests >> (9 of 10)
 tests.extend([
 ("""
-Open "c:\\development\\python23\\lib\\site-packages\\vb2py\\test\\vbtestfile.txt" For Input As #3
+Open "c:\\development\\python24\\lib\\site-packages\\vb2py\\test\\vbtestfile.txt" For Input As #3
 a = Lof(3)
 """, { "a" : 164}),
 ])
@@ -152,10 +150,10 @@ Next _i
 d = Environ("kskskskss")
 
 """, { "a" : "Windows_NT",
-	   "b" : "",
-	   "c" : "OS=Windows_NT",
-	   "d" : "",
-	   }),
+       "b" : "",
+       "c" : "OS=Windows_NT",
+       "d" : "",
+       }),
 ])
 # -- end -- << Intrinsic tests >>
 
@@ -164,4 +162,4 @@ vb2py.vbparser.log.setLevel(0) # Don't print all logging stuff
 TestClass = addTestsTo(BasicTest, tests)
 
 if __name__ == "__main__":
-	main()
+    main()

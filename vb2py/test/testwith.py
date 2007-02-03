@@ -1,5 +1,3 @@
-# Created by Leo from: C:\Development\Python22\Lib\site-packages\vb2py\vb2py.leo
-
 from unittest import *
 from testframework import *
 
@@ -8,7 +6,7 @@ from testframework import *
 tests.append(("""
 Set _a = New Collection
 With _a
-	b = .Count()
+    b = .Count()
 End With
 """, {"b" : 0}))
 
@@ -19,10 +17,10 @@ _a.Add 24
 _a.Add 25
 _b.Add 1
 With _a
-	aa = .Count()
-	With _b
-		bb = .Count()
-	End With
+    aa = .Count()
+    With _b
+        bb = .Count()
+    End With
 End With
 """, {"aa" : 2, "bb" : 1}))
 
@@ -30,13 +28,13 @@ End With
 tests.append(("""
 Dim _a As New Collection, _b As New Collection
 With _a
-	.Add 24
-	.Add 25
-	aa = .Count()
-	With _b
-		.Add 1
-		bb = .Count()
-	End With
+    .Add 24
+    .Add 25
+    aa = .Count()
+    With _b
+        .Add 1
+        bb = .Count()
+    End With
 End With
 """, {"aa" : 2, "bb" : 1}))
 
@@ -44,13 +42,13 @@ End With
 tests.append(("""
 Dim _a As New Collection, _b As New Collection
 With _a
-	.Add 24
-	.Add 25
-	With _b
-		.Add 1
-		bb = .Count()
-	End With
-	aa = .Count()
+    .Add 24
+    .Add 25
+    With _b
+        .Add 1
+        bb = .Count()
+    End With
+    aa = .Count()
 End With
 """, {"aa" : 2, "bb" : 1}))
 # << With tests >> (2 of 2)
@@ -80,11 +78,11 @@ Set _b.Obj = _c
 _c.Value = 10
 
 With _a
-	With .Obj ' ie _b
-	   With .Obj ' ie _c
-			val = .Value
-	   End With 
-	End With
+    With .Obj ' ie _b
+       With .Obj ' ie _c
+            val = .Value
+       End With 
+    End With
 End With
 """, {"val" : 10}))
 # -- end -- << With tests >>
@@ -94,4 +92,4 @@ vb2py.vbparser.log.setLevel(0) # Don't print all logging stuff
 TestClass = addTestsTo(BasicTest, tests)
 
 if __name__ == "__main__":
-	main()
+    main()

@@ -1,5 +1,3 @@
-# Created by Leo from: C:\Development\Python23\Lib\site-packages\vb2py\vb2py.leo
-
 from unittest import *
 from testframework import *
 import os 
@@ -7,9 +5,6 @@ import vb2py.utils
 PATH = vb2py.utils.rootPath()
 
 # << File tests >> (1 of 14)
-#	It is hard to test opening and closing files without reading so we do 
-#	things all at once
-
 # Open with Input
 tests.append((r"""
 Open "%s" For Input As #3
@@ -19,9 +14,9 @@ Input #3, c, d, e
 Input #3, f, g
 Close #3
 """ % vb2py.utils.relativePath("test\\testread.txt"), {'a' : 'Can you hear me now?',
-	  'b' : 'Can you still hear me now?',
-	  'c' : 10, 'd' : 20, 'e' : 30,
-	  'f' : 5, 'g' : "hello",
+      'b' : 'Can you still hear me now?',
+      'c' : 10, 'd' : 20, 'e' : 30,
+      'f' : 5, 'g' : "hello",
 }))
 
 # Open with Line Input
@@ -33,9 +28,9 @@ Line Input #3, c
 Line Input #3, d
 Close #3
 """ % PATH, {'a' : 'Can you hear me now?',
-	  'b' : 'Can you still hear me now?',
-	  'c' : '10, 20, 30',
-	  'd' : '5, "hello"',
+      'b' : 'Can you still hear me now?',
+      'c' : '10, 20, 30',
+      'd' : '5, "hello"',
 }))
 
 
@@ -47,8 +42,8 @@ b = Input(1, #3)
 c = Input(3, #3)
 Close #3
 """ % PATH, {'a' : 'Can',
-	  'b' : ' ',
-	  'c' : 'you',
+      'b' : ' ',
+      'c' : 'you',
 }))
 
 # Bug #810964 Input with indexed variable fails 
@@ -61,13 +56,10 @@ a = _a(1)
 b = _a(2)
 c = _a(3)
 """ % PATH, {'a' : 'Can you hear me now?',
-	  'b' : 'Can you still hear me now?',
-	  'c' : 10,
+      'b' : 'Can you still hear me now?',
+      'c' : 10,
 }))
 # << File tests >> (2 of 14)
-#	It is hard to test opening and closing files without reading so we do 
-#	things all at once
-
 # Open with print
 tests.append((r"""
 Open "%s/test/testwrite.txt" For Output As #3
@@ -80,8 +72,8 @@ Open "%s/test/testwrite.txt" For Input As #3
 Input #3, a, b, c, d, f
 Line Input #3, e
 """ % (PATH, PATH), {'a' : 10, 'b' : 20,
-	  'c' : 30, 'd' : 40, 'e' : 'hello',
-	  'f' : 50,
+      'c' : 30, 'd' : 40, 'e' : 'hello',
+      'f' : 50,
 }))
 
 
@@ -101,9 +93,6 @@ Line Input #3, a
 # Bare print with no channel number (Bug #805866 - used to fail during render)
 tests.append(("Print 10", {}))
 # << File tests >> (3 of 14)
-#	Open a couple of files and then use a bare close to close them and check we
-#	close ok
-
 # Open with Input
 tests.append((r"""
 Close
@@ -118,7 +107,7 @@ b = _a = _c
 c = _b = _c
 d = CStr(_a) & CStr(_b) & CStr(_c) 
 """ % (vb2py.utils.relativePath("test\\testread.txt"), 
-	   vb2py.utils.relativePath("test\\testwrite.txt")),
+       vb2py.utils.relativePath("test\\testwrite.txt")),
 {'a':0, 'b':1, 'c':0, 'd': '131',
 }))
 
@@ -136,7 +125,7 @@ b = _a = _c
 c = _b = _c
 d = CStr(_a) & CStr(_b) & CStr(_c) 
 """ % (vb2py.utils.relativePath("test\\testread.txt"), 
-	   vb2py.utils.relativePath("test\\testwrite.txt")),
+       vb2py.utils.relativePath("test\\testwrite.txt")),
 {'a':0, 'b':1, 'c':0, 'd': '131',
 }))
 
@@ -148,12 +137,10 @@ Open "%s" For Output As #4
 Close #3, #4
 Input #3, a
 """ % (vb2py.utils.relativePath("test\\testread.txt"), 
-	   vb2py.utils.relativePath("test\\testwrite.txt")),
+       vb2py.utils.relativePath("test\\testwrite.txt")),
 {'FAIL' : 'yes',
 }))
 # << File tests >> (4 of 14)
-#	Seek in a file
-
 # Seek as a way of moving around in a file
 tests.append((r"""
 Open "%s" For Input As #3
@@ -185,8 +172,6 @@ c = Seek(3)
 'c' : 5,
 }))
 # << File tests >> (5 of 14)
-#	Return the directory of file matches - this is a weird function
-
 # Dir
 tests.append((r"""
 a = Dir("test\\test*.txt")
@@ -236,8 +221,6 @@ c = Dir$
 'c' : '',
 }))
 # << File tests >> (6 of 14)
-#	Returns a new file 'handle'
-
 # Dir
 tests.append((r"""
 _a = FreeFile
@@ -258,8 +241,6 @@ dd = _d-_a
 'dd' : 0,
 }))
 # << File tests >> (7 of 14)
-#	Change the current directory
-
 # Dir
 tests.append((r"""
 ChDir "%s"
@@ -279,16 +260,14 @@ Open "_test1.txt" For Input As #3
 Input #3, b
 Close #3
 """ % (vb2py.utils.relativePath("test\\testdir"),
-	   vb2py.utils.relativePath("test"),
-	   vb2py.utils.relativePath("test\\testdir"),
-	   vb2py.utils.relativePath("test")),
+       vb2py.utils.relativePath("test"),
+       vb2py.utils.relativePath("test\\testdir"),
+       vb2py.utils.relativePath("test")),
 {
 'a' : 'in testdir',
 'b' : 'not in testdir',
 }))
 # << File tests >> (8 of 14)
-#	Remove a file
-
 # Dir
 tests.append((r"""
 Open "_test1.txt" For Output As #3
@@ -301,18 +280,16 @@ a = Dir("_test1.txt")
 'a' : '',
 }))
 # << File tests >> (9 of 14)
-#	Make a directory
-
 try:
-	for name in os.listdir(vb2py.utils.relativePath("test\\mytest2")):
-		os.remove(os.path.join(vb2py.utils.relativePath("test\\mytest2"), name))
+    for name in os.listdir(vb2py.utils.relativePath("test\\mytest2")):
+        os.remove(os.path.join(vb2py.utils.relativePath("test\\mytest2"), name))
 except OSError:
-	pass
+    pass
 
 try:
-	os.rmdir(vb2py.utils.relativePath("test\\mytest2"))
+    os.rmdir(vb2py.utils.relativePath("test\\mytest2"))
 except OSError, err:
-	pass
+    pass
 
 # Dir
 tests.append((r"""
@@ -322,23 +299,21 @@ Print #3, "made file"
 Close #3
 a = 1
 """ % (vb2py.utils.relativePath("test\\mytest2"),
-	   vb2py.utils.relativePath("test\\mytest2")),
+       vb2py.utils.relativePath("test\\mytest2")),
 {
 'a' : 1,
 }))
 # << File tests >> (10 of 14)
-#	Remove a directory
+try:
+    for name in os.listdir(vb2py.utils.relativePath("test\\mytestdir")):
+        os.remove(os.path.join(vb2py.utils.relativePath("test\\mytestdir"), name))
+except OSError:
+    pass
 
 try:
-	for name in os.listdir(vb2py.utils.relativePath("test\\mytestdir")):
-		os.remove(os.path.join(vb2py.utils.relativePath("test\\mytestdir"), name))
+    os.rmdir(vb2py.utils.relativePath("test\\mytestdir"))
 except OSError:
-	pass
-
-try:
-	os.rmdir(vb2py.utils.relativePath("test\\mytestdir"))
-except OSError:
-	pass
+    pass
 
 # Dir
 tests.append((r"""
@@ -346,17 +321,15 @@ MkDir "%s"
 RmDir "%s"
 a = 0
 """ % (vb2py.utils.relativePath("test\\mytestdir"),
-	   vb2py.utils.relativePath("test\\mytestdir")),
+       vb2py.utils.relativePath("test\\mytestdir")),
 {
 'a' : os.path.isdir(vb2py.utils.relativePath("test\\mytestdir")),
 }))
 # << File tests >> (11 of 14)
-#	Rename a file
-
 try:
-	os.remove(os.path.join(vb2py.utils.relativePath("test"), "knewname.txt"))
+    os.remove(os.path.join(vb2py.utils.relativePath("test"), "knewname.txt"))
 except OSError:
-	pass
+    pass
 
 # Dir
 tests.append((r"""
@@ -374,12 +347,10 @@ c = Dir(_path & "\knewname.txt")
 'c' : "knewname.txt",
 }))
 # << File tests >> (12 of 14)
-#	Copy a file
-
 try:
-	os.remove(os.path.join(vb2py.utils.relativePath("test"), "finalcopy.txt"))
+    os.remove(os.path.join(vb2py.utils.relativePath("test"), "finalcopy.txt"))
 except OSError:
-	pass
+    pass
 
 # Dir
 tests.append((r"""
@@ -417,7 +388,7 @@ Close #3
 tests.append((r"""
 Open "%s" For Input As #3
 While Not EOF(#3)
-	Input #3, a
+    Input #3, a
 End While
 Close #3
 
@@ -434,4 +405,4 @@ TestClass = addTestsTo(BasicTest, tests)
 
 
 if __name__ == "__main__":
-	main()
+    main()

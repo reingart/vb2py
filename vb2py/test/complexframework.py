@@ -1,5 +1,3 @@
-# Created by Leo from: C:\Development\Python23\Lib\site-packages\vb2py\vb2py.leo
-
 #
 # Turn off logging in extensions (too loud!)
 import vb2py.extensions
@@ -38,8 +36,6 @@ def getTestMethod(container, vb, assertions):
             self.fail("Error (%s):\n%s\n....\n%s" % (err, vb, python))
         # -- end -- << Execute the Python code >>
         # << Check assertions >>
-        #	        Go through each assertion (a Python statement) to see if it holds
-        
         reason = ""
 
         internal_dict = {"python" : python, "vb" : vb}

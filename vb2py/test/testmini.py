@@ -1,5 +1,3 @@
-# Created by Leo from: C:\Development\Python23\Lib\site-packages\vb2py\vb2py.leo
-
 #
 # Turn off logging in extensions (too loud!)
 import vb2py.extensions

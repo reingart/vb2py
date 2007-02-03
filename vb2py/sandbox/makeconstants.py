@@ -1,5 +1,3 @@
-# Created by Leo from: C:\Development\Python22\Lib\site-packages\vb2py\vb2py.leo
-
 """Take a series of text representations of keycodes and generate a Python file
 
 The data comes from the MSDN
@@ -210,16 +208,16 @@ vbArray 8192 Array
 # -- end -- << Constants >>
 
 if __name__ == "__main__":
-	f = open(vb2py.utils.relativePath("vbconstants.py"), "w")
-	f.write('\n"""VB Constants"""\n\n')
-	for name, chunk in constants:
-		f.write("# %s\n" % name)
-		for line in chunk.splitlines():
-			match = pattern.match(line.strip())
-			if not match:
-				print "Unable to match: '%s'" % line
-			else:
-				f.write("%s = %s # %s\n" % match.groups())
-				print "Wrote: '%s'" % match.groups()[0]
-		f.write("\n\n")
-	f.close()
+    f = open(vb2py.utils.relativePath("vbconstants.py"), "w")
+    f.write('\n"""VB Constants"""\n\n')
+    for name, chunk in constants:
+        f.write("# %s\n" % name)
+        for line in chunk.splitlines():
+            match = pattern.match(line.strip())
+            if not match:
+                print "Unable to match: '%s'" % line
+            else:
+                f.write("%s = %s # %s\n" % match.groups())
+                print "Wrote: '%s'" % match.groups()[0]
+        f.write("\n\n")
+    f.close()

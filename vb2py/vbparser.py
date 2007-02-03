@@ -1,5 +1,3 @@
-# Created by Leo from: C:\Development\Python23\Lib\site-packages\vb2py\vb2py.leo
-
 """Main parsing and conversion routines for translating VB to Python code"""
 
 # << Imports >>

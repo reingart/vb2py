@@ -1,5 +1,3 @@
-# Created by Leo from: C:\Development\Python23\Lib\site-packages\vb2py\vb2py.leo
-
 import vb2py.vbparser
 from vb2py.config import VB2PYConfig
 Config = VB2PYConfig()
@@ -10,16 +8,6 @@ log = logger.getLogger("PythonCardControls")
 twips_per_pixel = 15
 
 # << Events >>
-#	These are some common groupings of events that lots of controls have
-#	
-#	TODO:
-#		OLE ones
-#		ZOrder
-#		ShowWhatsThis
-#	
-#	An event definition comprises:
-#		The VB Name, The PCard Name, the VB Params, The PCard Params
-
 # << EventSupport >>
 class ControlEvent:
     """Represents a control event mapping from VB to PythonCard

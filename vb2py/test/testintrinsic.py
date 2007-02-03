@@ -1,5 +1,3 @@
-# Created by Leo from: C:\Development\Python22\Lib\site-packages\vb2py\vb2py.leo
-
 from unittest import *
 from testframework import *
 
@@ -51,195 +49,195 @@ d = Mid(a, 5, 20)
 """, {"a" : "hellothere", "b" : "hel", "c" : "ello", "d" : "othere"}))
 # << Intrinsic tests >> (2 of 10)
 tests.extend([
-	('a = InStr("hello", "ll")', {"a" : 3}),
-	('a = InStr("hello", "lll")', {"a" : 0}),
-	('a = InStr(4, "hellollo", "ll")', {"a" : 6}),
-	('a = InStr(4, "hellollo", "lll")', {"a" : 0}),
+    ('a = InStr("hello", "ll")', {"a" : 3}),
+    ('a = InStr("hello", "lll")', {"a" : 0}),
+    ('a = InStr(4, "hellollo", "ll")', {"a" : 6}),
+    ('a = InStr(4, "hellollo", "lll")', {"a" : 0}),
 
 # InstrB ??
 
-	('a = Len("hello")', {"a" : 5}),
-	('a = Len("")', {"a" : 0}),
+    ('a = Len("hello")', {"a" : 5}),
+    ('a = Len("")', {"a" : 0}),
 
-	('a = LCase("hello")', {"a" : "hello"}),
-	('a = LCase("HELlo")', {"a" : "hello"}),
-	('a = LCase("HELLO")', {"a" : "hello"}),
+    ('a = LCase("hello")', {"a" : "hello"}),
+    ('a = LCase("HELlo")', {"a" : "hello"}),
+    ('a = LCase("HELLO")', {"a" : "hello"}),
 
-	('a = UCase("hello")', {"a" : "HELLO"}),
-	('a = UCase("HELlo")', {"a" : "HELLO"}),
-	('a = UCase("HELLO")', {"a" : "HELLO"}),
+    ('a = UCase("hello")', {"a" : "HELLO"}),
+    ('a = UCase("HELlo")', {"a" : "HELLO"}),
+    ('a = UCase("HELLO")', {"a" : "HELLO"}),
 
-	('a = Space(4)', {"a" : "    "}),
-	('a = Space("4")', {"a" : "    "}),
-	('a = Space("0")', {"a" : ""}),
+    ('a = Space(4)', {"a" : "    "}),
+    ('a = Space("4")', {"a" : "    "}),
+    ('a = Space("0")', {"a" : ""}),
 
-	('a = StrComp("one", "two")', {"a" : -1}),
-	('a = StrComp("two", "two")', {"a" : 0}),
-	('a = StrComp("two", "one")', {"a" : 1}),
+    ('a = StrComp("one", "two")', {"a" : -1}),
+    ('a = StrComp("two", "two")', {"a" : 0}),
+    ('a = StrComp("two", "one")', {"a" : 1}),
 
-	('a = String(4, "a")', {"a" : "aaaa"}),
-	('a = String(0, "a")', {"a" : ""}),
-	('a = String(4, "abc")', {"a" : "aaaa"}),
+    ('a = String(4, "a")', {"a" : "aaaa"}),
+    ('a = String(0, "a")', {"a" : ""}),
+    ('a = String(4, "abc")', {"a" : "aaaa"}),
 
-	('a = LTrim("  hello there   ")', {"a" : "hello there   "}),
-	('a = LTrim("hello there   ")', {"a" : "hello there   "}),
+    ('a = LTrim("  hello there   ")', {"a" : "hello there   "}),
+    ('a = LTrim("hello there   ")', {"a" : "hello there   "}),
 
-	('a = RTrim("  hello there   ")', {"a" : "  hello there"}),
-	('a = RTrim("  hello there")', {"a" : "  hello there"}),
+    ('a = RTrim("  hello there   ")', {"a" : "  hello there"}),
+    ('a = RTrim("  hello there")', {"a" : "  hello there"}),
 
-	('a = Trim("  hello there   ")', {"a" : "hello there"}),
-	('a = Trim("hello there")', {"a" : "hello there"}),
+    ('a = Trim("  hello there   ")', {"a" : "hello there"}),
+    ('a = Trim("hello there")', {"a" : "hello there"}),
 
-	('a = Trim(1234)', {"a" : "1234"}),
-	('a = LTrim(1234)', {"a" : "1234"}),
-	('a = RTrim(1234)', {"a" : "1234"}),
+    ('a = Trim(1234)', {"a" : "1234"}),
+    ('a = LTrim(1234)', {"a" : "1234"}),
+    ('a = RTrim(1234)', {"a" : "1234"}),
 
-	('a = IsNumeric("nope")', {"a" : 0}),
-	('a = IsNumeric("123nope")', {"a" : 0}),
-	('a = IsNumeric("123.0nope")', {"a" : 0}),
-	('a = IsNumeric("123.0ne10 ope")', {"a" : 0}),
-	('a = IsNumeric("1")', {"a" : 1}),
-	('a = IsNumeric("-1")', {"a" : 1}),
-	('a = IsNumeric("-12.45")', {"a" : 1}),
-	('a = IsNumeric("-12.45e5")', {"a" : 1}),
-	('a = IsNumeric("-12.45e-5")', {"a" : 1}),
-	('a = IsNumeric("12.45")', {"a" : 1}),
-	('a = IsNumeric("12.45e5")', {"a" : 1}),
-	('a = IsNumeric("12.45e-5")', {"a" : 1}),
-	('a = IsNumeric("+12.45")', {"a" : 1}),
-	('a = IsNumeric("+12.45e5")', {"a" : 1}),
-	('a = IsNumeric("+12.45e-5")', {"a" : 1}),
+    ('a = IsNumeric("nope")', {"a" : 0}),
+    ('a = IsNumeric("123nope")', {"a" : 0}),
+    ('a = IsNumeric("123.0nope")', {"a" : 0}),
+    ('a = IsNumeric("123.0ne10 ope")', {"a" : 0}),
+    ('a = IsNumeric("1")', {"a" : 1}),
+    ('a = IsNumeric("-1")', {"a" : 1}),
+    ('a = IsNumeric("-12.45")', {"a" : 1}),
+    ('a = IsNumeric("-12.45e5")', {"a" : 1}),
+    ('a = IsNumeric("-12.45e-5")', {"a" : 1}),
+    ('a = IsNumeric("12.45")', {"a" : 1}),
+    ('a = IsNumeric("12.45e5")', {"a" : 1}),
+    ('a = IsNumeric("12.45e-5")', {"a" : 1}),
+    ('a = IsNumeric("+12.45")', {"a" : 1}),
+    ('a = IsNumeric("+12.45e5")', {"a" : 1}),
+    ('a = IsNumeric("+12.45e-5")', {"a" : 1}),
 ])
 # << Intrinsic tests >> (3 of 10)
 tests.extend([
-	('a = Asc("a")', {"a" : 97}),
-	('a = AscB("a")', {"a" : 97}),
-	('a = AscW("a")', {"a" : 97}),
+    ('a = Asc("a")', {"a" : 97}),
+    ('a = AscB("a")', {"a" : 97}),
+    ('a = AscW("a")', {"a" : 97}),
 
-	('a = Abs(101)', {"a" : 101}),
-	('a = Abs(-101)', {"a" : 101}),
+    ('a = Abs(101)', {"a" : 101}),
+    ('a = Abs(-101)', {"a" : 101}),
 
-	('a = Chr(97)', {"a" : "a"}),
-	('a = ChrB(97)', {"a" : "a"}),
-	('a = ChrW(97)', {"a" : "a"}),
+    ('a = Chr(97)', {"a" : "a"}),
+    ('a = ChrB(97)', {"a" : "a"}),
+    ('a = ChrW(97)', {"a" : "a"}),
 
 # CDATE?
 
 ])
 # << Intrinsic tests >> (4 of 10)
 tests.extend([
-	('a = CBool(-1)', {"a" : 1}),
-	('a = CBool(0)', {"a" : 0}),
-	('a = CBool(-1)', {"a" : 1}),
+    ('a = CBool(-1)', {"a" : 1}),
+    ('a = CBool(0)', {"a" : 0}),
+    ('a = CBool(-1)', {"a" : 1}),
 
-	('a = CByte(-1)', {"FAIL" : 1}),
-	('a = CByte(67.4)', {"a" : 67}),
-	('a = CByte("123.8")', {"a" : 124}),
-	('a = CByte("1023")', {"FAIL" : 1}),
-	('a = CByte("1ggg023")', {"FAIL" : 1}),
+    ('a = CByte(-1)', {"FAIL" : 1}),
+    ('a = CByte(67.4)', {"a" : 67}),
+    ('a = CByte("123.8")', {"a" : 124}),
+    ('a = CByte("1023")', {"FAIL" : 1}),
+    ('a = CByte("1ggg023")', {"FAIL" : 1}),
 
-	('a = CDbl(-1)', {"a" : -1}),
-	('a = CDbl(67.3)', {"a" : 67.3}),
-	('a = CDbl("123")', {"a" : 123}),
-	('a = CDbl("1023.1")', {"a" : 1023.1}),
-	('a = CDbl("1023.8")', {"a" : 1023.8}),
-	('a = CDbl("1ggg023")', {"FAIL" : 1}),
+    ('a = CDbl(-1)', {"a" : -1}),
+    ('a = CDbl(67.3)', {"a" : 67.3}),
+    ('a = CDbl("123")', {"a" : 123}),
+    ('a = CDbl("1023.1")', {"a" : 1023.1}),
+    ('a = CDbl("1023.8")', {"a" : 1023.8}),
+    ('a = CDbl("1ggg023")', {"FAIL" : 1}),
 
-	('a = CInt(-1)', {"a" : -1}),
-	('a = CInt(67.1)', {"a" : 67}),
-	('a = CInt("123.3")', {"a" : 123}),
-	('a = CInt("1023.8")', {"a" : 1024}),
-	('a = CInt("-331023")', {"FAIL" : 1}),
-	('a = CInt("331023")', {"FAIL" : 1}),
-	('a = CInt("1ggg023")', {"FAIL" : 1}),
+    ('a = CInt(-1)', {"a" : -1}),
+    ('a = CInt(67.1)', {"a" : 67}),
+    ('a = CInt("123.3")', {"a" : 123}),
+    ('a = CInt("1023.8")', {"a" : 1024}),
+    ('a = CInt("-331023")', {"FAIL" : 1}),
+    ('a = CInt("331023")', {"FAIL" : 1}),
+    ('a = CInt("1ggg023")', {"FAIL" : 1}),
 
-	('a = CLng(-1)', {"a" : -1}),
-	('a = CLng(67.2)', {"a" : 67}),
-	('a = CLng("123")', {"a" : 123}),
-	('a = CLng("1023.1")', {"a" : 1023}),
-	('a = CLng("-331023")', {"a" : -331023}),
-	('a = CLng("331023.8")', {"a" : 331024}),
-	('a = CLng("1ggg023")', {"FAIL" : 1}),
+    ('a = CLng(-1)', {"a" : -1}),
+    ('a = CLng(67.2)', {"a" : 67}),
+    ('a = CLng("123")', {"a" : 123}),
+    ('a = CLng("1023.1")', {"a" : 1023}),
+    ('a = CLng("-331023")', {"a" : -331023}),
+    ('a = CLng("331023.8")', {"a" : 331024}),
+    ('a = CLng("1ggg023")', {"FAIL" : 1}),
 
-	('a = CSng(-1)', {"a" : -1}),
-	('a = CSng(67.3)', {"a" : 67.3}),
-	('a = CSng("123")', {"a" : 123}),
-	('a = CSng("1023.1")', {"a" : 1023.1}),
-	('a = CSng("1023.8")', {"a" : 1023.8}),
-	('a = CSng("1ggg023")', {"FAIL" : 1}),
+    ('a = CSng(-1)', {"a" : -1}),
+    ('a = CSng(67.3)', {"a" : 67.3}),
+    ('a = CSng("123")', {"a" : 123}),
+    ('a = CSng("1023.1")', {"a" : 1023.1}),
+    ('a = CSng("1023.8")', {"a" : 1023.8}),
+    ('a = CSng("1ggg023")', {"FAIL" : 1}),
 
-	('a = CStr(-1)', {"a" : "-1"}),
-	('a = CStr("hello")', {"a" : "hello"}),
+    ('a = CStr(-1)', {"a" : "-1"}),
+    ('a = CStr("hello")', {"a" : "hello"}),
 
 ])
 # << Intrinsic tests >> (5 of 10)
 tests.extend([
-	('a = Hex(255)', {"a" : "FF"}),
-	('a = Hex("255")', {"a" : "FF"}),
-	('a = Hex(0)', {"a" : "0"}),
-	('a = Hex(12345)', {"a" : "3039"}),
+    ('a = Hex(255)', {"a" : "FF"}),
+    ('a = Hex("255")', {"a" : "FF"}),
+    ('a = Hex(0)', {"a" : "0"}),
+    ('a = Hex(12345)', {"a" : "3039"}),
 
-	('a = Oct(255)', {"a" : "377"}),
-	('a = Oct("255")', {"a" : "377"}),
-	('a = Oct(0)', {"a" : "0"}),
-	('a = Oct(12345)', {"a" : "30071"}),
+    ('a = Oct(255)', {"a" : "377"}),
+    ('a = Oct("255")', {"a" : "377"}),
+    ('a = Oct(0)', {"a" : "0"}),
+    ('a = Oct(12345)', {"a" : "30071"}),
 
-	('a = Fix(-1)', {"a" : -1}),
-	('a = Fix(67.1)', {"a" : 67}),
-	('a = Fix("123.3")', {"a" : 123}),
-	('a = Fix("1023.8")', {"a" : 1023}),
+    ('a = Fix(-1)', {"a" : -1}),
+    ('a = Fix(67.1)', {"a" : 67}),
+    ('a = Fix("123.3")', {"a" : 123}),
+    ('a = Fix("1023.8")', {"a" : 1023}),
 
-	('a = Int(-1)', {"a" : -1}),
-	('a = Int(67.1)', {"a" : 67}),
-	('a = Int("123.3")', {"a" : 123}),
-	('a = Int("1023.8")', {"a" : 1023}),
+    ('a = Int(-1)', {"a" : -1}),
+    ('a = Int(67.1)', {"a" : 67}),
+    ('a = Int("123.3")', {"a" : 123}),
+    ('a = Int("1023.8")', {"a" : 1023}),
 
-	('a = Sgn(-1)', {"a" : -1}),
-	('a = Sgn(0)', {"a" : 0}),
-	('a = Sgn(1)', {"a" : 1}),
-	('a = Sgn("-10")', {"a" : -1}),
-	('a = Sgn("10")', {"a" : 1}),
+    ('a = Sgn(-1)', {"a" : -1}),
+    ('a = Sgn(0)', {"a" : 0}),
+    ('a = Sgn(1)', {"a" : 1}),
+    ('a = Sgn("-10")', {"a" : -1}),
+    ('a = Sgn("10")', {"a" : 1}),
 ])
 # << Intrinsic tests >> (6 of 10)
 tests.extend([
-	('a = Sin(0)', {"a" : 0}),
-	('a = Sin("0")', {"a" : 0}),
+    ('a = Sin(0)', {"a" : 0}),
+    ('a = Sin("0")', {"a" : 0}),
 
-	('a = Cos(0)', {"a" : 1}),
-	('a = Cos("0")', {"a" : 1}),
+    ('a = Cos(0)', {"a" : 1}),
+    ('a = Cos("0")', {"a" : 1}),
 
-	('a = Tan(0)', {"a" : 0}),
-	('a = Tan("0")', {"a" : 0}),
+    ('a = Tan(0)', {"a" : 0}),
+    ('a = Tan("0")', {"a" : 0}),
 
-	('a = Int(10*Atn(10))', {"a" : 14}),
-	('a = Int(10*Atn("10"))', {"a" : 14}),
+    ('a = Int(10*Atn(10))', {"a" : 14}),
+    ('a = Int(10*Atn("10"))', {"a" : 14}),
 
-	('a = Exp(0)', {"a" : 1}),
-	('a = Exp("0")', {"a" : 1}),
+    ('a = Exp(0)', {"a" : 1}),
+    ('a = Exp("0")', {"a" : 1}),
 
-	('a = Int(Log(10))', {"a" : 2}),
-	('a = Int(Log("10"))', {"a" : 2}),
+    ('a = Int(Log(10))', {"a" : 2}),
+    ('a = Int(Log("10"))', {"a" : 2}),
 
-	('a = Sqr(16)', {"a" : 4}),
-	('a = Sqr("16")', {"a" : 4}),
+    ('a = Sqr(16)', {"a" : 4}),
+    ('a = Sqr("16")', {"a" : 4}),
 
-	('a = Round(1.1)', {"a" : 1}),
-	('a = Round(1.6)', {"a" : 2}),
+    ('a = Round(1.1)', {"a" : 1}),
+    ('a = Round(1.6)', {"a" : 2}),
 
-	('a = Round(1.1, 0)', {"a" : 1}),
-	('a = Round(1.6, 0)', {"a" : 2}),
+    ('a = Round(1.1, 0)', {"a" : 1}),
+    ('a = Round(1.6, 0)', {"a" : 2}),
 
-	('a = Round(1.11, 1)', {"a" : 1.1}),
-	('a = Round(1.16, 1)', {"a" : 1.2}),
+    ('a = Round(1.11, 1)', {"a" : 1.1}),
+    ('a = Round(1.16, 1)', {"a" : 1.2}),
 
-	('a = Round(-1.1)', {"a" : -1}),
-	('a = Round(-1.6)', {"a" : -2}),
+    ('a = Round(-1.1)', {"a" : -1}),
+    ('a = Round(-1.6)', {"a" : -2}),
 
-	('a = Round(-1.1, 0)', {"a" : -1}),
-	('a = Round(-1.6, 0)', {"a" : -2}),
+    ('a = Round(-1.1, 0)', {"a" : -1}),
+    ('a = Round(-1.6, 0)', {"a" : -2}),
 
-	('a = Round(-1.11, 1)', {"a" : -1.1}),
-	('a = Round(-1.16, 1)', {"a" : -1.2}),
+    ('a = Round(-1.11, 1)', {"a" : -1.1}),
+    ('a = Round(-1.16, 1)', {"a" : -1.2}),
 ])
 # << Intrinsic tests >> (7 of 10)
 tests.extend([
@@ -313,22 +311,22 @@ e = LBound(_A, 3)
 ])
 # << Intrinsic tests >> (9 of 10)
 tests.extend([
-	('a = Val("12")', {"a" : 12}),
-	('a = Val("12.")', {"a" : 12}),
-	('a = Val("-12.")', {"a" : -12}),
-	('a = Val("-12")', {"a" : -12}),
-	('a = Val("-12.5")', {"a" : -12.5}),
-	('a = Val("12.5")', {"a" : 12.5}),
-	('a = Val("12.5e5")', {"a" : 12.5e5}),
-	('a = Val("-12.5e5")', {"a" : -12.5e5}),
-	('a = Val("-12.5e-5")', {"a" : -12.5e-5}),
-	('a = Val("12.5e-5")', {"a" : 12.5e-5}),
-	('a = Val("12.5e-5 mdmdmf")', {"a" : 12.5e-5}),
-	('a = Val("12 mdmdmf")', {"a" : 12}),
-	('a = Val("12+mdmdmf")', {"a" : 12}),
-	('a = Val("12-mdmdmf")', {"a" : 12}),
-	('a = Val(" 12-mdmdmf")', {"a" : 12}),
-	('a = Val("ccc 12-mdmdmf")', {"a" : 0}),
+    ('a = Val("12")', {"a" : 12}),
+    ('a = Val("12.")', {"a" : 12}),
+    ('a = Val("-12.")', {"a" : -12}),
+    ('a = Val("-12")', {"a" : -12}),
+    ('a = Val("-12.5")', {"a" : -12.5}),
+    ('a = Val("12.5")', {"a" : 12.5}),
+    ('a = Val("12.5e5")', {"a" : 12.5e5}),
+    ('a = Val("-12.5e5")', {"a" : -12.5e5}),
+    ('a = Val("-12.5e-5")', {"a" : -12.5e-5}),
+    ('a = Val("12.5e-5")', {"a" : 12.5e-5}),
+    ('a = Val("12.5e-5 mdmdmf")', {"a" : 12.5e-5}),
+    ('a = Val("12 mdmdmf")', {"a" : 12}),
+    ('a = Val("12+mdmdmf")', {"a" : 12}),
+    ('a = Val("12-mdmdmf")', {"a" : 12}),
+    ('a = Val(" 12-mdmdmf")', {"a" : 12}),
+    ('a = Val("ccc 12-mdmdmf")', {"a" : 0}),
 ])
 # << Intrinsic tests >> (10 of 10)
 tests.extend([
@@ -380,4 +378,4 @@ vb2py.vbparser.log.setLevel(0) # Don't print all logging stuff
 TestClass = addTestsTo(BasicTest, tests)
 
 if __name__ == "__main__":
-	main()
+    main()

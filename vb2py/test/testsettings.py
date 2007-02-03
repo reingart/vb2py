@@ -1,5 +1,3 @@
-# Created by Leo from: C:\Development\Python23\Lib\site-packages\vb2py\vb2py.leo
-
 from unittest import *
 from testframework import *
 
@@ -41,7 +39,7 @@ Dim _Setting, _Settings
 a=""
 _Settings = GetAllSettings("vbtest", "main")
 For _Setting = 0 To UBound(_Settings)
-	a = a & _Settings(_Setting, 0) & " = " & _Settings(_Setting, 1) & ":"
+    a = a & _Settings(_Setting, 0) & " = " & _Settings(_Setting, 1) & ":"
 Next _Setting
 
 """, {"a":"real = 10.5:string = hello:int = 1:"})) # always returned as a string
@@ -61,4 +59,4 @@ vb2py.vbparser.log.setLevel(0) # Don't print all logging stuff
 TestClass = addTestsTo(BasicTest, tests)
 
 if __name__ == "__main__":
-	main()
+    main()

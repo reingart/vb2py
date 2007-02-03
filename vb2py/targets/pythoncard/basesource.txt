@@ -1,30 +1,28 @@
-# Created by Leo from: C:\Development\Python22\Lib\site-packages\vb2py\vb2py.leo
-
 {'stack':{'type':'Stack',
-		  'name':'Template',
-	'backgrounds': [
-	{'type':'Background',
-		  'name':'bgTemplate',
-		  'title':'Auto converted application',
-		  'position':(445, 73),
-		  'size':(345, 255),
-		  'style':['resizeable'],
+          'name':'Template',
+    'backgrounds': [
+    {'type':'Background',
+          'name':'bgTemplate',
+          'title':'Auto converted application',
+          'position':(445, 73),
+          'size':(345, 255),
+          'style':['resizeable'],
 
-		'menubar': {'type':'MenuBar',
-		 'menus': [
-			 {'type':'Menu',
-			 'name':'menuFile',
-			 'label':'&File',
-			 'items': [
-				  {'type':'MenuItem',
-				   'name':'menuFileExit',
-				   'label':'E&xit',
-				  },
-			  ]
-			 },
-		 ]
-	 },
-		 'components': [
+        'menubar': {'type':'MenuBar',
+         'menus': [
+             {'type':'Menu',
+             'name':'menuFile',
+             'label':'&File',
+             'items': [
+                  {'type':'MenuItem',
+                   'name':'menuFileExit',
+                   'label':'E&xit',
+                  },
+              ]
+             },
+         ]
+     },
+         'components': [
 ] # end components
 } # end background
 ] # end backgrounds

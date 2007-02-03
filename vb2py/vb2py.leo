@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet ekr_test?>
 <leo_file>
-<leo_header file_format="2" tnodes="0" max_tnode_index="1370" clone_windows="0"/>
-<globals body_outline_ratio="0.306479859895">
-	<global_window_position top="10" left="10" height="775" width="1142"/>
+<leo_header file_format="2" tnodes="0" max_tnode_index="0" clone_windows="0"/>
+<globals body_outline_ratio="0.653878942882">
+	<global_window_position top="10" left="10" height="978" width="1173"/>
 	<global_log_window_position top="0" left="0" height="0" width="0"/>
 </globals>
-<preferences>
-</preferences>
-<find_panel_settings>
-	<find_string></find_string>
-	<change_string></change_string>
-</find_panel_settings>
+<preferences/>
+<find_panel_settings/>
 <vnodes>
-<v t="pap.120703001453" a="E"><vh>Code</vh>
+<v t="pap.120703001453"><vh>Code</vh>
 <v t="pap.120703001453.1"><vh>__init__.py</vh></v>
 <v t="pap.120703001453.2"><vh>utils.py</vh>
 <v t="pap.120703001453.3"><vh>Path utils</vh></v>
@@ -328,7 +325,7 @@
 </v>
 </v>
 </v>
-<v t="pap.120703001453.216" a="EMTV"><vh>parserclasses.py</vh>
+<v t="pap.120703001453.216" a="M"><vh>parserclasses.py</vh>
 <v t="pap.120703001453.217"><vh>&lt;&lt; Definitions &gt;&gt;</vh></v>
 <v t="pap.120703001453.218" a="E"><vh>Base classes</vh>
 <v t="pap.120703001453.219"><vh>VBElement </vh>
@@ -832,7 +829,7 @@
 <v t="pap.120703001453.580"><vh>attributenames.py</vh></v>
 </v>
 </v>
-<v t="pap.120703001453.581"><vh>Package</vh>
+<v t="pap.120703001453.581" a="E"><vh>Package</vh>
 <v t="pap.120703001453.582"><vh>setup.py</vh>
 <v t="pap.120703001453.583"><vh>Supporting functions</vh></v>
 </v>
@@ -924,7 +921,7 @@
 </v>
 <v t="pap.120703001453.669"><vh>Failing tests</vh></v>
 </v>
-<v t="pap.120703001453.670"><vh>Test Basic Conversion</vh>
+<v t="pap.120703001453.670" a="E"><vh>Test Basic Conversion</vh>
 <v t="pap.120703001453.671"><vh>Basic Testing Framework</vh>
 <v t="PAP.20040125002850"><vh>getTestMethod</vh>
 <v t="pap.120703001453.672"><vh>&lt;&lt; Parse VB &gt;&gt;</vh></v>
@@ -1010,7 +1007,7 @@
 <v t="pap.120703001453.736"><vh>Val</vh></v>
 <v t="pap.120703001453.737"><vh>Array</vh></v>
 </v>
-<v t="pap.120703001453.738"><vh>VB intrinsic functions II</vh>
+<v t="pap.120703001453.738" a="E"><vh>VB intrinsic functions II</vh>
 <v t="pap.120703001453.739"><vh>IsArray</vh></v>
 <v t="pap.120703001453.740"><vh>IIf</vh></v>
 <v t="pap.120703001453.741"><vh>StrReverse</vh></v>
@@ -2155,7 +2152,7 @@
 </v>
 </v>
 </v>
-<v t="pap.120703001453.1162"><vh>v0.2.1 Task List</vh>
+<v t="pap.120703001453.1162" a="E"><vh>v0.2.1 Task List</vh>
 <v t="pap.120703001453.1163" a="E"><vh>New Keywords</vh>
 <v t="pap.120703001453.1164" a="E"><vh>Done</vh>
 <v t="pap.120703001453.1184"><vh>Array</vh>
@@ -2199,7 +2196,7 @@
 <v t="pap.120703001453.1172"><vh>FileCopy</vh>
 <v t="pap.120703001453.547"><vh>Existing python intrinsics</vh></v>
 </v>
-<v t="pap.120703001453.1200"><vh>FileLen</vh>
+<v t="pap.120703001453.1200" a="E"><vh>FileLen</vh>
 <v t="PAP.20040123193549"><vh>FileLen</vh></v>
 <v t="PAP.20040123194620"><vh>FileLen</vh></v>
 </v>
@@ -2533,7 +2530,7 @@
 </v>
 </v>
 </v>
-<v t="pap.120703001453.1280" a="E"><vh>Currently working on</vh>
+<v t="pap.120703001453.1280" a="TV"><vh>Currently working on</vh>
 <v t="PAP.20040426003228"><vh>Tree</vh>
 <v t="PAP.20040427013100.1"><vh>customimport.py</vh></v>
 <v t="PAP.20040427002644.1" a="E"><vh>comctllib.py</vh>
@@ -2654,7 +2651,7 @@ and not for anything else!
 
 tests.extend([
 ("""
-a = FileLen("c:\\development\\python23\\lib\\site-packages\\vb2py\\test\\vbtestfile.txt")
+a = FileLen("c:\\development\\python24\\lib\\site-packages\\vb2py\\test\\vbtestfile.txt")
 """, { "a" : 164}),
 ])
 
@@ -3019,7 +3016,7 @@ Do test for Random functions</t>
 
 tests.extend([
 ("""
-Open "c:\\development\\python23\\lib\\site-packages\\vb2py\\test\\vbtestfile.txt" For Input As #3
+Open "c:\\development\\python24\\lib\\site-packages\\vb2py\\test\\vbtestfile.txt" For Input As #3
 a = Lof(3)
 """, { "a" : 164}),
 ])
@@ -20457,7 +20454,7 @@ if __name__ == "__main__":
 		for file in files:
 			if file not in (r"test\testall.py", r"test\testframework.py", "test\testparser.py"):
 				print "Running '%s' ... " % file,
-				fname = os.path.join(r"c:\development\python23\lib\site-packages\vb2py", file)
+				fname = os.path.join(r"c:\development\python24\lib\site-packages\vb2py", file)
 				pi, po, pe = os.popen3(fname)
 				result = pe.read()
 				if result.find("FAILED") &gt; -1:

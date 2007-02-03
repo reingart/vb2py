@@ -1,5 +1,3 @@
-# Created by Leo from: C:\Development\Python23\Lib\site-packages\vb2py\vb2py.leo
-
 #
 # Turn off logging in extensions (too loud!)
 import vb2py.extensions
@@ -2294,9 +2292,6 @@ Enum MyEnum ' yeah
 End Enum
 """)
 # << Parsing tests >> (60 of 60)
-#	These tests fail but we accept this for v0.2 - we remove them to here so 
-#	that they do not hide other (real) failures when doing the testall.py
-
 failures = [
         "If a = 10 Then d = 1 Else If k = 12 Then b = 12",
         "If a = 10 Then d = 1 Else If k = 12 Then b = 12 Else g=123",

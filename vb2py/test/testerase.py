@@ -1,5 +1,3 @@
-# Created by Leo from: C:\Development\Python22\Lib\site-packages\vb2py\vb2py.leo
-
 from unittest import *
 from testframework import *
 
@@ -9,18 +7,18 @@ tests.append(("""
 Function _GetArrayRepr(Arr)
 total = 0
 For i = 1 To UBound(Arr, 1)
-	For j = 1 To UBound(Arr, 2)
-	   total = total + Arr(i, j)
-	Next j
+    For j = 1 To UBound(Arr, 2)
+       total = total + Arr(i, j)
+    Next j
 Next i
 _GetArrayRepr = total
 End Function
 
 Dim _a(10, 2) As Integer
 For _i = 1 To 10
-	For _j = 1 To 2
-		_a(_i, _j) = _i + _j
-	Next _j
+    For _j = 1 To 2
+        _a(_i, _j) = _i + _j
+    Next _j
 Next _i
 t1 = _GetArrayRepr(_a)
 Erase _a
@@ -32,9 +30,9 @@ tests.append(("""
 Function _GetArrayRepr(Arr)
 total = 0
 For i = 1 To UBound(Arr, 1)
-	For j = 1 To UBound(Arr, 2)
-	   total = total + Arr(i, j)
-	Next j
+    For j = 1 To UBound(Arr, 2)
+       total = total + Arr(i, j)
+    Next j
 Next i
 _GetArrayRepr = total
 End Function
@@ -42,10 +40,10 @@ End Function
 Dim _a(10, 2) As Integer
 Dim _b(10, 2) As Integer
 For _i = 1 To 10
-	For _j = 1 To 2
-		_a(_i, _j) = _i + _j
-		_b(_i, _j) = _i + _j
-	Next _j
+    For _j = 1 To 2
+        _a(_i, _j) = _i + _j
+        _b(_i, _j) = _i + _j
+    Next _j
 Next _i
 t1a = _GetArrayRepr(_a)
 t1b = _GetArrayRepr(_b)
@@ -60,4 +58,4 @@ vb2py.vbparser.log.setLevel(0) # Don't print all logging stuff
 TestClass = addTestsTo(BasicTest, tests)
 
 if __name__ == "__main__":
-	main()
+    main()

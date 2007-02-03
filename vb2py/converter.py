@@ -1,5 +1,3 @@
-# Created by Leo from: C:\Development\Python23\Lib\site-packages\vb2py\vb2py.leo
-
 # << Documentation >>
 """VB2Py - VB to Python + PythonCard conversion
 
@@ -306,10 +304,6 @@ class FormParser(BaseParser):
     def doParse(self, project):
         """Parse the text"""
         # << Split off code section >>
-        #	        We try to find the code section - this is delimeted by a series of 
-#	        "Attribute" definitions. This is pretty hokey and there should be a
-#	        better way to do this, but this method seems to work so far
-        
         data = self.splitSectionByMarker("Attribute")
         if data:
             self.form_data, self.code_block = data
@@ -320,10 +314,6 @@ class FormParser(BaseParser):
         if self.form:
             self.parseCode(project)
             # << Add controls to form namespace >>
-            #	            All the controls that this form owns are in the local namespace
-#	            so we need to add them to the VBFormModule so that they will be
-#	            converted to the proper (self.) style
-            
             distinct_names = {}
             for control in self.form._getControlsOfType():
                 #
@@ -353,28 +343,10 @@ class FormParser(BaseParser):
             # code_structure.local_names
             # -- end -- << Add controls to form namespace >>
     # << class FormParser methods >> (2 of 4)
-    #	    To parse the form we take advantage of the fact that the data is almost
-#	    a readable python structure anyway. It looks like
-#	    VERSION 5.00
-#	    Begin VB.Form frmMain 
-#	       Caption         =   "Form1"
-#	       StartUpPosition =   3  'Windows Default
-#	       Begin VB.CommandButton btnSecond 
-#	          Caption         =   "Second Form"
-#	          Height          =   375
-#	       End
-#	    End
-#	    
-#	    Begin = class
-#	    name = super
-    
     def parseForm(self):
         """Parse the form definition"""
         self.form_data = self.form_data.replace("\r\n", "\n") # For *nix
         # << Get name of form class >>
-        #	        Need to get the name of the form class - this is not always the 
-#	        same as the filename
-        
         pattern = re.compile(r"^Begin\s+VB\.Form\s+(\w+)", re.MULTILINE)
         name_match = pattern.findall(self.form_data)
 
@@ -490,12 +462,6 @@ class FormParser(BaseParser):
             self.form.name = self.name
             self.groupOptionButtons(self.form)
     # << class FormParser methods >> (3 of 4)
-    #	    Option buttons in VB are just properties of their container. The 
-#	    equivalent in PythonCard are option groups which are all in one place. 
-#	    We have to go into the VB form and pull all the options together so we 
-#	    start at the form level and then descend down each sub-container to 
-#	    make sure that we grab them all as a group.
-    
     def groupOptionButtons(self, cls):
         """Pull all the option buttons together for this class"""
         #
@@ -725,9 +691,6 @@ def main():
     conv.doConversion(project_file)
     renderTo(conv, destination_dir, do_code)
 # << VBConverter >> (12 of 15)
-#	We need to import classes which are appropriate for the given target using 
-#	the imp module
-
 def importTarget(target):
     """Import the target resource"""
     global event_translator, resource

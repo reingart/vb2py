@@ -1,5 +1,3 @@
-# Created by Leo from: C:\Development\Python23\Lib\site-packages\vb2py\vb2py.leo
-
 """A set of classes used during the parsing of VB code"""
 
 # << Definitions >>
@@ -2247,17 +2245,6 @@ class VBCaseItem(VBCaseBlock):
                            self.block.renderAsCode(indent+1))						   
         elif len(self.expressions) == 1:
             # << Handle single expression >>
-            #	            We have a single expression. Normally this is translated as an 
-#	            == because we are comparing the select variable to another 
-#	            value or an expression. However, there is a special case where 
-#	            the first part of the expression is "Is". In this case the 
-#	            expression is a compare, eg "Is > 10". It turns out to be quite
-#	            tricky to special case this in the grammar without a lot of 
-#	            duplication so we try to catch it here.
-#	            
-#	            Fortunately the VB grammar doesn't allow things like "(Is > 
-#	            10)" so we can use a simple check!
-            
             expression_text = self.expressions[0].renderAsCode()
             # Now check for "Is"
             if expression_text.startswith("Is "):

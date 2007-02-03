@@ -1,5 +1,3 @@
-# Created by Leo from: C:\Development\Python23\Lib\site-packages\vb2py\vb2py.leo
-
 from wx import TreeItemData
 from wxPython import wx, stc
 import vb2py.custom.comctllib
@@ -30,8 +28,8 @@ class VBTreeView(VBWidget):
     } 
 
     _name_to_method_translations = {
-            "ListCount" : "getNumber",
-            "ListIndex" : "getSelectionIndex",
+            "ListCount" : ("getNumber", None),
+            "ListIndex" : ("getSelectionIndex", None),
     }
 
     _indexed_translations = { 

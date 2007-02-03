@@ -1,5 +1,3 @@
-# Created by Leo from: C:\Development\Python23\Lib\site-packages\vb2py\vb2py.leo
-
 """A simple module intended to aid interactive testing of the parser
 
 We just import a lot of useful things with short names so they are easy to type!
