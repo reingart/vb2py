@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.3.0: http://docutils.sourceforge.net/" />
+<title>vb2Py - Dim and Redim</title>
+<link rel="stylesheet" href="default.css" type="text/css" />
+</head>
+<body>
+<div class="document" id="vb2py-dim-and-redim">
+<h1 class="title">vb2Py - Dim and Redim</h1>
+<!-- filename: c:\development\python22\lib\site-packages\vb2py\doc/dim.htm -->
+<p>Contents of this page:</p>
+<ul class="simple">
+<li><a class="reference" href="#general">General</a></li>
+<li><a class="reference" href="#default-conversion">Default Conversion</a></li>
+<li><a class="reference" href="#list-of-options">List of Options</a></li>
+</ul>
+<div class="section" id="general">
+<h1><a name="general">General</a></h1>
+<p>VB variables can be defined or dimensioned using the <tt class="literal"><span class="pre">Dim</span></tt> keyword to specify their type and/or size (for arrays). Python has no equivalent of the <tt class="literal"><span class="pre">Dim</span></tt> statement but the converted code attempts to match the semantics of the <tt class="literal"><span class="pre">Dim</span></tt> by,</p>
+<ol class="arabic simple">
+<li>Initializing the named variables to an empty object of the required type</li>
+<li>Creating an array of the required size (using the <tt class="literal"><span class="pre">vbfunctions.vbObjectInitialize</span></tt> function)</li>
+</ol>
+<p>Note, however, that this conversion does not fix the type and size of the object and subsequent rebindings of the name will remove all reference to the previous <em>type</em>. Using the <tt class="literal"><span class="pre">Preserve</span></tt> option with the <tt class="literal"><span class="pre">ReDim</span></tt> command causes the original variable to be passed to the <tt class="literal"><span class="pre">vbfunctions.vbObjectInitialize</span></tt> so that the contents of the object can be retained after resizing.</p>
+</div>
+<div class="section" id="default-conversion">
+<h1><a name="default-conversion">Default Conversion</a></h1>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>Dim a, b, c(20)<br>Dim x As Integer, y As String, z(10) As Variant<br>Dim obj As New Collection<br><br>ReDim c(10)<br>ReDim Preserve c(10)<br></pre></td><td class="python-code-cell"><pre><br><br><br>    a = Variant()<br>    b = Variant()<br>    c = vbObjectInitialize((20,), Variant)<br>    x = Integer()<br>    y = String()<br>    z = vbObjectInitialize((10,), Variant)<br>    obj = Collection()<br><br>    c = vbObjectInitialize((10,), Variant)<br>    c = vbObjectInitialize((10,), Variant, c)<br></pre></td></tr></table>
+</div>
+<div class="section" id="list-of-options">
+<h1><a name="list-of-options">List of Options</a></h1>
+<p>There are no options specific to the <tt class="literal"><span class="pre">Dim</span></tt> statement.</p>
+</div>
+</div>
+</body>
+</html>

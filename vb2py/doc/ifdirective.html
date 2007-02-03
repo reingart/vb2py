@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.3.0: http://docutils.sourceforge.net/" />
+<title>vb2Py - #If Directives</title>
+<link rel="stylesheet" href="default.css" type="text/css" />
+</head>
+<body>
+<div class="document" id="vb2py-if-directives">
+<h1 class="title">vb2Py - #If Directives</h1>
+<!-- filename: c:\development\python22\lib\site-packages\vb2py\doc/ifdirective.htm -->
+<p><em>THE #IF DIRECTIVE DOES NOT WORK CORRECTLY IN v0.2</em></p>
+<p>Contents of this page:</p>
+<ul class="simple">
+<li><a class="reference" href="#general">General</a></li>
+<li><a class="reference" href="#default-conversion">Default Conversion</a></li>
+<li><a class="reference" href="#list-of-options">List of Options</a></li>
+</ul>
+<div class="section" id="general">
+<h1><a name="general">General</a></h1>
+<p><tt class="literal"><span class="pre">#If</span></tt> directives in VB are used to produce compile time switches (eg to define different constants or functions). Although Python doesn't have this concept, any of the use cases for #If directives are easily handled by Python's conventional <tt class="literal"><span class="pre">if</span></tt> statement at runtime. Consequently, the <tt class="literal"><span class="pre">#If</span></tt> conversion is simply converted to the equivalant Python <tt class="literal"><span class="pre">if</span></tt>.</p>
+</div>
+<div class="section" id="default-conversion">
+<h1><a name="default-conversion">Default Conversion</a></h1>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>#If Value = 10 Or Value = 20 Then<br>    Const MaxCols = 10<br>#ElseIf Value = 30 Then<br>    Const MaxCols = 20<br>#Else<br>    Const MaxCols = 30<br>#End If<br></pre></td><td class="python-code-cell"><pre><br><br><br><br>    if Value == 10 or Value == 20:<br>    elif Value == 30:<br>    else:<br></pre></td></tr></table>
+</div>
+<div class="section" id="list-of-options">
+<h1><a name="list-of-options">List of Options</a></h1>
+<p>There are no options specific to the <tt class="literal"><span class="pre">If</span></tt> statement.</p>
+</div>
+</div>
+</body>
+</html>

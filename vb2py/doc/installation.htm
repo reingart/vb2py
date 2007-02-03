@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.3.0: http://docutils.sourceforge.net/" />
+<title>vb2Py Installation</title>
+<link rel="stylesheet" href="default.css" type="text/css" />
+</head>
+<body>
+<div class="document" id="vb2py-installation">
+<h1 class="title">vb2Py Installation</h1>
+<!-- filename: c:\development\python22\lib\site-packages\vb2py\doc/installation.htm -->
+<p><strong>Important</strong> If you installed v0.1, or the CVS version, prior to v0.2 please remove the old directories completely before installing v0.2. Changes in the package (in particular the renaming of <tt class="literal"><span class="pre">vb2py.py</span></tt>) <strong>will</strong> causes problems. Sorry for the confusion!</p>
+<ul class="simple">
+<li><a class="reference" href="#main-installation">Main Installation</a></li>
+<li><a class="reference" href="#gui-installation">GUI Installation</a></li>
+<li><a class="reference" href="#simpleparse-installation">Simpleparse Installation</a></li>
+<li><a class="reference" href="#mxtools-installation">mxTools Installation</a></li>
+<li><a class="reference" href="#pythoncard-installation">PythonCard Installation</a></li>
+</ul>
+<p><tt class="literal"><span class="pre">vb2Py</span></tt> uses Python and has been tested on Python 2.2. Python 2.3 should work but earlier versions will not.</p>
+<div class="section" id="main-installation">
+<h1><a name="main-installation">Main Installation</a></h1>
+<p>vb2Py is written in Python and runs on any platform which has a Python interpreter.</p>
+<p>Once you have downloaded the <tt class="literal"><span class="pre">vb2py</span></tt> package you will have a zip file. Before you can do anything you must have Python installed. After Python is installed you can install the <tt class="literal"><span class="pre">vb2py</span></tt> modules by going to the directory you unzipped the files to and typing:</p>
+<pre class="literal-block">
+&gt; python setup.py install
+</pre>
+<p>Now you should have a 'vb2py' folder in your Python site packages directory.</p>
+<p>You also need to make sure you have both <a class="reference" href="http://sourceforge.net/project/showfiles.php?group_id=19015">PythonCard</a> and <a class="reference" href="http://sourceforge.net/project/showfiles.php?group_id=55673">Simpleparse</a> installed on your system.</p>
+<p>Once these additional resources are installed on your system you should be ready to go and use the converter.</p>
+<p>Note: You do not need VB to run the converter!</p>
+</div>
+<div class="section" id="gui-installation">
+<h1><a name="gui-installation">GUI Installation</a></h1>
+<p>The vb2Py GUI is also written in Python and uses the PythonCard GUI toolkit. Installation of the GUI is the same as for the main libraries. Once you have downloaded the <tt class="literal"><span class="pre">vb2pygui</span></tt> you will have a zip file. You can install the <tt class="literal"><span class="pre">vb2pygui</span></tt> module by going to the directory you unzipped the files to and typing:</p>
+<pre class="literal-block">
+&gt; python setup.py install
+</pre>
+<p>Now you should have a 'vb2pygui' folder in your Python site packages directory.</p>
+</div>
+<div class="section" id="simpleparse-installation">
+<h1><a name="simpleparse-installation">Simpleparse Installation</a></h1>
+<p>vb2Py uses the <tt class="literal"><span class="pre">Simpleparse</span></tt> module to parse the Visual Basic code. You can download the <tt class="literal"><span class="pre">Simpleparse</span></tt> files from the <a class="reference" href="http://sourceforge.net/project/showfiles.php?group_id=55673">Simpleparse</a> download site. <em>NB You need ``Simpleparse v2.0.1a2`` or later.</em> Follow the instructions on the <a class="reference" href="http://simpleparse.sourceforge.net">Simpleparse homepage</a> to install the software.</p>
+<p>You will also need to do the <a class="reference" href="#mxtools-installation">mxTools Installation</a>.</p>
+</div>
+<div class="section" id="mxtools-installation">
+<h1><a name="mxtools-installation">mxTools Installation</a></h1>
+<p>The <tt class="literal"><span class="pre">Simpleparse</span></tt> library uses the <a class="reference" href="http://www.egenix.com">mxTools</a> libraries. Once you have downloaded these, follow the instructions on the <a class="reference" href="http://www.egenix.com">mxTools homepage</a>.</p>
+</div>
+<div class="section" id="pythoncard-installation">
+<h1><a name="pythoncard-installation">PythonCard Installation</a></h1>
+<p>If you want to use the <tt class="literal"><span class="pre">vb2Py</span></tt> GUI or view converted forms actually running, then you will need the <tt class="literal"><span class="pre">PythonCard</span></tt> GUI library. You can download the software from the <a class="reference" href="http://sourceforge.net/project/showfiles.php?group_id=19015">PythonCard</a> download site. Installation instructions are on the <a class="reference" href="http://pythoncard.sourceforge.net/installation.html">PythonCard homepage</a>. <tt class="literal"><span class="pre">vb2Py</span></tt> has been tested with the 0.7 Prototype version but should work with later versions also.</p>
+</div>
+</div>
+</body>
+</html>

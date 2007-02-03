@@ -1,0 +1,9 @@
+#@+leo-ver=4
+#@+node:@file test\vbtestfile.txt
+This is a file just
+used for reading
+and not for anything else!
+ ...
+#@nonl
+#@-node:@file test\vbtestfile.txt
+#@-leo

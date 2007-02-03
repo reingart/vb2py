@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.3.0: http://docutils.sourceforge.net/" />
+<title>vb2Py - With</title>
+<link rel="stylesheet" href="default.css" type="text/css" />
+</head>
+<body>
+<div class="document" id="vb2py-with">
+<h1 class="title">vb2Py - With</h1>
+<!-- filename: c:\development\python22\lib\site-packages\vb2py\doc/with.htm -->
+<p>Contents of this page:</p>
+<ul class="simple">
+<li><a class="reference" href="#general">General</a></li>
+<li><a class="reference" href="#default-conversion">Default Conversion</a></li>
+<li><a class="reference" href="#list-of-options">List of Options</a></li>
+</ul>
+<p>Specific options:</p>
+<ul class="simple">
+<li><a class="reference" href="#evaluatevariable">EvaluateVariable</a></li>
+<li><a class="reference" href="#withvariableprefix">WithVariablePrefix</a></li>
+<li><a class="reference" href="#usenumericindex">UseNumericIndex</a></li>
+</ul>
+<div class="section" id="general">
+<h1><a name="general">General</a></h1>
+<p>In VB, <tt class="literal"><span class="pre">With</span></tt> blocks represent a shorthand for refering to a specific object. Properties and methods of the object can be referenced by just prefixing the name with a '.' and the base object name is infered from the context. Python has no such equivalent and therefore the objects must be written out in full. By default, a <tt class="literal"><span class="pre">with</span></tt> variable is created and this is used to fully qualify the references. This is <em>safe</em> in cases where evaluation of the <tt class="literal"><span class="pre">With</span></tt> object is expensive <a class="footnote-reference" href="#id3" id="id1" name="id1"><sup>1</sup></a> but may make the code look less clear. To get around this, an option is avaialble to use the actual variable name.</p>
+</div>
+<div class="section" id="default-conversion">
+<h1><a name="default-conversion">Default Conversion</a></h1>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>With MyObject<br>    .Height = 10<br>    .Width = .Height * .ScaleFactor<br>End With<br></pre></td><td class="python-code-cell"><pre><br><br><br><br>    _with5 = MyObject<br>    _with5.Height = 10<br>    _with5.Width = _with5.Height * _with5.ScaleFactor<br></pre></td></tr></table>
+</div>
+<div class="section" id="list-of-options">
+<h1><a name="list-of-options">List of Options</a></h1>
+<p>Here are the options in the INI file:</p>
+<pre class="literal-block">
+[With]
+# Once or EachTime, how many times to evaluate the with variable  
+EvaluateVariable = Once
+# Name of with variable (only used if EvaluateVariable is Once)
+WithVariablePrefix = _with
+# Yes or No, use numeric index on with variable (needed if you every have nested Withs and EvaluateVariable = Once)
+UseNumericIndex = Yes
+</pre>
+<div class="section" id="evaluatevariable">
+<h2><a name="evaluatevariable">EvaluateVariable</a></h2>
+<p>Syntax: <tt class="literal"><span class="pre">EvaluateVariable</span> <span class="pre">=</span> <span class="pre">Once</span> <span class="pre">|</span> <span class="pre">EveryTime</span></tt></p>
+<p>The default behaviour is to evaluate the <tt class="literal"><span class="pre">With</span></tt> object once at the start of the block. By setting this option to <tt class="literal"><span class="pre">EachTime</span></tt> you can force the object to be evaluated each time it is required. This generally looks more natural but can lead to undesired side effects or slow run times depending on how expensive <a class="footnote-reference" href="#id3" id="id2" name="id2"><sup>1</sup></a> the object is to calculate.</p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>' VB2PY-Set: With.EvaluateVariable = EveryTime<br>With MyObject<br>    .Height = 10<br>    .Width = .Height * .ScaleFactor<br>End With<br>' VB2PY-Unset: With.EvaluateVariable<br></pre></td><td class="python-code-cell"><pre><br><br><br><br>    MyObject.Height = 10<br>    MyObject.Width = MyObject.Height * MyObject.ScaleFactor<br></pre></td></tr></table>
+</div>
+<div class="section" id="withvariableprefix">
+<h2><a name="withvariableprefix">WithVariablePrefix</a></h2>
+<p>Syntax: <tt class="literal"><span class="pre">WithVariablePrefix</span> <span class="pre">=</span> <span class="pre">name</span></tt></p>
+<p>When <a class="reference" href="#evaluatevariable">EvaluateVariable</a> is set to <tt class="literal"><span class="pre">Once</span></tt>, this option determines the prefix used to name the variable used in the <tt class="literal"><span class="pre">With</span></tt>. If <a class="reference" href="#usenumericindex">UseNumericIndex</a> is set to <tt class="literal"><span class="pre">No</span></tt> then this option sets the variable name used, otherwise this is the prefix and the final variable will also include a unique ID number.</p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>' VB2PY-Set: With.WithVariablePrefix = withVariable<br>With MyObject<br>    .Height = 10<br>    .Width = .Height * .ScaleFactor<br>End With<br>' VB2PY-Unset: With.WithVariablePrefix<br></pre></td><td class="python-code-cell"><pre><br><br><br><br>    withVariable7 = MyObject<br>    withVariable7.Height = 10<br>    withVariable7.Width = withVariable7.Height * withVariable7.ScaleFactor<br></pre></td></tr></table>
+</div>
+<div class="section" id="usenumericindex">
+<h2><a name="usenumericindex">UseNumericIndex</a></h2>
+<p>Syntax: <tt class="literal"><span class="pre">UseNumericIndex</span> <span class="pre">=</span> <span class="pre">Yes</span> <span class="pre">|</span> <span class="pre">No</span></tt></p>
+<p>When <a class="reference" href="#evaluatevariable">EvaluateVariable</a> is set to <tt class="literal"><span class="pre">Once</span></tt>, this option determines whether a unique ID number is appended to the <a class="reference" href="#withvariableprefix">WithVariablePrefix</a> to determine the variable name used to hold the object. If used, the index is incremented for each <tt class="literal"><span class="pre">With</span></tt> constuct found. This option is always required to be <tt class="literal"><span class="pre">Yes</span></tt> where the code includes nested <tt class="literal"><span class="pre">With</span></tt> blocks <em>and</em> <a class="reference" href="#evaluatevariable">EvaluateVariable</a> is set to <tt class="literal"><span class="pre">Once</span></tt>. If neither of these conditions applies then it is safe to set this to <tt class="literal"><span class="pre">No</span></tt></p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>' VB2PY-Set: With.UseNumericIndex = No<br>With MyObject<br>    .Height = 10<br>    .Width = .Height * .ScaleFactor<br>End With<br>' VB2PY-Unset: With.UseNumericIndex<br></pre></td><td class="python-code-cell"><pre><br><br><br><br>    _with = MyObject<br>    _with.Height = 10<br>    _with.Width = _with.Height * _with.ScaleFactor<br></pre></td></tr></table>
+<hr />
+<table class="footnote" frame="void" id="id3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a name="id3">[1]</a></td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>)</em> Expensive as in CPU time.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</body>
+</html>
