@@ -1,3 +1,5 @@
+#@+leo-ver=4
+#@+node:@file finddialog.rsrc.py
 {'type':'CustomDialog',
     'name':'Find',
     'title':'Find',
@@ -50,3 +52,5 @@
 
 ] # end components
 } # end CustomDialog
+#@-node:@file finddialog.rsrc.py
+#@-leo

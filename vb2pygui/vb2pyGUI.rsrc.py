@@ -1,4 +1,6 @@
-{'stack':{'type':'Stack',
+#@+leo-ver=4-thin
+#@+node:pap.20070203004134:@thin vb2pyGUI.rsrc.py
+{'application':{'type':'Application',
           'name':'Template',
     'backgrounds': [
     {'type':'Background',
@@ -174,3 +176,5 @@
 } # end background
 ] # end backgrounds
 } }
+#@-node:pap.20070203004134:@thin vb2pyGUI.rsrc.py
+#@-leo
