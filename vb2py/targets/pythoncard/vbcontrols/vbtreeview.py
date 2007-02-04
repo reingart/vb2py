@@ -3,13 +3,14 @@ from wxPython import wx, stc
 import vb2py.custom.comctllib
 
 from vb2py.targets.pythoncard.controlclasses import VBWrapped, VBWidget
+from vb2py.targets.pythoncard import Register
 import vb2py.logger
 log = vb2py.logger.getLogger("VBTreeView")
 
-from PythonCardPrototype.components import tree
+from PythonCard.components import tree
 from wxPython import wx
 import sys
-from PythonCardPrototype import binding, event, registry, widget
+from PythonCard import event, registry, widget
 from vb2py.vbclasses import Collection
 
 
@@ -108,4 +109,4 @@ class TreeNodeCollection(Collection):
 # -- end -- << Classes >>
 
 log.debug("Registering VBTreeView as '%s'" % sys.modules[__name__].VBTreeView)
-registry.getRegistry().register( sys.modules[__name__].VBTreeView )
+Register(VBTreeView)

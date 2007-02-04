@@ -1,12 +1,10 @@
-# Created by Leo from: C:\Development\Python23\Lib\site-packages\vb2py\vb2py.leo
-
 """The main form for the application"""
 
-from PythonCardPrototype import model
+from PythonCard import model
 
 # Allow importing of our custom controls
-import PythonCardPrototype.res
-PythonCardPrototype.res.APP_COMPONENTS_PACKAGE = "vb2py.targets.pythoncard.vbcontrols"
+import PythonCard.resource
+PythonCard.resource.APP_COMPONENTS_PACKAGE = "vb2py.targets.pythoncard.vbcontrols"
 
 class Background(model.Background):
 
@@ -26,9 +24,29 @@ class Background(model.Background):
             self.Form_Load()
 
 
+from vb2py.vbfunctions import *
+from vb2py.vbdebug import *
+
+class MAINFORM(Background):
+    """ A form to test the Like function"""
+
+    __a = 10
+    __b = 2
+
+    def on_btnCheckLike_mouseClick(self, *args):
+        if Like(self.txtOne.Text, self.txtTwo.Text):
+            self.lblLike.Caption = 'Yes'
+        else:
+            self.lblLike.Caption = 'No'
+
+    # VB2PY (UntranslatedCode) Attribute VB_Name = "frmForm"
+    # VB2PY (UntranslatedCode) Attribute VB_GlobalNameSpace = False
+    # VB2PY (UntranslatedCode) Attribute VB_Creatable = False
+    # VB2PY (UntranslatedCode) Attribute VB_PredeclaredId = True
+    # VB2PY (UntranslatedCode) Attribute VB_Exposed = False
 
 
 
 if __name__ == '__main__':
-    app = model.PythonCardApp(MAINFORM)
+    app = model.Application(MAINFORM)
     app.MainLoop()

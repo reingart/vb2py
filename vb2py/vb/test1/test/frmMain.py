@@ -1,12 +1,10 @@
-# Created by Leo from: C:\Development\Python23\Lib\site-packages\vb2py\vb2py.leo
-
 """The main form for the application"""
 
-from PythonCardPrototype import model
+from PythonCard import model
 
 # Allow importing of our custom controls
-import PythonCardPrototype.res
-PythonCardPrototype.res.APP_COMPONENTS_PACKAGE = "vb2py.targets.pythoncard.vbcontrols"
+import PythonCard.resource
+PythonCard.resource.APP_COMPONENTS_PACKAGE = "vb2py.targets.pythoncard.vbcontrols"
 
 class Background(model.Background):
 
@@ -26,9 +24,68 @@ class Background(model.Background):
             self.Form_Load()
 
 
+from vb2py.vbfunctions import *
+from vb2py.vbdebug import *
+import Module1
+
+class MAINFORM(Background):
+
+    __a = 10
+    __b = 'hello'
+    __c = 43
+
+    def on_btnChange_mouseClick(self, *args):
+        if self.chkAdd.Value:
+            self.txtValue.Text = CStr(self.__doAnAdd(CInt(self.txtValue.Text), 1))
+        elif self.chkSub.Value:
+            self.txtValue.Text = CStr(self.__doAnAdd(CInt(self.txtValue.Text), -1))
+
+    def on_btnDirectHide_mouseClick(self, *args):
+        self.btnDirectHide.Visible = False
+
+    def on_btnDoIt_mouseClick(self, *args):
+        self.lblLabel.Caption = self.txtName.Text + self.txtSecond.Text
+
+    def on_btnHideMe_mouseClick(self, *args):
+        #HideSomething (btnHideMe)
+        pass
+
+    def on_btnSecond_mouseClick(self, *args):
+        frmSecond.Show()
+
+    def __doAnAdd(self, Value, Adding):
+        _ret = None
+        _ret = Value + Adding
+        return _ret
+
+    def __HideSomething(self, btn):
+        btn.Visible = False
+
+    def on_btnZeroIt_mouseClick(self, *args):
+        self.txtValue.Text = '0'
+
+    def on_cmdFactorial_mouseClick(self, *args):
+        MsgBox('Factorial 6 is ' + Module1.Factorial(6))
+
+    def on_Command1_mouseClick(self, *args):
+        frmRadio.Show()
+
+    def __Form_Load(self):
+        a = Integer()
+        VBFiles.closeFile()
+        #b (1,2), f(3)
+        _select0 = a
+#a = 10
+        bb = MakeDate(1, 10, 2000)
+
+    # VB2PY (UntranslatedCode) Attribute VB_Name = "frmMain"
+    # VB2PY (UntranslatedCode) Attribute VB_GlobalNameSpace = False
+    # VB2PY (UntranslatedCode) Attribute VB_Creatable = False
+    # VB2PY (UntranslatedCode) Attribute VB_PredeclaredId = True
+    # VB2PY (UntranslatedCode) Attribute VB_Exposed = False
 
 
 
 if __name__ == '__main__':
-    app = model.PythonCardApp(MAINFORM)
+    app = model.Application(MAINFORM)
     app.MainLoop()

@@ -110,7 +110,7 @@ class VBWrapped(type):
 
         # Set the _spec for the item
         obj._spec = obj._proxy_for._spec
-        obj._spec.name = obj.__name__
+        obj._spec._name = obj.__name__
         # Create the object 
         return obj
     # << VBWrapped methods >> (2 of 6)

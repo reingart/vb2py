@@ -49,7 +49,7 @@ def makeDataDirs(rootDir=APPLICATION_NAME, dataDirs=[]):
         directories=recurseDir(directory)
         results.extend(directories)
     for directory in results:
-        if os.path.split(directory)[1]!='CVS':
+        if os.path.split(directory)[1]!='.svn':
             # Add this directory and its contents to list
             files=[]
             for file in os.listdir(directory):
@@ -63,7 +63,7 @@ def makeDataDirs(rootDir=APPLICATION_NAME, dataDirs=[]):
 # -- end -- << Support functions >>
 
 setup(name=APPLICATION_NAME, 
-      version="0.2.1",
+      version="0.2.2",
       description="Visual Basic to Python Converter",
       author="Paul Paterson",
       author_email="paulpaterson@users.sourceforge.net",

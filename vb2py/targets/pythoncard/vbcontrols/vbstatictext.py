@@ -1,11 +1,12 @@
 from vb2py.targets.pythoncard.controlclasses import VBWrapped, VBWidget
+from vb2py.targets.pythoncard import Register
 import vb2py.logger
 log = vb2py.logger.getLogger("VBStaticText")
 
-from PythonCardPrototype.components import statictext
+from PythonCard.components import statictext
 from wxPython import wx
 import sys
-from PythonCardPrototype import binding, event, registry, widget
+from PythonCard import event, registry, widget
 
 
 class VBStaticText(VBWidget): 
@@ -30,4 +31,4 @@ class VBStaticText(VBWidget):
 
 
 log.debug("Registering VBStaticText as '%s'" % sys.modules[__name__].VBStaticText)
-registry.getRegistry().register( sys.modules[__name__].VBStaticText )
+Register(VBStaticText)

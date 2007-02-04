@@ -1,10 +1,18 @@
 from vb2py.vbfunctions import *
+from vb2py.vbdebug import *
 
 
 NoError = 0
 
 def GetUserName():
     _ret = None
+    lpnLength = 255
+
+    status = Integer()
+
+    lpName = Variant()
+
+    lpUserName = String()
     # Buffer size for the return string.
     # Get return buffer space.
     # For getting user information.

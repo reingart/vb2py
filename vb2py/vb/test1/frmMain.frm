@@ -289,7 +289,7 @@ End Sub
 
 Private Sub Form_Load()
 Close
-b (1,2), f(3)
+'b (1,2), f(3)
 Dim a As Integer
 Select Case a
 'a = 10

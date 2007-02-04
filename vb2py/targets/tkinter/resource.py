@@ -29,7 +29,7 @@ class Resource(vb2py.BaseResource):
         fle = open(os.path.join(basedir, self.name) + ".py", "w")
 
         lines = []
-        for control in self._rsc['stack']['backgrounds'][0]['components']:
+        for control in self._rsc['application']['backgrounds'][0]['components']:
             control
 
         if write_code:

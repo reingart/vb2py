@@ -1,11 +1,12 @@
 from vb2py.targets.pythoncard.controlclasses import VBWrapped, VBWidget
+from vb2py.targets.pythoncard import Register
 import vb2py.logger
 log = vb2py.logger.getLogger("VBBitmapCanvas")
 
-from PythonCardPrototype.components import bitmapcanvas
+from PythonCard.components import bitmapcanvas
 from wxPython import wx
 import sys
-from PythonCardPrototype import binding, event, registry, widget
+from PythonCard import event, registry, widget
 
 
 class VBBitmapCanvas(VBWidget): 
@@ -54,4 +55,4 @@ class VBBitmapCanvas(VBWidget):
 VBBitmapCanvas._setters["Picture"] = VBBitmapCanvas._setPicture	
 
 log.debug("Registering VBBitmapCanvas as '%s'" % sys.modules[__name__].VBBitmapCanvas)
-registry.getRegistry().register( sys.modules[__name__].VBBitmapCanvas )
+Register(VBBitmapCanvas)

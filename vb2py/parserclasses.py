@@ -988,7 +988,7 @@ class VBDateLiteral(VBParExpression):
     # << VBDateLiteral methods >>
     def renderAsCode(self, indent=0):
         """Render this element as code"""
-        return "makeDate(%s)" % ", ".join([item.renderAsCode() for item in self.parts])
+        return "MakeDate(%s)" % ", ".join([item.renderAsCode() for item in self.parts])
     # -- end -- << VBDateLiteral methods >>
 # << Classes >> (25 of 74)
 class VBProject(VBNamespace):
@@ -1369,7 +1369,7 @@ class VBVariableDefinition(VBVariable):
                             self.getIndent(indent),
                             local_name,
                             local_type)						
-        elif self.size_definitions:
+        elif self.size_definitions: # There is a size 'Dim a(10)'
             if self.preserve_keyword:
                 preserve = ", %s" % (local_name, )
             else:
@@ -1384,14 +1384,14 @@ class VBVariableDefinition(VBVariable):
                             local_type,
                             preserve,
                             size)
-        elif self.new_keyword:
+        elif self.new_keyword: # It is an 'Dim a as new ...'
             return "%s%s%s = %s(%s)\n" % (
                             warning,
                             self.getIndent(indent),
                             local_name,
                             local_type,
                             size)
-        else:
+        else: # This is just 'Dim a as frob'
             return "%s%s%s = %s(%s)\n" % (
                             warning,
                             self.getIndent(indent),

@@ -1,11 +1,12 @@
 from vb2py.vbfunctions import *
 from vb2py.vbdebug import *
+import Point
 
 class Point(Object):
 
     x = Single()
     y = Single()
-    SubPoint = Point()
+    SubPoint = Point.Point()
 
     def getLength(self):
         _ret = None

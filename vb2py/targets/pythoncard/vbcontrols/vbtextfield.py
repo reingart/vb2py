@@ -1,11 +1,12 @@
 from vb2py.targets.pythoncard.controlclasses import VBWrapped, VBWidget
+from vb2py.targets.pythoncard import Register
 import vb2py.logger
 log = vb2py.logger.getLogger("VBTextField")
 
-from PythonCardPrototype.components import textfield
+from PythonCard.components import textfield
 from wxPython import wx
 import sys
-from PythonCardPrototype import binding, event, registry, widget
+from PythonCard import event, registry, widget
 
 
 class VBTextField(VBWidget): 
@@ -28,4 +29,4 @@ class VBTextField(VBWidget):
 
 
 log.debug("Registering VBTextField as '%s'" % sys.modules[__name__].VBTextField)
-registry.getRegistry().register( sys.modules[__name__].VBTextField )
+Register(VBTextField)

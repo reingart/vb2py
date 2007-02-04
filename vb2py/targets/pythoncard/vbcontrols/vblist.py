@@ -1,11 +1,12 @@
 from vb2py.targets.pythoncard.controlclasses import VBWrapped, VBWidget
+from vb2py.targets.pythoncard import Register
 import vb2py.logger
 log = vb2py.logger.getLogger("VBListBox")
 
-from PythonCardPrototype.components import list
+from PythonCard.components import list
 from wxPython import wx
 import sys
-from PythonCardPrototype import binding, event, registry, widget
+from PythonCard import event, registry, widget
 
 
 class VBList(VBWidget): 
@@ -52,4 +53,4 @@ class VBList(VBWidget):
     # -- end -- << VBList methods >>   
 
 log.debug("Registering VBList as '%s'" % sys.modules[__name__].VBList)
-registry.getRegistry().register( sys.modules[__name__].VBList )
+Register(VBList)

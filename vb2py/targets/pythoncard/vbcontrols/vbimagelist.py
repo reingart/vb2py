@@ -1,11 +1,12 @@
 from vb2py.targets.pythoncard.controlclasses import VBWrapped, VBWidget
+from vb2py.targets.pythoncard import Register
 import vb2py.logger
 log = vb2py.logger.getLogger("VBImageList")
 
-from PythonCardPrototype.components import statictext
+from PythonCard.components import statictext
 from wxPython import wx
 import sys
-from PythonCardPrototype import binding, event, registry, widget
+from PythonCard import event, registry, widget
 
 
 class VBImageList(VBWidget): 
@@ -33,4 +34,4 @@ class VBImageList(VBWidget):
     # -- end -- << VBImageList methods >>   
 
 log.debug("Registering VBImageList as '%s'" % sys.modules[__name__].VBImageList)
-registry.getRegistry().register( sys.modules[__name__].VBImageList )
+Register(VBImageList)

@@ -1,11 +1,12 @@
 from vb2py.targets.pythoncard.controlclasses import VBWrapped, VBWidget
+from vb2py.targets.pythoncard import Register
 import vb2py.logger
 log = vb2py.logger.getLogger("VBTimer")
 
-from PythonCardPrototype.components import statictext
+from PythonCard.components import statictext
 from wxPython import wx
 import sys
-from PythonCardPrototype import binding, event, registry, widget
+from PythonCard import event, registry, widget
 
 
 class VBTimer(VBWidget): 
@@ -28,4 +29,4 @@ class VBTimer(VBWidget):
     _proxy_for = statictext.StaticText
 
 log.debug("Registering VBTimer as '%s'" % sys.modules[__name__].VBTimer)
-registry.getRegistry().register( sys.modules[__name__].VBTimer )
+Register(VBTimer)

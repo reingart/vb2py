@@ -1,11 +1,12 @@
 from vb2py.targets.pythoncard.controlclasses import VBWrapped, VBWidget
+from vb2py.targets.pythoncard import Register
 import vb2py.logger
 log = vb2py.logger.getLogger("VBTextArea")
 
-from PythonCardPrototype.components import textarea
+from PythonCard.components import textarea
 from wxPython import wx
 import sys
-from PythonCardPrototype import binding, event, registry, widget
+from PythonCard import event, registry, widget
 
 
 class VBTextArea(VBWidget): 
@@ -28,4 +29,4 @@ class VBTextArea(VBWidget):
 
 
 log.debug("Registering VBTextArea as '%s'" % sys.modules[__name__].VBTextArea)
-registry.getRegistry().register( sys.modules[__name__].VBTextArea )
+Register(VBTextArea)

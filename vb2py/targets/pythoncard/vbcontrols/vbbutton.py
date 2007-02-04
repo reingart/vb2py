@@ -1,11 +1,12 @@
 from vb2py.targets.pythoncard.controlclasses import VBWrapped, VBWidget
+from vb2py.targets.pythoncard import Register
 import vb2py.logger
 log = vb2py.logger.getLogger("VBButton")
 
-from PythonCardPrototype.components import button
+from PythonCard.components import button
 from wxPython import wx
 import sys
-from PythonCardPrototype import binding, event, registry, widget
+from PythonCard import event, registry, widget
 
 
 class VBButton(VBWidget): 
@@ -28,4 +29,4 @@ class VBButton(VBWidget):
 
 
 log.debug("Registering VBButton as '%s'" % sys.modules[__name__].VBButton)
-registry.getRegistry().register( sys.modules[__name__].VBButton )
+Register(VBButton)

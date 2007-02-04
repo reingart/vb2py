@@ -563,7 +563,7 @@ class BaseResource(object):
         # << Main properties >>
         #
         # The main properties of the form
-        d = self._rsc['stack']['backgrounds'][0]
+        d = self._rsc['application']['backgrounds'][0]
         self.name = form.name
         d['name'] = form.name
         d['title'] = form.Caption
@@ -581,7 +581,7 @@ class BaseResource(object):
         # << Components >>
         #
         # The components (controls) on the form
-        c = self._rsc['stack']['backgrounds'][0]['components']
+        c = self._rsc['application']['backgrounds'][0]['components']
 
         for cmp in form._getControlList():
             obj = form._get(cmp)
@@ -593,7 +593,7 @@ class BaseResource(object):
         #
         # The menus
         m = []
-        self._rsc['stack']['backgrounds'][0]['menubar']['menus'] = m
+        self._rsc['application']['backgrounds'][0]['menubar']['menus'] = m
 
         self.addMenus(form, m)
         # -- end -- << Menus >>

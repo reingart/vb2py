@@ -2,8 +2,8 @@
 <?xml-stylesheet ekr_test?>
 <leo_file>
 <leo_header file_format="2" tnodes="0" max_tnode_index="0" clone_windows="0"/>
-<globals body_outline_ratio="0.373401534527">
-	<global_window_position top="10" left="10" height="978" width="1173"/>
+<globals body_outline_ratio="0.309787234043">
+	<global_window_position top="3" left="-2" height="978" width="1175"/>
 	<global_log_window_position top="0" left="0" height="0" width="0"/>
 </globals>
 <preferences/>
@@ -19,7 +19,7 @@
 <v t="pap.120703001453.6"><vh>&lt;&lt; Documentation &gt;&gt;</vh></v>
 <v t="pap.120703001453.7"><vh>&lt;&lt; Declarations &gt;&gt;</vh></v>
 <v t="pap.120703001453.8"><vh>&lt;&lt; Error classes &gt;&gt;</vh></v>
-<v t="pap.120703001453.9" a="E"><vh>class VBConverter</vh>
+<v t="pap.120703001453.9"><vh>class VBConverter</vh>
 <v t="pap.120703001453.10"><vh>__init__</vh></v>
 <v t="pap.120703001453.11" a="E"><vh>doConversion</vh>
 <v t="pap.20041207001955"><vh>&lt;&lt; Handle references &gt;&gt;</vh></v>
@@ -70,7 +70,7 @@
 <v t="pap.120703001453.45"><vh>groupOptionButtons</vh></v>
 <v t="pap.120703001453.46"><vh>getContainer</vh></v>
 </v>
-<v t="pap.120703001453.47" a="E"><vh>class ModuleParser</vh>
+<v t="pap.120703001453.47"><vh>class ModuleParser</vh>
 <v t="pap.120703001453.48"><vh>doParse</vh></v>
 <v t="pap.120703001453.49"><vh>getContainer</vh></v>
 <v t="pap.120703001453.50"><vh>writeToFile</vh></v>
@@ -80,7 +80,7 @@
 </v>
 <v t="pap.120703001453.53"><vh>class BaseResource</vh>
 <v t="pap.120703001453.54"><vh>__init__</vh></v>
-<v t="pap.120703001453.55"><vh>updateFrom</vh>
+<v t="pap.120703001453.55" a="E"><vh>updateFrom</vh>
 <v t="pap.120703001453.56"><vh>&lt;&lt; Main properties &gt;&gt;</vh></v>
 <v t="pap.120703001453.57"><vh>&lt;&lt; Components &gt;&gt;</vh></v>
 <v t="pap.120703001453.58"><vh>&lt;&lt; Menus &gt;&gt;</vh></v>
@@ -89,11 +89,11 @@
 <v t="pap.120703001453.60"><vh>addMenus</vh></v>
 <v t="pap.120703001453.61"><vh>writeToFile</vh></v>
 </v>
-<v t="pap.20041207005308" a="E"><vh>class ExternalRefParser</vh>
+<v t="pap.20041207005308"><vh>class ExternalRefParser</vh>
 <v t="pap.20041207005609"><vh>__init__</vh></v>
 </v>
 <v t="pap.120703001453.62"><vh>class NameSpace</vh></v>
-<v t="pap.120703001453.63" a="E"><vh>main</vh>
+<v t="pap.120703001453.63"><vh>main</vh>
 <v t="pap.120703001453.64"><vh>&lt;&lt; Parse options &gt;&gt;</vh></v>
 <v t="pap.120703001453.65"><vh>&lt;&lt; Validate arguments &gt;&gt;</vh></v>
 </v>
@@ -180,7 +180,7 @@
 <v t="pap.120703001453.590"><vh>vbtextfield.py</vh></v>
 <v t="pap.120703001453.599"><vh>vbtextarea.py</vh></v>
 <v t="pap.120703001453.598"><vh>vbcheckbox.py</vh></v>
-<v t="pap.120703001453.1249"><vh>Image Controls</vh>
+<v t="pap.120703001453.1249" a="E"><vh>Image Controls</vh>
 <v t="pap.120703001453.1250"><vh>vbbitmapcanvas.py</vh>
 <v t="pap.120703001453.1251"><vh>Picture</vh></v>
 </v>
@@ -216,9 +216,9 @@
 </v>
 </v>
 </v>
-<v t="pap.120703001453.125"><vh>Tkinter</vh>
+<v t="pap.120703001453.125" a="E"><vh>Tkinter</vh>
 <v t="pap.120703001453.126"><vh>__init__.py</vh></v>
-<v t="pap.120703001453.127"><vh>resource.py</vh>
+<v t="pap.120703001453.127" a="E"><vh>resource.py</vh>
 <v t="pap.120703001453.128"><vh>&lt;&lt; Event translation &gt;&gt;</vh></v>
 <v t="pap.120703001453.129"><vh>__init__</vh></v>
 <v t="pap.120703001453.130"><vh>writeToFile</vh></v>
@@ -260,7 +260,7 @@
 </v>
 </v>
 <v t="pap.120703001453.160" a="E"><vh>Parsing and converting code</vh>
-<v t="pap.120703001453.161" a="E" tnodeList="pap.120703001453.161,pap.120703001453.163,pap.120703001453.164,pap.120703001453.165,pap.120703001453.166,pap.120703001453.167,pap.120703001453.168,pap.120703001453.170,pap.120703001453.171,pap.120703001453.172,pap.120703001453.173,pap.120703001453.174,pap.120703001453.175,pap.120703001453.176,pap.120703001453.177,pap.120703001453.178,pap.120703001453.179,pap.120703001453.180,pap.120703001453.181,pap.120703001453.182,pap.120703001453.183,pap.120703001453.184,pap.120703001453.186,pap.120703001453.187,pap.120703001453.188,pap.120703001453.189,pap.120703001453.190,pap.120703001453.191,pap.120703001453.192,pap.120703001453.193,pap.120703001453.194,pap.120703001453.195,pap.120703001453.196,pap.120703001453.197,pap.120703001453.198,pap.120703001453.199"><vh>@file vbgrammar.txt</vh>
+<v t="pap.120703001453.161" tnodeList="pap.120703001453.161,pap.120703001453.163,pap.120703001453.164,pap.120703001453.165,pap.120703001453.166,pap.120703001453.167,pap.120703001453.168,pap.120703001453.170,pap.120703001453.171,pap.120703001453.172,pap.120703001453.173,pap.120703001453.174,pap.120703001453.175,pap.120703001453.176,pap.120703001453.177,pap.120703001453.178,pap.120703001453.179,pap.120703001453.180,pap.120703001453.181,pap.120703001453.182,pap.120703001453.183,pap.120703001453.184,pap.120703001453.186,pap.120703001453.187,pap.120703001453.188,pap.120703001453.189,pap.120703001453.190,pap.120703001453.191,pap.120703001453.192,pap.120703001453.193,pap.120703001453.194,pap.120703001453.195,pap.120703001453.196,pap.120703001453.197,pap.120703001453.198,pap.120703001453.199"><vh>@file vbgrammar.txt</vh>
 <v t="pap.120703001453.162"><vh>Basic building blocks</vh>
 <v t="pap.120703001453.163"><vh>Basic elements</vh></v>
 <v t="pap.120703001453.164"><vh>Blocks and lines</vh></v>
@@ -280,7 +280,7 @@
 <v t="pap.120703001453.177"><vh>Seek</vh></v>
 <v t="pap.120703001453.178"><vh>Open/Close</vh></v>
 <v t="pap.120703001453.179"><vh>Calls</vh></v>
-<v t="pap.120703001453.180" a="TV"><vh>Resume statement</vh></v>
+<v t="pap.120703001453.180"><vh>Resume statement</vh></v>
 <v t="pap.120703001453.181"><vh>Exit statement</vh></v>
 <v t="pap.120703001453.182"><vh>Name statement</vh></v>
 <v t="pap.120703001453.183"><vh>End statement</vh></v>
@@ -304,13 +304,13 @@
 <v t="pap.120703001453.199"><vh>option_statement</vh></v>
 </v>
 </v>
-<v t="pap.120703001453.200" a="E"><vh>vbparser.py</vh>
+<v t="pap.120703001453.200"><vh>vbparser.py</vh>
 <v t="pap.120703001453.201"><vh>&lt;&lt; Imports &gt;&gt;</vh></v>
 <v t="pap.120703001453.202"><vh>&lt;&lt; Error Classes &gt;&gt;</vh></v>
 <v t="pap.120703001453.203"><vh>&lt;&lt; Definitions &gt;&gt;</vh></v>
 <v t="pap.120703001453.204" a="E"><vh>Utility functions</vh>
 <v t="pap.120703001453.205"><vh>convertToElements</vh></v>
-<v t="pap.120703001453.206" a="E"><vh>buildParseTree</vh>
+<v t="pap.120703001453.206"><vh>buildParseTree</vh>
 <v t="pap.120703001453.208"><vh>&lt;&lt; Handle failure &gt;&gt;</vh></v>
 </v>
 <v t="pap.120703001453.209"><vh>parseVB</vh></v>
@@ -324,9 +324,9 @@
 </v>
 </v>
 </v>
-<v t="pap.120703001453.216" a="M"><vh>parserclasses.py</vh>
+<v t="pap.120703001453.216" a="EM"><vh>parserclasses.py</vh>
 <v t="pap.120703001453.217"><vh>&lt;&lt; Definitions &gt;&gt;</vh></v>
-<v t="pap.120703001453.218" a="E"><vh>Base classes</vh>
+<v t="pap.120703001453.218"><vh>Base classes</vh>
 <v t="pap.120703001453.219"><vh>VBElement </vh>
 <v t="pap.120703001453.220"><vh>__init__</vh></v>
 <v t="pap.120703001453.221"><vh>printTree</vh></v>
@@ -334,7 +334,7 @@
 <v t="pap.120703001453.222"><vh>VBFailedElement</vh>
 <v t="pap.120703001453.223"><vh>__init__</vh></v>
 </v>
-<v t="pap.120703001453.224" a="E"><vh>VBNamespace </vh>
+<v t="pap.120703001453.224"><vh>VBNamespace </vh>
 <v t="pap.120703001453.225"><vh>&lt;&lt; VBNamespace declarations &gt;&gt;</vh></v>
 <v t="pap.120703001453.226" a="E"><vh>__init__</vh>
 <v t="pap.120703001453.227"><vh>&lt;&lt; Get indenting Options &gt;&gt;</vh></v>
@@ -385,7 +385,7 @@
 <v t="pap.120703001453.265"><vh>VBOptionalCodeBlock</vh>
 <v t="pap.120703001453.266"><vh>containsStatements</vh></v>
 </v>
-<v t="pap.120703001453.267" a="E"><vh>VBVariable </vh>
+<v t="pap.120703001453.267"><vh>VBVariable </vh>
 <v t="pap.120703001453.268"><vh>&lt;&lt; VBVariable declarations &gt;&gt;</vh></v>
 <v t="pap.120703001453.269"><vh>__init__</vh></v>
 <v t="pap.120703001453.270"><vh>finalizeObject</vh></v>
@@ -395,7 +395,7 @@
 <v t="pap.120703001453.273"><vh>__init__</vh></v>
 <v t="pap.120703001453.274"><vh>renderAsCode</vh></v>
 </v>
-<v t="pap.120703001453.275" a="E"><vh>Objects</vh>
+<v t="pap.120703001453.275"><vh>Objects</vh>
 <v t="pap.120703001453.276"><vh>VBObject</vh>
 <v t="pap.120703001453.277" a="E"><vh>__init__</vh></v>
 <v t="pap.120703001453.278"><vh>renderAsCode</vh></v>
@@ -415,7 +415,7 @@
 <v t="PAP.20040428010229.2"><vh>renderAsCode</vh></v>
 </v>
 </v>
-<v t="pap.120703001453.286" a="E"><vh>Expression</vh>
+<v t="pap.120703001453.286"><vh>Expression</vh>
 <v t="pap.120703001453.287" a="E"><vh>VBExpression</vh>
 <v t="pap.120703001453.288"><vh>__init__</vh></v>
 <v t="pap.120703001453.289"><vh>renderAsCode</vh></v>
@@ -441,13 +441,13 @@
 <v t="pap.120703001453.304"><vh>VBStringLiteral</vh>
 <v t="pap.120703001453.305"><vh>renderAsCode</vh></v>
 </v>
-<v t="pap.120703001453.306"><vh>VBDateLiteral</vh>
+<v t="pap.120703001453.306" a="E"><vh>VBDateLiteral</vh>
 <v t="pap.120703001453.307"><vh>renderAsCode</vh></v>
 </v>
 </v>
 </v>
 </v>
-<v t="pap.120703001453.308" a="E"><vh>Project and Module classes</vh>
+<v t="pap.120703001453.308"><vh>Project and Module classes</vh>
 <v t="pap.120703001453.309" a="E"><vh>VBProject</vh>
 <v t="pap.120703001453.310"><vh>__init__</vh></v>
 <v t="pap.120703001453.311"><vh>resolveLocalName</vh></v>
@@ -482,7 +482,7 @@
 </v>
 <v t="pap.120703001453.330" a="E"><vh>Single Statements</vh>
 <v t="pap.120703001453.331" a="E"><vh>VBVariableDefinition</vh>
-<v t="pap.120703001453.332"><vh>renderAsCode</vh></v>
+<v t="pap.120703001453.332" a="TV"><vh>renderAsCode</vh></v>
 </v>
 <v t="pap.120703001453.333"><vh>VBConstant </vh>
 <v t="pap.120703001453.334"><vh>renderAsCode</vh></v>
@@ -551,7 +551,7 @@
 </v>
 </v>
 </v>
-<v t="pap.120703001453.382"><vh>Compound Statements</vh>
+<v t="pap.120703001453.382" a="E"><vh>Compound Statements</vh>
 <v t="pap.120703001453.383"><vh>VBUserType</vh>
 <v t="pap.120703001453.384"><vh>__init__</vh></v>
 <v t="pap.120703001453.385"><vh>renderAsCode</vh></v>
@@ -632,7 +632,7 @@
 </v>
 </v>
 </v>
-<v t="pap.120703001453.439" a="E"><vh>Non-VB Classes</vh>
+<v t="pap.120703001453.439"><vh>Non-VB Classes</vh>
 <v t="pap.120703001453.440"><vh>VB2PYDirective </vh>
 <v t="pap.120703001453.441"><vh>__init__</vh></v>
 <v t="pap.120703001453.442"><vh>renderAsCode</vh></v>
@@ -731,6 +731,7 @@
 <v t="PAP.20040126223432"><vh>Lof</vh></v>
 <v t="pap.120703001453.512"><vh>Log / Exp </vh></v>
 <v t="pap.120703001453.522"><vh>LSet</vh></v>
+<v t="pap.20070203154528"><vh>MakeDate</vh></v>
 <v t="pap.120703001453.507"><vh>Mid</vh></v>
 <v t="pap.120703001453.513"><vh>Oct</vh></v>
 <v t="PAP.20040126232735"><vh>RGB</vh></v>
@@ -778,9 +779,10 @@
 </v>
 </v>
 </v>
-<v t="pap.120703001453.550"><vh>Configuration</vh>
-<v t="pap.120703001453.551" a="E" tnodeList="pap.120703001453.551,PAP.20040202230624,PAP.20040202230624.1,PAP.20040202230624.2,PAP.20040202230624.3,PAP.20040202230624.4,PAP.20040202230624.5,PAP.20040202230624.6,PAP.20040202230624.7,PAP.20040427003436"><vh>@file vb2py.ini</vh>
+<v t="pap.120703001453.550" a="E"><vh>Configuration</vh>
+<v t="pap.120703001453.551" a="E" tnodeList="pap.120703001453.551,PAP.20040202230624,pap.20070203192530,PAP.20040202230624.1,PAP.20040202230624.2,PAP.20040202230624.3,PAP.20040202230624.4,PAP.20040202230624.5,PAP.20040202230624.6,PAP.20040202230624.7,PAP.20040427003436"><vh>@file vb2py.ini</vh>
 <v t="PAP.20040202230624"><vh>General</vh></v>
+<v t="pap.20070203192530"><vh>Style</vh></v>
 <v t="PAP.20040202230624.1"><vh>Functions</vh></v>
 <v t="PAP.20040202230624.2"><vh>Select</vh></v>
 <v t="PAP.20040202230624.3"><vh>Labels</vh></v>
@@ -837,9 +839,35 @@
 <v t="pap.120703001453.586"><vh>@file-asis LICENCE.txt</vh></v>
 </v>
 </v>
-<v t="pap.120703001453.600"><vh>Testing</vh>
+<v t="pap.20070203003154" a="E"><vh>GUI</vh>
+<v t="pap.20070203103920" a="E"><vh>Main Window</vh>
+<v t="pap.20070203003154.1"
+expanded="pap.20070203003154.31,"><vh>@thin vb2pyGUI.pyw</vh></v>
+<v t="pap.20070203004134"><vh>@thin vb2pyGUI.rsrc.py</vh></v>
+</v>
+<v t="pap.20070203103920.1" a="E"><vh>Find Dialog</vh>
+<v t="pap.20070203003236"
+expanded="pap.20070203003236.2,"><vh>@thin finddialog.py</vh></v>
+<v t="pap.20070203103920.2" tnodeList="pap.20070203103920.2"><vh>@file finddialog.rsrc.py</vh></v>
+</v>
+<v t="pap.20070203103920.3"><vh>Testing Form</vh>
+<v t="pap.20070203003321"><vh>@thin testingview.py</vh></v>
+</v>
+<v t="pap.20070203103920.4"><vh>Options Form</vh>
+<v t="pap.20070203003353" a="E"><vh>@thin vb2pyOptions.py</vh></v>
+</v>
+<v t="pap.20070203162417" a="E"><vh>UI</vh>
+<v t="pap.20070203162417.1"
+expanded="pap.20070203162417.3,"><vh>@thin vb2pyMain.py</vh></v>
+<v t="pap.20070203162417.6"><vh>@thin vb2pyMain.rsrc.py</vh></v>
+<v t="pap.20070203172243.1" a="E"
+expanded="pap.20070203172243.3,"><vh>@thin interactive.py</vh></v>
+<v t="pap.20070203172243.5"><vh>@thin interactive.rsrc.py</vh></v>
+</v>
+</v>
+<v t="pap.120703001453.600" a="E"><vh>Testing</vh>
 <v t="pap.120703001453.601"><vh>__init__.py</vh></v>
-<v t="pap.120703001453.602" a="E"><vh>Mini parser for quick testing</vh>
+<v t="pap.120703001453.602"><vh>Mini parser for quick testing</vh>
 <v t="PAP.20040824001655"><vh>Recordsets</vh></v>
 </v>
 <v t="pap.120703001453.604"><vh>Test Parsing</vh>
@@ -920,7 +948,7 @@
 </v>
 <v t="pap.120703001453.669"><vh>Failing tests</vh></v>
 </v>
-<v t="pap.120703001453.670" a="E"><vh>Test Basic Conversion</vh>
+<v t="pap.120703001453.670"><vh>Test Basic Conversion</vh>
 <v t="pap.120703001453.671"><vh>Basic Testing Framework</vh>
 <v t="PAP.20040125002850"><vh>getTestMethod</vh>
 <v t="pap.120703001453.672"><vh>&lt;&lt; Parse VB &gt;&gt;</vh></v>
@@ -1194,7 +1222,7 @@
 <v t="pap.120703001453.861"><vh>testall.py</vh></v>
 <v t="PAP.20040123192735" tnodeList="PAP.20040123192735"><vh>@file test\vbtestfile.txt</vh></v>
 </v>
-<v t="pap.120703001453.862" a="E"><vh>Sandbox</vh>
+<v t="pap.120703001453.862"><vh>Sandbox</vh>
 <v t="pap.120703001453.863"><vh>__init__.py</vh></v>
 <v t="pap.120703001453.864"><vh>commandline.py</vh></v>
 <v t="pap.120703001453.865" a="E"><vh>makedocs.py</vh>
@@ -1369,7 +1397,7 @@
 </v>
 </v>
 <v t="pap.120703001453.973"><vh>Collection</vh></v>
-<v t="pap.120703001453.974"><vh>PythonCard object</vh>
+<v t="pap.120703001453.974" a="E"><vh>PythonCard object</vh>
 <v t="pap.120703001453.975"><vh>vbbutton.py as subclass</vh></v>
 <v t="pap.120703001453.976"><vh>vbbutton.py as proxy 1st attempt</vh></v>
 </v>
@@ -1377,7 +1405,7 @@
 </v>
 <v t="pap.120703001453.978"><vh>Documentation</vh>
 <v t="pap.120703001453.979"><vh>__init__.py</vh></v>
-<v t="pap.120703001453.980"><vh>User Guide</vh>
+<v t="pap.120703001453.980" a="E"><vh>User Guide</vh>
 <v t="pap.120703001453.981"><vh>@rst doc/index.htm</vh></v>
 <v t="pap.120703001453.982"><vh>@rst doc/reference.htm</vh></v>
 <v t="pap.120703001453.983"><vh>@file-asis doc/default.css</vh></v>
@@ -1386,7 +1414,7 @@
 <v t="pap.120703001453.986"><vh>@rst doc/unsupported.htm</vh></v>
 <v t="pap.120703001453.987"><vh>@rst doc/about.htm</vh></v>
 </v>
-<v t="pap.120703001453.988"><vh>Installation</vh>
+<v t="pap.120703001453.988" a="E"><vh>Installation</vh>
 <v t="pap.120703001453.989"><vh>@rst doc/installation.htm</vh></v>
 </v>
 <v t="pap.120703001453.990"><vh>Usage</vh>
@@ -1450,7 +1478,7 @@
 <v t="pap.120703001453.1037"><vh>@rst doc/while.htm</vh></v>
 <v t="pap.120703001453.1038"><vh>@rst doc/for.htm</vh></v>
 </v>
-<v t="pap.120703001453.1039"><vh>Definitions</vh>
+<v t="pap.120703001453.1039" a="E"><vh>Definitions</vh>
 <v t="pap.120703001453.1040"><vh>@rst doc/type.htm</vh></v>
 <v t="pap.120703001453.1041"><vh>@rst doc/sub.htm</vh></v>
 <v t="pap.120703001453.1042"><vh>@rst doc/function.htm</vh></v>
@@ -1562,7 +1590,7 @@
 <v t="pap.120703001453.1086"><vh>GUI</vh></v>
 <v t="pap.120703001453.1087"><vh>Linux</vh></v>
 </v>
-<v t="pap.120703001453.1088"><vh>Detailed list</vh>
+<v t="pap.120703001453.1088" a="E"><vh>Detailed list</vh>
 <v t="pap.120703001453.1089"><vh>Rerun t1 - identify all failing blocks</vh></v>
 <v t="pap.120703001453.1090"><vh>Rerun t2 - identify all failing blocks</vh></v>
 <v t="pap.120703001453.1091"><vh>Add module imports</vh></v>
@@ -1841,7 +1869,7 @@
 <v t="pap.120703001453.420"><vh>renderAsCode</vh></v>
 </v>
 </v>
-<v t="pap.120703001453.1135" a="E"><vh>Assignment</vh>
+<v t="pap.120703001453.1135"><vh>Assignment</vh>
 <v t="pap.120703001453.338" a="E"><vh>VBAssignment</vh>
 <v t="pap.120703001453.339"><vh>__init__</vh></v>
 <v t="pap.120703001453.340"><vh>asString</vh></v>
@@ -1964,8 +1992,8 @@
 <v t="pap.120703001453.432"><vh>renderPropertyGroup</vh></v>
 </v>
 </v>
-<v t="pap.120703001453.1140" a="E"><vh>Modules</vh>
-<v t="pap.120703001453.308" a="E"><vh>Project and Module classes</vh>
+<v t="pap.120703001453.1140"><vh>Modules</vh>
+<v t="pap.120703001453.308"><vh>Project and Module classes</vh>
 <v t="pap.120703001453.309" a="E"><vh>VBProject</vh>
 <v t="pap.120703001453.310"><vh>__init__</vh></v>
 <v t="pap.120703001453.311"><vh>resolveLocalName</vh></v>
@@ -2014,8 +2042,9 @@
 </v>
 <v t="pap.120703001453.1141"><vh>Configuration</vh>
 <v t="pap.120703001453.550"><vh>Configuration</vh>
-<v t="pap.120703001453.551" a="E" tnodeList="pap.120703001453.551,PAP.20040202230624,PAP.20040202230624.1,PAP.20040202230624.2,PAP.20040202230624.3,PAP.20040202230624.4,PAP.20040202230624.5,PAP.20040202230624.6,PAP.20040202230624.7,PAP.20040427003436"><vh>@file vb2py.ini</vh>
+<v t="pap.120703001453.551" a="E" tnodeList="pap.120703001453.551,PAP.20040202230624,pap.20070203192530,PAP.20040202230624.1,PAP.20040202230624.2,PAP.20040202230624.3,PAP.20040202230624.4,PAP.20040202230624.5,PAP.20040202230624.6,PAP.20040202230624.7,PAP.20040427003436"><vh>@file vb2py.ini</vh>
 <v t="PAP.20040202230624"><vh>General</vh></v>
+<v t="pap.20070203192530"><vh>Style</vh></v>
 <v t="PAP.20040202230624.1"><vh>Functions</vh></v>
 <v t="PAP.20040202230624.2"><vh>Select</vh></v>
 <v t="PAP.20040202230624.3"><vh>Labels</vh></v>
@@ -2151,8 +2180,8 @@
 </v>
 </v>
 </v>
-<v t="pap.120703001453.1162" a="E"><vh>v0.2.1 Task List</vh>
-<v t="pap.120703001453.1163" a="E"><vh>New Keywords</vh>
+<v t="pap.120703001453.1162"><vh>v0.2.1 Task List</vh>
+<v t="pap.120703001453.1163"><vh>New Keywords</vh>
 <v t="pap.120703001453.1164" a="E"><vh>Done</vh>
 <v t="pap.120703001453.1184"><vh>Array</vh>
 <v t="pap.120703001453.737"><vh>Array</vh></v>
@@ -2351,9 +2380,9 @@
 <v t="pap.120703001453.1194"><vh>New Functions</vh></v>
 </v>
 </v>
-<v t="pap.120703001453.1246" a="E"><vh>v0.3 Task list</vh>
+<v t="pap.120703001453.1246"><vh>v0.3 Task list</vh>
 <v t="pap.120703001453.1247" a="E"><vh>Controls</vh>
-<v t="pap.120703001453.1248" a="E"><vh>Subclassing PythonCard classes</vh>
+<v t="pap.120703001453.1248"><vh>Subclassing PythonCard classes</vh>
 <v t="PAP.20040202234151"><vh>__init__.py</vh></v>
 <v t="pap.120703001453.588"><vh>vbbutton.py</vh></v>
 <v t="pap.120703001453.589"><vh>vbstatictext.py</vh></v>
@@ -2361,7 +2390,7 @@
 <v t="pap.120703001453.590"><vh>vbtextfield.py</vh></v>
 <v t="pap.120703001453.599"><vh>vbtextarea.py</vh></v>
 <v t="pap.120703001453.598"><vh>vbcheckbox.py</vh></v>
-<v t="pap.120703001453.1249"><vh>Image Controls</vh>
+<v t="pap.120703001453.1249" a="E"><vh>Image Controls</vh>
 <v t="pap.120703001453.1250"><vh>vbbitmapcanvas.py</vh>
 <v t="pap.120703001453.1251"><vh>Picture</vh></v>
 </v>
@@ -3692,13 +3721,14 @@ class ImageList(VBControl):
 <t tx="PAP.20040425193458">@root vbimagelist.py
 
 from vb2py.targets.pythoncard.controlclasses import VBWrapped, VBWidget
+from vb2py.targets.pythoncard import Register
 import vb2py.logger
 log = vb2py.logger.getLogger("VBImageList")
 
-from PythonCardPrototype.components import statictext
+from PythonCard.components import statictext
 from wxPython import wx
 import sys
-from PythonCardPrototype import binding, event, registry, widget
+from PythonCard import event, registry, widget
 
 
 class VBImageList(VBWidget): 
@@ -3724,7 +3754,8 @@ class VBImageList(VBWidget):
 	&lt;&lt; VBImageList methods &gt;&gt;   
 
 log.debug("Registering VBImageList as '%s'" % sys.modules[__name__].VBImageList)
-registry.getRegistry().register( sys.modules[__name__].VBImageList )
+Register(VBImageList)
+
 </t>
 <t tx="PAP.20040425193458.1">&lt;&lt; VBImageList methods &gt;&gt;=
 
@@ -3736,13 +3767,14 @@ from wxPython import wx, stc
 import vb2py.custom.comctllib
 
 from vb2py.targets.pythoncard.controlclasses import VBWrapped, VBWidget
+from vb2py.targets.pythoncard import Register
 import vb2py.logger
 log = vb2py.logger.getLogger("VBTreeView")
 
-from PythonCardPrototype.components import tree
+from PythonCard.components import tree
 from wxPython import wx
 import sys
-from PythonCardPrototype import binding, event, registry, widget
+from PythonCard import event, registry, widget
 from vb2py.vbclasses import Collection
 
 
@@ -3751,7 +3783,7 @@ from vb2py.vbclasses import Collection
 &lt;&lt; Classes &gt;&gt;
 
 log.debug("Registering VBTreeView as '%s'" % sys.modules[__name__].VBTreeView)
-registry.getRegistry().register( sys.modules[__name__].VBTreeView )
+Register(VBTreeView)
 </t>
 <t tx="PAP.20040425193947.1">&lt;&lt; class VBTreeView methods &gt;&gt;=
 
@@ -4343,13 +4375,14 @@ class Timer(VBControl):
 <t tx="PAP.20040801200221">@root vbtimer.py
 
 from vb2py.targets.pythoncard.controlclasses import VBWrapped, VBWidget
+from vb2py.targets.pythoncard import Register
 import vb2py.logger
 log = vb2py.logger.getLogger("VBTimer")
 
-from PythonCardPrototype.components import statictext
+from PythonCard.components import statictext
 from wxPython import wx
 import sys
-from PythonCardPrototype import binding, event, registry, widget
+from PythonCard import event, registry, widget
 
 
 class VBTimer(VBWidget): 
@@ -4372,7 +4405,7 @@ class VBTimer(VBWidget):
     _proxy_for = statictext.StaticText
 
 log.debug("Registering VBTimer as '%s'" % sys.modules[__name__].VBTimer)
-registry.getRegistry().register( sys.modules[__name__].VBTimer )</t>
+Register(VBTimer)</t>
 <t tx="PAP.20040811222221">&lt;&lt; VBWrapped methods &gt;&gt;=
 
 def createAttributeSet(attr_name):
@@ -5147,7 +5180,7 @@ def updateFrom(self, form):
 
 #
 # The main properties of the form
-d = self._rsc['stack']['backgrounds'][0]
+d = self._rsc['application']['backgrounds'][0]
 self.name = form.name
 d['name'] = form.name
 d['title'] = form.Caption
@@ -5166,7 +5199,7 @@ d['position'] = (form.ClientLeft/twips_per_pixel, form.ClientTop/twips_per_pixel
 
 #
 # The components (controls) on the form
-c = self._rsc['stack']['backgrounds'][0]['components']
+c = self._rsc['application']['backgrounds'][0]['components']
 
 for cmp in form._getControlList():
 	obj = form._get(cmp)
@@ -5178,7 +5211,7 @@ for cmp in form._getControlList():
 #
 # The menus
 m = []
-self._rsc['stack']['backgrounds'][0]['menubar']['menus'] = m
+self._rsc['application']['backgrounds'][0]['menubar']['menus'] = m
 
 self.addMenus(form, m)</t>
 <t tx="pap.120703001453.59">&lt;&lt; class BaseResource methods &gt;&gt;=
@@ -5343,10 +5376,17 @@ pass</t>
 <t tx="pap.120703001453.72"></t>
 <t tx="pap.120703001453.73">@root targets\pythoncard\__init__.py
 
-pass</t>
+from PythonCard import registry
+PythonCardRegistry = registry.Registry.getInstance()
+
+def Register(control):
+    """Register a control for PythonCard"""
+    #
+    #import pdb; pdb.set_trace()
+    PythonCardRegistry.register(control)</t>
 <t tx="pap.120703001453.74">@root targets\pythoncard\basesource.txt
 
-{'stack':{'type':'Stack',
+{'application':{'type':'Application',
           'name':'Template',
     'backgrounds': [
     {'type':'Background',
@@ -5380,11 +5420,11 @@ pass</t>
 
 """The main form for the application"""
 
-from PythonCardPrototype import model
+from PythonCard import model
 
 # Allow importing of our custom controls
-import PythonCardPrototype.res
-PythonCardPrototype.res.APP_COMPONENTS_PACKAGE = "vb2py.targets.pythoncard.vbcontrols"
+import PythonCard.resource
+PythonCard.resource.APP_COMPONENTS_PACKAGE = "vb2py.targets.pythoncard.vbcontrols"
 
 class Background(model.Background):
 	
@@ -5408,7 +5448,7 @@ class Background(model.Background):
 
 			
 if __name__ == '__main__':
-    app = model.PythonCardApp(MAINFORM)
+    app = model.Application(MAINFORM)
     app.MainLoop()
 
 </t>
@@ -6246,7 +6286,7 @@ def __new__(cls, name, bases, dict):
 
 	# Set the _spec for the item
     obj._spec = obj._proxy_for._spec
-    obj._spec.name = obj.__name__
+    obj._spec._name = obj.__name__
     # Create the object 
     return obj</t>
 <t tx="pap.120703001453.121">&lt;&lt; VBWrapped methods &gt;&gt;=
@@ -6338,7 +6378,7 @@ def writeToFile(self, basedir, write_code=0):
 	fle = open(os.path.join(basedir, self.name) + ".py", "w")
 	
 	lines = []
-	for control in self._rsc['stack']['backgrounds'][0]['components']:
+	for control in self._rsc['application']['backgrounds'][0]['components']:
 		control
 
 	if write_code:
@@ -8781,7 +8821,7 @@ class VBDateLiteral(VBParExpression):
 
 def renderAsCode(self, indent=0):
 	"""Render this element as code"""
-	return "makeDate(%s)" % ", ".join([item.renderAsCode() for item in self.parts])
+	return "MakeDate(%s)" % ", ".join([item.renderAsCode() for item in self.parts])
 </t>
 <t tx="pap.120703001453.308"></t>
 <t tx="pap.120703001453.309">&lt;&lt; Classes &gt;&gt;=
@@ -9122,7 +9162,7 @@ def renderAsCode(self, indent=0):
                         self.getIndent(indent),
                         local_name,
                         local_type)						
-    elif self.size_definitions:
+    elif self.size_definitions: # There is a size 'Dim a(10)'
         if self.preserve_keyword:
             preserve = ", %s" % (local_name, )
         else:
@@ -9137,14 +9177,14 @@ def renderAsCode(self, indent=0):
                         local_type,
                         preserve,
                         size)
-    elif self.new_keyword:
+    elif self.new_keyword: # It is an 'Dim a as new ...'
         return "%s%s%s = %s(%s)\n" % (
                         warning,
                         self.getIndent(indent),
                         local_name,
                         local_type,
                         size)
-    else:
+    else: # This is just 'Dim a as frob'
         return "%s%s%s = %s(%s)\n" % (
                         warning,
                         self.getIndent(indent),
@@ -11645,7 +11685,7 @@ def CreateObject(classname, ipaddress=None):
 </t>
 <t tx="pap.120703001453.531">&lt;&lt; VBFunctions &gt;&gt;=
 
-from PythonCardPrototype.graphic import Bitmap
+from PythonCard.graphic import Bitmap
 
 def LoadPicture(filename):
 	"""Load an image as a bitmap for display in a BitmapImage control"""
@@ -12635,13 +12675,14 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 <t tx="pap.120703001453.588">@root vbbutton.py
 
 from vb2py.targets.pythoncard.controlclasses import VBWrapped, VBWidget
+from vb2py.targets.pythoncard import Register
 import vb2py.logger
 log = vb2py.logger.getLogger("VBButton")
 
-from PythonCardPrototype.components import button
+from PythonCard.components import button
 from wxPython import wx
 import sys
-from PythonCardPrototype import binding, event, registry, widget
+from PythonCard import event, registry, widget
 
 
 class VBButton(VBWidget): 
@@ -12664,18 +12705,19 @@ class VBButton(VBWidget):
     
 
 log.debug("Registering VBButton as '%s'" % sys.modules[__name__].VBButton)
-registry.getRegistry().register( sys.modules[__name__].VBButton )
+Register(VBButton)
 </t>
 <t tx="pap.120703001453.589">@root vbstatictext.py
 
 from vb2py.targets.pythoncard.controlclasses import VBWrapped, VBWidget
+from vb2py.targets.pythoncard import Register
 import vb2py.logger
 log = vb2py.logger.getLogger("VBStaticText")
 
-from PythonCardPrototype.components import statictext
+from PythonCard.components import statictext
 from wxPython import wx
 import sys
-from PythonCardPrototype import binding, event, registry, widget
+from PythonCard import event, registry, widget
 
 
 class VBStaticText(VBWidget): 
@@ -12700,17 +12742,18 @@ class VBStaticText(VBWidget):
 
 
 log.debug("Registering VBStaticText as '%s'" % sys.modules[__name__].VBStaticText)
-registry.getRegistry().register( sys.modules[__name__].VBStaticText )</t>
+Register(VBStaticText)</t>
 <t tx="pap.120703001453.590">@root vbtextfield.py
 
 from vb2py.targets.pythoncard.controlclasses import VBWrapped, VBWidget
+from vb2py.targets.pythoncard import Register
 import vb2py.logger
 log = vb2py.logger.getLogger("VBTextField")
 
-from PythonCardPrototype.components import textfield
+from PythonCard.components import textfield
 from wxPython import wx
 import sys
-from PythonCardPrototype import binding, event, registry, widget
+from PythonCard import event, registry, widget
 
 
 class VBTextField(VBWidget): 
@@ -12733,17 +12776,18 @@ class VBTextField(VBWidget):
     
 
 log.debug("Registering VBTextField as '%s'" % sys.modules[__name__].VBTextField)
-registry.getRegistry().register( sys.modules[__name__].VBTextField )</t>
+Register(VBTextField)</t>
 <t tx="pap.120703001453.591">@root vbcombobox.py
 
 from vb2py.targets.pythoncard.controlclasses import VBWrapped, VBWidget
+from vb2py.targets.pythoncard import Register
 import vb2py.logger
 log = vb2py.logger.getLogger("VBComboBox")
 
-from PythonCardPrototype.components import combobox
+from PythonCard.components import combobox
 from wxPython import wx
 import sys
-from PythonCardPrototype import binding, event, registry, widget
+from PythonCard import event, registry, widget
 
 
 class VBComboBox(VBWidget): 
@@ -12779,7 +12823,7 @@ class VBComboBox(VBWidget):
     
 
 log.debug("Registering VBComboBox as '%s'" % sys.modules[__name__].VBComboBox)
-registry.getRegistry().register( sys.modules[__name__].VBComboBox )</t>
+Register(VBComboBox)</t>
 <t tx="pap.120703001453.592">&lt;&lt; VBComboBox methods &gt;&gt;=
 
 def AddItem(self, item, position=None):
@@ -12826,13 +12870,14 @@ def delete(self, position):
 <t tx="pap.120703001453.596">@root vblist.py
 
 from vb2py.targets.pythoncard.controlclasses import VBWrapped, VBWidget
+from vb2py.targets.pythoncard import Register
 import vb2py.logger
 log = vb2py.logger.getLogger("VBListBox")
 
-from PythonCardPrototype.components import list
+from PythonCard.components import list
 from wxPython import wx
 import sys
-from PythonCardPrototype import binding, event, registry, widget
+from PythonCard import event, registry, widget
 
 
 class VBList(VBWidget): 
@@ -12867,7 +12912,8 @@ class VBList(VBWidget):
 	&lt;&lt; VBList methods &gt;&gt;   
 
 log.debug("Registering VBList as '%s'" % sys.modules[__name__].VBList)
-registry.getRegistry().register( sys.modules[__name__].VBList )</t>
+Register(VBList)
+</t>
 <t tx="pap.120703001453.597">&lt;&lt; VBList methods &gt;&gt;=
 
 def AddItem(self, item, position=None):
@@ -12884,13 +12930,14 @@ def AddItem(self, item, position=None):
 <t tx="pap.120703001453.598">@root vbcheckbox.py
 
 from vb2py.targets.pythoncard.controlclasses import VBWrapped, VBWidget
+from vb2py.targets.pythoncard import Register
 import vb2py.logger
 log = vb2py.logger.getLogger("VBCheckBox")
 
-from PythonCardPrototype.components import checkbox
+from PythonCard.components import checkbox
 from wxPython import wx
 import sys
-from PythonCardPrototype import binding, event, registry, widget
+from PythonCard import event, registry, widget
 
 
 class VBCheckBox(VBWidget): 
@@ -12915,17 +12962,18 @@ class VBCheckBox(VBWidget):
     
 
 log.debug("Registering VBCheckBox as '%s'" % sys.modules[__name__].VBCheckBox)
-registry.getRegistry().register( sys.modules[__name__].VBCheckBox )</t>
+Register(VBCheckBox)</t>
 <t tx="pap.120703001453.599">@root vbtextarea.py
 
 from vb2py.targets.pythoncard.controlclasses import VBWrapped, VBWidget
+from vb2py.targets.pythoncard import Register
 import vb2py.logger
 log = vb2py.logger.getLogger("VBTextArea")
 
-from PythonCardPrototype.components import textarea
+from PythonCard.components import textarea
 from wxPython import wx
 import sys
-from PythonCardPrototype import binding, event, registry, widget
+from PythonCard import event, registry, widget
 
 
 class VBTextArea(VBWidget): 
@@ -12948,7 +12996,7 @@ class VBTextArea(VBWidget):
     
 
 log.debug("Registering VBTextArea as '%s'" % sys.modules[__name__].VBTextArea)
-registry.getRegistry().register( sys.modules[__name__].VBTextArea )</t>
+Register(VBTextArea)</t>
 <t tx="pap.120703001453.600">@doc
 The general testing methodology is,
 
@@ -28711,13 +28759,14 @@ Note that implicit conversion of an Error is not allowed. For example, you can't
 <t tx="pap.120703001453.1250">@root vbbitmapcanvas.py
 
 from vb2py.targets.pythoncard.controlclasses import VBWrapped, VBWidget
+from vb2py.targets.pythoncard import Register
 import vb2py.logger
 log = vb2py.logger.getLogger("VBBitmapCanvas")
 
-from PythonCardPrototype.components import bitmapcanvas
+from PythonCard.components import bitmapcanvas
 from wxPython import wx
 import sys
-from PythonCardPrototype import binding, event, registry, widget
+from PythonCard import event, registry, widget
 
 
 class VBBitmapCanvas(VBWidget): 
@@ -28748,7 +28797,7 @@ class VBBitmapCanvas(VBWidget):
 VBBitmapCanvas._setters["Picture"] = VBBitmapCanvas._setPicture	
 
 log.debug("Registering VBBitmapCanvas as '%s'" % sys.modules[__name__].VBBitmapCanvas)
-registry.getRegistry().register( sys.modules[__name__].VBBitmapCanvas )
+Register(VBBitmapCanvas)
 
 </t>
 <t tx="pap.120703001453.1251">&lt;&lt; VBBitmapCanvas Methods &gt;&gt;=
@@ -29257,7 +29306,9 @@ To handle nothing we may need a Nothing object which compares to None etc. The t
 Dim A as Object
 If A Is Nothing ...
 </t>
-<t tx="pap.120703001453.1283">Starting testall at Mon Dec 06 22:25:30 2004
+<t tx="pap.120703001453.1283">C:\Development\Python24\Lib\site-packages\vb2py&gt;test\testall.py
+
+Starting testall at Fri Feb 02 23:45:29 2007
 
 Running 'test\testassignment.py' ...  *** 1 errors out of 99
 Running 'test\testattributenames.py' ...  *** 1 errors out of 1
@@ -29297,7 +29348,7 @@ Running 'test\testwith.py' ...  Passed 5 tests
 
 Ran 742 tests
 Failed 6
-Took 268 seconds</t>
+Took 249 seconds</t>
 <t tx="pap.20041206011550">@root test\testimports.py
 
 from unittest import *
@@ -29465,5 +29516,258 @@ def __init__(self, *args, **kw):
     self.module_imports.append("win32com.client")
     self.docstrings.append(
             VBRenderDirect("Automatically generated file based on project references"))</t>
+<t tx="pap.20070203003154">@path ../vb2pygui
+</t>
+<t tx="pap.20070203103920"></t>
+<t tx="pap.20070203103920.1"></t>
+<t tx="pap.20070203103920.2">{'type':'CustomDialog',
+    'name':'Find',
+    'title':'Find',
+    'position':(467, 157),
+    'size':(437, 164),
+    'components': [
+
+{'type':'Button', 
+    'name':'btnFindNext', 
+    'position':(347, 30), 
+    'label':'Find Next', 
+    },
+
+{'type':'RadioGroup', 
+    'name':'optSearchIn', 
+    'position':(10, 40), 
+    'size':(151, 47), 
+    'items':['Python', 'VB'], 
+    'label':'Search in', 
+    'layout':'horizontal', 
+    'max':1, 
+    'selected':'Python', 
+    },
+
+{'type':'TextField', 
+    'name':'txtFind', 
+    'position':(67, 7), 
+    'size':(272, -1), 
+    },
+
+{'type':'StaticText', 
+    'name':'StaticText1', 
+    'position':(11, 10), 
+    'text':'Find what', 
+    },
+
+{'type':'Button', 
+    'id':5100, 
+    'name':'btnFind', 
+    'position':(347, 6), 
+    'label':'Find', 
+    },
+
+{'type':'Button', 
+    'id':5101, 
+    'name':'btnCancel', 
+    'position':(347, 55), 
+    'label':'Close', 
+    },
+
+] # end components
+} # end CustomDialog
+</t>
+<t tx="pap.20070203103920.3"></t>
+<t tx="pap.20070203103920.4"></t>
+<t tx="pap.20070203154528">&lt;&lt; VBFunctions &gt;&gt;=
+
+
+def MakeDate(*args):
+	"""Return a date from the given string"""
+    raise NotImplementedError("MakeDate has not been written yet")</t>
+<t tx="pap.20070203162417"></t>
+<t tx="pap.20070203162417.6">@ignore
+
+{'application':{'type':'Application',
+          'name':'Template',
+    'backgrounds': [
+    {'type':'Background',
+          'name':'Wizard',
+          'title':'vb2Py : Conversion Wizard',
+          'position':(340, 102),
+          'size':(608, 637),
+          'style':['resizeable'],
+
+        'menubar': {'type':'MenuBar',
+         'menus': [
+             {'type':'Menu',
+             'name':'menuFile',
+             'label':'&amp;File',
+             'items': [
+                  {'type':'MenuItem',
+                   'name':'menuFileOpen',
+                   'label':'&amp;Open\tCtrl+O',
+                  },
+                  {'type':'MenuItem',
+                   'name':'menuFileSave',
+                   'label':'&amp;Save\tCtrl+S',
+                  },
+                  {'type':'MenuItem',
+                   'name':'menuFileExit',
+                   'label':'E&amp;xit\tCtrl+X',
+                  },
+              ]
+             },
+             {'type':'Menu',
+             'name':'menuEdit',
+             'label':'Edit',
+             'items': [
+                  {'type':'MenuItem',
+                   'name':'menuFind',
+                   'label':'Find\tCtrl+F',
+                  },
+                  {'type':'MenuItem',
+                   'name':'menuFindNext',
+                   'label':'Find next\tF3',
+                  },
+              ]
+             },
+             {'type':'Menu',
+             'name':'menuView',
+             'label':'View',
+             'items': [
+                  {'type':'MenuItem',
+                   'name':'menuOptions',
+                   'label':'Options ...',
+                  },
+                  {'type':'MenuItem',
+                   'name':'menuViewStructure',
+                   'label':'View Structure',
+                  },
+                  {'type':'MenuItem',
+                   'name':'menuTestView',
+                   'label':'Testing Window',
+                  },
+              ]
+             },
+             {'type':'Menu',
+             'name':'menuConversion',
+             'label':'Convert',
+             'items': [
+                  {'type':'MenuItem',
+                   'name':'menuConvert',
+                   'label':'Convert active\tCtrl+A',
+                  },
+                  {'type':'MenuItem',
+                   'name':'menuConvertSelection',
+                   'label':'Convert selection\tCtrl+Shift+S',
+                  },
+                  {'type':'MenuItem',
+                   'name':'menuSep1',
+                   'label':'-',
+                  },
+                  {'type':'MenuItem',
+                   'name':'menuCodeModuleContext',
+                   'label':'Code Module',
+                   'checkable':1,
+                   'checked':1,
+                  },
+                  {'type':'MenuItem',
+                   'name':'menuClassModuleContext',
+                   'label':'Class Module',
+                   'checkable':1,
+                  },
+                  {'type':'MenuItem',
+                   'name':'menuFormModuleContext',
+                   'label':'Form Module',
+                   'checkable':1,
+                  },
+              ]
+             },
+             {'type':'Menu',
+             'name':'menuHelp',
+             'label':'Help',
+             'items': [
+                  {'type':'MenuItem',
+                   'name':'menuHelp',
+                   'label':'vb2Py Help\tF1',
+                  },
+                  {'type':'MenuItem',
+                   'name':'menuHelpGUI',
+                   'label':'GUI Help',
+                  },
+                  {'type':'MenuItem',
+                   'name':'menuSep2',
+                   'label':'-',
+                  },
+                  {'type':'MenuItem',
+                   'name':'menuAbout',
+                   'label':'About vb2Py',
+                  },
+              ]
+             },
+         ]
+     },
+         'components': [
+
+
+
+] # end components
+} # end background
+] # end backgrounds
+} }
+</t>
+<t tx="pap.20070203172243.5">@ignore
+{'application':{'type':'Application',
+          'name':'Template',
+    'backgrounds': [
+    {'type':'Background',
+          'name':'bgTemplate',
+          'title':'Standard Template with no menus',
+          'size':(929, 741),
+          'backgroundColor':(255, 255, 255),
+
+         'components': [
+
+{'type':'StaticText', 
+    'name':'PythonBlurb', 
+    'position':(648, 12), 
+    'text':'Python code appears below', 
+    },
+
+{'type':'Button', 
+    'name':'Convert', 
+    'position':(427, 4), 
+    'label':'Convert --&gt;', 
+    },
+
+{'type':'StaticText', 
+    'name':'VBBlurb', 
+    'position':(156, 13), 
+    'text':'Enter the VB code below', 
+    },
+
+{'type':'CodeEditor', 
+    'name':'Python', 
+    'position':(461, 47), 
+    'size':(454, 619), 
+    'backgroundColor':(255, 255, 255, 255), 
+    },
+
+{'type':'CodeEditor', 
+    'name':'VB', 
+    'position':(10, 46), 
+    'size':(448, 621), 
+    'backgroundColor':(255, 255, 255, 255), 
+    },
+
+] # end components
+} # end background
+] # end backgrounds
+} }
+</t>
+<t tx="pap.20070203192530">
+[Style]
+# Style of conversion, Pythonic or VB
+# VB tries to make sure that the code works identically
+# Pythonic tries to make sure the code looks like Python, but it might behave differently
+ConversionStyle = VB
+</t>
 </tnodes>
 </leo_file>

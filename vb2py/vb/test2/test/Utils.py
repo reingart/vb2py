@@ -1,9 +1,11 @@
 from vb2py.vbfunctions import *
+from vb2py.vbdebug import *
 
 
 
 def SplitOnWord(Text, Letter):
     _ret = None
+    Words = vbObjectInitialize(objtype=Variant)
     posn = 1
     Words = vbObjectInitialize((0,), Variant)
     for i in vbForRange(1, Len(Text)):

@@ -1,11 +1,12 @@
 from vb2py.targets.pythoncard.controlclasses import VBWrapped, VBWidget
+from vb2py.targets.pythoncard import Register
 import vb2py.logger
 log = vb2py.logger.getLogger("VBComboBox")
 
-from PythonCardPrototype.components import combobox
+from PythonCard.components import combobox
 from wxPython import wx
 import sys
-from PythonCardPrototype import binding, event, registry, widget
+from PythonCard import event, registry, widget
 
 
 class VBComboBox(VBWidget): 
@@ -80,4 +81,4 @@ class VBComboBox(VBWidget):
 
 
 log.debug("Registering VBComboBox as '%s'" % sys.modules[__name__].VBComboBox)
-registry.getRegistry().register( sys.modules[__name__].VBComboBox )
+Register(VBComboBox)

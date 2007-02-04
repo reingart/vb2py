@@ -1,4 +1,4 @@
-{'stack':{'type':'Stack',
+{'application':{'type':'Application',
           'name':'Template',
     'backgrounds': [
     {'type':'Background',
