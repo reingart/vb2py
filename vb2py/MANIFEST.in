@@ -6,3 +6,4 @@ recursive-include vb *.*
 recursive-include doc *.html
 recursive-include doc *.css
 recursive-include doc *.gif
+prune *.svn*

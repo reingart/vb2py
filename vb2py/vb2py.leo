@@ -324,7 +324,7 @@
 </v>
 </v>
 </v>
-<v t="pap.120703001453.216" a="EM"><vh>parserclasses.py</vh>
+<v t="pap.120703001453.216" a="M"><vh>parserclasses.py</vh>
 <v t="pap.120703001453.217"><vh>&lt;&lt; Definitions &gt;&gt;</vh></v>
 <v t="pap.120703001453.218"><vh>Base classes</vh>
 <v t="pap.120703001453.219"><vh>VBElement </vh>
@@ -482,7 +482,7 @@
 </v>
 <v t="pap.120703001453.330" a="E"><vh>Single Statements</vh>
 <v t="pap.120703001453.331" a="E"><vh>VBVariableDefinition</vh>
-<v t="pap.120703001453.332" a="TV"><vh>renderAsCode</vh></v>
+<v t="pap.120703001453.332"><vh>renderAsCode</vh></v>
 </v>
 <v t="pap.120703001453.333"><vh>VBConstant </vh>
 <v t="pap.120703001453.334"><vh>renderAsCode</vh></v>
@@ -779,7 +779,7 @@
 </v>
 </v>
 </v>
-<v t="pap.120703001453.550" a="E"><vh>Configuration</vh>
+<v t="pap.120703001453.550"><vh>Configuration</vh>
 <v t="pap.120703001453.551" a="E" tnodeList="pap.120703001453.551,PAP.20040202230624,pap.20070203192530,PAP.20040202230624.1,PAP.20040202230624.2,PAP.20040202230624.3,PAP.20040202230624.4,PAP.20040202230624.5,PAP.20040202230624.6,PAP.20040202230624.7,PAP.20040427003436"><vh>@file vb2py.ini</vh>
 <v t="PAP.20040202230624"><vh>General</vh></v>
 <v t="pap.20070203192530"><vh>Style</vh></v>
@@ -830,8 +830,8 @@
 <v t="pap.120703001453.580"><vh>attributenames.py</vh></v>
 </v>
 </v>
-<v t="pap.120703001453.581"><vh>Package</vh>
-<v t="pap.120703001453.582"><vh>setup.py</vh>
+<v t="pap.120703001453.581" a="E"><vh>Package</vh>
+<v t="pap.120703001453.582" a="E"><vh>setup.py</vh>
 <v t="pap.120703001453.583"><vh>Supporting functions</vh></v>
 </v>
 <v t="pap.120703001453.584"><vh>MANIFEST.in</vh></v>
@@ -841,11 +841,11 @@
 </v>
 <v t="pap.20070203003154" a="E"><vh>GUI</vh>
 <v t="pap.20070203103920" a="E"><vh>Main Window</vh>
-<v t="pap.20070203003154.1"
-expanded="pap.20070203003154.31,"><vh>@thin vb2pyGUI.pyw</vh></v>
+<v t="pap.20070203003154.1" a="E"
+expanded="pap.20070203003154.3,pap.20070203003154.31,"><vh>@thin vb2pyGUI.pyw</vh></v>
 <v t="pap.20070203004134"><vh>@thin vb2pyGUI.rsrc.py</vh></v>
 </v>
-<v t="pap.20070203103920.1" a="E"><vh>Find Dialog</vh>
+<v t="pap.20070203103920.1"><vh>Find Dialog</vh>
 <v t="pap.20070203003236"
 expanded="pap.20070203003236.2,"><vh>@thin finddialog.py</vh></v>
 <v t="pap.20070203103920.2" tnodeList="pap.20070203103920.2"><vh>@file finddialog.rsrc.py</vh></v>
@@ -856,7 +856,7 @@ expanded="pap.20070203003236.2,"><vh>@thin finddialog.py</vh></v>
 <v t="pap.20070203103920.4"><vh>Options Form</vh>
 <v t="pap.20070203003353" a="E"><vh>@thin vb2pyOptions.py</vh></v>
 </v>
-<v t="pap.20070203162417" a="E"><vh>UI</vh>
+<v t="pap.20070203162417"><vh>UI</vh>
 <v t="pap.20070203162417.1"
 expanded="pap.20070203162417.3,"><vh>@thin vb2pyMain.py</vh></v>
 <v t="pap.20070203162417.6"><vh>@thin vb2pyMain.rsrc.py</vh></v>
@@ -865,7 +865,7 @@ expanded="pap.20070203172243.3,"><vh>@thin interactive.py</vh></v>
 <v t="pap.20070203172243.5"><vh>@thin interactive.rsrc.py</vh></v>
 </v>
 </v>
-<v t="pap.120703001453.600" a="E"><vh>Testing</vh>
+<v t="pap.120703001453.600"><vh>Testing</vh>
 <v t="pap.120703001453.601"><vh>__init__.py</vh></v>
 <v t="pap.120703001453.602"><vh>Mini parser for quick testing</vh>
 <v t="PAP.20040824001655"><vh>Recordsets</vh></v>
@@ -12471,7 +12471,7 @@ This script is setup.py of the vb2py package.
 &lt;&lt; Support functions &gt;&gt;
 
 setup(name=APPLICATION_NAME, 
-      version="0.2.1",
+      version="0.2.2",
       description="Visual Basic to Python Converter",
       author="Paul Paterson",
       author_email="paulpaterson@users.sourceforge.net",
@@ -12515,7 +12515,7 @@ def makeDataDirs(rootDir=APPLICATION_NAME, dataDirs=[]):
         directories=recurseDir(directory)
         results.extend(directories)
     for directory in results:
-        if os.path.split(directory)[1]!='CVS':
+        if not "svn" in os.path.split(directory)[1]:
             # Add this directory and its contents to list
             files=[]
             for file in os.listdir(directory):
@@ -12536,7 +12536,7 @@ recursive-include vb *.*
 recursive-include doc *.html
 recursive-include doc *.css
 recursive-include doc *.gif
-</t>
+prune *.svn*</t>
 <t tx="pap.120703001453.585">The main documentation lives at .\doc\index.html
 
 

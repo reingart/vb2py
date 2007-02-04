@@ -49,7 +49,7 @@ def makeDataDirs(rootDir=APPLICATION_NAME, dataDirs=[]):
         directories=recurseDir(directory)
         results.extend(directories)
     for directory in results:
-        if os.path.split(directory)[1]!='.svn':
+        if not "svn" in os.path.split(directory)[1]:
             # Add this directory and its contents to list
             files=[]
             for file in os.listdir(directory):
