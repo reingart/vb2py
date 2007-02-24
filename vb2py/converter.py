@@ -183,6 +183,7 @@ class BaseParser(object):
     # << class BaseParser methods >> (1 of 9)
     def __init__(self, filename, name=None):
         """Initialize the parser"""
+        self.references = []
         self.filename = filename
         self.text = open(filename.strip(), "r").read() # Use strip to remove \r 
         self.name = name or os.path.splitext(os.path.split(filename)[1])[0]

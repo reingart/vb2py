@@ -3,7 +3,7 @@
 <leo_file>
 <leo_header file_format="2" tnodes="0" max_tnode_index="0" clone_windows="0"/>
 <globals body_outline_ratio="0.309787234043">
-	<global_window_position top="3" left="-2" height="978" width="1175"/>
+	<global_window_position top="1" left="-5" height="958" width="1175"/>
 	<global_log_window_position top="0" left="0" height="0" width="0"/>
 </globals>
 <preferences/>
@@ -15,11 +15,11 @@
 <v t="pap.120703001453.3"><vh>Path utils</vh></v>
 </v>
 <v t="pap.120703001453.4"><vh>logger.py</vh></v>
-<v t="pap.120703001453.5"><vh>converter.py</vh>
+<v t="pap.120703001453.5" a="E"><vh>converter.py</vh>
 <v t="pap.120703001453.6"><vh>&lt;&lt; Documentation &gt;&gt;</vh></v>
 <v t="pap.120703001453.7"><vh>&lt;&lt; Declarations &gt;&gt;</vh></v>
 <v t="pap.120703001453.8"><vh>&lt;&lt; Error classes &gt;&gt;</vh></v>
-<v t="pap.120703001453.9"><vh>class VBConverter</vh>
+<v t="pap.120703001453.9" a="E"><vh>class VBConverter</vh>
 <v t="pap.120703001453.10"><vh>__init__</vh></v>
 <v t="pap.120703001453.11" a="E"><vh>doConversion</vh>
 <v t="pap.20041207001955"><vh>&lt;&lt; Handle references &gt;&gt;</vh></v>
@@ -33,8 +33,8 @@
 <v t="pap.20041207004101"><vh>&lt;&lt; Resolve References &gt;&gt;</vh></v>
 </v>
 </v>
-<v t="pap.120703001453.16"><vh>class BaseParser</vh>
-<v t="pap.120703001453.17"><vh>__init__</vh></v>
+<v t="pap.120703001453.16" a="E"><vh>class BaseParser</vh>
+<v t="pap.120703001453.17" a="V"><vh>__init__</vh></v>
 <v t="pap.120703001453.18"><vh>doValidation</vh></v>
 <v t="pap.120703001453.19"><vh>findMany</vh></v>
 <v t="pap.120703001453.20"><vh>findOne</vh></v>
@@ -44,7 +44,7 @@
 <v t="pap.120703001453.24"><vh>getContainer</vh></v>
 <v t="pap.120703001453.25" a="E"><vh>writeToFile</vh></v>
 </v>
-<v t="pap.120703001453.26"><vh>class ProjectParser</vh>
+<v t="pap.120703001453.26" a="E"><vh>class ProjectParser</vh>
 <v t="pap.120703001453.27"><vh>doParse</vh></v>
 <v t="pap.120703001453.28"><vh>doValidation</vh></v>
 </v>
@@ -52,7 +52,7 @@
 <v t="pap.120703001453.30"><vh>doParse</vh></v>
 <v t="pap.120703001453.31"><vh>doValidation</vh></v>
 </v>
-<v t="pap.120703001453.32"><vh>class FormParser</vh>
+<v t="pap.120703001453.32" a="E"><vh>class FormParser</vh>
 <v t="pap.120703001453.33" a="E"><vh>doParse</vh>
 <v t="pap.120703001453.34"><vh>&lt;&lt; Split off code section &gt;&gt;</vh></v>
 <v t="pap.120703001453.35"><vh>&lt;&lt; Add controls to form namespace &gt;&gt;</vh></v>
@@ -93,7 +93,7 @@
 <v t="pap.20041207005609"><vh>__init__</vh></v>
 </v>
 <v t="pap.120703001453.62"><vh>class NameSpace</vh></v>
-<v t="pap.120703001453.63"><vh>main</vh>
+<v t="pap.120703001453.63" a="E"><vh>main</vh>
 <v t="pap.120703001453.64"><vh>&lt;&lt; Parse options &gt;&gt;</vh></v>
 <v t="pap.120703001453.65"><vh>&lt;&lt; Validate arguments &gt;&gt;</vh></v>
 </v>
@@ -259,7 +259,7 @@
 </v>
 </v>
 </v>
-<v t="pap.120703001453.160" a="E"><vh>Parsing and converting code</vh>
+<v t="pap.120703001453.160"><vh>Parsing and converting code</vh>
 <v t="pap.120703001453.161" tnodeList="pap.120703001453.161,pap.120703001453.163,pap.120703001453.164,pap.120703001453.165,pap.120703001453.166,pap.120703001453.167,pap.120703001453.168,pap.120703001453.170,pap.120703001453.171,pap.120703001453.172,pap.120703001453.173,pap.120703001453.174,pap.120703001453.175,pap.120703001453.176,pap.120703001453.177,pap.120703001453.178,pap.120703001453.179,pap.120703001453.180,pap.120703001453.181,pap.120703001453.182,pap.120703001453.183,pap.120703001453.184,pap.120703001453.186,pap.120703001453.187,pap.120703001453.188,pap.120703001453.189,pap.120703001453.190,pap.120703001453.191,pap.120703001453.192,pap.120703001453.193,pap.120703001453.194,pap.120703001453.195,pap.120703001453.196,pap.120703001453.197,pap.120703001453.198,pap.120703001453.199"><vh>@file vbgrammar.txt</vh>
 <v t="pap.120703001453.162"><vh>Basic building blocks</vh>
 <v t="pap.120703001453.163"><vh>Basic elements</vh></v>
@@ -830,7 +830,7 @@
 <v t="pap.120703001453.580"><vh>attributenames.py</vh></v>
 </v>
 </v>
-<v t="pap.120703001453.581" a="E"><vh>Package</vh>
+<v t="pap.120703001453.581"><vh>Package</vh>
 <v t="pap.120703001453.582" a="E"><vh>setup.py</vh>
 <v t="pap.120703001453.583"><vh>Supporting functions</vh></v>
 </v>
@@ -839,8 +839,8 @@
 <v t="pap.120703001453.586"><vh>@file-asis LICENCE.txt</vh></v>
 </v>
 </v>
-<v t="pap.20070203003154" a="E"><vh>GUI</vh>
-<v t="pap.20070203103920" a="E"><vh>Main Window</vh>
+<v t="pap.20070203003154"><vh>GUI</vh>
+<v t="pap.20070203103920"><vh>Main Window</vh>
 <v t="pap.20070203003154.1" a="E"
 expanded="pap.20070203003154.3,pap.20070203003154.31,"><vh>@thin vb2pyGUI.pyw</vh></v>
 <v t="pap.20070203004134"><vh>@thin vb2pyGUI.rsrc.py</vh></v>
@@ -4711,6 +4711,7 @@ class BaseParser(object):
 
 def __init__(self, filename, name=None):
 	"""Initialize the parser"""
+    self.references = []
 	self.filename = filename
 	self.text = open(filename.strip(), "r").read() # Use strip to remove \r 
 	self.name = name or os.path.splitext(os.path.split(filename)[1])[0]
