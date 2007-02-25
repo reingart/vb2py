@@ -55,7 +55,17 @@ def convertToElements(details, txt):
 def buildParseTree(vbtext, starttoken="line", verbose=0, returnpartial=0, returnast=0):
     """Parse some VB"""
 
-    parser = Parser(declaration, starttoken)
+    # << Build Parser >>
+    # Try to buid the parse - if this fails we probably have an early
+    # version of Simpleparse
+    try:
+        parser = Parser(declaration, starttoken)
+    except Exception, err:
+        log.warn("Failed to build parse (%s) - trying case sensitive grammar" % err)
+        parser = Parser(declaration.replace('c"', ' "'), starttoken)
+        log.info("Downgraded to case sensitive grammar")
+    # -- end -- << Build Parser >>
+
     txt = applyPlugins("preProcessVBText", vbtext)
 
     txt = makeSafeFromUnicode(txt)

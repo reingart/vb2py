@@ -15,11 +15,11 @@
 <v t="pap.120703001453.3"><vh>Path utils</vh></v>
 </v>
 <v t="pap.120703001453.4"><vh>logger.py</vh></v>
-<v t="pap.120703001453.5" a="E"><vh>converter.py</vh>
+<v t="pap.120703001453.5"><vh>converter.py</vh>
 <v t="pap.120703001453.6"><vh>&lt;&lt; Documentation &gt;&gt;</vh></v>
 <v t="pap.120703001453.7"><vh>&lt;&lt; Declarations &gt;&gt;</vh></v>
 <v t="pap.120703001453.8"><vh>&lt;&lt; Error classes &gt;&gt;</vh></v>
-<v t="pap.120703001453.9" a="E"><vh>class VBConverter</vh>
+<v t="pap.120703001453.9"><vh>class VBConverter</vh>
 <v t="pap.120703001453.10"><vh>__init__</vh></v>
 <v t="pap.120703001453.11" a="E"><vh>doConversion</vh>
 <v t="pap.20041207001955"><vh>&lt;&lt; Handle references &gt;&gt;</vh></v>
@@ -33,7 +33,7 @@
 <v t="pap.20041207004101"><vh>&lt;&lt; Resolve References &gt;&gt;</vh></v>
 </v>
 </v>
-<v t="pap.120703001453.16" a="E"><vh>class BaseParser</vh>
+<v t="pap.120703001453.16"><vh>class BaseParser</vh>
 <v t="pap.120703001453.17"><vh>__init__</vh></v>
 <v t="pap.20070224183443"><vh>readFileContent</vh></v>
 <v t="pap.120703001453.18"><vh>doValidation</vh></v>
@@ -45,7 +45,7 @@
 <v t="pap.120703001453.24"><vh>getContainer</vh></v>
 <v t="pap.120703001453.25" a="E"><vh>writeToFile</vh></v>
 </v>
-<v t="pap.120703001453.26" a="E"><vh>class ProjectParser</vh>
+<v t="pap.120703001453.26"><vh>class ProjectParser</vh>
 <v t="pap.120703001453.27"><vh>doParse</vh></v>
 <v t="pap.120703001453.28"><vh>doValidation</vh></v>
 </v>
@@ -305,13 +305,14 @@
 <v t="pap.120703001453.199"><vh>option_statement</vh></v>
 </v>
 </v>
-<v t="pap.120703001453.200"><vh>vbparser.py</vh>
+<v t="pap.120703001453.200" a="E"><vh>vbparser.py</vh>
 <v t="pap.120703001453.201"><vh>&lt;&lt; Imports &gt;&gt;</vh></v>
 <v t="pap.120703001453.202"><vh>&lt;&lt; Error Classes &gt;&gt;</vh></v>
 <v t="pap.120703001453.203"><vh>&lt;&lt; Definitions &gt;&gt;</vh></v>
 <v t="pap.120703001453.204" a="E"><vh>Utility functions</vh>
 <v t="pap.120703001453.205"><vh>convertToElements</vh></v>
-<v t="pap.120703001453.206"><vh>buildParseTree</vh>
+<v t="pap.120703001453.206" a="E"><vh>buildParseTree</vh>
+<v t="pap.20070224191421" a="V"><vh>&lt;&lt; Build Parser &gt;&gt;</vh></v>
 <v t="pap.120703001453.208"><vh>&lt;&lt; Handle failure &gt;&gt;</vh></v>
 </v>
 <v t="pap.20070224185447"><vh>makeSafeFromUnicode</vh></v>
@@ -2599,7 +2600,7 @@ expanded="pap.20070203172243.3,"><vh>@thin interactive.py</vh></v>
 </v>
 <v t="pap.120703001453.1281"><vh>Where I stopped</vh></v>
 <v t="pap.120703001453.1282"><vh>Thoughts etc</vh></v>
-<v t="pap.120703001453.1283" a="TV"><vh>Test report for this version</vh></v>
+<v t="pap.120703001453.1283"><vh>Test report for this version</vh></v>
 <v t="pap.20041206020842"><vh>Challenge</vh></v>
 <v t="pap.20041206233451"><vh>Spammers</vh></v>
 </v>
@@ -7597,7 +7598,8 @@ def convertToElements(details, txt):
 def buildParseTree(vbtext, starttoken="line", verbose=0, returnpartial=0, returnast=0):
 	"""Parse some VB"""
 
-	parser = Parser(declaration, starttoken)
+    &lt;&lt; Build Parser &gt;&gt;
+
 	txt = applyPlugins("preProcessVBText", vbtext)
 
     txt = makeSafeFromUnicode(txt)
@@ -7619,8 +7621,7 @@ def buildParseTree(vbtext, starttoken="line", verbose=0, returnpartial=0, return
             nodes.append(tree)
 		txt = txt[next:]
 		
-	return nodes	
-</t>
+	return nodes	</t>
 <t tx="pap.120703001453.208">@c
 
 msg = "Parsing error: %d, '%s'" % (next, txt.split("\n")[0])
@@ -29852,5 +29853,15 @@ def makeUnicodeFromSafe(text):
     
     return proper_text
     </t>
+<t tx="pap.20070224191421">@c
+# Try to buid the parse - if this fails we probably have an early
+# version of Simpleparse
+try:
+    parser = Parser(declaration, starttoken)
+except Exception, err:
+    log.warn("Failed to build parse (%s) - trying case sensitive grammar" % err)
+    parser = Parser(declaration.replace('c"', ' "'), starttoken)
+    log.info("Downgraded to case sensitive grammar")
+</t>
 </tnodes>
 </leo_file>
