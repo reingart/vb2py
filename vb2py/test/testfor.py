@@ -43,6 +43,15 @@ For _var = 1 To 10
     Exit For
 Next _var
 """, {"j" : 1}))
+
+# Bizarre dotted name
+tests.append(("""
+Dim _me As Object
+j = 0
+For _me.you = 1 To 10
+    j = j + _me.you
+Next _me.you
+""", {"j" : 55}))
 # << For tests >> (2 of 4)
 # Nested loop
 tests.append(("""

@@ -2281,7 +2281,9 @@ class VBCaseElse(VBCaseBlock):
 class VBFor(VBCodeBlock):
     """Represents a for statement"""
 
-    # << VBFor methods >> (1 of 2)
+    _for_variable_index = 0
+
+    # << VBFor methods >> (1 of 3)
     def __init__(self, scope="Private"):
         """Initialize the Select"""
         super(VBFor, self).__init__(scope)
@@ -2296,17 +2298,42 @@ class VBFor(VBCodeBlock):
         }
 
         self.auto_handlers = [
-            "identifier",
+            "object",
         ]
-    # << VBFor methods >> (2 of 2)
+    # << VBFor methods >> (2 of 3)
     def renderAsCode(self, indent=0):
         """Render this element as code"""
         range_statement = ", ".join([item.renderAsCode() for item in self.expressions])
-        return "%sfor %s in vbForRange(%s):\n%s" % (
+        # Watch out for the weird dotted name in the for
+        self.handleDottedName(indent)
+        return "%sfor %s in vbForRange(%s):\n%s%s" % (
                                  self.getIndent(indent),
-                                 self.identifier,
+                                 self.loopname,
                                  range_statement,
+                                 self.copiedname,
                                  self.block.renderAsCode(indent+1))
+    # << VBFor methods >> (3 of 3)
+    def handleDottedName(self, indent):
+        """Handle a dotted name as the identifier
+
+        The For can reference a dotted name, which presumably changes the
+        value of that attribute. We can only do this by a local re-assignment
+
+        """
+        name = self.object
+        if "." not in name:
+            # Ok, normal case
+            self.loopname = name
+            self.copiedname = ""
+        else:
+            # Ooops, assigning to a dotted name in the loop
+            self.loopname = "_idx%s" % VBFor._for_variable_index
+            VBFor._for_variable_index += 1
+            self.copiedname = "%s%s = %s\n" % (
+                self.getIndent(indent+1),
+                name,
+                self.loopname
+            )
     # -- end -- << VBFor methods >>
 # << Classes >> (63 of 74)
 class VBForEach(VBFor):
@@ -2315,10 +2342,13 @@ class VBForEach(VBFor):
     # << VBForEach methods >>
     def renderAsCode(self, indent=0):
         """Render this element as code"""
-        return "%sfor %s in %s:\n%s" % (
+        # Watch out for the weird dotted name in the for
+        self.handleDottedName(indent)    
+        return "%sfor %s in %s:\n%s%s" % (
                                  self.getIndent(indent),
-                                 self.identifier,
+                                 self.loopname,
                                  self.expressions[0].renderAsCode(),
+                                 self.copiedname,
                                  self.block.renderAsCode(indent+1))
     # -- end -- << VBForEach methods >>
 # << Classes >> (64 of 74)

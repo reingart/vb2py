@@ -15,7 +15,7 @@ Config.setLocalOveride("General", "ReportPartialConversion", "No")
 
 tests = []
 
-# << Parsing tests >> (1 of 60)
+# << Parsing tests >> (1 of 61)
 # Simple assignments
 tests.append("""
 a = 10
@@ -54,7 +54,7 @@ tests.extend([
 tests.extend([
         r'a="\"',  # The single slash is a killer
 ])
-# << Parsing tests >> (2 of 60)
+# << Parsing tests >> (2 of 61)
 # Simple expressions
 tests.extend([
 'a = 10',
@@ -103,6 +103,7 @@ tests.extend([
             "a = -x*10",
             "a = 10 Mod 6",
             "Set NewEnum = mCol.[_NewEnum]",
+            "a = 10 ^ -bob",
 ])
 
 # Functions
@@ -145,7 +146,7 @@ tests.extend([
         "a = fn(a, TypeOf b.m.m, TypeOf c.k.l, TypeOf fn)",
         "a = TypeOf Control Is This",
         "a = TypeOf Control Is This Or TypeOf Control Is That",])
-# << Parsing tests >> (3 of 60)
+# << Parsing tests >> (3 of 61)
 # Using ByVal and ByRef in a call or expression
 tests.extend([
 'a = fn(ByVal b)',
@@ -166,7 +167,7 @@ tests.extend([
 'fn ByRef a, ByRef b, ByRef c',
 
 ])
-# << Parsing tests >> (4 of 60)
+# << Parsing tests >> (4 of 61)
 # One line comments
 tests.append("""
 a = 10
@@ -260,7 +261,7 @@ End Function ' other nasty comment
 """,
 
 ])
-# << Parsing tests >> (5 of 60)
+# << Parsing tests >> (5 of 61)
 # Directives
 tests.extend([
     "' VB2PY-Set General.Blah = Yes",
@@ -268,7 +269,7 @@ tests.extend([
     "' VB2PY-Unset General.Blah",
     "' VB2PY-Add: General.Option = 10",
 ])
-# << Parsing tests >> (6 of 60)
+# << Parsing tests >> (6 of 61)
 # Two line continuations
 tests.append("""
 a = _
@@ -301,7 +302,7 @@ End Function
 """,
 
 ])
-# << Parsing tests >> (7 of 60)
+# << Parsing tests >> (7 of 61)
 # Simple dims
 tests.extend([
         "Dim A",
@@ -355,7 +356,7 @@ tests.extend([
         "Static variable As Object.OtherObj, B, C, D, E",
         "Static Var As Variant",
 ])
-# << Parsing tests >> (8 of 60)
+# << Parsing tests >> (8 of 61)
 # Arrays
 tests.extend([
     "Dim a(10)",
@@ -390,7 +391,7 @@ With Obj
 End With
 """,
 ])
-# << Parsing tests >> (9 of 60)
+# << Parsing tests >> (9 of 61)
 # Constants with different types
 tests.extend([
     "Const a = 10",
@@ -430,12 +431,12 @@ tests.extend([
         'Const a As Integer = 10, b As String = "hello", c As String * 10 = 43',
         'Private Const a As Integer = 10, b As String = "hello", c As String * 10 = 43',
 ])
-# << Parsing tests >> (10 of 60)
+# << Parsing tests >> (10 of 61)
 # Odds and ends
 tests.extend([
 "Private WithEvents A As Button",
 ])
-# << Parsing tests >> (11 of 60)
+# << Parsing tests >> (11 of 61)
 # Bare calls
 tests.extend([
         "subr",
@@ -485,7 +486,7 @@ tests.extend([
         "subr ,,,,0",
         "subr 10, , , , 5",
 ])
-# << Parsing tests >> (12 of 60)
+# << Parsing tests >> (12 of 61)
 # labels
 tests.extend([
     "label:",
@@ -580,7 +581,7 @@ tests.extend([
 """,
 
 ])
-# << Parsing tests >> (13 of 60)
+# << Parsing tests >> (13 of 61)
 # simple multi-line statements
 tests.extend([
     "a = 10: b = 20",
@@ -602,7 +603,7 @@ tests.extend([
     "a = 10: b = 20:\nc=1: d=1: e=2",
     "a=10:\nb=20:\nc=1",
 ])
-# << Parsing tests >> (14 of 60)
+# << Parsing tests >> (14 of 61)
 # open statements
 tests.extend([
     "Open fn For Output As 12",
@@ -631,7 +632,7 @@ tests.extend([
     "Close #1,#2,#3,#4",
     "Close   #1   ,   #2   ,   #3   ,   #4   ",
 ])
-# << Parsing tests >> (15 of 60)
+# << Parsing tests >> (15 of 61)
 # print# statements
 tests.extend([
     "Print 10",
@@ -679,7 +680,7 @@ tests.extend([
     "10: Seek #filenum, value ' comment",
     "Seek #filenum, value ' comment",
 ])
-# << Parsing tests >> (16 of 60)
+# << Parsing tests >> (16 of 61)
 tests.extend([
     'Private Declare Function FileTimeToSystemTime Lib "kernel32" (ftFileTime As FILETIME, stSystemTime As SYSTEMTIME) As Long',
     'Private Declare Sub Sleep Lib "kernel32" (ByVal dwMilliseconds As Long)',
@@ -689,7 +690,7 @@ tests.extend([
     'Private Declare Function GetFileAttributes Lib "kernel32" _ \n(ByVal lpFileName As String , A) As Long',
     'Private Declare Function GetFileAttributes Lib "kernel32" _ \n(ByVal lpFileName As String ) As Long',
 ])
-# << Parsing tests >> (17 of 60)
+# << Parsing tests >> (17 of 61)
 # General on error goto
 tests.extend([
     "On Error GoTo 100",
@@ -761,7 +762,7 @@ tests.extend([
     "100: On Error GoTo lbl:\na=1",
     "100: On Error GoTo lbl: ' comment",
 ])
-# << Parsing tests >> (18 of 60)
+# << Parsing tests >> (18 of 61)
 # Lines
 tests.extend([
         "Line (10,20)-(30,40), 10, 20",
@@ -772,7 +773,7 @@ tests.extend([
 tests.extend([
         "Move (Screen.Width - Width) / 2, (Screen.Height - Height) / 2",
 ])
-# << Parsing tests >> (19 of 60)
+# << Parsing tests >> (19 of 61)
 # General name test (rename a file)
 tests.extend([
         "Name file As otherfile",
@@ -780,7 +781,7 @@ tests.extend([
         "Name file & extension As otherfile & otherextension",
         'Name path & "\origname.txt" As path & "\knewname.txt"',
 ])
-# << Parsing tests >> (20 of 60)
+# << Parsing tests >> (20 of 61)
 # Attributes at the head of a file
 tests.extend([
     'Attribute VB_Name = "frmMain"',
@@ -792,7 +793,7 @@ tests.extend([
     'Attribute Me.VB_Exposed = False, 1, 2, 3, 4',
     'Attribute Me.VB_Exposed = False, "1", "2, 3,", 4',
 ])
-# << Parsing tests >> (21 of 60)
+# << Parsing tests >> (21 of 61)
 # Attributes at the head of a file
 tests.extend([
 """
@@ -812,7 +813,7 @@ Enum thing
 End Enum
 """,
 ])
-# << Parsing tests >> (22 of 60)
+# << Parsing tests >> (22 of 61)
 # Types
 tests.extend([
 """
@@ -825,7 +826,7 @@ Private Type ShellFileInfoType
 End Type
 """
 ])
-# << Parsing tests >> (23 of 60)
+# << Parsing tests >> (23 of 61)
 # The Option statement
 tests.extend([
 "Option Base 0",
@@ -834,7 +835,7 @@ tests.extend([
 "Option String Compare",
 "Option String Compare Text",
 ])
-# << Parsing tests >> (24 of 60)
+# << Parsing tests >> (24 of 61)
 # The End statement
 tests.extend([
 "10: End",
@@ -870,7 +871,7 @@ With obj
  End
 End With
 """)
-# << Parsing tests >> (25 of 60)
+# << Parsing tests >> (25 of 61)
 # The Event statement
 tests.extend([
 "Event doit()",
@@ -879,7 +880,7 @@ tests.extend([
 "Public Event doit(a, b, c, e)",
 "Public Event doit(a As Integer, b As Long, c(), e As Command.Button)",
 ])
-# << Parsing tests >> (26 of 60)
+# << Parsing tests >> (26 of 61)
 # The Debug.Print statement
 tests.extend([
 "Debug.Print",
@@ -890,14 +891,31 @@ tests.extend([
 "Debug.Print a+20, b-20",
 "Debug.Print a;b;",
 ])
-# << Parsing tests >> (27 of 60)
+# << Parsing tests >> (27 of 61)
 # Recordset notation
 tests.extend([
 "RS!diskID = DriveID",
 "RS!diskID = DriveID+10",
 'RS!diskID = "DriveID"',
 ])
-# << Parsing tests >> (28 of 60)
+# << Parsing tests >> (28 of 61)
+# Unicode
+tests.extend([
+'cIÅ  = 10',
+'a = cIÅ + 30',
+'a = "cIÅ there"',
+
+])
+
+# Unicode sub
+tests.append("""
+Sub cIÅ()
+a=10
+n=20
+c="hello"
+End Sub
+""")
+# << Parsing tests >> (29 of 61)
 # Simple If
 tests.append("""
 If a = 10 Then
@@ -953,7 +971,7 @@ tests.append("""
 20:   	b=2  ' antoher here
 30: End If ' here too
 """)
-# << Parsing tests >> (29 of 60)
+# << Parsing tests >> (30 of 61)
 # Simple If/Else
 tests.append("""
 If a = 10 Then
@@ -1002,7 +1020,7 @@ Else
     h = 1234
 End If
 """)
-# << Parsing tests >> (30 of 60)
+# << Parsing tests >> (31 of 61)
 # Simple If/Else
 tests.append("""
 If a = 10 Then
@@ -1045,7 +1063,7 @@ ElseIf k < 43 Then
     h = 1234
 End If
 """)
-# << Parsing tests >> (31 of 60)
+# << Parsing tests >> (32 of 61)
 # Simple If/Else
 tests.append("""
 If a = 10 Then
@@ -1100,7 +1118,7 @@ Else
     doIt
 End If
 """)
-# << Parsing tests >> (32 of 60)
+# << Parsing tests >> (33 of 61)
 # Simple Nested If
 tests.append("""
 If a = 10 Then
@@ -1133,7 +1151,7 @@ Else
     k = 3234
 End If
 """)
-# << Parsing tests >> (33 of 60)
+# << Parsing tests >> (34 of 61)
 # Inline ifs
 tests.extend([
         "If a = 10 Then b = 20",
@@ -1157,7 +1175,7 @@ tests.extend([
 tests.extend([
         "If a = 10 Then b a\nc=1",
 ])
-# << Parsing tests >> (34 of 60)
+# << Parsing tests >> (35 of 61)
 # #If
 tests.append("""
 #If a = 10 Then
@@ -1224,7 +1242,7 @@ tests.append("""
     c=2
 #End If
 """)
-# << Parsing tests >> (35 of 60)
+# << Parsing tests >> (36 of 61)
 # simple sub
 tests.append("""
 Sub MySub()
@@ -1284,7 +1302,7 @@ n=20
 c="hello"
 End Sub
 """)
-# << Parsing tests >> (36 of 60)
+# << Parsing tests >> (37 of 61)
 # simple sub
 tests.append("""
 Sub MySub(x, y, z, a, b, c)
@@ -1319,7 +1337,7 @@ n=20
 c="hello"
 End Sub
 """)
-# << Parsing tests >> (37 of 60)
+# << Parsing tests >> (38 of 61)
 # simple sub
 tests.append("""
 Sub MySub(x As Single, y, z As Boolean, a, b As Variant, c)
@@ -1354,7 +1372,7 @@ n=20
 c="hello"
 End Sub
 """)
-# << Parsing tests >> (38 of 60)
+# << Parsing tests >> (39 of 61)
 # simple sub
 tests.append("""
 Sub MySub(x As Single, y, z As Boolean, a, Optional b As Variant, c)
@@ -1407,7 +1425,7 @@ n=20
 c="hello"
 End Sub
 """)
-# << Parsing tests >> (39 of 60)
+# << Parsing tests >> (40 of 61)
 # ByVal, ByRef args
 tests.append("""
 Sub MySub(ByVal a, ByRef y)
@@ -1440,7 +1458,7 @@ n=20
 c="hello"
 End Sub
 """)
-# << Parsing tests >> (40 of 60)
+# << Parsing tests >> (41 of 61)
 # 852166 Sub X<spc>(a,b,c) fails to parse 
 tests.append("""
 Sub MySub (ByVal a, ByRef y)
@@ -1459,7 +1477,7 @@ n=20
 c="hello"
 End Sub
 """)
-# << Parsing tests >> (41 of 60)
+# << Parsing tests >> (42 of 61)
 # simple fn
 tests.append("""
 Function MyFn()
@@ -1518,7 +1536,7 @@ c="hello"
 MyFn = 20
 End Function
 """)
-# << Parsing tests >> (42 of 60)
+# << Parsing tests >> (43 of 61)
 # simple sub
 tests.append("""
 Function MySub(x, y, z, a, b, c)
@@ -1553,7 +1571,7 @@ n=20
 c="hello"
 End Function
 """)
-# << Parsing tests >> (43 of 60)
+# << Parsing tests >> (44 of 61)
 # simple sub
 tests.append("""
 Function fn(x As Single, y, z As Boolean, a, b As Variant, c) As Single
@@ -1597,7 +1615,7 @@ n=20
 c="hello"
 End Function
 """)
-# << Parsing tests >> (44 of 60)
+# << Parsing tests >> (45 of 61)
 # simple sub
 tests.append("""
 Function fn(x As Single, y, z As Boolean, a, Optional b As Variant, c) As Single
@@ -1650,7 +1668,7 @@ n=20
 c="hello"
 End Function
 """)
-# << Parsing tests >> (45 of 60)
+# << Parsing tests >> (46 of 61)
 # ByVal, ByRef args
 tests.append("""
 Function MySub(ByVal a, ByRef y)
@@ -1683,7 +1701,7 @@ n=20
 c="hello"
 End Function
 """)
-# << Parsing tests >> (46 of 60)
+# << Parsing tests >> (47 of 61)
 # Simple property let/get/set
 tests.extend(["""
 Property Let MyProp(NewVal As String)
@@ -1760,7 +1778,7 @@ tests.extend(["""
 1: End Property  ' comment
 """
 ])
-# << Parsing tests >> (47 of 60)
+# << Parsing tests >> (48 of 61)
 # Simple case
 tests.append("""
 Select Case x
@@ -1877,7 +1895,7 @@ Case "three"
     z = 3
 End Select
 """)
-# << Parsing tests >> (48 of 60)
+# << Parsing tests >> (49 of 61)
 # Simple for
 tests.append("""
 For i = 0 To 1000
@@ -1929,7 +1947,14 @@ For i = 0 To 1000
   Next j
 Next i
 """)
-# << Parsing tests >> (49 of 60)
+
+# Dotted names - what does this even mean?
+tests.append("""
+For me.you = 0 To 1000 Step 2
+  a = a + 1
+Next me.you
+""")
+# << Parsing tests >> (50 of 61)
 # Simple for
 tests.append("""
 For Each i In coll
@@ -1968,7 +1993,7 @@ For Each i In coll
   Next j
 Next i
 """)
-# << Parsing tests >> (50 of 60)
+# << Parsing tests >> (51 of 61)
 # Simple while wend
 tests.append("""
         a = 0
@@ -1998,7 +2023,7 @@ tests.append("""
 4:			a = a + 1
 5:		Wend
 """)
-# << Parsing tests >> (51 of 60)
+# << Parsing tests >> (52 of 61)
 # Simple do while loop
 tests.append("""
         a = 0
@@ -2029,7 +2054,7 @@ tests.append("""
             Loop
         Loop
 """)
-# << Parsing tests >> (52 of 60)
+# << Parsing tests >> (53 of 61)
 # Simple do  loop
 tests.append("""
         a = 0
@@ -2060,7 +2085,7 @@ tests.append("""
             Loop
         Loop
 """)
-# << Parsing tests >> (53 of 60)
+# << Parsing tests >> (54 of 61)
 # Simple do  loop
 tests.append("""
         a = 0
@@ -2091,7 +2116,7 @@ tests.append("""
             Loop While a <10
         Loop While a< 10
 """)
-# << Parsing tests >> (54 of 60)
+# << Parsing tests >> (55 of 61)
 # Simple do  loop
 tests.append("""
         a = 0
@@ -2122,7 +2147,7 @@ tests.append("""
             Loop While a <10
         Loop Until a< 10
 """)
-# << Parsing tests >> (55 of 60)
+# << Parsing tests >> (56 of 61)
 # Simple do  loop
 tests.append("""
         a = 0
@@ -2153,7 +2178,7 @@ tests.append("""
             Loop 
         Loop 
 """)
-# << Parsing tests >> (56 of 60)
+# << Parsing tests >> (57 of 61)
 # simple type
 tests.append("""
 Type myType
@@ -2189,7 +2214,7 @@ Private Type myType
     C As MyClass.MyType
 End Type
 """)
-# << Parsing tests >> (57 of 60)
+# << Parsing tests >> (58 of 61)
 # General with with just the structure
 tests.append("""
 With MyObject
@@ -2235,7 +2260,7 @@ tests.append("""
 With MyObject
 End With
 """)
-# << Parsing tests >> (58 of 60)
+# << Parsing tests >> (59 of 61)
 # Simple header found at the top of most class files
 tests.append("""
 VERSION 1.0 CLASS
@@ -2247,7 +2272,7 @@ BEGIN
   MTSTransactionMode  = 0  'NotAnMTSObject
 END
 """)
-# << Parsing tests >> (59 of 60)
+# << Parsing tests >> (60 of 61)
 # Simple enumeration
 tests.append("""
 Enum MyEnum
@@ -2291,7 +2316,7 @@ Enum MyEnum ' yeah
     five
 End Enum
 """)
-# << Parsing tests >> (60 of 60)
+# << Parsing tests >> (61 of 61)
 failures = [
         "If a = 10 Then d = 1 Else If k = 12 Then b = 12",
         "If a = 10 Then d = 1 Else If k = 12 Then b = 12 Else g=123",

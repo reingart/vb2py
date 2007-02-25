@@ -287,7 +287,7 @@
 <v t="pap.120703001453.183"><vh>End statement</vh></v>
 <v t="pap.120703001453.184"><vh>Event definition</vh></v>
 </v>
-<v t="pap.120703001453.185"><vh>Compound statements</vh>
+<v t="pap.120703001453.185" a="E"><vh>Compound statements</vh>
 <v t="pap.120703001453.186"><vh>Do/While etc</vh></v>
 <v t="pap.120703001453.187"><vh>Select case</vh></v>
 <v t="pap.120703001453.188"><vh>If</vh></v>
@@ -305,7 +305,7 @@
 <v t="pap.120703001453.199"><vh>option_statement</vh></v>
 </v>
 </v>
-<v t="pap.120703001453.200" a="ETV"><vh>vbparser.py</vh>
+<v t="pap.120703001453.200" a="E"><vh>vbparser.py</vh>
 <v t="pap.120703001453.201"><vh>&lt;&lt; Imports &gt;&gt;</vh></v>
 <v t="pap.120703001453.202"><vh>&lt;&lt; Error Classes &gt;&gt;</vh></v>
 <v t="pap.120703001453.203"><vh>&lt;&lt; Definitions &gt;&gt;</vh></v>
@@ -419,7 +419,7 @@
 <v t="PAP.20040428010229.2"><vh>renderAsCode</vh></v>
 </v>
 </v>
-<v t="pap.120703001453.286" a="E"><vh>Expression</vh>
+<v t="pap.120703001453.286"><vh>Expression</vh>
 <v t="pap.120703001453.287" a="E"><vh>VBExpression</vh>
 <v t="pap.120703001453.288"><vh>__init__</vh></v>
 <v t="pap.120703001453.289"><vh>renderAsCode</vh></v>
@@ -484,7 +484,7 @@
 <v t="pap.20041207011116"><vh>renderDeclarations</vh></v>
 </v>
 </v>
-<v t="pap.120703001453.330" a="E"><vh>Single Statements</vh>
+<v t="pap.120703001453.330"><vh>Single Statements</vh>
 <v t="pap.120703001453.331" a="E"><vh>VBVariableDefinition</vh>
 <v t="pap.120703001453.332"><vh>renderAsCode</vh></v>
 </v>
@@ -585,8 +585,8 @@
 <v t="pap.120703001453.404"><vh>renderAsCode</vh></v>
 </v>
 </v>
-<v t="pap.120703001453.405"><vh>Select</vh>
-<v t="pap.120703001453.406"><vh>VBSelect</vh>
+<v t="pap.120703001453.405" a="E"><vh>Select</vh>
+<v t="pap.120703001453.406" a="E"><vh>VBSelect</vh>
 <v t="pap.120703001453.407"><vh>__init__</vh></v>
 <v t="pap.120703001453.408"><vh>renderAsCode</vh></v>
 <v t="pap.120703001453.409"><vh>getSelectVariable</vh></v>
@@ -603,11 +603,12 @@
 <v t="pap.120703001453.415"><vh>renderAsCode</vh></v>
 </v>
 </v>
-<v t="pap.120703001453.416"><vh>VBFor</vh>
+<v t="pap.120703001453.416" a="E"><vh>VBFor</vh>
 <v t="pap.120703001453.417"><vh>__init__</vh></v>
 <v t="pap.120703001453.418"><vh>renderAsCode</vh></v>
+<v t="pap.20070225000746"><vh>handleDottedName</vh></v>
 </v>
-<v t="pap.120703001453.419"><vh>VBForEach</vh>
+<v t="pap.120703001453.419" a="E"><vh>VBForEach</vh>
 <v t="pap.120703001453.420"><vh>renderAsCode</vh></v>
 </v>
 <v t="pap.120703001453.421"><vh>While</vh>
@@ -872,10 +873,10 @@ expanded="pap.20070203172243.3,"><vh>@thin interactive.py</vh></v>
 <v t="pap.120703001453.600" a="E"><vh>Testing</vh>
 <v t="pap.120703001453.601"><vh>__init__.py</vh></v>
 <v t="pap.120703001453.602" a="E"><vh>Mini parser for quick testing</vh>
-<v t="pap.120703001453.607"><vh>Expressions</vh></v>
+<v t="pap.120703001453.656"><vh>For</vh></v>
 </v>
 <v t="pap.120703001453.604" a="E"><vh>Test Parsing</vh>
-<v t="pap.120703001453.605" a="E"><vh>Single statements</vh>
+<v t="pap.120703001453.605"><vh>Single statements</vh>
 <v t="pap.120703001453.606"><vh>Assignment</vh></v>
 <v t="pap.120703001453.607"><vh>Expressions</vh></v>
 <v t="pap.120703001453.608"><vh>ByVal and ByRef</vh></v>
@@ -917,7 +918,7 @@ expanded="pap.20070203172243.3,"><vh>@thin interactive.py</vh></v>
 <v t="pap.120703001453.639"><vh>Inline If</vh></v>
 <v t="pap.120703001453.640"><vh>#if</vh></v>
 </v>
-<v t="pap.120703001453.641" a="E"><vh>Subroutines</vh>
+<v t="pap.120703001453.641"><vh>Subroutines</vh>
 <v t="pap.120703001453.642"><vh>Simple subroutine</vh></v>
 <v t="pap.120703001453.643"><vh>Subroutine with arguments</vh></v>
 <v t="pap.120703001453.644"><vh>Subroutine with typed arguments</vh></v>
@@ -934,7 +935,7 @@ expanded="pap.20070203172243.3,"><vh>@thin interactive.py</vh></v>
 </v>
 <v t="pap.120703001453.653"><vh>Properties</vh></v>
 <v t="pap.120703001453.654"><vh>Select</vh></v>
-<v t="pap.120703001453.655"><vh>For statements</vh>
+<v t="pap.120703001453.655" a="E"><vh>For statements</vh>
 <v t="pap.120703001453.656"><vh>For</vh></v>
 <v t="pap.120703001453.657"><vh>For each</vh></v>
 </v>
@@ -963,7 +964,7 @@ expanded="pap.20070203172243.3,"><vh>@thin interactive.py</vh></v>
 </v>
 <v t="PAP.20040125002850.1"><vh>getScriptTestMethod</vh></v>
 </v>
-<v t="pap.120703001453.676" a="E"><vh>Variable assignment</vh>
+<v t="pap.120703001453.676"><vh>Variable assignment</vh>
 <v t="pap.120703001453.677"><vh>General</vh></v>
 <v t="pap.120703001453.678"><vh>General - Let</vh></v>
 <v t="pap.120703001453.679"><vh>Expressions</vh></v>
@@ -993,8 +994,8 @@ expanded="pap.20070203172243.3,"><vh>@thin interactive.py</vh></v>
 <v t="pap.120703001453.699"><vh>Nested Select with multiple values</vh></v>
 <v t="PAP.20040122000733"><vh>Using Is</vh></v>
 </v>
-<v t="pap.120703001453.700"><vh>Test For</vh>
-<v t="pap.120703001453.701"><vh>Basic For</vh></v>
+<v t="pap.120703001453.700" a="E"><vh>Test For</vh>
+<v t="pap.120703001453.701" a="V"><vh>Basic For</vh></v>
 <v t="pap.120703001453.702"><vh>Nested For</vh></v>
 <v t="pap.120703001453.703"><vh>For each</vh></v>
 <v t="pap.120703001453.704"><vh>Non-integer</vh></v>
@@ -1689,7 +1690,7 @@ expanded="pap.20070203172243.3,"><vh>@thin interactive.py</vh></v>
 <v t="pap.120703001453.654"><vh>Select</vh></v>
 <v t="pap.120703001453.187"><vh>Select case</vh></v>
 <v t="pap.120703001453.405"><vh>Select</vh>
-<v t="pap.120703001453.406"><vh>VBSelect</vh>
+<v t="pap.120703001453.406" a="E"><vh>VBSelect</vh>
 <v t="pap.120703001453.407"><vh>__init__</vh></v>
 <v t="pap.120703001453.408"><vh>renderAsCode</vh></v>
 <v t="pap.120703001453.409"><vh>getSelectVariable</vh></v>
@@ -1730,7 +1731,7 @@ expanded="pap.20070203172243.3,"><vh>@thin interactive.py</vh></v>
 <v t="pap.120703001453.1129"><vh>Select</vh>
 <v t="pap.120703001453.187"><vh>Select case</vh></v>
 <v t="pap.120703001453.405"><vh>Select</vh>
-<v t="pap.120703001453.406"><vh>VBSelect</vh>
+<v t="pap.120703001453.406" a="E"><vh>VBSelect</vh>
 <v t="pap.120703001453.407"><vh>__init__</vh></v>
 <v t="pap.120703001453.408"><vh>renderAsCode</vh></v>
 <v t="pap.120703001453.409"><vh>getSelectVariable</vh></v>
@@ -1869,6 +1870,7 @@ expanded="pap.20070203172243.3,"><vh>@thin interactive.py</vh></v>
 <v t="pap.120703001453.416"><vh>VBFor</vh>
 <v t="pap.120703001453.417"><vh>__init__</vh></v>
 <v t="pap.120703001453.418"><vh>renderAsCode</vh></v>
+<v t="pap.20070225000746"><vh>handleDottedName</vh></v>
 </v>
 <v t="pap.120703001453.419"><vh>VBForEach</vh>
 <v t="pap.120703001453.420"><vh>renderAsCode</vh></v>
@@ -7421,24 +7423,24 @@ inline_block ::=
 			  
 </t>
 <t tx="pap.120703001453.189">for_statement ::=
-                c"For", wsp+, identifier, wsp*, "=", wsp*, 
+                c"For", wsp+, object, wsp*, "=", wsp*, 
                 expression, c"To", wsp+, expression, for_stepping?, line_end,
                 block?,
-                label_definition?, c"Next", (wsp+, identifier)?
+                label_definition?, c"Next", (wsp+, object)?
 
 for_stepping ::=
                 c"Step", expression
 
 for_each_statement ::=
-                c"For", wsp+, c"Each", wsp+, identifier, wsp*, c"In", wsp+, 
+                c"For", wsp+, c"Each", wsp+, object, wsp*, c"In", wsp+, 
                 expression, line_end,
                 block?,
-                label_definition?, c"Next", (wsp+, identifier)?
+                label_definition?, c"Next", (wsp+, object)?
 				
 inline_for_statement ::=				
-                c"For", wsp+, identifier, wsp*, "=", wsp*,
+                c"For", wsp+, object, wsp*, "=", wsp*,
 				expression, c"To", wsp+, expression, for_stepping?, 
-				colon, body, c"Next", (wsp+, identifier)?	
+				colon, body, c"Next", (wsp+, object)?	
 				
 body ::=
 			    (implicit_call_statement / (single_statement, colon))*</t>
@@ -10218,6 +10220,8 @@ def renderAsCode(self, indent=0):
 class VBFor(VBCodeBlock):
 	"""Represents a for statement"""
 	
+    _for_variable_index = 0
+
 	&lt;&lt; VBFor methods &gt;&gt;</t>
 <t tx="pap.120703001453.417">&lt;&lt; VBFor methods &gt;&gt;=
 
@@ -10235,7 +10239,7 @@ def __init__(self, scope="Private"):
 	}
 	
 	self.auto_handlers = [
-		"identifier",
+		"object",
 	]
 </t>
 <t tx="pap.120703001453.418">&lt;&lt; VBFor methods &gt;&gt;=
@@ -10243,10 +10247,13 @@ def __init__(self, scope="Private"):
 def renderAsCode(self, indent=0):
 	"""Render this element as code"""
 	range_statement = ", ".join([item.renderAsCode() for item in self.expressions])
-	return "%sfor %s in vbForRange(%s):\n%s" % (
+    # Watch out for the weird dotted name in the for
+    self.handleDottedName(indent)
+	return "%sfor %s in vbForRange(%s):\n%s%s" % (
 							 self.getIndent(indent),
-							 self.identifier,
+							 self.loopname,
 							 range_statement,
+                             self.copiedname,
 							 self.block.renderAsCode(indent+1))
 </t>
 <t tx="pap.120703001453.419">&lt;&lt; Classes &gt;&gt;=
@@ -10259,10 +10266,13 @@ class VBForEach(VBFor):
 
 def renderAsCode(self, indent=0):
 	"""Render this element as code"""
-	return "%sfor %s in %s:\n%s" % (
+    # Watch out for the weird dotted name in the for
+    self.handleDottedName(indent)    
+	return "%sfor %s in %s:\n%s%s" % (
 							 self.getIndent(indent),
-							 self.identifier,
+							 self.loopname,
 							 self.expressions[0].renderAsCode(),
+                             self.copiedname,
 							 self.block.renderAsCode(indent+1))
 </t>
 <t tx="pap.120703001453.421">&lt;&lt; Classes &gt;&gt;=
@@ -15091,7 +15101,13 @@ For i = 0 To 1000
   Next j
 Next i
 """)
-</t>
+
+# Dotted names - what does this even mean?
+tests.append("""
+For me.you = 0 To 1000 Step 2
+  a = a + 1
+Next me.you
+""")</t>
 <t tx="pap.120703001453.657">&lt;&lt; Parsing tests &gt;&gt;=
 
 # Simple for
@@ -16347,7 +16363,15 @@ For _var = 1 To 10
 	Exit For
 Next _var
 """, {"j" : 1}))
-</t>
+
+# Bizarre dotted name
+tests.append(("""
+Dim _me As Object
+j = 0
+For _me.you = 1 To 10
+	j = j + _me.you
+Next _me.you
+""", {"j" : 55}))</t>
 <t tx="pap.120703001453.702">&lt;&lt; For tests &gt;&gt;=
 
 # Nested loop
@@ -29867,6 +29891,31 @@ except Exception, err:
     log.warn("Failed to build parse (%s) - trying case sensitive grammar" % err)
     parser = Parser(declaration.replace('c"', ' "'), starttoken)
     log.info("Downgraded to case sensitive grammar")
+</t>
+<t tx="pap.20070225000746">&lt;&lt; VBFor methods &gt;&gt;=
+
+def handleDottedName(self, indent):
+	"""Handle a dotted name as the identifier
+    
+    The For can reference a dotted name, which presumably changes the
+    value of that attribute. We can only do this by a local re-assignment
+    
+    """
+    name = self.object
+    if "." not in name:
+        # Ok, normal case
+        self.loopname = name
+        self.copiedname = ""
+    else:
+        # Ooops, assigning to a dotted name in the loop
+        self.loopname = "_idx%s" % VBFor._for_variable_index
+        VBFor._for_variable_index += 1
+        self.copiedname = "%s%s = %s\n" % (
+            self.getIndent(indent+1),
+            name,
+            self.loopname
+        )
+    	
 </t>
 </tnodes>
 </leo_file>

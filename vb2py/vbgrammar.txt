@@ -643,24 +643,24 @@ inline_block ::=
 #@-node:If
 #@+node:For and for each
 for_statement ::=
-                c"For", wsp+, identifier, wsp*, "=", wsp*, 
+                c"For", wsp+, object, wsp*, "=", wsp*, 
                 expression, c"To", wsp+, expression, for_stepping?, line_end,
                 block?,
-                label_definition?, c"Next", (wsp+, identifier)?
+                label_definition?, c"Next", (wsp+, object)?
 
 for_stepping ::=
                 c"Step", expression
 
 for_each_statement ::=
-                c"For", wsp+, c"Each", wsp+, identifier, wsp*, c"In", wsp+, 
+                c"For", wsp+, c"Each", wsp+, object, wsp*, c"In", wsp+, 
                 expression, line_end,
                 block?,
-                label_definition?, c"Next", (wsp+, identifier)?
+                label_definition?, c"Next", (wsp+, object)?
 				
 inline_for_statement ::=				
-                c"For", wsp+, identifier, wsp*, "=", wsp*,
+                c"For", wsp+, object, wsp*, "=", wsp*,
 				expression, c"To", wsp+, expression, for_stepping?, 
-				colon, body, c"Next", (wsp+, identifier)?	
+				colon, body, c"Next", (wsp+, object)?	
 				
 body ::=
 			    (implicit_call_statement / (single_statement, colon))*
