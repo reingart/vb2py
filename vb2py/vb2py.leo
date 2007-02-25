@@ -305,7 +305,7 @@
 <v t="pap.120703001453.199"><vh>option_statement</vh></v>
 </v>
 </v>
-<v t="pap.120703001453.200" a="E"><vh>vbparser.py</vh>
+<v t="pap.120703001453.200"><vh>vbparser.py</vh>
 <v t="pap.120703001453.201"><vh>&lt;&lt; Imports &gt;&gt;</vh></v>
 <v t="pap.120703001453.202"><vh>&lt;&lt; Error Classes &gt;&gt;</vh></v>
 <v t="pap.120703001453.203"><vh>&lt;&lt; Definitions &gt;&gt;</vh></v>
@@ -338,7 +338,7 @@
 <v t="pap.120703001453.222"><vh>VBFailedElement</vh>
 <v t="pap.120703001453.223"><vh>__init__</vh></v>
 </v>
-<v t="pap.120703001453.224"><vh>VBNamespace </vh>
+<v t="pap.120703001453.224" a="E"><vh>VBNamespace </vh>
 <v t="pap.120703001453.225"><vh>&lt;&lt; VBNamespace declarations &gt;&gt;</vh></v>
 <v t="pap.120703001453.226" a="E"><vh>__init__</vh>
 <v t="pap.120703001453.227"><vh>&lt;&lt; Get indenting Options &gt;&gt;</vh></v>
@@ -484,7 +484,7 @@
 <v t="pap.20041207011116"><vh>renderDeclarations</vh></v>
 </v>
 </v>
-<v t="pap.120703001453.330"><vh>Single Statements</vh>
+<v t="pap.120703001453.330" a="E"><vh>Single Statements</vh>
 <v t="pap.120703001453.331" a="E"><vh>VBVariableDefinition</vh>
 <v t="pap.120703001453.332"><vh>renderAsCode</vh></v>
 </v>
@@ -524,8 +524,8 @@
 <v t="pap.120703001453.358"><vh>asString</vh></v>
 </v>
 <v t="pap.120703001453.359"><vh>VBLabel</vh></v>
-<v t="pap.120703001453.360"><vh>File related</vh>
-<v t="pap.120703001453.361"><vh>VBOpen</vh>
+<v t="pap.120703001453.360" a="E"><vh>File related</vh>
+<v t="pap.120703001453.361" a="E"><vh>VBOpen</vh>
 <v t="pap.120703001453.362"><vh>__init__</vh></v>
 <v t="pap.120703001453.363"><vh>renderAsCode</vh></v>
 </v>
@@ -555,7 +555,7 @@
 </v>
 </v>
 </v>
-<v t="pap.120703001453.382" a="E"><vh>Compound Statements</vh>
+<v t="pap.120703001453.382"><vh>Compound Statements</vh>
 <v t="pap.120703001453.383"><vh>VBUserType</vh>
 <v t="pap.120703001453.384"><vh>__init__</vh></v>
 <v t="pap.120703001453.385"><vh>renderAsCode</vh></v>
@@ -585,7 +585,7 @@
 <v t="pap.120703001453.404"><vh>renderAsCode</vh></v>
 </v>
 </v>
-<v t="pap.120703001453.405" a="E"><vh>Select</vh>
+<v t="pap.120703001453.405"><vh>Select</vh>
 <v t="pap.120703001453.406" a="E"><vh>VBSelect</vh>
 <v t="pap.120703001453.407"><vh>__init__</vh></v>
 <v t="pap.120703001453.408"><vh>renderAsCode</vh></v>
@@ -603,7 +603,7 @@
 <v t="pap.120703001453.415"><vh>renderAsCode</vh></v>
 </v>
 </v>
-<v t="pap.120703001453.416" a="E"><vh>VBFor</vh>
+<v t="pap.120703001453.416"><vh>VBFor</vh>
 <v t="pap.120703001453.417"><vh>__init__</vh></v>
 <v t="pap.120703001453.418"><vh>renderAsCode</vh></v>
 <v t="pap.20070225000746"><vh>handleDottedName</vh></v>
@@ -7276,7 +7276,7 @@ print_separator ::=
 </t>
 <t tx="pap.120703001453.178">open_statement ::=
         label_definition?, c"Open", wsp+, filename, c"For", wsp+, open_mode+, c"As", wsp+, "#"?, channel,
-        (wsp*, c"Len", wsp+, access_length)?
+        (wsp*, c"Len", wsp*, "=", wsp*, access_length)?
         
 filename ::=
         expression
@@ -9550,11 +9550,13 @@ def __init__(self, scope="Private"):
 	self.filename = None
 	self.open_modes = []
 	self.channel = None
+    self.access_length = None
 	#
 	self.auto_class_handlers = ({
 		"filename" : (VBParExpression, "filename"),
 		"open_mode" : (VBConsumer, self.open_modes),
 		"channel" : (VBParExpression, "channel"),
+        "access_length" : (VBParExpression, "access_length"),
 	})
 	#
 	self.open_mode_lookup = {
@@ -9577,6 +9579,8 @@ def renderAsCode(self, indent=0):
 			file_mode += self.open_mode_lookup[m.strip()]
 		except KeyError:
 			todo.append("'%s'" % m.strip())
+    if self.access_length is not None:
+        todo.append("Access length is not supported (%s)" % self.access_length.renderAsCode())
 	if todo:
 		todo_warning = self.getWarning("UnknownFileMode", ", ".join(todo))	
 	else:
@@ -13758,7 +13762,7 @@ tests.extend([
 	"Open fn For Input As #12",
 	"Open fn.gk.gl() For Input As #NxtChn()",
 	"Open fn For Append Lock Write As 23",
-    "Open fn For Random As 23 Len 1234",
+    "Open fn For Random As 23 Len = 1234",
 	"Close 1",
 	"Close #1",
 	"Close channel",
@@ -17935,7 +17939,7 @@ c = _a(3)
 
 # Open with Random access
 tests.append((r"""
-Open "%s" For Random As #3 Len 2
+Open "%s" For Random As #3 Len = 2
 ' !!!!Dont expect this to work!!!!
 Input #3, a
 Input #3, b

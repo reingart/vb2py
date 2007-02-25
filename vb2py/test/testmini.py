@@ -24,7 +24,7 @@ tests.extend([
     "Open fn For Input As #12",
     "Open fn.gk.gl() For Input As #NxtChn()",
     "Open fn For Append Lock Write As 23",
-    "Open fn For Random As 23 Len 1234",
+    "Open fn For Random As 23 Len = 1234",
     "Close 1",
     "Close #1",
     "Close channel",

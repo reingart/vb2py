@@ -62,7 +62,7 @@ c = _a(3)
 
 # Open with Random access
 tests.append((r"""
-Open "%s" For Random As #3 Len 2
+Open "%s" For Random As #3 Len = 2
 ' !!!!Dont expect this to work!!!!
 Input #3, a
 Input #3, b

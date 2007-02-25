@@ -471,7 +471,7 @@ seek_statement ::=
 #@+node:Open/Close
 open_statement ::=
         label_definition?, c"Open", wsp+, filename, c"For", wsp+, open_mode+, c"As", wsp+, "#"?, channel,
-        (wsp*, c"Len", wsp+, access_length)?
+        (wsp*, c"Len", wsp*, "=", wsp*, access_length)?
         
 filename ::=
         expression
