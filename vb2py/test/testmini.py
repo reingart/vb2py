@@ -16,12 +16,22 @@ Config.setLocalOveride("General", "ReportPartialConversion", "No")
 tests = []
 
 # << Parsing tests >>
-# Recordset notation
+# Unicode
 tests.extend([
-"RS!diskID = DriveID",
-"RS!diskID = DriveID+10",
-'RS!diskID = "DriveID"',
+'cIÅ  = 10',
+'a = cIÅ + 30',
+'a = "cIÅ there"',
+
 ])
+
+# Unicode sub
+tests.append("""
+Sub cIÅ()
+a=10
+n=20
+c="hello"
+End Sub
+""")
 # -- end -- << Parsing tests >>
 
 class ParsingTest(TestCase):

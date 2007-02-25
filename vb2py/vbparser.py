@@ -8,7 +8,9 @@ Config = config.VB2PYConfig()
 
 from pprint import pprint as pp
 from simpleparse.common import chartypes
-import sys, os
+import sys
+import os
+import re
 import utils
 
 declaration = open(utils.relativePath("vbgrammar.txt"), "r").read()
@@ -41,7 +43,7 @@ class DirectiveError(VBParserError):
 pass
 # -- end -- << Definitions >>
 
-# << Utility functions >> (1 of 8)
+# << Utility functions >> (1 of 10)
 def convertToElements(details, txt):
     """Convert a parse tree to elements"""
     ret = []
@@ -49,12 +51,14 @@ def convertToElements(details, txt):
         for item in details:
             ret.append(VBElement(item, txt))
     return ret
-# << Utility functions >> (2 of 8)
+# << Utility functions >> (2 of 10)
 def buildParseTree(vbtext, starttoken="line", verbose=0, returnpartial=0, returnast=0):
     """Parse some VB"""
 
     parser = Parser(declaration, starttoken)
     txt = applyPlugins("preProcessVBText", vbtext)
+
+    txt = makeSafeFromUnicode(txt)
 
     nodes = []
     while 1:
@@ -82,7 +86,47 @@ def buildParseTree(vbtext, starttoken="line", verbose=0, returnpartial=0, return
         txt = txt[next:]
 
     return nodes
-# << Utility functions >> (3 of 8)
+# << Utility functions >> (3 of 10)
+def makeSafeFromUnicode(text):
+    """Return a safe version of the text without unicode characters
+
+    We do some ugly hacks here to handle unicode since the SimpleParse library
+    doesn't have an easy way to deal with it.
+
+    """
+    result = []
+    letters = map(ord, text)
+    marker1 = [ord('x'), ord('X')]
+    marker2 = [ord('X'), ord('x')]    
+    #
+    # Replace all non asc characters with a marker
+    for letter in letters:
+        if letter < 128:
+            result.append(letter)
+        else:
+            result.extend(marker1)
+            result.extend(map(ord, str(letter)))
+            result.extend(marker2)
+    #
+    return "".join(map(chr, result))
+# << Utility functions >> (4 of 10)
+def makeUnicodeFromSafe(text):
+    """Recover the unicode text from a safe version of the text
+
+    We do some ugly hacks here to handle unicode since the SimpleParse library
+    doesn't have an easy way to deal with it.
+
+    """
+    def replacer(match):
+        """Replace the safe unicode thingumy"""
+        text = match.groups()[1]
+        code = int(text)
+        return chr(code)
+
+    proper_text = re.sub('(xX)(\d+)(Xx)', replacer, text)
+
+    return proper_text
+# << Utility functions >> (5 of 10)
 def parseVB(vbtext, container=None, starttoken="line", verbose=0, returnpartial=None):
     """Parse some VB"""
 
@@ -105,7 +149,7 @@ def parseVB(vbtext, container=None, starttoken="line", verbose=0, returnpartial=
             log.warn("Unhandled: %s\n%s" % (node.structure_name, node.text))
 
     return m
-# << Utility functions >> (4 of 8)
+# << Utility functions >> (6 of 10)
 def getAST(vbtext, starttoken="line", returnpartial=None):
     """Parse some VB to produce an AST"""
 
@@ -115,7 +159,7 @@ def getAST(vbtext, starttoken="line", returnpartial=None):
     nodes = buildParseTree(vbtext, starttoken, 0, returnpartial, returnast=1)
 
     return nodes
-# << Utility functions >> (5 of 8)
+# << Utility functions >> (7 of 10)
 def renderCodeStructure(structure):
     """Render a code structure as Python
 
@@ -123,12 +167,12 @@ def renderCodeStructure(structure):
 
     """
     return applyPlugins("postProcessPythonText", structure.renderAsCode())
-# << Utility functions >> (6 of 8)
+# << Utility functions >> (8 of 10)
 def convertVBtoPython(vbtext, *args, **kw):
     """Convert some VB text to Python"""
     m = parseVB(vbtext, *args, **kw)
     return applyPlugins("postProcessPythonText", m.renderAsCode())
-# << Utility functions >> (7 of 8)
+# << Utility functions >> (9 of 10)
 def applyPlugins(methodname, txt):
     """Apply the method of all active plugins to this text"""
     use_user_plugins = Config["General", "LoadUserPlugins"] == "Yes"
@@ -146,7 +190,7 @@ def applyPlugins(methodname, txt):
                             plugin.name, err, methodname))
                     plugin.disable()
     return txt
-# << Utility functions >> (8 of 8)
+# << Utility functions >> (10 of 10)
 def parseVBFile(filename, text=None, parent=None, **kw):
     """Parse some VB from a file"""
     if not text:

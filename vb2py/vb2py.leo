@@ -34,7 +34,8 @@
 </v>
 </v>
 <v t="pap.120703001453.16" a="E"><vh>class BaseParser</vh>
-<v t="pap.120703001453.17" a="V"><vh>__init__</vh></v>
+<v t="pap.120703001453.17"><vh>__init__</vh></v>
+<v t="pap.20070224183443"><vh>readFileContent</vh></v>
 <v t="pap.120703001453.18"><vh>doValidation</vh></v>
 <v t="pap.120703001453.19"><vh>findMany</vh></v>
 <v t="pap.120703001453.20"><vh>findOne</vh></v>
@@ -48,7 +49,7 @@
 <v t="pap.120703001453.27"><vh>doParse</vh></v>
 <v t="pap.120703001453.28"><vh>doValidation</vh></v>
 </v>
-<v t="pap.120703001453.29"><vh>class FileParser</vh>
+<v t="pap.120703001453.29" a="E"><vh>class FileParser</vh>
 <v t="pap.120703001453.30"><vh>doParse</vh></v>
 <v t="pap.120703001453.31"><vh>doValidation</vh></v>
 </v>
@@ -57,7 +58,7 @@
 <v t="pap.120703001453.34"><vh>&lt;&lt; Split off code section &gt;&gt;</vh></v>
 <v t="pap.120703001453.35"><vh>&lt;&lt; Add controls to form namespace &gt;&gt;</vh></v>
 </v>
-<v t="pap.120703001453.36"><vh>parseForm</vh>
+<v t="pap.120703001453.36" a="E"><vh>parseForm</vh>
 <v t="pap.120703001453.37"><vh>&lt;&lt; Get name of form class &gt;&gt;</vh></v>
 <v t="pap.120703001453.38"><vh>&lt;&lt; Begin class conversion &gt;&gt;</vh></v>
 <v t="pap.120703001453.39"><vh>&lt;&lt; Convert properties &gt;&gt;</vh></v>
@@ -70,7 +71,7 @@
 <v t="pap.120703001453.45"><vh>groupOptionButtons</vh></v>
 <v t="pap.120703001453.46"><vh>getContainer</vh></v>
 </v>
-<v t="pap.120703001453.47"><vh>class ModuleParser</vh>
+<v t="pap.120703001453.47" a="E"><vh>class ModuleParser</vh>
 <v t="pap.120703001453.48"><vh>doParse</vh></v>
 <v t="pap.120703001453.49"><vh>getContainer</vh></v>
 <v t="pap.120703001453.50"><vh>writeToFile</vh></v>
@@ -259,9 +260,9 @@
 </v>
 </v>
 </v>
-<v t="pap.120703001453.160"><vh>Parsing and converting code</vh>
-<v t="pap.120703001453.161" tnodeList="pap.120703001453.161,pap.120703001453.163,pap.120703001453.164,pap.120703001453.165,pap.120703001453.166,pap.120703001453.167,pap.120703001453.168,pap.120703001453.170,pap.120703001453.171,pap.120703001453.172,pap.120703001453.173,pap.120703001453.174,pap.120703001453.175,pap.120703001453.176,pap.120703001453.177,pap.120703001453.178,pap.120703001453.179,pap.120703001453.180,pap.120703001453.181,pap.120703001453.182,pap.120703001453.183,pap.120703001453.184,pap.120703001453.186,pap.120703001453.187,pap.120703001453.188,pap.120703001453.189,pap.120703001453.190,pap.120703001453.191,pap.120703001453.192,pap.120703001453.193,pap.120703001453.194,pap.120703001453.195,pap.120703001453.196,pap.120703001453.197,pap.120703001453.198,pap.120703001453.199"><vh>@file vbgrammar.txt</vh>
-<v t="pap.120703001453.162"><vh>Basic building blocks</vh>
+<v t="pap.120703001453.160" a="E"><vh>Parsing and converting code</vh>
+<v t="pap.120703001453.161" a="E" tnodeList="pap.120703001453.161,pap.120703001453.162,pap.120703001453.163,pap.120703001453.164,pap.120703001453.165,pap.120703001453.166,pap.120703001453.167,pap.120703001453.168,pap.120703001453.169,pap.120703001453.170,pap.120703001453.171,pap.120703001453.172,pap.120703001453.173,pap.120703001453.174,pap.120703001453.175,pap.120703001453.176,pap.120703001453.177,pap.120703001453.178,pap.120703001453.179,pap.120703001453.180,pap.120703001453.181,pap.120703001453.182,pap.120703001453.183,pap.120703001453.184,pap.120703001453.185,pap.120703001453.186,pap.120703001453.187,pap.120703001453.188,pap.120703001453.189,pap.120703001453.190,pap.120703001453.191,pap.120703001453.192,pap.120703001453.193,pap.120703001453.194,pap.120703001453.195,pap.120703001453.196,pap.120703001453.197,pap.120703001453.198,pap.120703001453.199"><vh>@file vbgrammar.txt</vh>
+<v t="pap.120703001453.162" a="E"><vh>Basic building blocks</vh>
 <v t="pap.120703001453.163"><vh>Basic elements</vh></v>
 <v t="pap.120703001453.164"><vh>Blocks and lines</vh></v>
 <v t="pap.120703001453.165"><vh>Statements</vh></v>
@@ -269,7 +270,7 @@
 <v t="pap.120703001453.167"><vh>Expressions</vh></v>
 <v t="pap.120703001453.168"><vh>Line (connecting points)</vh></v>
 </v>
-<v t="pap.120703001453.169" a="E"><vh>Single statements</vh>
+<v t="pap.120703001453.169"><vh>Single statements</vh>
 <v t="pap.120703001453.170"><vh>Assigment</vh></v>
 <v t="pap.120703001453.171"><vh>Comment</vh></v>
 <v t="pap.120703001453.172"><vh>External libraries</vh></v>
@@ -313,6 +314,8 @@
 <v t="pap.120703001453.206"><vh>buildParseTree</vh>
 <v t="pap.120703001453.208"><vh>&lt;&lt; Handle failure &gt;&gt;</vh></v>
 </v>
+<v t="pap.20070224185447"><vh>makeSafeFromUnicode</vh></v>
+<v t="pap.20070224185546"><vh>makeUnicodeFromSafe</vh></v>
 <v t="pap.120703001453.209"><vh>parseVB</vh></v>
 <v t="PAP.20040801193506"><vh>getAST</vh></v>
 <v t="pap.120703001453.210"><vh>renderCodeStructure</vh></v>
@@ -326,8 +329,8 @@
 </v>
 <v t="pap.120703001453.216" a="M"><vh>parserclasses.py</vh>
 <v t="pap.120703001453.217"><vh>&lt;&lt; Definitions &gt;&gt;</vh></v>
-<v t="pap.120703001453.218"><vh>Base classes</vh>
-<v t="pap.120703001453.219"><vh>VBElement </vh>
+<v t="pap.120703001453.218" a="E"><vh>Base classes</vh>
+<v t="pap.120703001453.219" a="E"><vh>VBElement </vh>
 <v t="pap.120703001453.220"><vh>__init__</vh></v>
 <v t="pap.120703001453.221"><vh>printTree</vh></v>
 </v>
@@ -865,10 +868,10 @@ expanded="pap.20070203172243.3,"><vh>@thin interactive.py</vh></v>
 <v t="pap.20070203172243.5"><vh>@thin interactive.rsrc.py</vh></v>
 </v>
 </v>
-<v t="pap.120703001453.600"><vh>Testing</vh>
+<v t="pap.120703001453.600" a="E"><vh>Testing</vh>
 <v t="pap.120703001453.601"><vh>__init__.py</vh></v>
-<v t="pap.120703001453.602"><vh>Mini parser for quick testing</vh>
-<v t="PAP.20040824001655"><vh>Recordsets</vh></v>
+<v t="pap.120703001453.602" a="E"><vh>Mini parser for quick testing</vh>
+<v t="pap.20070224180440"><vh>Unicode</vh></v>
 </v>
 <v t="pap.120703001453.604"><vh>Test Parsing</vh>
 <v t="pap.120703001453.605" a="E"><vh>Single statements</vh>
@@ -901,8 +904,9 @@ expanded="pap.20070203172243.3,"><vh>@thin interactive.py</vh></v>
 <v t="pap.120703001453.631"><vh>Events</vh></v>
 <v t="pap.120703001453.603"><vh>Debug</vh></v>
 <v t="PAP.20040824001655"><vh>Recordsets</vh></v>
+<v t="pap.20070224180440"><vh>Unicode</vh></v>
 </v>
-<v t="pap.120703001453.632"><vh>Compound statements</vh>
+<v t="pap.120703001453.632" a="E"><vh>Compound statements</vh>
 <v t="pap.120703001453.633"><vh>If</vh>
 <v t="pap.120703001453.634"><vh>Just If</vh></v>
 <v t="pap.120703001453.635"><vh>If  Else</vh></v>
@@ -912,7 +916,7 @@ expanded="pap.20070203172243.3,"><vh>@thin interactive.py</vh></v>
 <v t="pap.120703001453.639"><vh>Inline If</vh></v>
 <v t="pap.120703001453.640"><vh>#if</vh></v>
 </v>
-<v t="pap.120703001453.641"><vh>Subroutines</vh>
+<v t="pap.120703001453.641" a="E"><vh>Subroutines</vh>
 <v t="pap.120703001453.642"><vh>Simple subroutine</vh></v>
 <v t="pap.120703001453.643"><vh>Subroutine with arguments</vh></v>
 <v t="pap.120703001453.644"><vh>Subroutine with typed arguments</vh></v>
@@ -2595,7 +2599,7 @@ expanded="pap.20070203172243.3,"><vh>@thin interactive.py</vh></v>
 </v>
 <v t="pap.120703001453.1281"><vh>Where I stopped</vh></v>
 <v t="pap.120703001453.1282"><vh>Thoughts etc</vh></v>
-<v t="pap.120703001453.1283"><vh>Test report for this version</vh></v>
+<v t="pap.120703001453.1283" a="TV"><vh>Test report for this version</vh></v>
 <v t="pap.20041206020842"><vh>Challenge</vh></v>
 <v t="pap.20041206233451"><vh>Spammers</vh></v>
 </v>
@@ -4713,7 +4717,7 @@ def __init__(self, filename, name=None):
 	"""Initialize the parser"""
     self.references = []
 	self.filename = filename
-	self.text = open(filename.strip(), "r").read() # Use strip to remove \r 
+	self.text = self.readFileContent(filename)
 	self.name = name or os.path.splitext(os.path.split(filename)[1])[0]
 	self.basedir = os.path.split(filename)[0]
 </t>
@@ -5297,7 +5301,7 @@ for o, a in opts:
         Config.setLocalOveride("General", "DumpFormData", "Yes")
 		
 if len(args) &lt;&gt; 2:
-	usage()
+	usage("Converter needs two arguments (a file and a path)")
 	sys.exit(2)
 
 project_file, destination_dir = args
@@ -6827,7 +6831,7 @@ class App(Frame):
 @others</t>
 <t tx="pap.120703001453.162"></t>
 <t tx="pap.120703001453.163">identifier ::= 
-        (letter/("_", letter)), (letter / digit / "_")*, type_marker?
+        (safe_letter/("_", safe_letter)), (safe_letter / digit / "_")*, type_marker?
         
 type_marker ::=
         "$" / "%" / "#" / "&amp;"  
@@ -6838,6 +6842,10 @@ NEWLINE ::=
 &lt;wsp&gt; ::=
             (" "/"\t")
  
+# Also includes the hack for a unicode marker
+&lt;safe_letter&gt; ::= 
+             letter / '~~'
+             
 &lt;letter&gt; ::= 
              lowercase / uppercase
   
@@ -7537,7 +7545,9 @@ Config = config.VB2PYConfig()
 
 from pprint import pprint as pp
 from simpleparse.common import chartypes
-import sys, os
+import sys
+import os
+import re
 import utils
 
 declaration = open(utils.relativePath("vbgrammar.txt"), "r").read()
@@ -7590,6 +7600,8 @@ def buildParseTree(vbtext, starttoken="line", verbose=0, returnpartial=0, return
 	parser = Parser(declaration, starttoken)
 	txt = applyPlugins("preProcessVBText", vbtext)
 
+    txt = makeSafeFromUnicode(txt)
+    
 	nodes = []
 	while 1:
 		success, tree, next = parser.parse(txt) 
@@ -7752,8 +7764,9 @@ class VBElement(object):
 
 def __init__(self, details, text):
 	"""Initialize from the details"""
+    #import pdb; pdb.set_trace()
 	self.name = details[0]
-	self.text = text[details[1]:details[2]]
+	self.text = makeUnicodeFromSafe(text[details[1]:details[2]])
 	self.elements = convertToElements(details[3], text)</t>
 <t tx="pap.120703001453.221">&lt;&lt; VBElement methods &gt;&gt;=
 
@@ -29307,9 +29320,9 @@ To handle nothing we may need a Nothing object which compares to None etc. The t
 Dim A as Object
 If A Is Nothing ...
 </t>
-<t tx="pap.120703001453.1283">C:\Development\Python24\Lib\site-packages\vb2py&gt;test\testall.py
+<t tx="pap.120703001453.1283">C:\Development\Python24\Lib\site-packages\vb2py&gt;..\..\..\python test\testall.py
 
-Starting testall at Fri Feb 02 23:45:29 2007
+Starting testall at Sat Feb 24 19:03:20 2007
 
 Running 'test\testassignment.py' ...  *** 1 errors out of 99
 Running 'test\testattributenames.py' ...  *** 1 errors out of 1
@@ -29333,7 +29346,7 @@ Running 'test\testimports.py' ...  Passed 1 tests
 Running 'test\testintrinsic.py' ...  Passed 172 tests
 Running 'test\testintrinsic2.py' ...  Passed 40 tests
 Running 'test\testintrinsic3.py' ...  Passed 12 tests
-Running 'test\testmini.py' ...  Passed 3 tests
+Running 'test\testmini.py' ...  *** 0 errors out of 0
 Running 'test\testobjectdef.py' ...  Passed 8 tests
 Running 'test\testoperators.py' ...  *** 1 errors out of 20
 Running 'test\testparser.py' ...  *** 0 errors out of 0
@@ -29347,9 +29360,9 @@ Running 'test\testtypes.py' ...  Passed 4 tests
 Running 'test\testwhile.py' ...  Passed 14 tests
 Running 'test\testwith.py' ...  Passed 5 tests
 
-Ran 742 tests
+Ran 739 tests
 Failed 6
-Took 249 seconds</t>
+Took 291 seconds</t>
 <t tx="pap.20041206011550">@root test\testimports.py
 
 from unittest import *
@@ -29770,5 +29783,74 @@ def MakeDate(*args):
 # Pythonic tries to make sure the code looks like Python, but it might behave differently
 ConversionStyle = VB
 </t>
+<t tx="pap.20070224180440">&lt;&lt; Parsing tests &gt;&gt;=
+
+# Unicode
+tests.extend([
+'cIÅ  = 10',
+'a = cIÅ + 30',
+'a = "cIÅ there"',
+
+])
+
+# Unicode sub
+tests.append("""
+Sub cIÅ()
+a=10
+n=20
+c="hello"
+End Sub
+""")
+
+</t>
+<t tx="pap.20070224183443">&lt;&lt; class BaseParser methods &gt;&gt;=
+
+def readFileContent(self, filename):
+    """Read the contents of the file"""
+    text = open(filename.strip(), "r").read() # Use strip to remove \r 
+    return text</t>
+<t tx="pap.20070224185447">&lt;&lt; Utility functions &gt;&gt;=
+
+def makeSafeFromUnicode(text):
+    """Return a safe version of the text without unicode characters
+    
+    We do some ugly hacks here to handle unicode since the SimpleParse library
+    doesn't have an easy way to deal with it.
+    
+    """
+    result = []
+    letters = map(ord, text)
+    marker1 = [ord('x'), ord('X')]
+    marker2 = [ord('X'), ord('x')]    
+    #
+    # Replace all non asc characters with a marker
+    for letter in letters:
+        if letter &lt; 128:
+            result.append(letter)
+        else:
+            result.extend(marker1)
+            result.extend(map(ord, str(letter)))
+            result.extend(marker2)
+    #
+    return "".join(map(chr, result))</t>
+<t tx="pap.20070224185546">&lt;&lt; Utility functions &gt;&gt;=
+
+def makeUnicodeFromSafe(text):
+    """Recover the unicode text from a safe version of the text
+    
+    We do some ugly hacks here to handle unicode since the SimpleParse library
+    doesn't have an easy way to deal with it.
+    
+    """
+    def replacer(match):
+        """Replace the safe unicode thingumy"""
+        text = match.groups()[1]
+        code = int(text)
+        return chr(code)
+    
+    proper_text = re.sub('(xX)(\d+)(Xx)', replacer, text)
+    
+    return proper_text
+    </t>
 </tnodes>
 </leo_file>

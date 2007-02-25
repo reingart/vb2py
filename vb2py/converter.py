@@ -180,23 +180,28 @@ class VBConverter(object):
 class BaseParser(object):
     """A base parser object"""
 
-    # << class BaseParser methods >> (1 of 9)
+    # << class BaseParser methods >> (1 of 10)
     def __init__(self, filename, name=None):
         """Initialize the parser"""
         self.references = []
         self.filename = filename
-        self.text = open(filename.strip(), "r").read() # Use strip to remove \r 
+        self.text = self.readFileContent(filename)
         self.name = name or os.path.splitext(os.path.split(filename)[1])[0]
         self.basedir = os.path.split(filename)[0]
-    # << class BaseParser methods >> (2 of 9)
+    # << class BaseParser methods >> (2 of 10)
+    def readFileContent(self, filename):
+        """Read the contents of the file"""
+        text = open(filename.strip(), "r").read() # Use strip to remove \r 
+        return text
+    # << class BaseParser methods >> (3 of 10)
     def doValidation(self):
         """Validate the data we parsed out of the file"""
         pass
-    # << class BaseParser methods >> (3 of 9)
+    # << class BaseParser methods >> (4 of 10)
     def findMany(self, id):
         """Find a list of values in the file"""
         return self._getPattern(id).findall(self.text)
-    # << class BaseParser methods >> (4 of 9)
+    # << class BaseParser methods >> (5 of 10)
     def findOne(self, id, default=None):
         """Find a value in the file"""
         match = self._getPattern(id).search(self.text)
@@ -204,7 +209,7 @@ class BaseParser(object):
             return match.groups(1)[0]
         else:
             return default
-    # << class BaseParser methods >> (5 of 9)
+    # << class BaseParser methods >> (6 of 10)
     def splitSectionByMarker(self, marker):
         """Split a block of text about a marker"""
         pattern = re.compile('^%s ' % marker, re.MULTILINE)
@@ -213,11 +218,11 @@ class BaseParser(object):
             return (self.text[:match.start(0)], self.text[match.start(0):])
         else:
             return None
-    # << class BaseParser methods >> (6 of 9)
+    # << class BaseParser methods >> (7 of 10)
     def _getPattern(self, id):
         """Create a search pattern"""
         return re.compile('^%s\s*=\s*"*(.*?)"*$' % id, re.MULTILINE)
-    # << class BaseParser methods >> (7 of 9)
+    # << class BaseParser methods >> (8 of 10)
     def parseCode(self, project):
         """Parse the form code"""
         container = self.getContainer()
@@ -230,11 +235,11 @@ class BaseParser(object):
             self.code_structure = vbparser.VBMessage(
                         messagetype="ParsingError",
                         message="Failed to parse (%s)" % err)
-    # << class BaseParser methods >> (8 of 9)
+    # << class BaseParser methods >> (9 of 10)
     def getContainer(self):
         """Return the container to use for code conversion"""
         return vbparser.VBModule()
-    # << class BaseParser methods >> (9 of 9)
+    # << class BaseParser methods >> (10 of 10)
     def writeToFile(self, basedir, write_code=0):
         """Write this out to a file"""
         raise VB2PyError("Unable to write '%s' to a file" % self)
@@ -674,7 +679,7 @@ def main():
             Config.setLocalOveride("General", "DumpFormData", "Yes")
 
     if len(args) <> 2:
-        usage()
+        usage("Converter needs two arguments (a file and a path)")
         sys.exit(2)
 
     project_file, destination_dir = args

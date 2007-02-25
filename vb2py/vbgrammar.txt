@@ -2,9 +2,10 @@
 #@+node:@file vbgrammar.txt
 
 #@+others
+#@+node:Basic building blocks
 #@+node:Basic elements
 identifier ::= 
-        (letter/("_", letter)), (letter / digit / "_")*, type_marker?
+        (safe_letter/("_", safe_letter)), (safe_letter / digit / "_")*, type_marker?
         
 type_marker ::=
         "$" / "%" / "#" / "&"  
@@ -15,6 +16,10 @@ NEWLINE ::=
 <wsp> ::=
             (" "/"\t")
  
+# Also includes the hack for a unicode marker
+<safe_letter> ::= 
+             letter / '~~'
+             
 <letter> ::= 
              lowercase / uppercase
   
@@ -266,6 +271,8 @@ point ::=
         (l_bracket, expression, wsp*, ",", wsp*, expression, r_bracket)
 #@nonl
 #@-node:Line (connecting points)
+#@-node:Basic building blocks
+#@+node:Single statements
 #@+node:Assigment
                
 assignment_statement ::=
@@ -545,6 +552,8 @@ event_definition ::=
 			label_statement?, (scope, wsp+)?, c"Event", wsp+, object, formal_param_list?
 #@nonl
 #@-node:Event definition
+#@-node:Single statements
+#@+node:Compound statements
 #@+node:Do/While etc
 while_statement ::=
                 c"While", wsp+, expression, line_end, block, label_definition?, (c"End While" / c"Wend")
@@ -714,6 +723,7 @@ enumeration_item ::=
         ?-c"End", identifier, (wsp*, "=", wsp*, expression)?
 #@nonl
 #@-node:Enumerations
+#@-node:Compound statements
 #@+node:Non VB stuff
 non_vb_statement ::=
         class_header_statement / attribute_statement
@@ -721,7 +731,6 @@ non_vb_statement ::=
 non_vb_block ::=
         class_header_block
 #@nonl
-#@-node:Non VB stuff
 #@+node:Class file headers
 class_header_statement ::=
         c"VERSION", wsp+, floatnumber, wsp+, c"CLASS"
@@ -753,6 +762,7 @@ attribute_statement ::=
 option_statement ::=
 		c"Option", wsp+, atom, (wsp*, atom)*, comment_statement?
 #@-node:option_statement
+#@-node:Non VB stuff
 #@-others
 #@nonl
 #@-node:@file vbgrammar.txt

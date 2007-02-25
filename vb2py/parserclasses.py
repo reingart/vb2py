@@ -10,8 +10,9 @@ class VBElement(object):
     # << VBElement methods >> (1 of 2)
     def __init__(self, details, text):
         """Initialize from the details"""
+        #import pdb; pdb.set_trace()
         self.name = details[0]
-        self.text = text[details[1]:details[2]]
+        self.text = makeUnicodeFromSafe(text[details[1]:details[2]])
         self.elements = convertToElements(details[3], text)
     # << VBElement methods >> (2 of 2)
     def printTree(self, offset=0):
