@@ -262,7 +262,7 @@
 </v>
 <v t="pap.120703001453.160" a="E"><vh>Parsing and converting code</vh>
 <v t="pap.120703001453.161" a="E" tnodeList="pap.120703001453.161,pap.120703001453.162,pap.120703001453.163,pap.120703001453.164,pap.120703001453.165,pap.120703001453.166,pap.120703001453.167,pap.120703001453.168,pap.120703001453.169,pap.120703001453.170,pap.120703001453.171,pap.120703001453.172,pap.120703001453.173,pap.120703001453.174,pap.120703001453.175,pap.120703001453.176,pap.120703001453.177,pap.120703001453.178,pap.120703001453.179,pap.120703001453.180,pap.120703001453.181,pap.120703001453.182,pap.120703001453.183,pap.120703001453.184,pap.120703001453.185,pap.120703001453.186,pap.120703001453.187,pap.120703001453.188,pap.120703001453.189,pap.120703001453.190,pap.120703001453.191,pap.120703001453.192,pap.120703001453.193,pap.120703001453.194,pap.120703001453.195,pap.120703001453.196,pap.120703001453.197,pap.120703001453.198,pap.120703001453.199"><vh>@file vbgrammar.txt</vh>
-<v t="pap.120703001453.162" a="E"><vh>Basic building blocks</vh>
+<v t="pap.120703001453.162"><vh>Basic building blocks</vh>
 <v t="pap.120703001453.163"><vh>Basic elements</vh></v>
 <v t="pap.120703001453.164"><vh>Blocks and lines</vh></v>
 <v t="pap.120703001453.165"><vh>Statements</vh></v>
@@ -270,7 +270,7 @@
 <v t="pap.120703001453.167"><vh>Expressions</vh></v>
 <v t="pap.120703001453.168"><vh>Line (connecting points)</vh></v>
 </v>
-<v t="pap.120703001453.169"><vh>Single statements</vh>
+<v t="pap.120703001453.169" a="E"><vh>Single statements</vh>
 <v t="pap.120703001453.170"><vh>Assigment</vh></v>
 <v t="pap.120703001453.171"><vh>Comment</vh></v>
 <v t="pap.120703001453.172"><vh>External libraries</vh></v>
@@ -279,7 +279,7 @@
 <v t="pap.120703001453.175"><vh>On Error Goto</vh></v>
 <v t="pap.120703001453.176"><vh>Print / Get</vh></v>
 <v t="pap.120703001453.177"><vh>Seek</vh></v>
-<v t="pap.120703001453.178"><vh>Open/Close</vh></v>
+<v t="pap.120703001453.178" a="TV"><vh>Open/Close</vh></v>
 <v t="pap.120703001453.179"><vh>Calls</vh></v>
 <v t="pap.120703001453.180"><vh>Resume statement</vh></v>
 <v t="pap.120703001453.181"><vh>Exit statement</vh></v>
@@ -287,7 +287,7 @@
 <v t="pap.120703001453.183"><vh>End statement</vh></v>
 <v t="pap.120703001453.184"><vh>Event definition</vh></v>
 </v>
-<v t="pap.120703001453.185" a="E"><vh>Compound statements</vh>
+<v t="pap.120703001453.185"><vh>Compound statements</vh>
 <v t="pap.120703001453.186"><vh>Do/While etc</vh></v>
 <v t="pap.120703001453.187"><vh>Select case</vh></v>
 <v t="pap.120703001453.188"><vh>If</vh></v>
@@ -873,10 +873,10 @@ expanded="pap.20070203172243.3,"><vh>@thin interactive.py</vh></v>
 <v t="pap.120703001453.600" a="E"><vh>Testing</vh>
 <v t="pap.120703001453.601"><vh>__init__.py</vh></v>
 <v t="pap.120703001453.602" a="E"><vh>Mini parser for quick testing</vh>
-<v t="pap.120703001453.656"><vh>For</vh></v>
+<v t="pap.120703001453.620"><vh>Open/Close</vh></v>
 </v>
 <v t="pap.120703001453.604" a="E"><vh>Test Parsing</vh>
-<v t="pap.120703001453.605"><vh>Single statements</vh>
+<v t="pap.120703001453.605" a="E"><vh>Single statements</vh>
 <v t="pap.120703001453.606"><vh>Assignment</vh></v>
 <v t="pap.120703001453.607"><vh>Expressions</vh></v>
 <v t="pap.120703001453.608"><vh>ByVal and ByRef</vh></v>
@@ -908,7 +908,7 @@ expanded="pap.20070203172243.3,"><vh>@thin interactive.py</vh></v>
 <v t="PAP.20040824001655"><vh>Recordsets</vh></v>
 <v t="pap.20070224180440"><vh>Unicode</vh></v>
 </v>
-<v t="pap.120703001453.632" a="E"><vh>Compound statements</vh>
+<v t="pap.120703001453.632"><vh>Compound statements</vh>
 <v t="pap.120703001453.633"><vh>If</vh>
 <v t="pap.120703001453.634"><vh>Just If</vh></v>
 <v t="pap.120703001453.635"><vh>If  Else</vh></v>
@@ -935,7 +935,7 @@ expanded="pap.20070203172243.3,"><vh>@thin interactive.py</vh></v>
 </v>
 <v t="pap.120703001453.653"><vh>Properties</vh></v>
 <v t="pap.120703001453.654"><vh>Select</vh></v>
-<v t="pap.120703001453.655" a="E"><vh>For statements</vh>
+<v t="pap.120703001453.655"><vh>For statements</vh>
 <v t="pap.120703001453.656"><vh>For</vh></v>
 <v t="pap.120703001453.657"><vh>For each</vh></v>
 </v>
@@ -994,8 +994,8 @@ expanded="pap.20070203172243.3,"><vh>@thin interactive.py</vh></v>
 <v t="pap.120703001453.699"><vh>Nested Select with multiple values</vh></v>
 <v t="PAP.20040122000733"><vh>Using Is</vh></v>
 </v>
-<v t="pap.120703001453.700" a="E"><vh>Test For</vh>
-<v t="pap.120703001453.701" a="V"><vh>Basic For</vh></v>
+<v t="pap.120703001453.700"><vh>Test For</vh>
+<v t="pap.120703001453.701"><vh>Basic For</vh></v>
 <v t="pap.120703001453.702"><vh>Nested For</vh></v>
 <v t="pap.120703001453.703"><vh>For each</vh></v>
 <v t="pap.120703001453.704"><vh>Non-integer</vh></v>
@@ -1040,7 +1040,7 @@ expanded="pap.20070203172243.3,"><vh>@thin interactive.py</vh></v>
 <v t="pap.120703001453.736"><vh>Val</vh></v>
 <v t="pap.120703001453.737"><vh>Array</vh></v>
 </v>
-<v t="pap.120703001453.738" a="E"><vh>VB intrinsic functions II</vh>
+<v t="pap.120703001453.738"><vh>VB intrinsic functions II</vh>
 <v t="pap.120703001453.739"><vh>IsArray</vh></v>
 <v t="pap.120703001453.740"><vh>IIf</vh></v>
 <v t="pap.120703001453.741"><vh>StrReverse</vh></v>
@@ -1068,7 +1068,7 @@ expanded="pap.20070203172243.3,"><vh>@thin interactive.py</vh></v>
 <v t="pap.120703001453.750"><vh>Simple Types</vh></v>
 <v t="pap.120703001453.751"><vh>Arrays of types</vh></v>
 </v>
-<v t="pap.120703001453.752"><vh>Files</vh>
+<v t="pap.120703001453.752" a="E"><vh>Files</vh>
 <v t="pap.120703001453.753"><vh>Open/read/close</vh></v>
 <v t="pap.120703001453.754"><vh>Open/print/close</vh></v>
 <v t="pap.120703001453.755"><vh>Bare/Multiple close</vh></v>
@@ -7275,12 +7275,16 @@ print_separator ::=
 			label_statement?, c"Seek", wsp+, channel_id, wsp*, ",", wsp*, expression
 </t>
 <t tx="pap.120703001453.178">open_statement ::=
-        label_definition?, c"Open", wsp+, filename, c"For", wsp+, open_mode+, c"As", wsp+, "#"?, channel
+        label_definition?, c"Open", wsp+, filename, c"For", wsp+, open_mode+, c"As", wsp+, "#"?, channel,
+        (wsp*, c"Len", wsp+, access_length)?
         
 filename ::=
         expression
         
 channel ::=
+        expression
+        
+access_length ::=
         expression
         
 open_mode ::=
@@ -13754,6 +13758,7 @@ tests.extend([
 	"Open fn For Input As #12",
 	"Open fn.gk.gl() For Input As #NxtChn()",
 	"Open fn For Append Lock Write As 23",
+    "Open fn For Random As 23 Len 1234",
 	"Close 1",
 	"Close #1",
 	"Close channel",
@@ -13774,6 +13779,8 @@ tests.extend([
 	"Close #1,#2,#3,#4",
 	"Close   #1   ,   #2   ,   #3   ,   #4   ",
 ])
+
+
 </t>
 <t tx="pap.120703001453.621">&lt;&lt; Parsing tests &gt;&gt;=
 
@@ -17925,7 +17932,17 @@ c = _a(3)
       'b' : 'Can you still hear me now?',
 	  'c' : 10,
 }))
-</t>
+
+# Open with Random access
+tests.append((r"""
+Open "%s" For Random As #3 Len 2
+' !!!!Dont expect this to work!!!!
+Input #3, a
+Input #3, b
+Input #3, c, d, e
+Input #3, f, g
+Close #3
+""" % vb2py.utils.relativePath("test\\testread.txt"), {'a' : 'This wont work!!!!'}))</t>
 <t tx="pap.120703001453.754">It is hard to test opening and closing files without reading so we do things all at once
 
 &lt;&lt; File tests &gt;&gt;=

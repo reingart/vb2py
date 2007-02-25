@@ -59,6 +59,17 @@ c = _a(3)
       'b' : 'Can you still hear me now?',
       'c' : 10,
 }))
+
+# Open with Random access
+tests.append((r"""
+Open "%s" For Random As #3 Len 2
+' !!!!Dont expect this to work!!!!
+Input #3, a
+Input #3, b
+Input #3, c, d, e
+Input #3, f, g
+Close #3
+""" % vb2py.utils.relativePath("test\\testread.txt"), {'a' : 'This wont work!!!!'}))
 # << File tests >> (2 of 14)
 # Open with print
 tests.append((r"""

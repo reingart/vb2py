@@ -1675,11 +1675,13 @@ class VBOpen(VBCodeBlock):
         self.filename = None
         self.open_modes = []
         self.channel = None
+        self.access_length = None
         #
         self.auto_class_handlers = ({
             "filename" : (VBParExpression, "filename"),
             "open_mode" : (VBConsumer, self.open_modes),
             "channel" : (VBParExpression, "channel"),
+            "access_length" : (VBParExpression, "access_length"),
         })
         #
         self.open_mode_lookup = {
@@ -1699,6 +1701,8 @@ class VBOpen(VBCodeBlock):
                 file_mode += self.open_mode_lookup[m.strip()]
             except KeyError:
                 todo.append("'%s'" % m.strip())
+        if self.access_length is not None:
+            todo.append("Access length is not supported (%s)" % self.access_length.renderAsCode())
         if todo:
             todo_warning = self.getWarning("UnknownFileMode", ", ".join(todo))	
         else:

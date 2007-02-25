@@ -16,64 +16,35 @@ Config.setLocalOveride("General", "ReportPartialConversion", "No")
 tests = []
 
 # << Parsing tests >>
-# Simple for
-tests.append("""
-For i = 0 To 1000
-  a = a + 1
-Next i
-""")
+# open statements
+tests.extend([
+    "Open fn For Output As 12",
+    "Open fn For Output As #12",
+    "Open fn For Input As 12",
+    "Open fn For Input As #12",
+    "Open fn.gk.gl() For Input As #NxtChn()",
+    "Open fn For Append Lock Write As 23",
+    "Open fn For Random As 23 Len 1234",
+    "Close 1",
+    "Close #1",
+    "Close channel",
+    "Close #channel",
+    "Close",
+    "Close\na=1",
+    "Closet = 10",
+])
 
-# Simple for
-tests.append("""
-For i=0 To 1000
-  a = a + 1
-Next i
-""")
 
-# Empty for
-tests.append("""
-For i = 0 To 1000
-Next i
-""")
-
-# Simple for with unnamed Next
-tests.append("""
-For i = 0 To 1000
-  a = a + 1
-Next
-""")
-
-# For with step
-tests.append("""
-For i = 0 To 1000 Step 2
-  a = a + 1
-Next i
-""")
-
-# For with exit
-tests.append("""
-For i = 0 To 1000
-  a = a + 1
-  Exit For
-Next i
-""")
-
-# Nested for
-tests.append("""
-For i = 0 To 1000
-  a = a + 1
-  For j = 1 To i
-     b = b + j
-  Next j
-Next i
-""")
-
-# Dotted names - what does this even mean?
-tests.append("""
-For me.you = 0 To 1000 Step 2
-  a = a + 1
-Next me.you
-""")
+# Bug #810968 Close #1, #2 ' fails to parse 
+tests.extend([
+    "Close #1, #2, #3, #4",
+    "Close 1, 2, 3, 4",
+    "Close #1, 2, #3, 4",
+    "Close #one, #two, #three, #four",
+    "Close one, two, three, four",
+    "Close #1,#2,#3,#4",
+    "Close   #1   ,   #2   ,   #3   ,   #4   ",
+])
 # -- end -- << Parsing tests >>
 
 class ParsingTest(TestCase):
