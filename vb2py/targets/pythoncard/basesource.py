@@ -18,8 +18,8 @@ class Background(model.Background):
         model.Background.__init__(self, *args, **kw)
         # Call the VB Form_Load
         # TODO: This is brittle - depends on how the private indicator is set
-        if hasattr(self, "_MAINFORM__Form_Load"):
-            self._MAINFORM__Form_Load()
+        if hasattr(self, "_Background__Form_Load"):
+            self._Background__Form_Load()
         elif hasattr(self, "Form_Load"):
             self.Form_Load()
 
@@ -28,5 +28,5 @@ class Background(model.Background):
 
 
 if __name__ == '__main__':
-    app = model.Application(MAINFORM)
+    app = model.Application(Background)
     app.MainLoop()

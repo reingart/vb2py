@@ -33,7 +33,7 @@
 <v t="pap.20041207004101"><vh>&lt;&lt; Resolve References &gt;&gt;</vh></v>
 </v>
 </v>
-<v t="pap.120703001453.16"><vh>class BaseParser</vh>
+<v t="pap.120703001453.16" a="E"><vh>class BaseParser</vh>
 <v t="pap.120703001453.17"><vh>__init__</vh></v>
 <v t="pap.20070224183443"><vh>readFileContent</vh></v>
 <v t="pap.120703001453.18"><vh>doValidation</vh></v>
@@ -49,7 +49,7 @@
 <v t="pap.120703001453.27"><vh>doParse</vh></v>
 <v t="pap.120703001453.28"><vh>doValidation</vh></v>
 </v>
-<v t="pap.120703001453.29" a="E"><vh>class FileParser</vh>
+<v t="pap.120703001453.29"><vh>class FileParser</vh>
 <v t="pap.120703001453.30"><vh>doParse</vh></v>
 <v t="pap.120703001453.31"><vh>doValidation</vh></v>
 </v>
@@ -79,7 +79,7 @@
 <v t="pap.120703001453.51"><vh>class ClassParser</vh>
 <v t="pap.120703001453.52"><vh>getContainer</vh></v>
 </v>
-<v t="pap.120703001453.53"><vh>class BaseResource</vh>
+<v t="pap.120703001453.53" a="E"><vh>class BaseResource</vh>
 <v t="pap.120703001453.54"><vh>__init__</vh></v>
 <v t="pap.120703001453.55" a="E"><vh>updateFrom</vh>
 <v t="pap.120703001453.56"><vh>&lt;&lt; Main properties &gt;&gt;</vh></v>
@@ -109,14 +109,14 @@
 <v t="pap.120703001453.73"><vh>__init__.py</vh></v>
 <v t="pap.120703001453.74"><vh>basesource.txt</vh></v>
 <v t="pap.120703001453.75"><vh>basesource.py</vh></v>
-<v t="pap.120703001453.76"><vh>controls.py</vh>
+<v t="pap.120703001453.76" a="E"><vh>controls.py</vh>
 <v t="pap.120703001453.77"><vh>&lt;&lt; Events &gt;&gt;</vh>
 <v t="pap.120703001453.78"><vh>class ControlEvent</vh>
 <v t="pap.120703001453.79"><vh>__init__</vh></v>
 <v t="pap.120703001453.80"><vh>updateMethodDefinition</vh></v>
 </v>
 </v>
-<v t="pap.120703001453.81"><vh>class VBControl</vh>
+<v t="pap.120703001453.81" a="E"><vh>class VBControl</vh>
 <v t="pap.120703001453.82"><vh>_getPropertyList</vh></v>
 <v t="pap.120703001453.83"><vh>_getControlList</vh></v>
 <v t="pap.120703001453.84"><vh>_getControlsOfType</vh></v>
@@ -305,14 +305,14 @@
 <v t="pap.120703001453.199"><vh>option_statement</vh></v>
 </v>
 </v>
-<v t="pap.120703001453.200" a="E"><vh>vbparser.py</vh>
+<v t="pap.120703001453.200" a="ETV"><vh>vbparser.py</vh>
 <v t="pap.120703001453.201"><vh>&lt;&lt; Imports &gt;&gt;</vh></v>
 <v t="pap.120703001453.202"><vh>&lt;&lt; Error Classes &gt;&gt;</vh></v>
 <v t="pap.120703001453.203"><vh>&lt;&lt; Definitions &gt;&gt;</vh></v>
 <v t="pap.120703001453.204" a="E"><vh>Utility functions</vh>
 <v t="pap.120703001453.205"><vh>convertToElements</vh></v>
 <v t="pap.120703001453.206" a="E"><vh>buildParseTree</vh>
-<v t="pap.20070224191421" a="V"><vh>&lt;&lt; Build Parser &gt;&gt;</vh></v>
+<v t="pap.20070224191421"><vh>&lt;&lt; Build Parser &gt;&gt;</vh></v>
 <v t="pap.120703001453.208"><vh>&lt;&lt; Handle failure &gt;&gt;</vh></v>
 </v>
 <v t="pap.20070224185447"><vh>makeSafeFromUnicode</vh></v>
@@ -328,7 +328,7 @@
 </v>
 </v>
 </v>
-<v t="pap.120703001453.216" a="M"><vh>parserclasses.py</vh>
+<v t="pap.120703001453.216" a="EM"><vh>parserclasses.py</vh>
 <v t="pap.120703001453.217"><vh>&lt;&lt; Definitions &gt;&gt;</vh></v>
 <v t="pap.120703001453.218" a="E"><vh>Base classes</vh>
 <v t="pap.120703001453.219" a="E"><vh>VBElement </vh>
@@ -419,14 +419,14 @@
 <v t="PAP.20040428010229.2"><vh>renderAsCode</vh></v>
 </v>
 </v>
-<v t="pap.120703001453.286"><vh>Expression</vh>
+<v t="pap.120703001453.286" a="E"><vh>Expression</vh>
 <v t="pap.120703001453.287" a="E"><vh>VBExpression</vh>
 <v t="pap.120703001453.288"><vh>__init__</vh></v>
 <v t="pap.120703001453.289"><vh>renderAsCode</vh></v>
 <v t="pap.120703001453.290"><vh>checkForOperatorGroupings</vh></v>
 </v>
 <v t="pap.120703001453.291" a="E"><vh>Expression parts</vh>
-<v t="pap.120703001453.292"><vh>VBParExpression</vh>
+<v t="pap.120703001453.292" a="E"><vh>VBParExpression</vh>
 <v t="pap.120703001453.293"><vh>__init__</vh></v>
 <v t="pap.120703001453.294"><vh>renderAsCode</vh></v>
 <v t="pap.120703001453.295"><vh>checkForOperatorGroupings</vh></v>
@@ -434,7 +434,7 @@
 <v t="pap.120703001453.296"><vh>VBPoint</vh>
 <v t="pap.120703001453.297"><vh>renderAsCode</vh></v>
 </v>
-<v t="pap.120703001453.298"><vh>VBExpressionPart</vh>
+<v t="pap.120703001453.298" a="E"><vh>VBExpressionPart</vh>
 <v t="pap.120703001453.299"><vh>renderAsCode</vh></v>
 <v t="pap.120703001453.300"><vh>finalizeObject</vh></v>
 </v>
@@ -872,9 +872,9 @@ expanded="pap.20070203172243.3,"><vh>@thin interactive.py</vh></v>
 <v t="pap.120703001453.600" a="E"><vh>Testing</vh>
 <v t="pap.120703001453.601"><vh>__init__.py</vh></v>
 <v t="pap.120703001453.602" a="E"><vh>Mini parser for quick testing</vh>
-<v t="pap.20070224180440"><vh>Unicode</vh></v>
+<v t="pap.120703001453.607"><vh>Expressions</vh></v>
 </v>
-<v t="pap.120703001453.604"><vh>Test Parsing</vh>
+<v t="pap.120703001453.604" a="E"><vh>Test Parsing</vh>
 <v t="pap.120703001453.605" a="E"><vh>Single statements</vh>
 <v t="pap.120703001453.606"><vh>Assignment</vh></v>
 <v t="pap.120703001453.607"><vh>Expressions</vh></v>
@@ -953,7 +953,7 @@ expanded="pap.20070203172243.3,"><vh>@thin interactive.py</vh></v>
 </v>
 <v t="pap.120703001453.669"><vh>Failing tests</vh></v>
 </v>
-<v t="pap.120703001453.670"><vh>Test Basic Conversion</vh>
+<v t="pap.120703001453.670" a="E"><vh>Test Basic Conversion</vh>
 <v t="pap.120703001453.671"><vh>Basic Testing Framework</vh>
 <v t="PAP.20040125002850"><vh>getTestMethod</vh>
 <v t="pap.120703001453.672"><vh>&lt;&lt; Parse VB &gt;&gt;</vh></v>
@@ -963,7 +963,7 @@ expanded="pap.20070203172243.3,"><vh>@thin interactive.py</vh></v>
 </v>
 <v t="PAP.20040125002850.1"><vh>getScriptTestMethod</vh></v>
 </v>
-<v t="pap.120703001453.676"><vh>Variable assignment</vh>
+<v t="pap.120703001453.676" a="E"><vh>Variable assignment</vh>
 <v t="pap.120703001453.677"><vh>General</vh></v>
 <v t="pap.120703001453.678"><vh>General - Let</vh></v>
 <v t="pap.120703001453.679"><vh>Expressions</vh></v>
@@ -2440,7 +2440,7 @@ expanded="pap.20070203172243.3,"><vh>@thin interactive.py</vh></v>
 <v t="pap.120703001453.80"><vh>updateMethodDefinition</vh></v>
 </v>
 </v>
-<v t="pap.120703001453.81"><vh>class VBControl</vh>
+<v t="pap.120703001453.81" a="E"><vh>class VBControl</vh>
 <v t="pap.120703001453.82"><vh>_getPropertyList</vh></v>
 <v t="pap.120703001453.83"><vh>_getControlList</vh></v>
 <v t="pap.120703001453.84"><vh>_getControlsOfType</vh></v>
@@ -4745,7 +4745,7 @@ def findOne(self, id, default=None):
 
 def splitSectionByMarker(self, marker):
 	"""Split a block of text about a marker"""
-	pattern = re.compile('^%s ' % marker, re.MULTILINE)
+	pattern = re.compile('^%s ' % marker, re.MULTILINE+re.UNICODE)
 	match = pattern.search(self.text)
 	if match:
 		return (self.text[:match.start(0)], self.text[match.start(0):])
@@ -4755,7 +4755,7 @@ def splitSectionByMarker(self, marker):
 
 def _getPattern(self, id):
 	"""Create a search pattern"""
-	return re.compile('^%s\s*=\s*"*(.*?)"*$' % id, re.MULTILINE)</t>
+	return re.compile('^%s\s*=\s*"*(.*?)"*$' % id, re.MULTILINE+re.UNICODE)</t>
 <t tx="pap.120703001453.23">&lt;&lt; class BaseParser methods &gt;&gt;=
 
 def parseCode(self, project):
@@ -4904,8 +4904,6 @@ for control in self.form._getControlsOfType():
 	
 self.code_structure.local_names.extend(distinct_names.keys())
 	
-#import pdb; pdb.set_trace()
-	
 # Probably need to get self.form._getControlList()
 # then strip front of name (vbobj_txtName) and add to
 # code_structure.local_names</t>
@@ -4953,7 +4951,7 @@ def parseForm(self):
 <t tx="pap.120703001453.37">@doc
 Need to get the name of the form class - this is not always the same as the filename
 @c
-pattern = re.compile(r"^Begin\s+VB\.Form\s+(\w+)", re.MULTILINE)
+pattern = re.compile(r"^Begin\s+VB\.Form\s+(\w+)", re.MULTILINE+re.UNICODE)
 name_match = pattern.findall(self.form_data)
 
 if name_match:
@@ -4961,7 +4959,7 @@ if name_match:
 </t>
 <t tx="pap.120703001453.38">@c
 
-pattern = re.compile(r'^(\s*)Begin\s+(\w+)\.(.+?)\s+(.+?)\s*?$', re.MULTILINE)
+pattern = re.compile(r'^(\s*)Begin\s+(\w+)\.(.+?)\s+(.+?)\s*?$', re.MULTILINE+re.UNICODE)
 
 def sub_begin(match):
 	if match.groups()[1] in ("VB", "ComctlLib"):
@@ -4977,7 +4975,7 @@ def sub_begin(match):
 self.form_data = pattern.sub(sub_begin, self.form_data)</t>
 <t tx="pap.120703001453.39">@c
 
-pattern = re.compile(r'^(\s*)BeginProperty\s+(\w+)(\(.*?\))?\s(.*?)$', re.MULTILINE)
+pattern = re.compile(r'^(\s*)BeginProperty\s+(\w+)(\(.*?\))?\s(.*?)$', re.MULTILINE+re.UNICODE)
 
 def sub_beginproperty(match):
 	return '%sclass vbobj_%s(resource.%s): # %s %s' % (
@@ -4991,7 +4989,7 @@ def sub_beginproperty(match):
 self.form_data = pattern.sub(sub_beginproperty, self.form_data)</t>
 <t tx="pap.120703001453.40">@c
 
-pattern = re.compile(r'^(\s*)Object\s*=\s*"(\S+)"\s*;\s*(.*?)$', re.MULTILINE)
+pattern = re.compile(r'^(\s*)Object\s*=\s*"(\S+)"\s*;\s*(.*?)$', re.MULTILINE+re.UNICODE)
 
 def sub_beginobject(match):
 	return '%s# %s, %s' % (
@@ -5003,7 +5001,7 @@ def sub_beginobject(match):
 self.form_data = pattern.sub(sub_beginobject, self.form_data)</t>
 <t tx="pap.120703001453.41">@c
 
-pattern = re.compile(r'^(\s*)Shortcut\s*=\s*(\S+)\s*$', re.MULTILINE)
+pattern = re.compile(r'^(\s*)Shortcut\s*=\s*(\S+)\s*$', re.MULTILINE+re.UNICODE)
 
 def sub_shortcut(match):
 	return '%sshortcut = "%s"' % (
@@ -5015,17 +5013,17 @@ self.form_data = pattern.sub(sub_shortcut, self.form_data)</t>
 
 #
 # End
-pattern = re.compile("^\s*End$", re.MULTILINE)
+pattern = re.compile("^\s*End$", re.MULTILINE+re.UNICODE)
 self.form_data = pattern.sub("", self.form_data)
 
 #
 # End Property
-pattern = re.compile("^\s*EndProperty$", re.MULTILINE)
+pattern = re.compile("^\s*EndProperty$", re.MULTILINE+re.UNICODE)
 self.form_data = pattern.sub("", self.form_data)
 
 #
 # Version
-pattern = re.compile("^VERSION\s+.*?$", re.MULTILINE)
+pattern = re.compile("^VERSION\s+.*?$", re.MULTILINE+re.UNICODE)
 self.form_data = pattern.sub("", self.form_data)
 
 #
@@ -5037,7 +5035,7 @@ def sub_frx(match):
 	s = '"%s.frx@%s"' % (os.path.join(self.basedir, match.groups()[0]), match.groups()[1])
 	return s.replace("\\", "/")
 	
-pattern = re.compile('\$?"(.*)\.frx":(\S+)', re.MULTILINE)
+pattern = re.compile('\$?"(.*)\.frx":(\S+)', re.MULTILINE+re.UNICODE)
 self.form_data = pattern.sub(sub_frx, self.form_data)
 </t>
 <t tx="pap.120703001453.44">@c
@@ -5047,7 +5045,7 @@ self.form_data = pattern.sub(sub_frx, self.form_data)
 # We will have problems with system colours (&amp;H80 ... ) so we 
 # ultimately need a lookup table here
 
-pattern = re.compile("\&amp;H([A-F0-9]{8})\&amp;", re.MULTILINE)
+pattern = re.compile("\&amp;H([A-F0-9]{8})\&amp;", re.MULTILINE+re.UNICODE)
 
 def sub_hex(match):
     txt = match.groups()[0]
@@ -5444,8 +5442,8 @@ class Background(model.Background):
 		model.Background.__init__(self, *args, **kw)
 		# Call the VB Form_Load
         # TODO: This is brittle - depends on how the private indicator is set
-		if hasattr(self, "_MAINFORM__Form_Load"):
-			self._MAINFORM__Form_Load()
+		if hasattr(self, "_Background__Form_Load"):
+			self._Background__Form_Load()
 		elif hasattr(self, "Form_Load"):
 			self.Form_Load()
 		
@@ -5454,7 +5452,7 @@ class Background(model.Background):
 
 			
 if __name__ == '__main__':
-    app = model.Application(MAINFORM)
+    app = model.Application(Background)
     app.MainLoop()
 
 </t>
@@ -5601,6 +5599,9 @@ class VBControl:
 	# Lookup table showing the VB event name and the Pythoncard event name
 	_events = ()
 	
+    # Some standard attributes which can be absent
+    Caption = "UnknownCaption"
+    
 	&lt;&lt; class VBControl methods &gt;&gt;</t>
 <t tx="pap.120703001453.82">&lt;&lt; class VBControl methods &gt;&gt;=
 
@@ -7040,7 +7041,8 @@ normal_keyword ::=
 </t>
 <t tx="pap.120703001453.167">
 expression ::= 
-             (pre_named_argument?, passing_semantics?, pre_operator?, sign?, par_expression, (operation, par_expression)*) / line_expression
+             (pre_named_argument?, passing_semantics?, pre_operator?, sign?, par_expression, 
+             (operation, par_expression)*) / line_expression
 
 par_expression ::= 
              point / (l_bracket, expression, r_bracket) / base_expression
@@ -7049,7 +7051,7 @@ base_expression ::=
 			  simple_expr, (operation, simple_expr)?
              
 simple_expr ::= 
-              pre_operator?, wsp*, (call / atom / channelid), wsp*
+              pre_operator?, wsp*, (sign, wsp*)*, (call / atom / channelid), wsp*
 
 l_bracket ::= 
              wsp*, "(", wsp*
@@ -7523,7 +7525,7 @@ config_name ::= identifier</t>
 
 &lt;&lt; Utility functions &gt;&gt;
 
-# The following imports must go at the end to avoid import errors
+# The following imports must go at the end to avoid import errors 
 # caused by poor structuring of the package. This needs to be refactored!
 
 # Plug-ins
@@ -8667,6 +8669,7 @@ def __init__(self, scope="Private"):
 		"pre_not" : (VBExpressionPart, self.parts),
 		"pre_typeof" : (VBUnrendered, self.parts),
 		"point" : (VBPoint, self.parts),
+		"sign"	: (VBExpressionPart, self.parts),
 	})
 	
 	self.l_bracket = self.r_bracket = ""
@@ -13214,6 +13217,7 @@ tests.extend([
 			"a = -x*10",
 			"a = 10 Mod 6",
 			"Set NewEnum = mCol.[_NewEnum]",
+            "a = 10 ^ -bob",
 ])
 
 # Functions
@@ -15653,6 +15657,7 @@ numeric_exp = [
 	('h=5^2', 				  {'h' : 25}),
 	('i=10 Mod 2', 			{'i' : 0}),
 	('i=10 Mod 3', 			{'i' : 1}),
+    ('i=10 ^ - 1',    {'i' : 0.1}),
 ]
 
 string_exp = [

@@ -212,7 +212,7 @@ class BaseParser(object):
     # << class BaseParser methods >> (6 of 10)
     def splitSectionByMarker(self, marker):
         """Split a block of text about a marker"""
-        pattern = re.compile('^%s ' % marker, re.MULTILINE)
+        pattern = re.compile('^%s ' % marker, re.MULTILINE+re.UNICODE)
         match = pattern.search(self.text)
         if match:
             return (self.text[:match.start(0)], self.text[match.start(0):])
@@ -221,7 +221,7 @@ class BaseParser(object):
     # << class BaseParser methods >> (7 of 10)
     def _getPattern(self, id):
         """Create a search pattern"""
-        return re.compile('^%s\s*=\s*"*(.*?)"*$' % id, re.MULTILINE)
+        return re.compile('^%s\s*=\s*"*(.*?)"*$' % id, re.MULTILINE+re.UNICODE)
     # << class BaseParser methods >> (8 of 10)
     def parseCode(self, project):
         """Parse the form code"""
@@ -342,8 +342,6 @@ class FormParser(BaseParser):
 
             self.code_structure.local_names.extend(distinct_names.keys())
 
-            #import pdb; pdb.set_trace()
-
             # Probably need to get self.form._getControlList()
             # then strip front of name (vbobj_txtName) and add to
             # code_structure.local_names
@@ -353,14 +351,14 @@ class FormParser(BaseParser):
         """Parse the form definition"""
         self.form_data = self.form_data.replace("\r\n", "\n") # For *nix
         # << Get name of form class >>
-        pattern = re.compile(r"^Begin\s+VB\.Form\s+(\w+)", re.MULTILINE)
+        pattern = re.compile(r"^Begin\s+VB\.Form\s+(\w+)", re.MULTILINE+re.UNICODE)
         name_match = pattern.findall(self.form_data)
 
         if name_match:
             self.name = name_match[0]
         # -- end -- << Get name of form class >>
         # << Begin class conversion >>
-        pattern = re.compile(r'^(\s*)Begin\s+(\w+)\.(.+?)\s+(.+?)\s*?$', re.MULTILINE)
+        pattern = re.compile(r'^(\s*)Begin\s+(\w+)\.(.+?)\s+(.+?)\s*?$', re.MULTILINE+re.UNICODE)
 
         def sub_begin(match):
             if match.groups()[1] in ("VB", "ComctlLib"):
@@ -376,7 +374,7 @@ class FormParser(BaseParser):
         self.form_data = pattern.sub(sub_begin, self.form_data)
         # -- end -- << Begin class conversion >>
         # << Convert properties >>
-        pattern = re.compile(r'^(\s*)BeginProperty\s+(\w+)(\(.*?\))?\s(.*?)$', re.MULTILINE)
+        pattern = re.compile(r'^(\s*)BeginProperty\s+(\w+)(\(.*?\))?\s(.*?)$', re.MULTILINE+re.UNICODE)
 
         def sub_beginproperty(match):
             return '%sclass vbobj_%s(resource.%s): # %s %s' % (
@@ -390,7 +388,7 @@ class FormParser(BaseParser):
         self.form_data = pattern.sub(sub_beginproperty, self.form_data)
         # -- end -- << Convert properties >>
         # << Menu shortcuts >>
-        pattern = re.compile(r'^(\s*)Shortcut\s*=\s*(\S+)\s*$', re.MULTILINE)
+        pattern = re.compile(r'^(\s*)Shortcut\s*=\s*(\S+)\s*$', re.MULTILINE+re.UNICODE)
 
         def sub_shortcut(match):
             return '%sshortcut = "%s"' % (
@@ -402,17 +400,17 @@ class FormParser(BaseParser):
         # << Remove meaningless bits >>
         #
         # End
-        pattern = re.compile("^\s*End$", re.MULTILINE)
+        pattern = re.compile("^\s*End$", re.MULTILINE+re.UNICODE)
         self.form_data = pattern.sub("", self.form_data)
 
         #
         # End Property
-        pattern = re.compile("^\s*EndProperty$", re.MULTILINE)
+        pattern = re.compile("^\s*EndProperty$", re.MULTILINE+re.UNICODE)
         self.form_data = pattern.sub("", self.form_data)
 
         #
         # Version
-        pattern = re.compile("^VERSION\s+.*?$", re.MULTILINE)
+        pattern = re.compile("^VERSION\s+.*?$", re.MULTILINE+re.UNICODE)
         self.form_data = pattern.sub("", self.form_data)
 
         #
@@ -424,7 +422,7 @@ class FormParser(BaseParser):
             s = '"%s.frx@%s"' % (os.path.join(self.basedir, match.groups()[0]), match.groups()[1])
             return s.replace("\\", "/")
 
-        pattern = re.compile('\$?"(.*)\.frx":(\S+)', re.MULTILINE)
+        pattern = re.compile('\$?"(.*)\.frx":(\S+)', re.MULTILINE+re.UNICODE)
         self.form_data = pattern.sub(sub_frx, self.form_data)
         # -- end -- << Remove references to frx file >>
         # << Hex numbers >>
@@ -433,7 +431,7 @@ class FormParser(BaseParser):
         # We will have problems with system colours (&H80 ... ) so we 
         # ultimately need a lookup table here
 
-        pattern = re.compile("\&H([A-F0-9]{8})\&", re.MULTILINE)
+        pattern = re.compile("\&H([A-F0-9]{8})\&", re.MULTILINE+re.UNICODE)
 
         def sub_hex(match):
             txt = match.groups()[0]
@@ -444,7 +442,7 @@ class FormParser(BaseParser):
         self.form_data = pattern.sub(sub_hex, self.form_data)
         # -- end -- << Hex numbers >>
         # << Convert object references >>
-        pattern = re.compile(r'^(\s*)Object\s*=\s*"(\S+)"\s*;\s*(.*?)$', re.MULTILINE)
+        pattern = re.compile(r'^(\s*)Object\s*=\s*"(\S+)"\s*;\s*(.*?)$', re.MULTILINE+re.UNICODE)
 
         def sub_beginobject(match):
             return '%s# %s, %s' % (

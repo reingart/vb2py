@@ -120,6 +120,9 @@ class VBControl:
     # Lookup table showing the VB event name and the Pythoncard event name
     _events = ()
 
+    # Some standard attributes which can be absent
+    Caption = "UnknownCaption"
+
     # << class VBControl methods >> (1 of 14)
     def _getPropertyList(cls):
         """Return a list of the properties of this control"""

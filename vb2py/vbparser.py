@@ -233,7 +233,7 @@ def parseVBFile(filename, text=None, parent=None, **kw):
     return code_structure
 # -- end -- << Utility functions >>
 
-# The following imports must go at the end to avoid import errors
+# The following imports must go at the end to avoid import errors 
 # caused by poor structuring of the package. This needs to be refactored!
 
 # Plug-ins

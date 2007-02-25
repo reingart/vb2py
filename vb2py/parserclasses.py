@@ -847,6 +847,7 @@ class VBParExpression(VBNamespace):
             "pre_not" : (VBExpressionPart, self.parts),
             "pre_typeof" : (VBUnrendered, self.parts),
             "point" : (VBPoint, self.parts),
+            "sign"	: (VBExpressionPart, self.parts),
         })
 
         self.l_bracket = self.r_bracket = ""

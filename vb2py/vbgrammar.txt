@@ -217,7 +217,8 @@ normal_keyword ::=
 #@+node:Expressions
 
 expression ::= 
-             (pre_named_argument?, passing_semantics?, pre_operator?, sign?, par_expression, (operation, par_expression)*) / line_expression
+             (pre_named_argument?, passing_semantics?, pre_operator?, sign?, par_expression, 
+             (operation, par_expression)*) / line_expression
 
 par_expression ::= 
              point / (l_bracket, expression, r_bracket) / base_expression
@@ -226,7 +227,7 @@ base_expression ::=
 			  simple_expr, (operation, simple_expr)?
              
 simple_expr ::= 
-              pre_operator?, wsp*, (call / atom / channelid), wsp*
+              pre_operator?, wsp*, (sign, wsp*)*, (call / atom / channelid), wsp*
 
 l_bracket ::= 
              wsp*, "(", wsp*
