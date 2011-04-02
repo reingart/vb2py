@@ -63,7 +63,7 @@ def makeDataDirs(rootDir=APPLICATION_NAME, dataDirs=[]):
 # -- end -- << Support functions >>
 
 setup(name=APPLICATION_NAME, 
-      version="0.2.2",
+      version="0.2.3",
       description="Visual Basic to Python Converter",
       author="Paul Paterson",
       author_email="paulpaterson@users.sourceforge.net",

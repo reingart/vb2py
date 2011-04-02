@@ -3,7 +3,7 @@
 # << Definitions >>
 StopSearch = -9999 # Used to terminate searches for parent properties
 # -- end -- << Definitions >>
-# << Classes >> (1 of 74)
+# << Classes >> (1 of 75)
 class VBElement(object):
     """An element of VB code"""
 
@@ -21,7 +21,7 @@ class VBElement(object):
         for subelement in self.elements:
             subelement.printTree(offset+1)
     # -- end -- << VBElement methods >>
-# << Classes >> (2 of 74)
+# << Classes >> (2 of 75)
 class VBFailedElement(object):
     """An failed element of VB code"""
 
@@ -32,7 +32,7 @@ class VBFailedElement(object):
         self.text = text
         self.elements = []
     # -- end -- << VBFailedElement methods >>
-# << Classes >> (3 of 74)
+# << Classes >> (3 of 75)
 class VBNamespace(object):
     """Handles a VB Namespace"""
 
@@ -406,7 +406,7 @@ class VBNamespace(object):
         """Handle the end of a line"""
         self.local_default_scope = self.default_scope
     # -- end -- << VBNamespace methods >>
-# << Classes >> (4 of 74)
+# << Classes >> (4 of 75)
 class VBConsumer(VBNamespace):
     """Consume and store elements"""
 
@@ -414,7 +414,7 @@ class VBConsumer(VBNamespace):
         """Eat this element"""
         self.element = element
         log.info("Consumed element: %s" % element)
-# << Classes >> (5 of 74)
+# << Classes >> (5 of 75)
 class VBUnrendered(VBConsumer):
     """Represents an unrendered statement"""
 
@@ -426,7 +426,7 @@ class VBUnrendered(VBConsumer):
             return self.getWarning("UntranslatedCode", self.element.text.replace("\n", "\\n"), indent, crlf=1)
         else:
             return ""
-# << Classes >> (6 of 74)
+# << Classes >> (6 of 75)
 class VBMessage(VBUnrendered):
     """Allows a message to be placed in the python output"""
 
@@ -440,14 +440,14 @@ class VBMessage(VBUnrendered):
         """Render the message"""
         return self.getWarning(self.messagetype, 
                                self.message, indent, crlf=1)
-# << Classes >> (7 of 74)
+# << Classes >> (7 of 75)
 class VBMissingArgument(VBConsumer):
     """Represents an missing argument"""
 
     def renderAsCode(self, indent=0):
         """Render the unrendrable!"""
         return "VBMissingArgument"
-# << Classes >> (8 of 74)
+# << Classes >> (8 of 75)
 class VBCodeBlock(VBNamespace):
     """A block of VB code"""
 
@@ -470,6 +470,7 @@ class VBCodeBlock(VBNamespace):
             "while_statement" : (VBWhile, self.blocks),
             "do_statement" : (VBDo, self.blocks),
             "redim_statement" : (VBReDim, self.blocks),
+            "explicit_call_statement" : (VBExplicitCall, self.blocks),
             "implicit_call_statement" : (VBCall, self.blocks),
             "inline_implicit_call" : (VBCall, self.blocks),
             "label_statement" : (VBLabel, self.blocks),
@@ -511,7 +512,7 @@ class VBCodeBlock(VBNamespace):
         #
         return "".join([block.renderAsCode(indent) for block in self.blocks])
     # -- end -- << VBCodeBlock methods >>
-# << Classes >> (9 of 74)
+# << Classes >> (9 of 75)
 class VBUnrenderedBlock(VBCodeBlock):
     """Represents an unrendered block"""
 
@@ -520,7 +521,7 @@ class VBUnrenderedBlock(VBCodeBlock):
     def renderAsCode(self, indent):
         """Render the unrendrable!"""
         return ""
-# << Classes >> (10 of 74)
+# << Classes >> (10 of 75)
 class VBOptionalCodeBlock(VBCodeBlock):
     """A block of VB code which can be empty and still sytactically correct"""
 
@@ -533,7 +534,7 @@ class VBOptionalCodeBlock(VBCodeBlock):
             """
         return 1
     # -- end -- << VBOptionalCodeBlock methods >>
-# << Classes >> (11 of 74)
+# << Classes >> (11 of 75)
 class VBVariable(VBNamespace):
     """Handles a VB Variable"""
 
@@ -591,7 +592,7 @@ class VBVariable(VBNamespace):
         else:
             return self.identifier
     # -- end -- << VBVariable methods >>
-# << Classes >> (12 of 74)
+# << Classes >> (12 of 75)
 class VBSizeDefinition(VBNamespace):
     """Handles a VB Variable size definition"""
 
@@ -616,7 +617,7 @@ class VBSizeDefinition(VBNamespace):
         else:
             return "(%s)" % ", ".join([item.renderAsCode() for item in self.size_ranges])
     # -- end -- << VBSizeDefinition methods >>
-# << Classes >> (13 of 74)
+# << Classes >> (13 of 75)
 class VBObject(VBNamespace):
     """Handles a VB Object"""
 
@@ -704,19 +705,19 @@ class VBObject(VBNamespace):
                            resolved_name,
                            "".join([item.renderAsCode() for item in valid_modifiers]))
     # -- end -- << VBObject methods >>
-# << Classes >> (14 of 74)
+# << Classes >> (14 of 75)
 class VBLHSObject(VBObject):
     """Handles a VB Object appearing on the LHS of an assignment"""
 
     am_on_lhs = 1 # Set to 1 if the object is on the LHS of an assignment
-# << Classes >> (15 of 74)
+# << Classes >> (15 of 75)
 class VBAttribute(VBConsumer):
     """An attribute of an object"""
 
     def renderAsCode(self, indent=0):
         """Render this attribute"""
         return ".%s" % self.element.text
-# << Classes >> (16 of 74)
+# << Classes >> (16 of 75)
 class VBParameterList(VBCodeBlock):
     """An parameter list for an object"""
 
@@ -753,7 +754,7 @@ class VBParameterList(VBCodeBlock):
         content = ", ".join(param_list)
         return fmt % content
     # -- end -- << VBParameterList methods >>
-# << Classes >> (17 of 74)
+# << Classes >> (17 of 75)
 class VBMissingPositional(VBCodeBlock):
     """A positional argument that is missing from the argument list"""
 
@@ -780,7 +781,7 @@ class VBMissingPositional(VBCodeBlock):
                          function_name,
                          self.parameter_index_position)
     # -- end -- << VBMissingPositional methods >>
-# << Classes >> (18 of 74)
+# << Classes >> (18 of 75)
 class VBExpression(VBNamespace):
     """Represents an comment"""
 
@@ -818,7 +819,7 @@ class VBExpression(VBNamespace):
             rh, lh = self.parts.pop(idx+1), self.parts.pop(idx-1)
             item.rh, item.lh = rh, lh
     # -- end -- << VBExpression methods >>
-# << Classes >> (19 of 74)
+# << Classes >> (19 of 75)
 class VBParExpression(VBNamespace):
     """A block in an expression"""
 
@@ -878,7 +879,7 @@ class VBParExpression(VBNamespace):
             rh, lh = self.parts.pop(idx+1), self.parts.pop(idx-1)
             item.rh, item.lh = rh, lh
     # -- end -- << VBParExpression methods >>
-# << Classes >> (20 of 74)
+# << Classes >> (20 of 75)
 class VBPoint(VBExpression):
     """A block in an expression"""
 
@@ -891,7 +892,7 @@ class VBPoint(VBExpression):
         """Render this element as code"""
         return "(%s)" % ", ".join([item.renderAsCode() for item in self.parts])
     # -- end -- << VBPoint methods >>
-# << Classes >> (21 of 74)
+# << Classes >> (21 of 75)
 class VBExpressionPart(VBConsumer):
     """Part of an expression"""
 
@@ -929,7 +930,7 @@ class VBExpressionPart(VBConsumer):
             log.info("Removed type identifier from '%s'" % self.element.text)
             self.element.text = self.element.text[:-1]
     # -- end -- << VBExpressionPart methods >>
-# << Classes >> (22 of 74)
+# << Classes >> (22 of 75)
 class VBOperation(VBExpressionPart):
     """An operation in an expression"""
 
@@ -959,7 +960,7 @@ class VBOperation(VBExpressionPart):
             log.info("Found regrouping operator, reversing order of operands")
             self.parent.operator_groupings.append(self)
     # -- end -- << VBOperation methods >>
-# << Classes >> (23 of 74)
+# << Classes >> (23 of 75)
 class VBStringLiteral(VBExpressionPart):
     """Represents a string literal"""
 
@@ -979,7 +980,7 @@ class VBStringLiteral(VBExpressionPart):
             body = body.replace("'", "\\'")
             return "'%s'" % body
     # -- end -- << VBStringLiteral methods >>
-# << Classes >> (24 of 74)
+# << Classes >> (24 of 75)
 class VBDateLiteral(VBParExpression):
     """Represents a date literal"""
 
@@ -992,7 +993,7 @@ class VBDateLiteral(VBParExpression):
         """Render this element as code"""
         return "MakeDate(%s)" % ", ".join([item.renderAsCode() for item in self.parts])
     # -- end -- << VBDateLiteral methods >>
-# << Classes >> (25 of 74)
+# << Classes >> (25 of 75)
 class VBProject(VBNamespace):
     """Handles a VB Project"""
 
@@ -1020,7 +1021,7 @@ class VBProject(VBNamespace):
         else:
             raise UnresolvableName("Name '%s' is not known in this namespace" % name)
     # -- end -- << VBProject methods >>
-# << Classes >> (26 of 74)
+# << Classes >> (26 of 75)
 class VBModule(VBCodeBlock):
     """Handles a VB Module"""
 
@@ -1220,7 +1221,7 @@ class VBModule(VBCodeBlock):
                     log.info("Registered new custom global '%s'" % item_name)
                     global_objects[item_name] = vbmodule
     # -- end -- << VBModule methods >>
-# << Classes >> (27 of 74)
+# << Classes >> (27 of 75)
 class VBClassModule(VBModule):
     """Handles a VB Class"""
 
@@ -1274,7 +1275,7 @@ class VBClassModule(VBModule):
         self.identifier = self.classname 
         self.registerAsGlobal()
     # -- end -- << VBClassModule methods >>
-# << Classes >> (28 of 74)
+# << Classes >> (28 of 75)
 class VBCodeModule(VBModule):
     """Handles a VB Code module"""
 
@@ -1291,12 +1292,12 @@ class VBCodeModule(VBModule):
             """
         return obj.identifier
     # -- end -- << VBCodeModule methods >>
-# << Classes >> (29 of 74)
+# << Classes >> (29 of 75)
 class VBFormModule(VBClassModule):
     """Handles a VB Form module"""
 
     convert_functions_to_methods = 1  # If this is 1 then local functions will become methods
-# << Classes >> (30 of 74)
+# << Classes >> (30 of 75)
 class VBCOMExternalModule(VBModule):
     """Handles external COM references"""
 
@@ -1337,7 +1338,7 @@ class VBCOMExternalModule(VBModule):
 
         return '\n\n'.join(library_code)
     # -- end -- << VBCOMExternalModule methods >>
-# << Classes >> (31 of 74)
+# << Classes >> (31 of 75)
 class VBVariableDefinition(VBVariable):
     """Handles a VB Dim of a Variable"""
 
@@ -1401,7 +1402,7 @@ class VBVariableDefinition(VBVariable):
                             local_type,
                             size)
     # -- end -- << VBVariableDefinition methods >>
-# << Classes >> (32 of 74)
+# << Classes >> (32 of 75)
 class VBConstant(VBVariableDefinition):
     """Represents a constant in VB"""
 
@@ -1415,7 +1416,7 @@ class VBConstant(VBVariableDefinition):
                             local_name,
                             self.expression.renderAsCode())
     # -- end -- << VBConstant methods >>
-# << Classes >> (33 of 74)
+# << Classes >> (33 of 75)
 class VBReDim(VBCodeBlock):
     """Represents a Redim statement"""
 
@@ -1438,7 +1439,7 @@ class VBReDim(VBCodeBlock):
             var.preserve_keyword = self.preserve
         return "".join([var.renderAsCode(indent) for var in self.variables])
     # -- end -- << VBReDim methods >>
-# << Classes >> (34 of 74)
+# << Classes >> (34 of 75)
 class VBAssignment(VBNamespace):
     """An assignment statement"""
 
@@ -1518,7 +1519,7 @@ class VBAssignment(VBNamespace):
 
         log.info("Added a module level global: '%s'" % self.resolveName(self.object.primary.element.text))
     # -- end -- << VBAssignment methods >>
-# << Classes >> (35 of 74)
+# << Classes >> (35 of 75)
 class VBSpecialAssignment(VBAssignment):
     """A special assignment eg LSet, RSet where the assignment ends up as a function call"""
 
@@ -1535,17 +1536,17 @@ class VBSpecialAssignment(VBAssignment):
                                 self.object.renderAsCode(), 
                                 self.parts[0].renderAsCode(indent))
     # -- end -- << VBSpecialAssignment methods >>
-# << Classes >> (36 of 74)
+# << Classes >> (36 of 75)
 class VBLSet(VBSpecialAssignment):
     """An LSet statement"""
 
     fn_name = "LSet"
-# << Classes >> (37 of 74)
+# << Classes >> (37 of 75)
 class VBRSet(VBSpecialAssignment):
     """An RSet statement"""
 
     fn_name = "RSet"
-# << Classes >> (38 of 74)
+# << Classes >> (38 of 75)
 class VBSet(VBAssignment):
     """A set statement"""
 
@@ -1566,7 +1567,7 @@ class VBSet(VBAssignment):
                         self.object.renderAsCode(), 
                         self.parts[0].renderAsCode(indent))
     # -- end -- << VBSet methods >>
-# << Classes >> (39 of 74)
+# << Classes >> (39 of 75)
 class VBEnd(VBAssignment):
     """An end statement"""
 
@@ -1575,9 +1576,9 @@ class VBEnd(VBAssignment):
         """Render this element as code"""
         return "%ssys.exit(0)\n" % self.getIndent(indent)
     # -- end -- << VBEnd methods >>
-# << Classes >> (40 of 74)
+# << Classes >> (40 of 75)
 class VBCall(VBCodeBlock):
-    """A set statement"""
+    """A call statement"""
 
     auto_handlers = [
     ]
@@ -1616,7 +1617,44 @@ class VBCall(VBCodeBlock):
                              self.object.renderAsCode(), 
                              params)
     # -- end -- << VBCall methods >>
-# << Classes >> (41 of 74)
+# << Classes >> (41 of 75)
+class VBExplicitCall(VBCodeBlock):
+    """A call statement on a single line with parenthesis
+
+    This is illegal in VB but can be found in VBSCript
+
+    """
+
+    auto_handlers = [
+    ]
+
+
+    # << VBExplicitCall methods >> (1 of 2)
+    def __init__(self, scope="Private"):
+        """Initialize the assignment"""
+        super(VBExplicitCall, self).__init__(scope)
+        self.parameters = []
+        self.object = None
+        self.auto_class_handlers = ({
+            "expression" : (VBParExpression, self.parameters),
+            "missing_positional" : (VBMissingPositional, self.parameters),
+            "qualified_object" : (VBObject, "object")
+        })
+    # << VBExplicitCall methods >> (2 of 2)
+    def renderAsCode(self, indent=0):
+        """Render this element as code"""
+        if self.parameters:
+            #
+            # Something has gone wrong here because there shouldn't be any parameters
+            # in the call. These should be encapsulated in the object. 
+            raise VBParserError('Unexpected parameters (%s) in explicit call' % self.parameters)
+        #
+        self.object.am_on_lhs = 1
+        #
+        return "%s%s\n" % (self.getIndent(indent),
+                             self.object.renderAsCode())
+    # -- end -- << VBExplicitCall methods >>
+# << Classes >> (42 of 75)
 class VBExitStatement(VBConsumer):
     """Represents an exit statement"""
 
@@ -1636,7 +1674,7 @@ class VBExitStatement(VBConsumer):
         else:
             return "%sbreak\n" % indenter
     # -- end -- << VBExitStatement methods >>
-# << Classes >> (42 of 74)
+# << Classes >> (43 of 75)
 class VBComment(VBConsumer):
     """Represents an comment"""
 
@@ -1653,7 +1691,7 @@ class VBComment(VBConsumer):
         """Render this element as a string"""
         return self.element.text
     # -- end -- << VBComment methods >>
-# << Classes >> (43 of 74)
+# << Classes >> (44 of 75)
 class VBLabel(VBUnrendered):
     """Represents a label"""
 
@@ -1663,7 +1701,7 @@ class VBLabel(VBUnrendered):
             return ""
         else:
             return super(VBLabel, self).renderAsCode(indent)
-# << Classes >> (44 of 74)
+# << Classes >> (45 of 75)
 class VBOpen(VBCodeBlock):
     """Represents an open statement"""
 
@@ -1715,7 +1753,7 @@ class VBOpen(VBCodeBlock):
                     file_mode,
                     todo_warning)
     # -- end -- << VBOpen methods >>
-# << Classes >> (45 of 74)
+# << Classes >> (46 of 75)
 class VBClose(VBCodeBlock):
     """Represents a close statement"""
 
@@ -1743,7 +1781,7 @@ class VBClose(VBCodeBlock):
                         channel.renderAsCode()))
             return "".join(ret)
     # -- end -- << VBClose methods >>
-# << Classes >> (46 of 74)
+# << Classes >> (47 of 75)
 class VBSeek(VBCodeBlock):
     """Represents a seek statement"""
 
@@ -1765,7 +1803,7 @@ class VBSeek(VBCodeBlock):
                     self.expressions[0].renderAsCode(),
                     self.expressions[1].renderAsCode(),)
     # -- end -- << VBSeek methods >>
-# << Classes >> (47 of 74)
+# << Classes >> (48 of 75)
 class VBInput(VBCodeBlock):
     """Represents an input statement"""
 
@@ -1797,12 +1835,12 @@ class VBInput(VBCodeBlock):
                     self.channel.renderAsCode(),
                     len(self.variables))
     # -- end -- << VBInput methods >>
-# << Classes >> (48 of 74)
+# << Classes >> (49 of 75)
 class VBLineInput(VBInput):
     """Represents an input statement"""
 
     input_type = "LineInput"
-# << Classes >> (49 of 74)
+# << Classes >> (50 of 75)
 class VBPrint(VBCodeBlock):
     """Represents a print statement"""
 
@@ -1832,7 +1870,7 @@ class VBPrint(VBCodeBlock):
                     self.channel.renderAsCode(),
                     print_list)
     # -- end -- << VBPrint methods >>
-# << Classes >> (50 of 74)
+# << Classes >> (51 of 75)
 class VBPrintSeparator(VBConsumer):
     """Represents a print statement separator"""
 
@@ -1846,7 +1884,7 @@ class VBPrintSeparator(VBConsumer):
         else:
             raise UnhandledStructureError("Unknown print separator '%s'" % self.element.text)
     # -- end -- << VBPrintSeparator methods >>
-# << Classes >> (51 of 74)
+# << Classes >> (52 of 75)
 class VBName(VBCodeBlock):
     """Represents a name statement"""
 
@@ -1870,7 +1908,7 @@ class VBName(VBCodeBlock):
                     self.getIndent(indent),
                     file_list)
     # -- end -- << VBName methods >>
-# << Classes >> (52 of 74)
+# << Classes >> (53 of 75)
 class VBUserType(VBCodeBlock):
     """Represents a select block"""
 
@@ -1911,7 +1949,7 @@ class VBUserType(VBCodeBlock):
                     self.getIndent(indent+1),
                     "\n".join(vars)))
     # -- end -- << VBUserType methods >>
-# << Classes >> (53 of 74)
+# << Classes >> (54 of 75)
 class VBSubroutine(VBCodeBlock):
     """Represents a subroutine"""
 
@@ -2003,7 +2041,7 @@ class VBSubroutine(VBCodeBlock):
             if self.parent.amGlobal(self.scope):
                 self.registerAsGlobal()
     # -- end -- << VBSubroutine methods >>
-# << Classes >> (54 of 74)
+# << Classes >> (55 of 75)
 class VBFunction(VBSubroutine):
     """Represents a function"""
 
@@ -2044,7 +2082,7 @@ class VBFunction(VBSubroutine):
                     return_var)
         return ret
     # -- end -- << VBFunction methods >>
-# << Classes >> (55 of 74)
+# << Classes >> (56 of 75)
 class VBIf(VBCodeBlock):
     """Represents an if block"""
 
@@ -2085,7 +2123,7 @@ class VBIf(VBCodeBlock):
             ret += self.else_block.renderAsCode(indent+1)
         return ret
     # -- end -- << VBIf methods >>
-# << Classes >> (56 of 74)
+# << Classes >> (57 of 75)
 class VBElseIf(VBIf):
     """Represents an ElseIf statement"""
 
@@ -2108,7 +2146,7 @@ class VBElseIf(VBIf):
         ret += self.elif_block.renderAsCode(indent+1)
         return ret
     # -- end -- << VBElseIf methods >>
-# << Classes >> (57 of 74)
+# << Classes >> (58 of 75)
 class VBInlineIf(VBCodeBlock):
     """Represents an if block"""
 
@@ -2152,7 +2190,7 @@ class VBInlineIf(VBCodeBlock):
         #
         return ret
     # -- end -- << VBInlineIf methods >>
-# << Classes >> (58 of 74)
+# << Classes >> (59 of 75)
 class VBSelect(VBCodeBlock):
     """Represents a select block"""
 
@@ -2213,7 +2251,7 @@ class VBSelect(VBCodeBlock):
             raise InvalidOption("Evaluate variable option not understood: '%s'" % eval_variable)
         return select_var
     # -- end -- << VBSelect methods >>
-# << Classes >> (59 of 74)
+# << Classes >> (60 of 75)
 class VBCaseBlock(VBSelect):
     """Represents a select block"""
 
@@ -2234,7 +2272,7 @@ class VBCaseBlock(VBSelect):
             "block" : (VBCodeBlock, "block"),
         }
     # -- end -- << VBCaseBlock methods >>
-# << Classes >> (60 of 74)
+# << Classes >> (61 of 75)
 class VBCaseItem(VBCaseBlock):
     """Represents a select block"""
 
@@ -2271,7 +2309,7 @@ class VBCaseItem(VBCaseBlock):
                                            self.expressions[1].renderAsCode())
         raise VBParserError("Error rendering case item")
     # -- end -- << VBCaseItem methods >>
-# << Classes >> (61 of 74)
+# << Classes >> (62 of 75)
 class VBCaseElse(VBCaseBlock):
     """Represents a select block"""
 
@@ -2281,7 +2319,7 @@ class VBCaseElse(VBCaseBlock):
         return "%selse:\n%s" % (self.getIndent(indent),
                                  self.block.renderAsCode(indent+1))
     # -- end -- << VBCaseElse methods >>
-# << Classes >> (62 of 74)
+# << Classes >> (63 of 75)
 class VBFor(VBCodeBlock):
     """Represents a for statement"""
 
@@ -2339,7 +2377,7 @@ class VBFor(VBCodeBlock):
                 self.loopname
             )
     # -- end -- << VBFor methods >>
-# << Classes >> (63 of 74)
+# << Classes >> (64 of 75)
 class VBForEach(VBFor):
     """Represents a for each statement"""
 
@@ -2355,7 +2393,7 @@ class VBForEach(VBFor):
                                  self.copiedname,
                                  self.block.renderAsCode(indent+1))
     # -- end -- << VBForEach methods >>
-# << Classes >> (64 of 74)
+# << Classes >> (65 of 75)
 class VBWhile(VBCodeBlock):
     """Represents a while statement"""
 
@@ -2379,7 +2417,7 @@ class VBWhile(VBCodeBlock):
                             self.expression.renderAsCode(),
                             self.block.renderAsCode(indent+1))
     # -- end -- << VBWhile methods >>
-# << Classes >> (65 of 74)
+# << Classes >> (66 of 75)
 class VBDo(VBCodeBlock):
     """Represents a do statement"""
 
@@ -2442,7 +2480,7 @@ class VBDo(VBCodeBlock):
                             self.getIndent(indent),
                             self.block.renderAsCode(indent+1))
     # -- end -- << VBDo methods >>
-# << Classes >> (66 of 74)
+# << Classes >> (67 of 75)
 class VBWith(VBCodeBlock):
     """Represents a with statement"""
 
@@ -2494,7 +2532,7 @@ class VBWith(VBCodeBlock):
         else:
             return ""
     # -- end -- << VBWith methods >>
-# << Classes >> (67 of 74)
+# << Classes >> (68 of 75)
 class VBProperty(VBSubroutine):
     """Represents a property definition"""
 
@@ -2542,7 +2580,7 @@ class VBProperty(VBSubroutine):
                     proper_name,
                     ", ".join(params))
     # -- end -- << VBProperty methods >>
-# << Classes >> (68 of 74)
+# << Classes >> (69 of 75)
 class VBEnum(VBCodeBlock):
     """Represents an enum definition"""
 
@@ -2579,7 +2617,7 @@ class VBEnum(VBCodeBlock):
                             "\n".join(ret),
                     )
     # -- end -- << VBEnum methods >>
-# << Classes >> (69 of 74)
+# << Classes >> (70 of 75)
 class VBEnumItem(VBCodeBlock):
     """Represents an enum item"""
 
@@ -2595,7 +2633,7 @@ class VBEnumItem(VBCodeBlock):
                 "expression" : (VBExpression, "expression"),
             }
     # -- end -- << VBEnumItem methods >>
-# << Classes >> (70 of 74)
+# << Classes >> (71 of 75)
 class VB2PYDirective(VBCodeBlock):
     """Handles a vb2py directive"""
 
@@ -2651,14 +2689,14 @@ class VB2PYDirective(VBCodeBlock):
         elif self.directive_type == "GlobalAdd":
             Config.addLocalOveride(self.config_section, self.config_name, self.expression)
     # -- end -- << VB2PYDirective methods >>
-# << Classes >> (71 of 74)
+# << Classes >> (72 of 75)
 class VBPass(VBCodeBlock):
     """Represents an empty statement"""
 
     def renderAsCode(self, indent=0):
         """Render it!"""
         return "%spass\n" % (self.getIndent(indent),)
-# << Classes >> (72 of 74)
+# << Classes >> (73 of 75)
 class VBRenderDirect(VBCodeBlock):
     """Represents a pre-rendered statement"""
 
@@ -2682,14 +2720,14 @@ class VBRenderDirect(VBCodeBlock):
     def asString(self):
         """Return string representation"""
         return self.identifier
-# << Classes >> (73 of 74)
+# << Classes >> (74 of 75)
 class VBNothing(VBCodeBlock):
     """Represents a block which renders to nothing at all"""
 
     def renderAsCode(self, indent=0):
         """Render it!"""
         return ""
-# << Classes >> (74 of 74)
+# << Classes >> (75 of 75)
 class VBParserFailure(VBConsumer):
     """Represents a block which failed to parse"""
 

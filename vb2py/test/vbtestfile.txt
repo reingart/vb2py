@@ -1,9 +1,7 @@
-#@+leo-ver=4
-#@+node:@file test\vbtestfile.txt
+#@+leo-ver=5-thin
+#@+node:PAP.20040123192735: * @file test\vbtestfile.txt
 This is a file just
 used for reading
 and not for anything else!
  ...
-#@nonl
-#@-node:@file test\vbtestfile.txt
 #@-leo

@@ -33,7 +33,7 @@
 <v t="pap.20041207004101"><vh>&lt;&lt; Resolve References &gt;&gt;</vh></v>
 </v>
 </v>
-<v t="pap.120703001453.16" a="E"><vh>class BaseParser</vh>
+<v t="pap.120703001453.16"><vh>class BaseParser</vh>
 <v t="pap.120703001453.17"><vh>__init__</vh></v>
 <v t="pap.20070224183443"><vh>readFileContent</vh></v>
 <v t="pap.120703001453.18"><vh>doValidation</vh></v>
@@ -53,7 +53,7 @@
 <v t="pap.120703001453.30"><vh>doParse</vh></v>
 <v t="pap.120703001453.31"><vh>doValidation</vh></v>
 </v>
-<v t="pap.120703001453.32" a="E"><vh>class FormParser</vh>
+<v t="pap.120703001453.32"><vh>class FormParser</vh>
 <v t="pap.120703001453.33" a="E"><vh>doParse</vh>
 <v t="pap.120703001453.34"><vh>&lt;&lt; Split off code section &gt;&gt;</vh></v>
 <v t="pap.120703001453.35"><vh>&lt;&lt; Add controls to form namespace &gt;&gt;</vh></v>
@@ -71,7 +71,7 @@
 <v t="pap.120703001453.45"><vh>groupOptionButtons</vh></v>
 <v t="pap.120703001453.46"><vh>getContainer</vh></v>
 </v>
-<v t="pap.120703001453.47" a="E"><vh>class ModuleParser</vh>
+<v t="pap.120703001453.47"><vh>class ModuleParser</vh>
 <v t="pap.120703001453.48"><vh>doParse</vh></v>
 <v t="pap.120703001453.49"><vh>getContainer</vh></v>
 <v t="pap.120703001453.50"><vh>writeToFile</vh></v>
@@ -79,7 +79,7 @@
 <v t="pap.120703001453.51"><vh>class ClassParser</vh>
 <v t="pap.120703001453.52"><vh>getContainer</vh></v>
 </v>
-<v t="pap.120703001453.53" a="E"><vh>class BaseResource</vh>
+<v t="pap.120703001453.53"><vh>class BaseResource</vh>
 <v t="pap.120703001453.54"><vh>__init__</vh></v>
 <v t="pap.120703001453.55" a="E"><vh>updateFrom</vh>
 <v t="pap.120703001453.56"><vh>&lt;&lt; Main properties &gt;&gt;</vh></v>
@@ -94,7 +94,7 @@
 <v t="pap.20041207005609"><vh>__init__</vh></v>
 </v>
 <v t="pap.120703001453.62"><vh>class NameSpace</vh></v>
-<v t="pap.120703001453.63" a="E"><vh>main</vh>
+<v t="pap.120703001453.63"><vh>main</vh>
 <v t="pap.120703001453.64"><vh>&lt;&lt; Parse options &gt;&gt;</vh></v>
 <v t="pap.120703001453.65"><vh>&lt;&lt; Validate arguments &gt;&gt;</vh></v>
 </v>
@@ -260,10 +260,10 @@
 </v>
 </v>
 </v>
-<v t="pap.120703001453.160"><vh>Parsing and converting code</vh>
-<v t="pap.120703001453.161" a="E"
-expanded="pap.120703001453.169,"><vh>@file vbgrammar.txt</vh></v>
-<v t="pap.120703001453.200"><vh>vbparser.py</vh>
+<v t="pap.120703001453.160" a="E"><vh>Parsing and converting code</vh>
+<v t="pap.120703001453.161"
+expanded="pap.120703001453.162,pap.120703001453.169,pap.120703001453.185,"><vh>@file vbgrammar.txt</vh></v>
+<v t="pap.120703001453.200" a="E"><vh>vbparser.py</vh>
 <v t="pap.120703001453.201"><vh>&lt;&lt; Imports &gt;&gt;</vh></v>
 <v t="pap.120703001453.202"><vh>&lt;&lt; Error Classes &gt;&gt;</vh></v>
 <v t="pap.120703001453.203"><vh>&lt;&lt; Definitions &gt;&gt;</vh></v>
@@ -296,7 +296,7 @@ expanded="pap.120703001453.169,"><vh>@file vbgrammar.txt</vh></v>
 <v t="pap.120703001453.222"><vh>VBFailedElement</vh>
 <v t="pap.120703001453.223"><vh>__init__</vh></v>
 </v>
-<v t="pap.120703001453.224" a="E"><vh>VBNamespace </vh>
+<v t="pap.120703001453.224"><vh>VBNamespace </vh>
 <v t="pap.120703001453.225"><vh>&lt;&lt; VBNamespace declarations &gt;&gt;</vh></v>
 <v t="pap.120703001453.226" a="E"><vh>__init__</vh>
 <v t="pap.120703001453.227"><vh>&lt;&lt; Get indenting Options &gt;&gt;</vh></v>
@@ -339,7 +339,7 @@ expanded="pap.120703001453.169,"><vh>@file vbgrammar.txt</vh></v>
 <v t="pap.120703001453.258"><vh>VBUnrendered</vh></v>
 <v t="pap.120703001453.259"><vh>VBMessage</vh></v>
 <v t="pap.120703001453.260"><vh>VBMissingArgument</vh></v>
-<v t="pap.120703001453.261"><vh>VBCodeBlock</vh>
+<v t="pap.120703001453.261" a="E"><vh>VBCodeBlock</vh>
 <v t="pap.120703001453.262"><vh>__init__</vh></v>
 <v t="pap.120703001453.263"><vh>renderAsCode</vh></v>
 </v>
@@ -347,7 +347,7 @@ expanded="pap.120703001453.169,"><vh>@file vbgrammar.txt</vh></v>
 <v t="pap.120703001453.265"><vh>VBOptionalCodeBlock</vh>
 <v t="pap.120703001453.266"><vh>containsStatements</vh></v>
 </v>
-<v t="pap.120703001453.267" a="E"><vh>VBVariable </vh>
+<v t="pap.120703001453.267"><vh>VBVariable </vh>
 <v t="pap.120703001453.268"><vh>&lt;&lt; VBVariable declarations &gt;&gt;</vh></v>
 <v t="pap.120703001453.269"><vh>__init__</vh></v>
 <v t="pap.120703001453.270"><vh>finalizeObject</vh></v>
@@ -470,9 +470,13 @@ expanded="pap.120703001453.169,"><vh>@file vbgrammar.txt</vh></v>
 <v t="pap.120703001453.349"><vh>VBEnd</vh>
 <v t="pap.120703001453.350"><vh>renderAsCode</vh></v>
 </v>
-<v t="pap.120703001453.351"><vh>VBCall</vh>
+<v t="pap.120703001453.351" a="E"><vh>VBCall</vh>
 <v t="pap.120703001453.352"><vh>__init__</vh></v>
 <v t="pap.120703001453.353"><vh>renderAsCode</vh></v>
+</v>
+<v t="paul.20110401223822.6973" a="E"><vh>VBExplicitCall</vh>
+<v t="paul.20110401223822.6974"><vh>__init__</vh></v>
+<v t="paul.20110401223822.6975"><vh>renderAsCode</vh></v>
 </v>
 <v t="pap.120703001453.354"><vh>Exit Statement</vh>
 <v t="pap.120703001453.355"><vh>renderAsCode</vh></v>
@@ -500,7 +504,7 @@ expanded="pap.120703001453.169,"><vh>@file vbgrammar.txt</vh></v>
 <v t="pap.120703001453.372"><vh>renderAsCode</vh></v>
 </v>
 <v t="pap.120703001453.373"><vh>VBLineInput</vh></v>
-<v t="pap.120703001453.374"><vh>VBPrint</vh>
+<v t="pap.120703001453.374" a="E"><vh>VBPrint</vh>
 <v t="pap.120703001453.375"><vh>__init__</vh></v>
 <v t="pap.120703001453.376"><vh>renderAsCode</vh></v>
 </v>
@@ -595,7 +599,7 @@ expanded="pap.120703001453.169,"><vh>@file vbgrammar.txt</vh></v>
 </v>
 </v>
 </v>
-<v t="pap.120703001453.439"><vh>Non-VB Classes</vh>
+<v t="pap.120703001453.439" a="E"><vh>Non-VB Classes</vh>
 <v t="pap.120703001453.440"><vh>VB2PYDirective </vh>
 <v t="pap.120703001453.441"><vh>__init__</vh></v>
 <v t="pap.120703001453.442"><vh>renderAsCode</vh></v>
@@ -608,7 +612,7 @@ expanded="pap.120703001453.169,"><vh>@file vbgrammar.txt</vh></v>
 </v>
 </v>
 </v>
-<v t="pap.120703001453.448" a="E"><vh>VB mimic fns and classes</vh>
+<v t="pap.120703001453.448"><vh>VB mimic fns and classes</vh>
 <v t="pap.120703001453.449" a="E"><vh>vbclasses.py</vh>
 <v t="pap.120703001453.450"><vh>Collection class</vh>
 <v t="pap.120703001453.451"><vh>Hidden methods</vh>
@@ -742,8 +746,7 @@ expanded="pap.120703001453.169,"><vh>@file vbgrammar.txt</vh></v>
 </v>
 </v>
 </v>
-<v t="pap.120703001453.550"><vh>Configuration</vh>
-<v t="pap.120703001453.551" a="E"><vh>@file vb2py.ini</vh></v>
+<v t="pap.120703001453.550" a="E"><vh>Configuration</vh>
 <v t="pap.120703001453.552"><vh>config.py</vh></v>
 </v>
 <v t="pap.120703001453.553"><vh>Extensions and plugins</vh>
@@ -782,7 +785,7 @@ expanded="pap.120703001453.169,"><vh>@file vbgrammar.txt</vh></v>
 <v t="pap.120703001453.580"><vh>attributenames.py</vh></v>
 </v>
 </v>
-<v t="pap.120703001453.581"><vh>Package</vh>
+<v t="pap.120703001453.581" a="E"><vh>Package</vh>
 <v t="pap.120703001453.582" a="E"><vh>setup.py</vh>
 <v t="pap.120703001453.583"><vh>Supporting functions</vh></v>
 </v>
@@ -817,7 +820,7 @@ expanded="pap.20070203172243.3,"><vh>@thin interactive.py</vh></v>
 <v t="pap.20070203172243.5"><vh>@thin interactive.rsrc.py</vh></v>
 </v>
 </v>
-<v t="pap.120703001453.600" a="E"><vh>Testing</vh>
+<v t="pap.120703001453.600"><vh>Testing</vh>
 <v t="pap.120703001453.601"><vh>__init__.py</vh></v>
 <v t="pap.120703001453.602" a="E"><vh>Mini parser for quick testing</vh>
 <v t="pap.120703001453.620"><vh>Open/Close</vh></v>
@@ -902,7 +905,7 @@ expanded="pap.20070203172243.3,"><vh>@thin interactive.py</vh></v>
 <v t="pap.120703001453.669"><vh>Failing tests</vh></v>
 </v>
 <v t="pap.120703001453.670" a="E"><vh>Test Basic Conversion</vh>
-<v t="pap.120703001453.671" a="E"><vh>Basic Testing Framework</vh>
+<v t="pap.120703001453.671"><vh>Basic Testing Framework</vh>
 <v t="PAP.20040125002850" a="E"><vh>getTestMethod</vh>
 <v t="pap.120703001453.672"><vh>&lt;&lt; Parse VB &gt;&gt;</vh></v>
 <v t="pap.120703001453.673"><vh>&lt;&lt; Execute the Python code &gt;&gt;</vh></v>
@@ -966,6 +969,7 @@ expanded="pap.20070203172243.3,"><vh>@thin interactive.py</vh></v>
 <v t="pap.120703001453.718"><vh>Recursion</vh></v>
 <v t="pap.120703001453.719"><vh>Optional arguments</vh></v>
 <v t="pap.120703001453.720"><vh>Named arguments</vh></v>
+<v t="paul.20110401223822.6963"><vh>VBScript type calls</vh></v>
 </v>
 <v t="pap.120703001453.721"><vh>Dims and arrays</vh>
 <v t="pap.120703001453.722"><vh>Simple dims</vh></v>
@@ -1015,7 +1019,7 @@ expanded="pap.20070203172243.3,"><vh>@thin interactive.py</vh></v>
 <v t="pap.120703001453.750"><vh>Simple Types</vh></v>
 <v t="pap.120703001453.751"><vh>Arrays of types</vh></v>
 </v>
-<v t="pap.120703001453.752" a="E"><vh>Files</vh>
+<v t="pap.120703001453.752"><vh>Files</vh>
 <v t="paul.20110401223822.4437"><vh>Small tests</vh></v>
 <v t="pap.120703001453.753"><vh>Open/read/close</vh></v>
 <v t="pap.120703001453.754"><vh>Open/print/close</vh></v>
@@ -1176,7 +1180,7 @@ expanded="pap.20070203172243.3,"><vh>@thin interactive.py</vh></v>
 <v t="pap.120703001453.861"><vh>testall.py</vh></v>
 <v t="PAP.20040123192735"><vh>@file test\vbtestfile.txt</vh></v>
 </v>
-<v t="pap.120703001453.862"><vh>Sandbox</vh>
+<v t="pap.120703001453.862" a="E"><vh>Sandbox</vh>
 <v t="pap.120703001453.863"><vh>__init__.py</vh></v>
 <v t="pap.120703001453.864"><vh>commandline.py</vh></v>
 <v t="pap.120703001453.865" a="E"><vh>makedocs.py</vh>
@@ -1517,7 +1521,7 @@ expanded="pap.20070203172243.3,"><vh>@thin interactive.py</vh></v>
 </v>
 <v t="pap.120703001453.1111"><vh>Bug Fixes</vh>
 <v t="pap.120703001453.1112"><vh>805866 Print with no channel number fails during rendering </vh>
-<v t="pap.120703001453.374"></v>
+<v t="pap.120703001453.374" a="E"></v>
 <v t="pap.120703001453.493"></v>
 </v>
 <v t="pap.120703001453.1113"><vh>809979 On Error GoTo label: </vh>
@@ -1528,7 +1532,7 @@ expanded="pap.20070203172243.3,"><vh>@thin interactive.py</vh></v>
 <v t="pap.120703001453.1114" a="E"><vh>810403 VB Array of String translated to just String() </vh>
 <v t="pap.120703001453.725"></v>
 <v t="pap.120703001453.174"><vh>Dim</vh></v>
-<v t="pap.120703001453.267" a="E"></v>
+<v t="pap.120703001453.267"></v>
 <v t="pap.120703001453.331" a="E"></v>
 <v t="pap.120703001453.503"></v>
 </v>
@@ -1586,8 +1590,8 @@ expanded="pap.20070203172243.3,"><vh>@thin interactive.py</vh></v>
 <v t="pap.120703001453.447"></v>
 </v>
 </v>
-<v t="pap.120703001453.1127"><vh>Project views</vh>
-<v t="pap.120703001453.1128" a="E"><vh>VB Structures</vh>
+<v t="pap.120703001453.1127" a="E"><vh>Project views</vh>
+<v t="pap.120703001453.1128"><vh>VB Structures</vh>
 <v t="pap.120703001453.1129"><vh>Select</vh>
 <v t="pap.120703001453.187"></v>
 <v t="pap.120703001453.405"></v>
@@ -1617,7 +1621,7 @@ expanded="pap.20070203172243.3,"><vh>@thin interactive.py</vh></v>
 <v t="pap.120703001453.174"></v>
 <v t="pap.120703001453.721"></v>
 <v t="pap.120703001453.335"></v>
-<v t="pap.120703001453.267" a="E"></v>
+<v t="pap.120703001453.267"></v>
 <v t="pap.120703001453.331" a="E"></v>
 </v>
 <v t="pap.120703001453.1134"><vh>Fors</vh>
@@ -1645,10 +1649,10 @@ expanded="pap.20070203172243.3,"><vh>@thin interactive.py</vh></v>
 <v t="pap.120703001453.364"></v>
 <v t="pap.120703001453.370"></v>
 <v t="pap.120703001453.373"></v>
-<v t="pap.120703001453.374"></v>
+<v t="pap.120703001453.374" a="E"></v>
 <v t="pap.120703001453.377"></v>
 <v t="pap.120703001453.487" a="E"></v>
-<v t="pap.120703001453.752" a="E"></v>
+<v t="pap.120703001453.752"></v>
 </v>
 <v t="pap.120703001453.1138"><vh>With</vh>
 <v t="pap.120703001453.193"><vh>With</vh></v>
@@ -1668,7 +1672,7 @@ expanded="pap.20070203172243.3,"><vh>@thin interactive.py</vh></v>
 </v>
 </v>
 <v t="pap.120703001453.1141" a="E"><vh>Configuration</vh>
-<v t="pap.120703001453.550"></v>
+<v t="pap.120703001453.550" a="E"></v>
 <v t="pap.120703001453.837"></v>
 <v t="pap.120703001453.996"></v>
 </v>
@@ -1974,6 +1978,7 @@ expanded="pap.20070203172243.3,"><vh>@thin interactive.py</vh></v>
 <v t="pap.120703001453.1283"><vh>Test report for this version</vh></v>
 <v t="pap.20041206020842"><vh>Challenge</vh></v>
 <v t="pap.20041206233451"><vh>Spammers</vh></v>
+<v t="pap.120703001453.716"></v>
 </v>
 </vnodes>
 <tnodes>
@@ -2051,7 +2056,7 @@ where this behaviour is not appropriate. </t>
 
 tests.extend([
 ("""
-a = FileLen("c:\\development\\python24\\lib\\site-packages\\vb2py\\test\\vbtestfile.txt")
+a = FileLen("/usr/local/lib/python2.6/dist-packages/vb2py/test/vbtestfile.txt")
 """, { "a" : 164}),
 ])
 
@@ -2418,7 +2423,7 @@ Do test for Random functions</t>
 
 tests.extend([
 ("""
-Open "c:\\development\\python24\\lib\\site-packages\\vb2py\\test\\vbtestfile.txt" For Input As #3
+Open "/usr/local/lib/python2.6/dist-packages/vb2py/test/vbtestfile.txt" For Input As #3
 a = Lof(3)
 """, { "a" : 164}),
 ])
@@ -2818,7 +2823,7 @@ While Not EOF(#3)
 End While
 Close #3
 
-""" % vb2py.utils.relativePath("test\\testread.txt"),
+""" % vb2py.utils.relativePath("test/testread.txt"),
 {
 'a' : 'hello',
 }))</t>
@@ -10691,12 +10696,12 @@ block_content ::=
 # The inline_if_statement appears here and also as a statement because sometimes the
 # implicit_call_statement in the inline_if consumes the line_end - presumably there is a way
 # to prevent this and simplify what is going on here!
-             
+
 line ::= 
              (?-label_definition, line_body) / (label_definition, line_body?)
-			 
+
 line_body ::=
-			 (implicit_call_statement / ((compound_statement / single_statement), (line_end / (colon, line_end?))) / inline_if_statement)
+			 (explicit_call_statement / implicit_call_statement / ((compound_statement / single_statement), (line_end / (colon, line_end?))) / inline_if_statement)
 
 
 line_end ::=
@@ -10767,7 +10772,7 @@ compound_statement ::=
              enumeration_definition /
              property_definition /
              non_vb_block
-             
+
 
 multi_statement_line ::=
              ((single_statement, colon) / label_statement), (wsp+, (compound_statement / statement))?
@@ -10786,7 +10791,7 @@ normal_keyword ::=
                 c"Public" / c"Private" / c"Static" / c"Attribute" / c"Const" / c"Option" / c"End" / 
 				"Event" / c"Seek" / "BEGIN" / c"Rem" / c"Let" / c"Reset" / c"LSet" / c"RSet"
             ), (wsp / line_end)
-            
+
 </t>
 <t tx="pap.120703001453.17">&lt;&lt; class BaseParser methods &gt;&gt;=
 
@@ -10798,26 +10803,29 @@ def __init__(self, filename, name=None):
 	self.name = name or os.path.splitext(os.path.split(filename)[1])[0]
 	self.basedir = os.path.split(filename)[0]
 </t>
-<t tx="pap.120703001453.170">               
+<t tx="pap.120703001453.170">
 assignment_statement ::=
              (c"Let", wsp+)?, assignment_body
-			 
+
 assignment_body ::=
 			 object, wsp*, "=", wsp*, expression			 
 
-             
+
 set_statement ::=
              c"Set", wsp+, object, wsp*, "=", new_keyword?, expression
-             
+
 new_keyword ::=
               wsp?, c"New", wsp+
 
 object ::=
              ?-keyword, implicit_object?, (primary, ((".", attribute) / parameter_list)*) 
-			 
+
 bare_object ::=
 			 ?-keyword, implicit_object?, primary, (".", attribute)*
-			    
+
+qualified_object ::=
+             bare_object, parameter_list
+
 implicit_object ::=
              "."         
 
@@ -10830,9 +10838,10 @@ attribute ::=
 
 lset_statement ::=
 			c"LSet", wsp+, assignment_body
-			
+
 rset_statement ::=
-			c"RSet", wsp+, assignment_body</t>
+			c"RSet", wsp+, assignment_body
+</t>
 <t tx="pap.120703001453.174">dim_statement ::=
   unscoped_dim / scoped_dim
 
@@ -10841,33 +10850,33 @@ unscoped_dim ::=
 
 scoped_dim ::=
   scope, wsp+, (c"Dim", wsp+)?, basic_dim
-   
+
 basic_dim ::=
   object_definition, (",", wsp*, object_definition)*
 
 object_definition ::=
   with_events?, bare_object, (unsized_definition / size_definition)?, type_definition?
-  
-  
+
+
 const_statement ::=
              (scope, wsp+)?, c"Const", wsp+, const_definition, (",", wsp*, const_definition)*
-             
+
 const_definition ::=
              identifier, type_definition?, wsp*, "=", wsp*, expression             
 
-            
+
 type_definition ::=
              (wsp+, c"As", wsp+, new_keyword?, type, array_indicator?, string_size_definition?, wsp*)
 
 unsized_definition ::=
 			"(", wsp*, ")"
-			
+
 size_definition ::=
              "(", (size_range / size)?, (",", wsp*, (size_range / size))*, ")"
 
 size ::=
              expression
-             
+
 size_range ::=
              size, wsp*, c"To", wsp*, size            
 
@@ -10882,75 +10891,80 @@ value ::=
 
 redim_statement ::=
              c"ReDim", wsp+, preserve_keyword?, basic_dim
-             
+
 preserve_keyword ::=
              c"Preserve", wsp+
-             
+
 array_indicator ::=
               wsp*, "()"
-			  
+
 string_size_definition ::=
 			  wsp*, "*", wsp*, string_size_indicator	
-			  
+
 string_size_indicator ::=
 			  atom
-			  
+
 with_events ::=
 			  wsp*, c"WithEvents", wsp+
 </t>
 <t tx="pap.120703001453.176">print_statement ::= 
         label_statement?, c"Print", (wsp+, channel_id, wsp*, ",", wsp*)?, print_list?
-        
+
 channel_id ::=
         "#", expression     
-        
+
 hold_cr ::=
         ";"
-        
+
 get_statement ::=
         label_statement?, c"Get", wsp+, channel_id, wsp*, bare_list
 
 input_statement ::=
         label_statement?, c"Input", wsp+, channel_id, wsp*, bare_list
-        
+
 line_input_statement ::=
         label_statement?, c"Line", wsp+, input_statement
-        
+
 put_statement ::=
         label_statement?, c"Put", wsp+, channel_id, wsp*, bare_list, hold_cr?
 
 print_list ::=
         wsp*, print_separator*, (expression, wsp*, print_separator*, wsp*)*
-        
+
 print_separator ::=
-        "," / ";"</t>
+        "," / ";"
+</t>
 <t tx="pap.120703001453.178">open_statement ::=
         label_definition?, c"Open", wsp+, filename, c"For", wsp+, open_mode+, c"As", wsp+, "#"?, channel,
         (wsp*, c"Len", wsp*, "=", wsp*, access_length)?
-        
+
 filename ::=
         expression
-        
+
 channel ::=
         expression
-        
+
 access_length ::=
         expression
-        
+
 open_mode ::=
         ?-c"As", identifier, wsp+
-        
+
 close_statement ::=
         label_definition?, (c"Close" / c"Reset"), (wsp+, channel_number, (",", wsp*, channel_number)*)?
 
 channel_number ::=
-		(channel_id   / expression)</t>
+		(channel_id   / expression)
+</t>
 <t tx="pap.120703001453.179">
 call_statement ::=
             label_definition?, (c"Call", wsp+, object, list?) 
-  
+
 implicit_call_statement ::=
             label_definition?, ?-keyword, (simple_expr, bare_list, (line_end / colon))
+
+explicit_call_statement ::=
+            label_definition?, ?-keyword, (qualified_object, (line_end / colon))
 
 inline_implicit_call ::=
             label_definition?, ?-keyword, (simple_expr, bare_list)
@@ -10967,18 +10981,19 @@ call ::=
 
 positional_item ::=
              (bare_list_item / missing_positional), list_separator
-             
+
 missing_positional ::=
              wsp*             
-             
+
 bare_list_item ::=
 			 addressof?, expression
 
 addressof ::=
 			 c"AddressOf", wsp+
-						 
+
 list_separator ::=
-        "," / ";"			 </t>
+        "," / ";"			 
+</t>
 <t tx="pap.120703001453.18">&lt;&lt; class BaseParser methods &gt;&gt;=
 
 def doValidation(self):
@@ -10993,15 +11008,16 @@ do_statement ::=
 
 while_clause ::=
                 (wsp+, c"While", wsp+, expression)
-                
+
 until_clause ::=
                 (wsp+, c"Until", wsp+, expression)
-                
+
 post_until_clause ::=
                 until_clause                
-                
+
 post_while_clause ::=
-                while_clause</t>
+                while_clause
+</t>
 <t tx="pap.120703001453.187">select_statement ::=
                 c"Select", wsp+, c"Case", wsp+, expression, line_end,
 				case_comment_block?,
@@ -11023,12 +11039,13 @@ case_list ::=
 
 case_expression ::=
                   expression, (to_keyword, expression)?
-                 
+
 to_keyword ::= 
                   c"To"
-				  
+
 case_comment_block ::=
-				  block</t>
+				  block
+</t>
 <t tx="pap.120703001453.188">inline_if_statement ::= 
              label_definition?, hash?, c"If", condition, hash?, c"Then", wsp+, inline_if_block,
              (wsp*, hash?, c"Else", wsp+, inline_else_block)?
@@ -11057,11 +11074,11 @@ inline_if_block ::=
 
 inline_else_block ::=
 			  inline_block
-			  
+
 inline_block ::=
               (statement / inline_implicit_call)
-			  
-			  
+
+
 </t>
 <t tx="pap.120703001453.189">for_statement ::=
                 c"For", wsp+, object, wsp*, "=", wsp*, 
@@ -11077,14 +11094,15 @@ for_each_statement ::=
                 expression, line_end,
                 block?,
                 label_definition?, c"Next", (wsp+, object)?
-				
+
 inline_for_statement ::=				
                 c"For", wsp+, object, wsp*, "=", wsp*,
 				expression, c"To", wsp+, expression, for_stepping?, 
 				colon, body, c"Next", (wsp+, object)?	
-				
+
 body ::=
-			    (implicit_call_statement / (single_statement, colon))*</t>
+			    (implicit_call_statement / (single_statement, colon))*
+</t>
 <t tx="pap.120703001453.19">&lt;&lt; class BaseParser methods &gt;&gt;=
 
 def findMany(self, id):
@@ -11102,17 +11120,17 @@ formal_param ::=
 
 optional ::=
              c"Optional", wsp+
-             
+
 passing_semantics ::=
              (c"ByVal" / c"ByRef"), wsp+           
-             
+
 parameter_list ::=
              list
-             
+
 fn_definition ::=
              label_definition?, (scope, wsp*)?, c"Function", wsp+, identifier, wsp*,
              formal_param_list, type_definition?, line_end, block?, label_definition?, c"End Function"
-             
+
 default_value ::=
             wsp*, "=", expression            
 
@@ -11126,12 +11144,14 @@ static ::=
              formal_param_list, type_definition?, line_end, block?, label_definition?, c"End Property"
 
 property_decorator_type ::=
-             c"Get" / c"Set" / c"Let"</t>
+             c"Get" / c"Set" / c"Let"
+</t>
 <t tx="pap.120703001453.192">user_type_definition ::=
              (scope, wsp+)?, c"Type", wsp+, identifier, line_end, ((object_definition / comment_statement), line_end)*, label_definition?, c"End Type"
 </t>
 <t tx="pap.120703001453.193">with_statement ::=
-    label_definition?, c"With", wsp+, expression, line_end, block?, label_definition?, c"End With"</t>
+    label_definition?, c"With", wsp+, expression, line_end, block?, label_definition?, c"End With"
+</t>
 <t tx="pap.120703001453.2">@root utils.py
 
 import os
@@ -11973,6 +11993,7 @@ def __init__(self, scope="Private"):
 		"while_statement" : (VBWhile, self.blocks),
 		"do_statement" : (VBDo, self.blocks),
 		"redim_statement" : (VBReDim, self.blocks),
+		"explicit_call_statement" : (VBExplicitCall, self.blocks),
 		"implicit_call_statement" : (VBCall, self.blocks),
 		"inline_implicit_call" : (VBCall, self.blocks),
 		"label_statement" : (VBLabel, self.blocks),
@@ -13238,7 +13259,7 @@ def renderAsCode(self, indent=0):
 <t tx="pap.120703001453.351">&lt;&lt; Classes &gt;&gt;=
 
 class VBCall(VBCodeBlock):
-	"""A set statement"""
+	"""A call statement"""
 	
 	auto_handlers = [
 	]
@@ -15152,25 +15173,28 @@ def __init__(self):
 <t tx="pap.120703001453.489">&lt;&lt; VBFiles methods &gt;&gt;=
 
 def openFile(self, channelid, filename, mode):
-	"""Open a file
-	
-	If the channel is already one then close it. There are likely to be some
-	race conditions here in multithreaded applications so we use a lock to make
-	this entire process atomic.
-	
-	"""
-	self._lock.acquire()
-	try:
-		try:
-			old_file = self._channels[channelid]
-		except KeyError:
-			pass
-		else:
-			old_file.close()
-		#
-		self._channels[channelid] = open(filename, mode)
-	finally:
-		self._lock.release()</t>
+    """Open a file
+    
+    If the channel is already one then close it. There are likely to be some
+    race conditions here in multithreaded applications so we use a lock to make
+    this entire process atomic.
+    
+    Watch out for path separators in the filename
+    
+    """
+    filename = filename.replace('\\', os.path.sep)
+    self._lock.acquire()
+    try:
+        try:
+            old_file = self._channels[channelid]
+        except KeyError:
+            pass
+        else:
+            old_file.close()
+        #
+        self._channels[channelid] = open(filename, mode)
+    finally:
+        self._lock.release()</t>
 <t tx="pap.120703001453.49">&lt;&lt; class ModuleParser methods &gt;&gt;=
 
 def getContainer(self):
@@ -15194,48 +15218,47 @@ def closeFile(self, channelid=None):
 <t tx="pap.120703001453.491">&lt;&lt; VBFiles methods &gt;&gt;=
 
 def getInput(self, channelid, number, separators=None, evaloutput=1):
-	"""Get data from a file
-	
-	VB nicely parses the input from files into variables so we have to mimic this
-	here. 
-	
-	For safety sake we go one character at a time here. TODO: find out how VB does this
-	and what the implications of chunking would be in a multithreaded app.
-	
-	We use the lock to prevent multiple reads.
-	
-	"""
-	if separators is None:
-		separators = ("\n", ",", "\t", "")
-	#
-	self._lock.acquire()
-	try:
-		vars = []
-		f = self._channels[channelid]
-		buffer = ""
-		while len(vars) &lt; number:
-			char = f.read(1)
-			if char &lt;&gt; '\r':            
-			if char in separators:
-				if evaloutput:
-					# Try to eval it - if we get a syntax error then assume it is a string
-					try:
-						vars.append(eval(buffer))
-					except SyntaxError:
-						vars.append(buffer)
-				else:
-					vars.append(buffer)
-				buffer = ""	
-			else:
-				buffer += char
-	finally:
-		self._lock.release()
-	#	
-	import pdb; pdb.set_trace()
-	if number == 1:
-		return vars[0]
-	else:
-		return vars</t>
+    """Get data from a file
+    
+    VB nicely parses the input from files into variables so we have to mimic this
+    here. 
+    
+    For safety sake we go one character at a time here. TODO: find out how VB does this
+    and what the implications of chunking would be in a multithreaded app.
+    
+    We use the lock to prevent multiple reads.
+    
+    """
+    if separators is None:
+        separators = ("\n", ",", "\t", "")
+    #
+    self._lock.acquire()
+    try:
+        vars = []
+        f = self._channels[channelid]
+        buffer = ""
+        while len(vars) &lt; number:
+            char = f.read(1)
+            if char &lt;&gt; '\r':            
+                if char in separators:
+                    if evaloutput:
+                        # Try to eval it - if we get a syntax error then assume it is a string
+                        try:
+                            vars.append(eval(buffer))
+                        except SyntaxError:
+                            vars.append(buffer)
+                    else:
+                        vars.append(buffer)
+                    buffer = ""	
+                else:
+                    buffer += char
+    finally:
+        self._lock.release()
+    #	
+    if number == 1:
+        return vars[0]
+    else:
+        return vars</t>
 <t tx="pap.120703001453.492">&lt;&lt; VBFiles methods &gt;&gt;=
 
 def getLineInput(self, channelid, number=1):
@@ -16673,7 +16696,7 @@ This script is setup.py of the vb2py package.
 &lt;&lt; Support functions &gt;&gt;
 
 setup(name=APPLICATION_NAME, 
-      version="0.2.2",
+      version="0.2.3",
       description="Visual Basic to Python Converter",
       author="Paul Paterson",
       author_email="paulpaterson@users.sourceforge.net",
@@ -22301,8 +22324,8 @@ import os
 import vb2py.utils
 PATH = vb2py.utils.rootPath()
 
-#&lt; &lt; File tests &gt;&gt;
-&lt;&lt; Small File tests &gt;&gt;
+&lt;&lt; File tests &gt;&gt;
+#&lt; &lt; Small File tests &gt;&gt;
 
 
 import vb2py.vbparser
@@ -23159,7 +23182,7 @@ For _Setting = 0 To UBound(_Settings)
     a = a &amp; _Settings(_Setting, 0) &amp; " = " &amp; _Settings(_Setting, 1) &amp; ":"
 Next _Setting
 
-""", {"a":"real = 10.5:string = hello:int = 1:"})) # always returned as a string
+""", {"a":"real = 10.5:int = 1:string = hello:"})) # always returned as a string
 
 </t>
 <t tx="pap.120703001453.777">&lt;&lt; Settings tests &gt;&gt;=
@@ -28847,18 +28870,86 @@ def handleDottedName(self, indent):
 </t>
 <t tx="paul.20110401223822.4437">&lt;&lt; Small File tests &gt;&gt;=
 
-# Open with Input
+# Input as a function to get a certain number of characters
 tests.append((r"""
 Open "%s" For Input As #3
-Input #3, a
-Input #3, b
-Input #3, c, d, e
-Input #3, f, g
+While Not EOF(#3)
+	Input #3, a
+End While
 Close #3
-""" % vb2py.utils.relativePath("test/testread.txt"), {'a' : 'Can you hear me now?',
-      'b' : 'Can you still hear me now?',
-	  'c' : 10, 'd' : 20, 'e' : 30,
-	  'f' : 5, 'g' : "hello",
+
+""" % vb2py.utils.relativePath("test/testread.txt"),
+{
+'a' : 'hello',
 }))</t>
+<t tx="paul.20110401223822.6963">&lt;&lt; Sub tests &gt;&gt;=
+
+# Implicit calling in the way that VBScript implements it
+# VBScript allows calls like:
+#     object.method()
+#     object.method(10,20)
+#
+# These are illegal in VB 
+
+tests.append(("""
+Dim _vals(10)
+Sub _sum(x, y)
+	_vals(0) = x + y
+End Sub
+
+Sub _const()
+     _vals(1) = 123
+End Sub
+
+_sum(10, 20)
+_const()
+
+a = _vals(0)
+b = _vals(1)
+
+""", {"a" : 30, "b" : 123}))
+</t>
+<t tx="paul.20110401223822.6973">&lt;&lt; Classes &gt;&gt;=
+
+class VBExplicitCall(VBCodeBlock):
+    """A call statement on a single line with parenthesis
+    
+    This is illegal in VB but can be found in VBSCript
+    
+    """
+    
+    auto_handlers = [
+    ]
+    
+    
+    &lt;&lt; VBExplicitCall methods &gt;&gt;
+</t>
+<t tx="paul.20110401223822.6974">&lt;&lt; VBExplicitCall methods &gt;&gt;=
+
+def __init__(self, scope="Private"):
+	"""Initialize the assignment"""
+	super(VBExplicitCall, self).__init__(scope)
+	self.parameters = []
+	self.object = None
+	self.auto_class_handlers = ({
+		"expression" : (VBParExpression, self.parameters),
+		"missing_positional" : (VBMissingPositional, self.parameters),
+		"qualified_object" : (VBObject, "object")
+	})
+</t>
+<t tx="paul.20110401223822.6975">&lt;&lt; VBExplicitCall methods &gt;&gt;=
+
+def renderAsCode(self, indent=0):
+    """Render this element as code"""
+    if self.parameters:
+        #
+        # Something has gone wrong here because there shouldn't be any parameters
+        # in the call. These should be encapsulated in the object. 
+        raise VBParserError('Unexpected parameters (%s) in explicit call' % self.parameters)
+    #
+    self.object.am_on_lhs = 1
+    #
+    return "%s%s\n" % (self.getIndent(indent),
+                         self.object.renderAsCode())</t>
 </tnodes>
 </leo_file>

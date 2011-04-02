@@ -1,6 +1,6 @@
 from testframework import *
 
-# << Sub tests >> (1 of 4)
+# << Sub tests >> (1 of 5)
 # Simple subroutine - use "global" to see results of the subroutine
 tests.append(("""
 Dim _lst(10) As Single
@@ -46,7 +46,7 @@ Sub _SetValue()
     ' Nothing to see here
 End Sub
 """, {}))
-# << Sub tests >> (2 of 4)
+# << Sub tests >> (2 of 5)
 # Recursive sub
 tests.append(("""
 Dim _lst(10) As Single
@@ -60,7 +60,7 @@ End Sub
 _SetValue 1, 1
 a = _lst(5)
 """, {"a" : 5}))
-# << Sub tests >> (3 of 4)
+# << Sub tests >> (3 of 5)
 # Optional arguments
 tests.append(("""
 Dim _lst(10) As Single
@@ -100,7 +100,7 @@ _SetValue 6
 a = _lst(5)
 b = _lst(6)
 """, {"a" : "hello", "b" : 10}))
-# << Sub tests >> (4 of 4)
+# << Sub tests >> (4 of 5)
 # Sub with named arguments
 tests.append(("""
 Dim _vals(10)
@@ -119,6 +119,31 @@ d = _vals(1)
 _sum x:=10, y:=20, z:=30
 f = _vals(1)
 """, {"a" : 60, "b" : 15, "c" : 13, "d" : 6, "f" : 60}))
+# << Sub tests >> (5 of 5)
+# Implicit calling in the way that VBScript implements it
+# VBScript allows calls like:
+#     object.method()
+#     object.method(10,20)
+#
+# These are illegal in VB 
+
+tests.append(("""
+Dim _vals(10)
+Sub _sum(x, y)
+    _vals(0) = x + y
+End Sub
+
+Sub _const()
+     _vals(1) = 123
+End Sub
+
+_sum(10, 20)
+_const()
+
+a = _vals(0)
+b = _vals(1)
+
+""", {"a" : 30, "b" : 123}))
 # -- end -- << Sub tests >>
 
 import vb2py.vbparser

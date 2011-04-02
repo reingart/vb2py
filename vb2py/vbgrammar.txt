@@ -1,110 +1,109 @@
-#@+leo-ver=4
-#@+node:@file vbgrammar.txt
+#@+leo-ver=5-thin
+#@+node:pap.120703001453.161: * @file vbgrammar.txt
 
 #@+others
-#@+node:Basic building blocks
-#@+node:Basic elements
+#@+node:pap.120703001453.162: ** Basic building blocks
+#@+node:pap.120703001453.163: *3* Basic elements
 identifier ::= 
         (safe_letter/("_", safe_letter)), (safe_letter / digit / "_")*, type_marker?
-        
+
 type_marker ::=
         "$" / "%" / "#" / "&"  
-  
+
 NEWLINE ::=
         "\n"
 
 <wsp> ::=
             (" "/"\t")
- 
+
 # Also includes the hack for a unicode marker
 <safe_letter> ::= 
              letter / '~~'
-             
+
 <letter> ::= 
              lowercase / uppercase
-  
+
 lowercase ::= 
              [a-z]
-  
+
 uppercase ::= 
              [A-Z]
-  
+
 <digit> ::= 
              [0-9]
 
 stringliteral ::=  
              '"', stringitem*, '"'
-  
+
 <stringitem> ::= 
              stringchar / escapeseq / '""'
-  
+
 stringchar ::= -('"' / NEWLINE)+
 
 dateliteral ::=
 			"#", integer, "/", integer, ("/", integer)?, "#"
-  
+
 escapeseq ::= 
              "\\", stringchar
 
 longinteger ::= 
              integer, ("l" / "L")
-  
+
 integer ::= 
              "-"?, decimalinteger, ("%" / "&")?
-    
+
 decimalinteger ::= 
              digit+
-  
+
 octinteger ::= 
              "0", octdigit+
-  
+
 hexinteger ::= 
              "&H", hexdigit+, "&"?
-  
+
 <nonzerodigit> ::= 
              [1-9]
-  
+
 <octdigit> ::= 
              [0-7]
-  
+
 <hexdigit> ::= 
              digit / [a-f] / [A-F]
 
 floatnumber ::= 
              ("-"?, (exponentfloat / pointfloat)) / (integer, "#") 
-  
+
 <pointfloat> ::= 
              (intpart?, fraction) / (intpart, ".")
-  
+
 <exponentfloat> ::= 
              (pointfloat / intpart), 
               exponent
-  
+
 <intpart> ::= 
              digit+
-  
+
 <fraction> ::= 
              ".", digit+
-  
+
 <exponent> ::= 
              ("e" / "E"), ("+" / "-")?, digit+
 
 atom ::= 
              object / literal
- 
+
 literal ::= 
              dateliteral / stringliteral / floatnumber / integer / longinteger / hexinteger
-             
+
 name ::= 
              identifier
 
 colon ::=
 			 wsp*, ":", wsp*
-			 
+
 hash ::=
 			 "#"
-#@-node:Basic elements
-#@+node:Blocks and lines
+#@+node:pap.120703001453.164: *3* Blocks and lines
 block ::= 
              block_content+
 
@@ -115,12 +114,12 @@ block_content ::=
 # The inline_if_statement appears here and also as a statement because sometimes the
 # implicit_call_statement in the inline_if consumes the line_end - presumably there is a way
 # to prevent this and simplify what is going on here!
-             
+
 line ::= 
              (?-label_definition, line_body) / (label_definition, line_body?)
-			 
+
 line_body ::=
-			 (implicit_call_statement / ((compound_statement / single_statement), (line_end / (colon, line_end?))) / inline_if_statement)
+			 (explicit_call_statement / implicit_call_statement / ((compound_statement / single_statement), (line_end / (colon, line_end?))) / inline_if_statement)
 
 
 line_end ::=
@@ -139,8 +138,7 @@ block_terminator ::=
 
 end_terminator ::=
 			 (c"End", wsp+, (c"If" / c"Function" / c"Subroutine")) / "END"
-#@-node:Blocks and lines
-#@+node:Statements
+#@+node:pap.120703001453.165: *3* Statements
 statement ::=
                multi_statement_line / single_statement
 
@@ -192,12 +190,11 @@ compound_statement ::=
              enumeration_definition /
              property_definition /
              non_vb_block
-             
+
 
 multi_statement_line ::=
              ((single_statement, colon) / label_statement), (wsp+, (compound_statement / statement))?
-#@-node:Statements
-#@+node:Keywords
+#@+node:pap.120703001453.166: *3* Keywords
 keyword ::= 
             normal_keyword / block_terminator
 
@@ -212,9 +209,8 @@ normal_keyword ::=
                 c"Public" / c"Private" / c"Static" / c"Attribute" / c"Const" / c"Option" / c"End" / 
 				"Event" / c"Seek" / "BEGIN" / c"Rem" / c"Let" / c"Reset" / c"LSet" / c"RSet"
             ), (wsp / line_end)
-            
-#@-node:Keywords
-#@+node:Expressions
+
+#@+node:pap.120703001453.167: *3* Expressions
 
 expression ::= 
              (pre_named_argument?, passing_semantics?, pre_operator?, sign?, par_expression, 
@@ -225,7 +221,7 @@ par_expression ::=
 
 base_expression ::= 
 			  simple_expr, (operation, simple_expr)?
-             
+
 simple_expr ::= 
               pre_operator?, wsp*, (sign, wsp*)*, (call / atom / channelid), wsp*
 
@@ -240,61 +236,59 @@ operation ::=
 
 compare ::= 
              c"Or" / c"And" / c"Xor" / "=" / "<=" / ">=" / "<>" / "<" / ">" / c"Is" / c"Like"
-             
+
 sign ::=
             "-" / "+"                   
-            
+
 pre_named_argument ::=
             wsp*, named_argument, ":=", wsp*    
-            
+
 named_argument ::=
             identifier
-			
+
 
 pre_operator ::=
 			pre_not / pre_typeof
-			
+
 pre_not ::=
             wsp*, c"Not", wsp+
-			
+
 pre_typeof ::=
             wsp*, c"TypeOf", wsp+			
 
 channelid ::=
 			"#", atom
-#@nonl
-#@-node:Expressions
-#@+node:Line (connecting points)
+#@+node:pap.120703001453.168: *3* Line (connecting points)
 line_expression ::=
         point, wsp*, "-", wsp*, point
-        
+
 point ::=       
         (l_bracket, expression, wsp*, ",", wsp*, expression, r_bracket)
-#@nonl
-#@-node:Line (connecting points)
-#@-node:Basic building blocks
-#@+node:Single statements
-#@+node:Assigment
-               
+#@+node:pap.120703001453.169: *3* Single statements
+#@+node:pap.120703001453.170: *4* Assigment
+
 assignment_statement ::=
              (c"Let", wsp+)?, assignment_body
-			 
+
 assignment_body ::=
 			 object, wsp*, "=", wsp*, expression			 
 
-             
+
 set_statement ::=
              c"Set", wsp+, object, wsp*, "=", new_keyword?, expression
-             
+
 new_keyword ::=
               wsp?, c"New", wsp+
 
 object ::=
              ?-keyword, implicit_object?, (primary, ((".", attribute) / parameter_list)*) 
-			 
+
 bare_object ::=
 			 ?-keyword, implicit_object?, primary, (".", attribute)*
-			    
+
+qualified_object ::=
+             bare_object, parameter_list
+
 implicit_object ::=
              "."         
 
@@ -307,33 +301,29 @@ attribute ::=
 
 lset_statement ::=
 			c"LSet", wsp+, assignment_body
-			
+
 rset_statement ::=
 			c"RSet", wsp+, assignment_body
-#@nonl
-#@-node:Assigment
-#@+node:Comment
+#@+node:pap.120703001453.171: *4* Comment
 comment_statement ::=
              wsp*, comment_start, (vb2py_directive  / comment_body)
 
 comment_body ::=
              (stringitem / '"')*
-			 
+
 comment_start ::=
 			 "'"	/ c"Rem"		 
-             
-             
 
-#@-node:Comment
-#@+node:External libraries
+
+
+#@+node:pap.120703001453.172: *4* External libraries
 external_declaration ::=
         (scope, wsp+)?, c"Declare", wsp+, (c"Sub" / c"Function"), wsp+, identifier, wsp+, c"Lib", wsp+, 
         stringliteral, wsp+, (c"Alias", wsp+, stringliteral, wsp+)?, formal_param_list, type_definition?
-        
-        
-        
-#@-node:External libraries
-#@+node:Labels and GoTo
+
+
+
+#@+node:pap.120703001453.173: *4* Labels and GoTo
 label_definition ::=
         label_statement, (wsp+ / line_end)
 
@@ -342,12 +332,10 @@ label_statement ::=
 
 label ::=
         (identifier / decimalinteger)
-                
+
 goto_statement ::=
         c"GoTo", wsp+, label
-#@nonl
-#@-node:Labels and GoTo
-#@+node:Dim
+#@+node:pap.120703001453.174: *4* Dim
 dim_statement ::=
   unscoped_dim / scoped_dim
 
@@ -356,33 +344,33 @@ unscoped_dim ::=
 
 scoped_dim ::=
   scope, wsp+, (c"Dim", wsp+)?, basic_dim
-   
+
 basic_dim ::=
   object_definition, (",", wsp*, object_definition)*
 
 object_definition ::=
   with_events?, bare_object, (unsized_definition / size_definition)?, type_definition?
-  
-  
+
+
 const_statement ::=
              (scope, wsp+)?, c"Const", wsp+, const_definition, (",", wsp*, const_definition)*
-             
+
 const_definition ::=
              identifier, type_definition?, wsp*, "=", wsp*, expression             
 
-            
+
 type_definition ::=
              (wsp+, c"As", wsp+, new_keyword?, type, array_indicator?, string_size_definition?, wsp*)
 
 unsized_definition ::=
 			"(", wsp*, ")"
-			
+
 size_definition ::=
              "(", (size_range / size)?, (",", wsp*, (size_range / size))*, ")"
 
 size ::=
              expression
-             
+
 size_range ::=
              size, wsp*, c"To", wsp*, size            
 
@@ -397,108 +385,104 @@ value ::=
 
 redim_statement ::=
              c"ReDim", wsp+, preserve_keyword?, basic_dim
-             
+
 preserve_keyword ::=
              c"Preserve", wsp+
-             
+
 array_indicator ::=
               wsp*, "()"
-			  
+
 string_size_definition ::=
 			  wsp*, "*", wsp*, string_size_indicator	
-			  
+
 string_size_indicator ::=
 			  atom
-			  
+
 with_events ::=
 			  wsp*, c"WithEvents", wsp+
-#@-node:Dim
-#@+node:On Error Goto
+#@+node:pap.120703001453.175: *4* On Error Goto
 on_statement ::=
         (on_error_goto / on_error_resume / on_goto)
-    
+
 on_error_goto ::=
         on_error, c"GoTo", wsp+, label
-        
+
 on_error_resume ::=
         on_error, c"Resume", wsp+, c"Next"        
-        
+
 on_goto ::=
         on_variable, c"GoTo", wsp+, bare_list        
 
 on_error ::= 
         label_definition?, c"On", wsp+, local?, c"Error", wsp+
-        
+
 on_variable ::= 
         label_definition?, c"On", wsp+, expression
-		
+
 local ::=
 		c"Local", wsp+		
-#@-node:On Error Goto
-#@+node:Print / Get
+#@+node:pap.120703001453.176: *4* Print / Get
 print_statement ::= 
         label_statement?, c"Print", (wsp+, channel_id, wsp*, ",", wsp*)?, print_list?
-        
+
 channel_id ::=
         "#", expression     
-        
+
 hold_cr ::=
         ";"
-        
+
 get_statement ::=
         label_statement?, c"Get", wsp+, channel_id, wsp*, bare_list
 
 input_statement ::=
         label_statement?, c"Input", wsp+, channel_id, wsp*, bare_list
-        
+
 line_input_statement ::=
         label_statement?, c"Line", wsp+, input_statement
-        
+
 put_statement ::=
         label_statement?, c"Put", wsp+, channel_id, wsp*, bare_list, hold_cr?
 
 print_list ::=
         wsp*, print_separator*, (expression, wsp*, print_separator*, wsp*)*
-        
+
 print_separator ::=
         "," / ";"
-#@nonl
-#@-node:Print / Get
-#@+node:Seek
+#@+node:pap.120703001453.177: *4* Seek
 seek_statement ::=
 			label_statement?, c"Seek", wsp+, channel_id, wsp*, ",", wsp*, expression
-#@-node:Seek
-#@+node:Open/Close
+#@+node:pap.120703001453.178: *4* Open/Close
 open_statement ::=
         label_definition?, c"Open", wsp+, filename, c"For", wsp+, open_mode+, c"As", wsp+, "#"?, channel,
         (wsp*, c"Len", wsp*, "=", wsp*, access_length)?
-        
+
 filename ::=
         expression
-        
+
 channel ::=
         expression
-        
+
 access_length ::=
         expression
-        
+
 open_mode ::=
         ?-c"As", identifier, wsp+
-        
+
 close_statement ::=
         label_definition?, (c"Close" / c"Reset"), (wsp+, channel_number, (",", wsp*, channel_number)*)?
 
 channel_number ::=
 		(channel_id   / expression)
-#@nonl
-#@-node:Open/Close
-#@+node:Calls
+#@+node:pap.120703001453.179: *4* Calls
 
 call_statement ::=
             label_definition?, (c"Call", wsp+, object, list?) 
-  
+
 implicit_call_statement ::=
             label_definition?, ?-keyword, (simple_expr, bare_list, (line_end / colon))
+
+explicit_call_statement ::=
+            label_definition?, ?-keyword, (qualified_object, (line_end / colon))
 
 inline_implicit_call ::=
             label_definition?, ?-keyword, (simple_expr, bare_list)
@@ -515,51 +499,40 @@ call ::=
 
 positional_item ::=
              (bare_list_item / missing_positional), list_separator
-             
+
 missing_positional ::=
              wsp*             
-             
+
 bare_list_item ::=
 			 addressof?, expression
 
 addressof ::=
 			 c"AddressOf", wsp+
-						 
+
 list_separator ::=
         "," / ";"			 
-#@nonl
-#@-node:Calls
-#@+node:Resume statement
+#@+node:pap.120703001453.180: *4* Resume statement
 resume_statement ::=
         label_definition?, c"Resume", (wsp+, resume_location)?
-        
+
 resume_location ::=
         c"Next" / label
-#@-node:Resume statement
-#@+node:Exit statement
-             
+#@+node:pap.120703001453.181: *4* Exit statement
+
 exit_statement ::=
              c"Exit", wsp+, (c"Sub" / c"Function" / c"For" / c"Do" / c"Loop" / c"Property")
 
-#@-node:Exit statement
-#@+node:Name statement
+#@+node:pap.120703001453.182: *4* Name statement
 name_statement ::=
         label_definition?, c"Name", wsp+, expression, c"As", expression
-#@nonl
-#@-node:Name statement
-#@+node:End statement
+#@+node:pap.120703001453.183: *4* End statement
 end_statement ::=
         c"End"
-#@nonl
-#@-node:End statement
-#@+node:Event definition
+#@+node:pap.120703001453.184: *4* Event definition
 event_definition ::=
 			label_statement?, (scope, wsp+)?, c"Event", wsp+, object, formal_param_list?
-#@nonl
-#@-node:Event definition
-#@-node:Single statements
-#@+node:Compound statements
-#@+node:Do/While etc
+#@+node:pap.120703001453.185: ** Compound statements
+#@+node:pap.120703001453.186: *3* Do/While etc
 while_statement ::=
                 c"While", wsp+, expression, line_end, block, label_definition?, (c"End While" / c"Wend")
 
@@ -569,18 +542,16 @@ do_statement ::=
 
 while_clause ::=
                 (wsp+, c"While", wsp+, expression)
-                
+
 until_clause ::=
                 (wsp+, c"Until", wsp+, expression)
-                
+
 post_until_clause ::=
                 until_clause                
-                
+
 post_while_clause ::=
                 while_clause
-#@nonl
-#@-node:Do/While etc
-#@+node:Select case
+#@+node:pap.120703001453.187: *3* Select case
 select_statement ::=
                 c"Select", wsp+, c"Case", wsp+, expression, line_end,
 				case_comment_block?,
@@ -602,15 +573,13 @@ case_list ::=
 
 case_expression ::=
                   expression, (to_keyword, expression)?
-                 
+
 to_keyword ::= 
                   c"To"
-				  
+
 case_comment_block ::=
 				  block
-#@nonl
-#@-node:Select case
-#@+node:If
+#@+node:pap.120703001453.188: *3* If
 inline_if_statement ::= 
              label_definition?, hash?, c"If", condition, hash?, c"Then", wsp+, inline_if_block,
              (wsp*, hash?, c"Else", wsp+, inline_else_block)?
@@ -639,13 +608,12 @@ inline_if_block ::=
 
 inline_else_block ::=
 			  inline_block
-			  
+
 inline_block ::=
               (statement / inline_implicit_call)
-			  
-			  
-#@-node:If
-#@+node:For and for each
+
+
+#@+node:pap.120703001453.189: *3* For and for each
 for_statement ::=
                 c"For", wsp+, object, wsp*, "=", wsp*, 
                 expression, c"To", wsp+, expression, for_stepping?, line_end,
@@ -660,17 +628,15 @@ for_each_statement ::=
                 expression, line_end,
                 block?,
                 label_definition?, c"Next", (wsp+, object)?
-				
+
 inline_for_statement ::=				
                 c"For", wsp+, object, wsp*, "=", wsp*,
 				expression, c"To", wsp+, expression, for_stepping?, 
 				colon, body, c"Next", (wsp+, object)?	
-				
+
 body ::=
 			    (implicit_call_statement / (single_statement, colon))*
-#@nonl
-#@-node:For and for each
-#@+node:Subs and functions
+#@+node:pap.120703001453.190: *3* Subs and functions
 sub_definition ::=
              label_definition?, (scope, wsp*)?, (static, wsp*)?, c"Sub", wsp+, identifier, wsp*,
              formal_param_list, line_end, block?, label_definition?, c"End Sub"
@@ -683,17 +649,17 @@ formal_param ::=
 
 optional ::=
              c"Optional", wsp+
-             
+
 passing_semantics ::=
              (c"ByVal" / c"ByRef"), wsp+           
-             
+
 parameter_list ::=
              list
-             
+
 fn_definition ::=
              label_definition?, (scope, wsp*)?, c"Function", wsp+, identifier, wsp*,
              formal_param_list, type_definition?, line_end, block?, label_definition?, c"End Function"
-             
+
 default_value ::=
             wsp*, "=", expression            
 
@@ -701,74 +667,54 @@ default_value ::=
 static ::=
 			"Static"
 
-#@-node:Subs and functions
-#@+node:Properties
+#@+node:pap.120703001453.191: *3* Properties
 property_definition ::=
              label_definition?, (scope, wsp*)?, c"Property", wsp+, property_decorator_type, wsp+, identifier, 
              formal_param_list, type_definition?, line_end, block?, label_definition?, c"End Property"
 
 property_decorator_type ::=
              c"Get" / c"Set" / c"Let"
-#@nonl
-#@-node:Properties
-#@+node:User Types
+#@+node:pap.120703001453.192: *3* User Types
 user_type_definition ::=
              (scope, wsp+)?, c"Type", wsp+, identifier, line_end, ((object_definition / comment_statement), line_end)*, label_definition?, c"End Type"
-#@-node:User Types
-#@+node:With
+#@+node:pap.120703001453.193: *3* With
 with_statement ::=
     label_definition?, c"With", wsp+, expression, line_end, block?, label_definition?, c"End With"
-#@nonl
-#@-node:With
-#@+node:Enumerations
+#@+node:pap.120703001453.194: *3* Enumerations
 enumeration_definition ::=
         (scope, wsp+)?, c"Enum", wsp, identifier, line_end, (enumeration_item, line_end)*, c"End Enum"
-        
+
 enumeration_item ::=
         ?-c"End", identifier, (wsp*, "=", wsp*, expression)?
-#@nonl
-#@-node:Enumerations
-#@-node:Compound statements
-#@+node:Non VB stuff
+#@+node:pap.120703001453.195: ** Non VB stuff
 non_vb_statement ::=
         class_header_statement / attribute_statement
-    
+
 non_vb_block ::=
         class_header_block
-#@nonl
-#@+node:Class file headers
+#@+node:pap.120703001453.196: *3* Class file headers
 class_header_statement ::=
         c"VERSION", wsp+, floatnumber, wsp+, c"CLASS"
-        
+
 class_header_block ::=
         "BEGIN", line_end, block, "END"
-#@nonl
-#@-node:Class file headers
-#@+node:vb2py Directives
+#@+node:pap.120703001453.197: *3* vb2py Directives
 vb2py_directive ::=
             wsp*, c"VB2PY-", directive_type, wsp*, ":", wsp*, directive_body
-            
+
 directive_type ::=
             identifier
-            
+
 directive_body ::=
             config_section, ".", config_name, wsp*, ("=", wsp*, expression)?
-            
+
 config_section ::= identifier
 config_name ::= identifier
-#@nonl
-#@-node:vb2py Directives
-#@+node:attribute statement
+#@+node:pap.120703001453.198: *3* attribute statement
 attribute_statement ::=
         c"Attribute", wsp+, object, wsp*, "=", wsp*, expression, (wsp*, ",", wsp*, expression)*
-#@nonl
-#@-node:attribute statement
-#@+node:option_statement
+#@+node:pap.120703001453.199: *3* option_statement
 option_statement ::=
 		c"Option", wsp+, atom, (wsp*, atom)*, comment_statement?
-#@-node:option_statement
-#@-node:Non VB stuff
 #@-others
-#@nonl
-#@-node:@file vbgrammar.txt
 #@-leo
