@@ -41,7 +41,7 @@ For _Setting = 0 To UBound(_Settings)
     a = a & _Settings(_Setting, 0) & " = " & _Settings(_Setting, 1) & ":"
 Next _Setting
 
-""", {"a":"real = 10.5:string = hello:int = 1:"})) # always returned as a string
+""", {"a":"real = 10.5:int = 1:string = hello:"})) # always returned as a string
 # << Settings tests >> (3 of 3)
 # Simple test of delete
 tests.append(("""
