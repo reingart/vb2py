@@ -1,4 +1,3 @@
-from unittest import *
 from testframework import *
 
 # << Select tests >> (1 of 5)

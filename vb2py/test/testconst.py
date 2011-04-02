@@ -1,4 +1,3 @@
-from unittest import *
 from testframework import *
 
 # << Const tests >>

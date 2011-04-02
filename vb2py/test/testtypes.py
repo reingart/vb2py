@@ -1,4 +1,3 @@
-from unittest import *
 from testframework import *
 
 # << Type tests >> (1 of 2)

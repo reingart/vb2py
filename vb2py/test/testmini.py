@@ -1,9 +1,9 @@
 #
 # Turn off logging in extensions (too loud!)
 import vb2py.extensions
+import unittest
 vb2py.extensions.disableLogging()
 
-from unittest import *
 from vb2py.vbparser import buildParseTree, VBParserError
 
 #
@@ -47,7 +47,7 @@ tests.extend([
 ])
 # -- end -- << Parsing tests >>
 
-class ParsingTest(TestCase):
+class ParsingTest(unittest.TestCase):
     """Holder class which gets built into a whole test case"""
 
 
@@ -67,4 +67,4 @@ for idx in range(len(tests)):
 
 
 if __name__ == "__main__":
-    main()
+    unittest.main()

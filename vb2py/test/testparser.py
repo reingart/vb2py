@@ -3,7 +3,6 @@
 import vb2py.extensions
 vb2py.extensions.disableLogging()
 
-from unittest import *
 from vb2py.vbparser import buildParseTree, VBParserError
 
 #
@@ -612,6 +611,7 @@ tests.extend([
     "Open fn For Input As #12",
     "Open fn.gk.gl() For Input As #NxtChn()",
     "Open fn For Append Lock Write As 23",
+    "Open fn For Random As 23 Len = 1234",
     "Close 1",
     "Close #1",
     "Close channel",

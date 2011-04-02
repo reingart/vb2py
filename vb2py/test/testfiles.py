@@ -1,4 +1,3 @@
-from unittest import *
 from testframework import *
 import os 
 import vb2py.utils
@@ -13,7 +12,7 @@ Input #3, b
 Input #3, c, d, e
 Input #3, f, g
 Close #3
-""" % vb2py.utils.relativePath("test\\testread.txt"), {'a' : 'Can you hear me now?',
+""" % vb2py.utils.relativePath("test/testread.txt"), {'a' : 'Can you hear me now?',
       'b' : 'Can you still hear me now?',
       'c' : 10, 'd' : 20, 'e' : 30,
       'f' : 5, 'g' : "hello",
@@ -21,7 +20,7 @@ Close #3
 
 # Open with Line Input
 tests.append((r"""
-Open "%s\\test\\testread.txt" For Input As #3
+Open "%s/test/testread.txt" For Input As #3
 Line Input #3, a
 Line Input #3, b
 Line Input #3, c
@@ -36,7 +35,7 @@ Close #3
 
 # Open and using Input() to get numbers of characters
 tests.append((r"""
-Open "%s\\test\\testread.txt" For Input As #3
+Open "%s/test/testread.txt" For Input As #3
 a = Input(3, #3)
 b = Input(1, #3)
 c = Input(3, #3)
@@ -48,7 +47,7 @@ Close #3
 
 # Bug #810964 Input with indexed variable fails 
 tests.append((r"""
-Open "%s\\test\\testread.txt" For Input As #3
+Open "%s/test/testread.txt" For Input As #3
 Dim _a(3) As String
 Input #3, _a(1), _a(2), _a(3)
 Close #3
@@ -69,7 +68,7 @@ Input #3, b
 Input #3, c, d, e
 Input #3, f, g
 Close #3
-""" % vb2py.utils.relativePath("test\\testread.txt"), {'a' : 'This wont work!!!!'}))
+""" % vb2py.utils.relativePath("test/testread.txt"), {'a' : 'This wont work!!!!'}))
 # << File tests >> (2 of 14)
 # Open with print
 tests.append((r"""
@@ -117,8 +116,8 @@ a = _a = _b
 b = _a = _c
 c = _b = _c
 d = CStr(_a) & CStr(_b) & CStr(_c) 
-""" % (vb2py.utils.relativePath("test\\testread.txt"), 
-       vb2py.utils.relativePath("test\\testwrite.txt")),
+""" % (vb2py.utils.relativePath("test/testread.txt"), 
+       vb2py.utils.relativePath("test/testwrite.txt")),
 {'a':0, 'b':1, 'c':0, 'd': '131',
 }))
 
@@ -135,8 +134,8 @@ a = _a = _b
 b = _a = _c
 c = _b = _c
 d = CStr(_a) & CStr(_b) & CStr(_c) 
-""" % (vb2py.utils.relativePath("test\\testread.txt"), 
-       vb2py.utils.relativePath("test\\testwrite.txt")),
+""" % (vb2py.utils.relativePath("test/testread.txt"), 
+       vb2py.utils.relativePath("test/testwrite.txt")),
 {'a':0, 'b':1, 'c':0, 'd': '131',
 }))
 
@@ -147,8 +146,8 @@ Open "%s" For Input As #3
 Open "%s" For Output As #4
 Close #3, #4
 Input #3, a
-""" % (vb2py.utils.relativePath("test\\testread.txt"), 
-       vb2py.utils.relativePath("test\\testwrite.txt")),
+""" % (vb2py.utils.relativePath("test/testread.txt"), 
+       vb2py.utils.relativePath("test/testwrite.txt")),
 {'FAIL' : 'yes',
 }))
 # << File tests >> (4 of 14)
@@ -160,7 +159,7 @@ Seek #3, 1
 Input #3, b
 Seek #3, 5
 Input #3, c
-""" % vb2py.utils.relativePath("test\\testread.txt"),
+""" % vb2py.utils.relativePath("test/testread.txt"),
 {
 'a' : 'Can you hear me now?',
 'b' : 'Can you hear me now?',
@@ -176,7 +175,7 @@ Input #3, _a
 b = Seek(3)
 Seek #3, 5
 c = Seek(3)
-""" % vb2py.utils.relativePath("test\\testread.txt"),
+""" % vb2py.utils.relativePath("test/testread.txt"),
 {
 'a' : 1,
 'b' : 23,
@@ -185,7 +184,7 @@ c = Seek(3)
 # << File tests >> (5 of 14)
 # Dir
 tests.append((r"""
-a = Dir("test\\test*.txt")
+a = Dir("test/test*.txt")
 b = Dir()
 c = Dir()
 """,
@@ -198,7 +197,7 @@ c = Dir()
 
 # Dir$
 tests.append((r"""
-a = Dir$("test\\test*.txt")
+a = Dir$("test/test*.txt")
 b = Dir$()
 c = Dir$()
 """,
@@ -210,7 +209,7 @@ c = Dir$()
 
 # Dir no parenthesis
 tests.append((r"""
-a = Dir("test\\test*.txt")
+a = Dir("test/test*.txt")
 b = Dir
 c = Dir
 """,
@@ -222,7 +221,7 @@ c = Dir
 
 # Dir$ no parenthesis
 tests.append((r"""
-a = Dir$("test\\test*.txt")
+a = Dir$("test/test*.txt")
 b = Dir$
 c = Dir$
 """,
@@ -270,9 +269,9 @@ ChDir "%s"
 Open "_test1.txt" For Input As #3
 Input #3, b
 Close #3
-""" % (vb2py.utils.relativePath("test\\testdir"),
+""" % (vb2py.utils.relativePath("test/testdir"),
        vb2py.utils.relativePath("test"),
-       vb2py.utils.relativePath("test\\testdir"),
+       vb2py.utils.relativePath("test/testdir"),
        vb2py.utils.relativePath("test")),
 {
 'a' : 'in testdir',
@@ -292,13 +291,13 @@ a = Dir("_test1.txt")
 }))
 # << File tests >> (9 of 14)
 try:
-    for name in os.listdir(vb2py.utils.relativePath("test\\mytest2")):
-        os.remove(os.path.join(vb2py.utils.relativePath("test\\mytest2"), name))
+    for name in os.listdir(vb2py.utils.relativePath("test/mytest2")):
+        os.remove(os.path.join(vb2py.utils.relativePath("test/mytest2"), name))
 except OSError:
     pass
 
 try:
-    os.rmdir(vb2py.utils.relativePath("test\\mytest2"))
+    os.rmdir(vb2py.utils.relativePath("test/mytest2"))
 except OSError, err:
     pass
 
@@ -309,20 +308,20 @@ Open "%s\test1.txt" For Output As #3
 Print #3, "made file"
 Close #3
 a = 1
-""" % (vb2py.utils.relativePath("test\\mytest2"),
-       vb2py.utils.relativePath("test\\mytest2")),
+""" % (vb2py.utils.relativePath("test/mytest2"),
+       vb2py.utils.relativePath("test/mytest2")),
 {
 'a' : 1,
 }))
 # << File tests >> (10 of 14)
 try:
-    for name in os.listdir(vb2py.utils.relativePath("test\\mytestdir")):
-        os.remove(os.path.join(vb2py.utils.relativePath("test\\mytestdir"), name))
+    for name in os.listdir(vb2py.utils.relativePath("test/mytestdir")):
+        os.remove(os.path.join(vb2py.utils.relativePath("test/mytestdir"), name))
 except OSError:
     pass
 
 try:
-    os.rmdir(vb2py.utils.relativePath("test\\mytestdir"))
+    os.rmdir(vb2py.utils.relativePath("test/mytestdir"))
 except OSError:
     pass
 
@@ -331,10 +330,10 @@ tests.append((r"""
 MkDir "%s"
 RmDir "%s"
 a = 0
-""" % (vb2py.utils.relativePath("test\\mytestdir"),
-       vb2py.utils.relativePath("test\\mytestdir")),
+""" % (vb2py.utils.relativePath("test/mytestdir"),
+       vb2py.utils.relativePath("test/mytestdir")),
 {
-'a' : os.path.isdir(vb2py.utils.relativePath("test\\mytestdir")),
+'a' : os.path.isdir(vb2py.utils.relativePath("test/mytestdir")),
 }))
 # << File tests >> (11 of 14)
 try:
@@ -389,7 +388,7 @@ a = Input(3, #3)
 b = Input(4, #3)
 Close #3
 
-""" % vb2py.utils.relativePath("test\\testread.txt"),
+""" % vb2py.utils.relativePath("test/testread.txt"),
 {
 'a' : 'Can',
 'b' : ' you',
@@ -403,11 +402,12 @@ While Not EOF(#3)
 End While
 Close #3
 
-""" % vb2py.utils.relativePath("test\\testread.txt"),
+""" % vb2py.utils.relativePath("test/testread.txt"),
 {
 'a' : 'hello',
 }))
 # -- end -- << File tests >>
+#< < Small File tests >>
 
 
 import vb2py.vbparser

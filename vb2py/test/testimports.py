@@ -1,7 +1,7 @@
-from unittest import *
 import vb2py.vbparser
+import unittest
 
-class TestImports(TestCase):
+class TestImports(unittest.TestCase):
     # << Imports tests >>
     def testImportClassToModule(self):
         """Import from class to module"""
@@ -30,4 +30,4 @@ import vb2py.vbparser
 vb2py.vbparser.log.setLevel(0) # Don't print all logging stuff
 
 if __name__ == "__main__":
-    main()
+    unittest.main()

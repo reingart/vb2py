@@ -1,5 +1,5 @@
-from unittest import *
 from testframework import *
+import sys
 
 # << Intrinsic tests >> (1 of 6)
 tests.append("""
@@ -156,7 +156,9 @@ i = Filter(a_, "notthereatall", False)(0)
 
 import vb2py.vbparser
 vb2py.vbparser.log.setLevel(0) # Don't print all logging stuff
-TestClass = addScriptTestsTo(BasicTest, tests)
+
+if sys.platform in ('win32', 'win64'):
+    TestClass = addScriptTestsTo(BasicTest, tests)
 
 if __name__ == "__main__":
     main()

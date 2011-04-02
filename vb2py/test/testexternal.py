@@ -1,13 +1,14 @@
-from unittest import *
 from testframework import *
+import sys
 
 # << External tests >>
 # Simple test
-tests.append(("""
-Dim _a As Object
-Set _a = CreateObject("Excel.Application")
-b = _a.Name
-""", {"b":"Microsoft Excel"}))
+if sys.platform in ('win32', 'win64'):
+    tests.append(("""
+    Dim _a As Object
+    Set _a = CreateObject("Excel.Application")
+    b = _a.Name
+    """, {"b":"Microsoft Excel"}))
 # -- end -- << External tests >>
 
 import vb2py.vbparser

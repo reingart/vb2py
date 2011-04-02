@@ -3,7 +3,8 @@
 import vb2py.extensions
 vb2py.extensions.disableLogging()
 
-from unittest import *
+import unittest
+from unittest import main
 from vb2py.vbparser import convertVBtoPython
 import vb2py.vbfunctions as vbfunctions
 import vb2py.vbfunctions
@@ -26,7 +27,7 @@ tests = []
 
 def BasicTest():
     """Return a new class - we do it this way to allow this to work properly for multiple tests"""
-    class _BasicTest(TestCase):
+    class _BasicTest(unittest.TestCase):
         """Holder class which gets built into a whole test case"""
     return _BasicTest
 

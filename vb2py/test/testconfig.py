@@ -1,17 +1,17 @@
 #
 # Turn off logging in extensions (too loud!)
 import vb2py.extensions
+import unittest
 vb2py.extensions.disableLogging()
 import vb2py.vbparser
 vb2py.vbparser.log.setLevel(0) # Don't print all logging stuff
 
-from unittest import *
 import vb2py.config
 import ConfigParser
 from vb2py.vbparser import convertVBtoPython
 import re
 
-class TestConfig(TestCase):
+class TestConfig(unittest.TestCase):
 
     def setUp(self):
         """Set up the test"""
@@ -225,4 +225,4 @@ class TestConfig(TestCase):
 
 
 if __name__ == "__main__":
-    main()
+    unittest.main()

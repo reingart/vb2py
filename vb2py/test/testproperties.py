@@ -1,4 +1,3 @@
-from unittest import *
 from complexframework import *
 
 # << Property tests >> (1 of 3)

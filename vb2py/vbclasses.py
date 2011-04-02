@@ -1,3 +1,5 @@
+# -*- coding: utf -*-
+
 """
 Classes which mimic the behaviour of VB classes
 
@@ -351,7 +353,10 @@ class _VBFiles:
         race conditions here in multithreaded applications so we use a lock to make
         this entire process atomic.
 
+        Watch out for path separators in the filename
+
         """
+        filename = filename.replace('\\', os.path.sep)
         self._lock.acquire()
         try:
             try:
@@ -400,18 +405,19 @@ class _VBFiles:
             buffer = ""
             while len(vars) < number:
                 char = f.read(1)
-                if char in separators:
-                    if evaloutput:
-                        # Try to eval it - if we get a syntax error then assume it is a string
-                        try:
-                            vars.append(eval(buffer))
-                        except SyntaxError:
+                if char <> '\r':            
+                    if char in separators:
+                        if evaloutput:
+                            # Try to eval it - if we get a syntax error then assume it is a string
+                            try:
+                                vars.append(eval(buffer))
+                            except SyntaxError:
+                                vars.append(buffer)
+                        else:
                             vars.append(buffer)
+                        buffer = ""	
                     else:
-                        vars.append(buffer)
-                    buffer = ""	
-                else:
-                    buffer += char
+                        buffer += char
         finally:
             self._lock.release()
         #	

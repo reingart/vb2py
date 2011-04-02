@@ -1,7 +1,7 @@
-from unittest import *
 import vb2py.vbparser
+import unittest
 
-class TestGlobals(TestCase):
+class TestGlobals(unittest.TestCase):
     # << Globals tests >> (1 of 8)
     def setUp(self):
         """Set up our tests"""
@@ -266,4 +266,4 @@ import vb2py.vbparser
 vb2py.vbparser.log.setLevel(0) # Don't print all logging stuff
 
 if __name__ == "__main__":
-    main()
+    unittest.main()

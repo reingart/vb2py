@@ -1,7 +1,7 @@
-from unittest import *
 from vb2py.vbfunctions import vbObjectInitialize, String, Integer
+import unittest
 
-class TestObjectDef(TestCase):
+class TestObjectDef(unittest.TestCase):
 
     # << ObjectDef tests >> (1 of 8)
     def test1D(self):
@@ -77,4 +77,4 @@ class TestObjectDef(TestCase):
 
 
 if __name__ == "__main__":
-    main()
+    unittest.main()

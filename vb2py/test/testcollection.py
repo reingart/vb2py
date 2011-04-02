@@ -1,7 +1,7 @@
-from unittest import *
 from vb2py.vbclasses import Collection
+import unittest 
 
-class TestCollection(TestCase):
+class TestCollection(unittest.TestCase):
 
     def setUp(self):
         """Set up the test"""
@@ -91,4 +91,4 @@ class TestCollection(TestCase):
 
 
 if __name__ == "__main__":
-    main()
+    unittest.main()

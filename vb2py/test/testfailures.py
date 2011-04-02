@@ -1,7 +1,6 @@
 """Tests that we know fail but are not within the scope of v0.2"""
 
 
-from unittest import *
 from testframework import *
 
 # << Failing tests >> (1 of 2)

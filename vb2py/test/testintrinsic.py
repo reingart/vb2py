@@ -1,4 +1,3 @@
-from unittest import *
 from testframework import *
 
 # << Intrinsic tests >> (1 of 10)

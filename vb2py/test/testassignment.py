@@ -1,4 +1,3 @@
-from unittest import *
 from testframework import *
 
 # << Assignment tests >> (1 of 8)

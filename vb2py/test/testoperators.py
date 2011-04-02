@@ -1,4 +1,3 @@
-from unittest import *
 from testframework import *
 
 # << Operators tests >> (1 of 2)
