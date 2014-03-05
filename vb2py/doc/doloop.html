@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.3.0: http://docutils.sourceforge.net/" />
+<title>vb2Py - Do ... Loop</title>
+<link rel="stylesheet" href="default.css" type="text/css" />
+</head>
+<body>
+<div class="document" id="vb2py-do-loop">
+<h1 class="title">vb2Py - Do ... Loop</h1>
+<!-- filename: c:\development\python22\lib\site-packages\vb2py\doc/doloop.htm -->
+<p>Contents of this page:</p>
+<ul class="simple">
+<li><a class="reference" href="#general">General</a></li>
+<li><a class="reference" href="#default-conversion">Default Conversion</a></li>
+<li><a class="reference" href="#list-of-options">List of Options</a></li>
+</ul>
+<p>Different forms:</p>
+<ul class="simple">
+<li><a class="reference" href="#do-loop">Do ... Loop</a></li>
+<li><a class="reference" href="#do-while-loop">Do While ... Loop</a></li>
+<li><a class="reference" href="#do-loop-while">Do ... Loop While</a></li>
+<li><a class="reference" href="#do-until-loop">Do Until ... Loop</a></li>
+<li><a class="reference" href="#do-loop-until">Do ... Loop Until</a></li>
+</ul>
+<div class="section" id="general">
+<h1><a name="general">General</a></h1>
+<p>All variations of VB's <tt class="literal"><span class="pre">Do</span> <span class="pre">...</span> <span class="pre">Loop</span></tt> construct are converted to an equivalent Python <tt class="literal"><span class="pre">while</span></tt> block. Preconditions are converted to the equivalent condition in the <tt class="literal"><span class="pre">while</span></tt> statement itself, whereas post-conditions are implemented using an <tt class="literal"><span class="pre">if</span> <span class="pre">...:</span> <span class="pre">break</span></tt> . <tt class="literal"><span class="pre">Exit's</span></tt> from the loop are also implemented using <tt class="literal"><span class="pre">break</span></tt> . <tt class="literal"><span class="pre">Until</span></tt> conditions (pre or post) are implemented by negating the condition itself but do not affect the structure.</p>
+</div>
+<div class="section" id="default-conversion">
+<h1><a name="default-conversion">Default Conversion</a></h1>
+<div class="section" id="do-loop">
+<h2><a name="do-loop">Do ... Loop</a></h2>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>Do<br>    Val = Val + 1<br>    If SomeCondition Then Exit Do<br>Loop<br></pre></td><td class="python-code-cell"><pre><br><br><br><br>    while 1:<br>        Val = Val + 1<br>        if SomeCondition:<br>            break<br></pre></td></tr></table>
+</div>
+<div class="section" id="do-while-loop">
+<h2><a name="do-while-loop">Do While ... Loop</a></h2>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>Do While Condition<br>    Val = Val + 1<br>    If SomeCondition Then Exit Do<br>Loop<br></pre></td><td class="python-code-cell"><pre><br><br><br><br>    while Condition:<br>        Val = Val + 1<br>        if SomeCondition:<br>            break<br></pre></td></tr></table>
+</div>
+<div class="section" id="do-loop-while">
+<h2><a name="do-loop-while">Do ... Loop While</a></h2>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>Do <br>    Val = Val + 1<br>    If SomeCondition Then Exit Do<br>Loop While Condition<br></pre></td><td class="python-code-cell"><pre><br><br><br><br>    while 1:<br>        Val = Val + 1<br>        if SomeCondition:<br>            break<br>        if not (Condition):<br>            break<br></pre></td></tr></table>
+</div>
+<div class="section" id="do-until-loop">
+<h2><a name="do-until-loop">Do Until ... Loop</a></h2>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>Do Until Condition<br>    Val = Val + 1<br>    If SomeCondition Then Exit Do<br>Loop<br></pre></td><td class="python-code-cell"><pre><br><br><br><br>    while not (Condition):<br>        Val = Val + 1<br>        if SomeCondition:<br>            break<br></pre></td></tr></table>
+</div>
+<div class="section" id="do-loop-until">
+<h2><a name="do-loop-until">Do ... Loop Until</a></h2>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>Do <br>    Val = Val + 1<br>    If SomeCondition Then Exit Do<br>Loop Until Condition<br></pre></td><td class="python-code-cell"><pre><br><br><br><br>    while 1:<br>        Val = Val + 1<br>        if SomeCondition:<br>            break<br>        if Condition:<br>            break<br></pre></td></tr></table>
+</div>
+</div>
+<div class="section" id="list-of-options">
+<h1><a name="list-of-options">List of Options</a></h1>
+<p>There are no options for the <tt class="literal"><span class="pre">Do</span> <span class="pre">...</span> <span class="pre">Loop</span></tt> construct.</p>
+</div>
+</div>
+</body>
+</html>

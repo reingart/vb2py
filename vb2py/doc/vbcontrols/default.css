@@ -1,0 +1,89 @@
+<STYLE TYPE="text/css">
+
+
+
+h1.title {
+}
+
+
+h1 {
+    font-size : 24;
+    font-family : ariel;
+    background-color : wheat;
+    padding : 5;
+	border-width : thin;
+	border-style : solid;
+	border-color : black;
+    text-align : center;
+}
+
+
+h2 {
+    font-size : 20;
+    font-family : ariel;
+    background-color : oldlace;
+    padding : 5;
+	border-width : thin;
+	border-style : solid;
+	border-color : black;
+}
+
+
+table {
+    width : 100%;
+}
+
+
+th.code-header {
+	border-width : thin;
+	border-style : solid;
+	border-color : black;
+    background-color : rgb(191, 223, 255);
+}
+
+
+td.vb-code-cell {
+    padding : 10;
+    background-color : rgb(255, 255, 204);    
+	border-width : thin;
+	border-style : solid;
+	border-color : black;
+    vertical-align : middle;
+    font-family : Courier;
+    font-size : 12;
+    width : 50%;
+}
+
+td.python-code-cell {
+    padding : 10;
+    background-color : rgb(204, 255, 204);    
+	border-width : thin;
+	border-style : solid;
+	border-color : black;
+    vertical-align : middle;
+    font-family : Courier;
+    font-size : 12;
+}
+
+ul {
+    font-size : 14;
+    padding-top : 0;
+    padding-bottom : 0;
+    margin-bottom : 0;
+    margin-top : 0;
+    list-style : square ;
+}
+
+li {
+    padding-bottom : 0;
+    margin-top : 0;
+    margin-bottom : 0;
+}
+
+pre.literal-block {
+	border-width : thin;
+	border-style : solid;
+	border-color : grey;
+    background-color : AliceBlue;
+    padding : 10;
+}

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.3.0: http://docutils.sourceforge.net/" />
+<title>vb2Py - For and For Each</title>
+<link rel="stylesheet" href="default.css" type="text/css" />
+</head>
+<body>
+<div class="document" id="vb2py-for-and-for-each">
+<h1 class="title">vb2Py - For and For Each</h1>
+<!-- filename: c:\development\python22\lib\site-packages\vb2py\doc/for.htm -->
+<p>Contents of this page:</p>
+<ul class="simple">
+<li><a class="reference" href="#general">General</a></li>
+<li><a class="reference" href="#default-conversion">Default Conversion</a></li>
+<li><a class="reference" href="#list-of-options">List of Options</a></li>
+</ul>
+<p>Different forms:</p>
+<ul class="simple">
+<li><a class="reference" href="#for-i-0-to-10">For i = 0 To 10</a></li>
+<li><a class="reference" href="#for-each-obj-in-container">For Each Obj In Container</a></li>
+</ul>
+<div class="section" id="general">
+<h1><a name="general">General</a></h1>
+<p><tt class="literal"><span class="pre">For</span></tt> and <tt class="literal"><span class="pre">For</span> <span class="pre">Each</span></tt> statements are converted to an equivalent Python for block. Where the iteration is over an iterable object, the translation just uses the iterable. Where the VB statement is an iteration between two numbers, the <tt class="literal"><span class="pre">vb2Py</span></tt> function <tt class="literal"><span class="pre">vbForRange</span></tt> is used to match the behaviour.</p>
+</div>
+<div class="section" id="default-conversion">
+<h1><a name="default-conversion">Default Conversion</a></h1>
+<div class="section" id="for-i-0-to-10">
+<h2><a name="for-i-0-to-10">For i = 0 To 10</a></h2>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>For i = 0 To 10<br>    DoSomething i<br>    If Condition Then Exit For<br>Next i<br></pre></td><td class="python-code-cell"><pre><br><br><br><br>    for i in vbForRange(0, 10):<br>        DoSomething(i)<br>        if Condition:<br>            break<br></pre></td></tr></table>
+</div>
+<div class="section" id="for-each-obj-in-container">
+<h2><a name="for-each-obj-in-container">For Each Obj In Container</a></h2>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>For Each Obj In Container<br>    DoSomethingWith i<br>    If i.Condition Then Exit For<br>Next i<br></pre></td><td class="python-code-cell"><pre><br><br><br><br>    for i in Container:<br>        DoSomethingWith(i)<br>        if i.Condition:<br>            break<br></pre></td></tr></table>
+</div>
+</div>
+<div class="section" id="list-of-options">
+<h1><a name="list-of-options">List of Options</a></h1>
+<p>There are no options specific to the <tt class="literal"><span class="pre">For</span></tt> statement.</p>
+</div>
+</div>
+</body>
+</html>

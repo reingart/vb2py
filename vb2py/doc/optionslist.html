@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.3.0: http://docutils.sourceforge.net/" />
+<link rel="stylesheet" href="default.css" type="text/css" />
+</head>
+<body>
+<div class="document">
+<!-- filename: c:\development\python22\lib\site-packages\vb2py\doc/optionslist.htm -->
+<div class="section" id="list-of-options">
+<h1><a name="list-of-options">List Of Options</a></h1>
+<p>All the options are in the <tt class="literal"><span class="pre">vb2py.ini</span></tt> file located in the main <tt class="literal"><span class="pre">vb2py</span></tt> folder.</p>
+<p><a class="reference" href="#general">General</a></p>
+<blockquote>
+<p><a class="reference" href="#indentcharacter">IndentCharacter</a></p>
+<p><a class="reference" href="#indentamount">IndentAmount</a></p>
+<p><a class="reference" href="#attentionmarker">AttentionMarker</a></p>
+<p><a class="reference" href="#warnaboutunrenderedcode">WarnAboutUnrenderedCode</a></p>
+<p><a class="reference" href="#loaduserplugins">LoadUserPlugins</a></p>
+<p><a class="reference" href="#logginglevel">LoggingLevel</a></p>
+<p><a class="reference" href="#dumpformdata">DumpFormData</a></p>
+<p><a class="reference" href="#respectprivatestatus">RespectPrivateStatus</a></p>
+<p><a class="reference" href="#privatedataprefix">PrivateDataPrefix</a></p>
+<p><a class="reference" href="#alwaysuserawstringliterals">AlwaysUseRawStringLiterals</a></p>
+<p><a class="reference" href="#trytoextractdocstrings">TryToExtractDocStrings</a></p>
+<p><a class="reference" href="#reportpartialconversion">ReportPartialConversion</a></p>
+<p><a class="reference" href="#includedebugcode">IncludeDebugCode</a></p>
+</blockquote>
+<p><a class="reference" href="#functions">Functions</a></p>
+<blockquote>
+<p><a class="reference" href="#returnvariablename">ReturnVariableName</a></p>
+<p><a class="reference" href="#preinitializereturnvariable">PreInitializeReturnVariable</a></p>
+</blockquote>
+<p><a class="reference" href="#select">Select</a></p>
+<blockquote>
+<p><a class="reference" href="#evaluatevariable">EvaluateVariable</a></p>
+<p><a class="reference" href="#selectvariableprefix">SelectVariablePrefix</a></p>
+<p><a class="reference" href="#usenumericindex">UseNumericIndex</a></p>
+</blockquote>
+<p><a class="reference" href="#labels">Labels</a></p>
+<blockquote>
+<a class="reference" href="#ignorelabels">IgnoreLabels</a></blockquote>
+<p><a class="reference" href="#with">With</a></p>
+<blockquote>
+<p><a class="reference" href="#with-evaluatevariable">With EvaluateVariable</a></p>
+<p><a class="reference" href="#withvariableprefix">WithVariablePrefix</a></p>
+<p><a class="reference" href="#with-usenumericindex">With UseNumericIndex</a></p>
+</blockquote>
+<p><a class="reference" href="#properties">Properties</a></p>
+<blockquote>
+<p><a class="reference" href="#letsetvariableprefix">LetSetVariablePrefix</a></p>
+<p><a class="reference" href="#getvariableprefix">GetVariablePrefix</a></p>
+</blockquote>
+<p><a class="reference" href="#classes">Classes</a></p>
+<blockquote>
+<a class="reference" href="#usenewstyleclasses">UseNewStyleClasses</a></blockquote>
+</div>
+<div class="section" id="general">
+<h1><a name="general">General</a></h1>
+<p>The list of all <tt class="literal"><span class="pre">General</span></tt> options is shown in the following table:</p>
+<pre class="literal-block">
+[General]
+# Space or Tab
+IndentCharacter = Space 
+# Number of spaces/tabs                                 
+IndentAmount = 4                                                         
+# Marker to use when code needs user attention
+AttentionMarker = VB2PY                         
+# Yes or No
+WarnAboutUnrenderedCode = Yes   
+# Yes or No, whether to use user plugins or not. If No, system plugins will still work
+LoadUserPlugins = No
+# Default logging level, 0 is nothing
+LoggingLevel = 0
+# Yes or No, whether to dump form data to screen - Yes seems to crash the GUI!
+DumpFormData = No
+# Yes or No, whether the full VB parser is used to convert code
+UseFullParser = Yes
+# Yes or No, whether to respect Private status of variables
+RespectPrivateStatus = Yes
+# Prefix to use to tag data as private (Python normally uses __ but VB convention is m_)
+PrivateDataPrefix = __
+# Yes or No, whether to use raw strings for all literals - very safe but not necessarily good looking!
+AlwaysUseRawStringLiterals = No
+# Yes or No, whether to try to automatically extract docstrings from the code
+TryToExtractDocStrings = Yes
+# Yes or No, whether to return a partially converted file when an error is found
+ReportPartialConversion = Yes
+# Yes or No, whether to include debug code in the converted application
+IncludeDebugCode = No
+</pre>
+<div class="section" id="indentcharacter">
+<h2><a name="indentcharacter">IndentCharacter</a></h2>
+<p>Syntax: <tt class="literal"><span class="pre">IndentCharacter</span> <span class="pre">=</span> <span class="pre">Space</span> <span class="pre">|</span> <span class="pre">Tab</span></tt></p>
+<pre class="literal-block">
+# Space or Tab
+IndentCharacter = Space 
+</pre>
+<p>Sets the indentation character as a Space or a Tab. The number of indent characters is set by the <a class="reference" href="#indentamount">IndentAmount</a>.</p>
+<p>The default is a space.</p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>' VB2PY-Set: General.IndentCharacter = Space<br>    If a = 10 Then<br>            b = 1<br>    Else<br>            b = 2<br>    End If<br>' VB2PY-Unset: General.IndentCharacter<br></pre></td><td class="python-code-cell"><pre><br><br><br><br>    if a == 10:<br>        b = 1<br>    else:<br>        b = 2<br></pre></td></tr></table>
+<p>Be careful when switching to <tt class="literal"><span class="pre">Tab</span></tt> to set the <a class="reference" href="#indentamount">IndentAmount</a>, or you will end up with four tabs!</p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>' VB2PY-Set: General.IndentCharacter = Tab<br>    If a = 10 Then<br>            b = 1<br>    Else<br>            b = 2<br>    End If<br>' VB2PY-Unset: General.IndentCharacter<br></pre></td><td class="python-code-cell"><pre><br><br><br><br>    if a == 10:<br>        b = 1<br>    else:<br>        b = 2<br></pre></td></tr></table>
+</div>
+<div class="section" id="indentamount">
+<h2><a name="indentamount">IndentAmount</a></h2>
+<p>Syntax: <tt class="literal"><span class="pre">IndentAmount</span> <span class="pre">=</span> <span class="pre">&lt;integer&gt;</span></tt></p>
+<pre class="literal-block">
+# Space or Tab
+IndentAmount = 4        
+</pre>
+<p>Sets the number of <a class="reference" href="#indentcharacter">IndentCharacter</a> 's to be used to indent code blocks.</p>
+<p>The default is 4.</p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>' VB2PY-Set: General.IndentAmount = 4<br>    If a = 10 Then<br>            b = 1<br>    Else<br>            b = 2<br>    End If<br>' VB2PY-Unset: General.IndentAmount<br></pre></td><td class="python-code-cell"><pre><br><br><br><br>    if a == 10:<br>        b = 1<br>    else:<br>        b = 2<br></pre></td></tr></table>
+<p>Other values are allowed.</p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>' VB2PY-Set: General.IndentAmount = 8<br>    If a = 10 Then<br>            b = 1<br>    Else<br>            b = 2<br>    End If<br>' VB2PY-Unset: General.IndentAmount<br></pre></td><td class="python-code-cell"><pre><br><br><br><br>    if a == 10:<br>        b = 1<br>    else:<br>        b = 2<br></pre></td></tr></table>
+</div>
+<div class="section" id="attentionmarker">
+<h2><a name="attentionmarker">AttentionMarker</a></h2>
+<p>Syntax: <tt class="literal"><span class="pre">AttentionMarker</span> <span class="pre">=</span> <span class="pre">&lt;string&gt;</span></tt></p>
+<pre class="literal-block">
+# Marker to use when code needs user attention
+AttentionMarker = VB2PY                         
+</pre>
+<p>Sets the marker to use in comments when highlighting part of the converted code that needs attention.</p>
+<p>The default is VB2PY.</p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>' VB2PY-Set: General.AttentionMarker = VB2PY<br>    On Error Goto 0<br>' VB2PY-Unset: General.AttentionMarker<br></pre></td><td class="python-code-cell"><pre><br><br><br><br>    # VB2PY (UntranslatedCode) On Error Goto 0<br></pre></td></tr></table>
+<p>Other values are allowed.</p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>' VB2PY-Set: General.AttentionMarker = TODO<br>    On Error Goto 0<br>' VB2PY-Unset: General.AttentionMarker<br></pre></td><td class="python-code-cell"><pre><br><br><br><br>    # TODO (UntranslatedCode) On Error Goto 0<br></pre></td></tr></table>
+</div>
+<div class="section" id="warnaboutunrenderedcode">
+<h2><a name="warnaboutunrenderedcode">WarnAboutUnrenderedCode</a></h2>
+<p>Syntax: <tt class="literal"><span class="pre">WarnAboutUnrenderedCode</span> <span class="pre">=</span> <span class="pre">Yes</span> <span class="pre">|</span> <span class="pre">No</span></tt></p>
+<pre class="literal-block">
+# Yes or No
+WarnAboutUnrenderedCode = Yes   
+</pre>
+<p>Determined whether an <a class="reference" href="#attentionmarker">AttentionMarker</a> is inserted in the Python code to highligh VB code which has not been rendered.</p>
+<p>The default is Yes.</p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>' VB2PY-Set: General.WarnAboutUnrenderedCode = Yes<br>    On Error Goto 0<br>' VB2PY-Unset: General.WarnAboutUnrenderedCode<br></pre></td><td class="python-code-cell"><pre><br><br><br><br>    # VB2PY (UntranslatedCode) On Error Goto 0<br></pre></td></tr></table>
+<p>Other values are allowed.</p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>' VB2PY-Set: General.WarnAboutUnrenderedCode = No<br>    On Error Goto 0<br>' VB2PY-Unset: General.WarnAboutUnrenderedCode<br></pre></td><td class="python-code-cell"><pre><br><br><br><br></pre></td></tr></table>
+</div>
+<div class="section" id="loaduserplugins">
+<h2><a name="loaduserplugins">LoadUserPlugins</a></h2>
+<p>Syntax: <tt class="literal"><span class="pre">LoadUserPlugins</span> <span class="pre">=</span> <span class="pre">Yes</span> <span class="pre">|</span> <span class="pre">No</span></tt></p>
+<pre class="literal-block">
+# Yes or No, whether to use user plugins or not. If No, system plugins will still work
+LoadUserPlugins = No
+</pre>
+<p>Determines whether user plug-ins are loaded and executed during the normal code conversion process. User plug-ins are kept in the <tt class="literal"><span class="pre">extensions</span></tt> folder of the <tt class="literal"><span class="pre">vb2py</span></tt> directory. System plug-ins are also located in this folder but are not affected by the value of this setting.</p>
+</div>
+<div class="section" id="logginglevel">
+<h2><a name="logginglevel">LoggingLevel</a></h2>
+<p>Syntax: <tt class="literal"><span class="pre">LoggingLevel</span> <span class="pre">=</span> <span class="pre">&lt;integer&gt;</span></tt></p>
+<pre class="literal-block">
+# Default logging level, 0 is nothing
+LoggingLevel = 0
+</pre>
+<p>Sets the default logging level to use during the code conversion. If this is set to 0 then no logging messages will be output. The logging levels are defined in the standard Python logging module.</p>
+</div>
+<div class="section" id="dumpformdata">
+<h2><a name="dumpformdata">DumpFormData</a></h2>
+<p>Syntax: <tt class="literal"><span class="pre">DumpFormData</span> <span class="pre">=</span> <span class="pre">Yes</span> <span class="pre">|</span> <span class="pre">No</span></tt></p>
+<pre class="literal-block">
+# Yes or No, whether to dump form data to screen - Yes seems to crash the GUI!
+DumpFormData = No
+</pre>
+<p>If this is set to <tt class="literal"><span class="pre">Yes</span></tt> then the form classes will be dumped to the screen during form conversion. This may be useful if there is a problem during the conversion process.</p>
+<p>The default is No.</p>
+</div>
+<div class="section" id="respectprivatestatus">
+<h2><a name="respectprivatestatus">RespectPrivateStatus</a></h2>
+<p>Syntax: <tt class="literal"><span class="pre">RespectPrivateStatus</span> <span class="pre">=</span> <span class="pre">Yes</span> <span class="pre">|</span> <span class="pre">No</span></tt></p>
+<pre class="literal-block">
+# Yes or No, whether to respect Private status of variables
+RespectPrivateStatus = Yes
+</pre>
+<p>If this variable is set to <tt class="literal"><span class="pre">Yes</span></tt> then variables, subroutines and functions in VB which are either explicitely or implicitely <tt class="literal"><span class="pre">Private</span></tt> will have their Python names converted to have a <a class="reference" href="#privatedataprefix">PrivateDataPrefix</a>. Setting this variable to <tt class="literal"><span class="pre">No</span></tt> will ignore the <tt class="literal"><span class="pre">Private</span></tt> status of all variables.</p>
+<p>The default is Yes.</p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>' VB2PY-GlobalSet: General.RespectPrivateStatus = Yes<br>Public Name As String<br>Public Age As Single<br>Private ID As Long<br><br>Public Sub checkAge()<br>    If Age = 0 Then Age = 1<br>End Sub<br>'<br>Private Sub setUp()<br>    ID = Rnd()<br>    If ID = 0 Then setUp<br>End Sub<br>' VB2PY-Unset: General.RespectPrivateStatus<br></pre></td><td class="python-code-cell"><pre><br><br>class MyClass(Object):<br>        """"""<br><br>        Name = String()<br>        Age = Single()<br>        __ID = Long()<br><br>        def checkAge(self):<br>            if self.Age == 0:<br>                self.Age = 1<br><br>        def __setUp(self):<br>            self.__ID = Rnd()<br>            if self.__ID == 0:<br>                self.__setUp()<br><br></pre></td></tr></table>
+<p>An example with No.</p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>' VB2PY-GlobalSet: General.RespectPrivateStatus = No<br>Public Name As String<br>Public Age As Single<br>Private ID As Long<br><br>Public Sub checkAge()<br>    If Age = 0 Then Age = 1<br>End Sub<br>'<br>Private Sub setUp()<br>    ID = Rnd()<br>    If ID = 0 Then setUp<br>End Sub<br>' VB2PY-Unset: General.RespectPrivateStatus<br></pre></td><td class="python-code-cell"><pre><br><br>class MyClass(Object):<br>        """"""<br><br>        Name = String()<br>        Age = Single()<br>        ID = Long()<br><br>        def checkAge(self):<br>            if self.Age == 0:<br>                self.Age = 1<br><br>        def setUp(self):<br>            self.ID = Rnd()<br>            if self.ID == 0:<br>                self.setUp()<br><br></pre></td></tr></table>
+</div>
+<div class="section" id="privatedataprefix">
+<h2><a name="privatedataprefix">PrivateDataPrefix</a></h2>
+<p>Syntax: <tt class="literal"><span class="pre">PrivateDataPrefix</span> <span class="pre">=</span> <span class="pre">&lt;string&gt;</span></tt></p>
+<pre class="literal-block">
+# Prefix to use to tag data as private (Python normally uses __ but VB convention is m_)
+PrivateDataPrefix = __
+</pre>
+<p>If <a class="reference" href="#respectprivatestatus">RespectPrivateStatus</a> is set to <tt class="literal"><span class="pre">Yes</span></tt> then variables, subroutines and functions in VB which are either explicitely or implicitely <tt class="literal"><span class="pre">Private</span></tt> will have their Python names converted to have a prefix and this setting determines what that prefix will be.</p>
+<p>The default is ___.</p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>' VB2PY-GlobalSet: General.PrivateDataPrefix = prv<br>Public Name As String<br>Public Age As Single<br>Private ID As Long<br><br>Public Sub checkAge()<br>    If Age = 0 Then Age = 1<br>End Sub<br>'<br>Private Sub setUp()<br>    ID = Rnd()<br>    If ID = 0 Then setUp<br>End Sub<br>' VB2PY-Unset: General.PrivateDataPrefix<br></pre></td><td class="python-code-cell"><pre><br><br>class MyClass(Object):<br>        """"""<br><br>        Name = String()<br>        Age = Single()<br>        prvID = Long()<br><br>        def checkAge(self):<br>            if self.Age == 0:<br>                self.Age = 1<br><br>        def prvsetUp(self):<br>            self.prvID = Rnd()<br>            if self.prvID == 0:<br>                self.prvsetUp()<br><br></pre></td></tr></table>
+<p>If the value used is not &quot;__&quot; then the data will not be hidden as far as Python is concerned.</p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>' VB2PY-GlobalSet: General.PrivateDataPrefix = m_<br>Public Name As String<br>Public Age As Single<br>Private ID As Long<br><br>Public Sub checkAge()<br>    If Age = 0 Then Age = 1<br>End Sub<br>'<br>Private Sub setUp()<br>    ID = Rnd()<br>    If ID = 0 Then setUp<br>End Sub<br>' VB2PY-Unset: General.PrivateDataPrefix<br></pre></td><td class="python-code-cell"><pre><br><br>class MyClass(Object):<br>        """"""<br><br>        Name = String()<br>        Age = Single()<br>        m_ID = Long()<br><br>        def checkAge(self):<br>            if self.Age == 0:<br>                self.Age = 1<br><br>        def m_setUp(self):<br>            self.m_ID = Rnd()<br>            if self.m_ID == 0:<br>                self.m_setUp()<br><br></pre></td></tr></table>
+</div>
+<div class="section" id="alwaysuserawstringliterals">
+<h2><a name="alwaysuserawstringliterals">AlwaysUseRawStringLiterals</a></h2>
+<p>Syntax: <tt class="literal"><span class="pre">AlwaysUseRawStringLiterals</span> <span class="pre">=</span> <span class="pre">Yes</span> <span class="pre">|</span> <span class="pre">No</span></tt></p>
+<pre class="literal-block">
+# Yes or No, whether to use raw strings for all literals - very safe but not necessarily good looking!
+AlwaysUseRawStringLiterals = No
+</pre>
+<p>By default, all VB strings are just converted to Python strings. However, if the VB string contains the backslash character then it is quite likely that the Python version will not be the same since Python will interpret the backslash as a control character. Setting the <tt class="literal"><span class="pre">AlwaysUseRawStringLiterals</span></tt> option to <tt class="literal"><span class="pre">Yes</span></tt> will cause all VB strings to be converted to raw Python strings (r&quot;string&quot;), which will prevent such problems.</p>
+<p>The default is No.</p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>' VB2PY-GlobalSet: General.AlwaysUseRawStringLiterals = No<br>myString = &quot;a\path\name&quot;<br>' VB2PY-Unset: General.AlwaysUseRawStringLiterals<br></pre></td><td class="python-code-cell"><pre><br><br><br><br>    # VB2PY (ParserError) Parsing error: 0, 'myString = &quot;a\path\name&quot;'<br>    # VB2PY (ParserStop) Conversion of VB code halted<br></pre></td></tr></table>
+<p>Setting the option to <tt class="literal"><span class="pre">Yes</span></tt> is safe but doesn't always look good in the code.</p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>' VB2PY-GlobalSet: General.AlwaysUseRawStringLiterals = Yes<br>myString = &quot;a\path\name&quot;<br>' VB2PY-Unset: General.AlwaysUseRawStringLiterals<br></pre></td><td class="python-code-cell"><pre><br><br><br><br>    # VB2PY (ParserError) Parsing error: 0, 'myString = &quot;a\path\name&quot;'<br>    # VB2PY (ParserStop) Conversion of VB code halted<br></pre></td></tr></table>
+</div>
+<div class="section" id="trytoextractdocstrings">
+<h2><a name="trytoextractdocstrings">TryToExtractDocStrings</a></h2>
+<p>Syntax: <tt class="literal"><span class="pre">TryToExtractDocStrings</span> <span class="pre">=</span> <span class="pre">Yes</span> <span class="pre">|</span> <span class="pre">No</span></tt></p>
+<pre class="literal-block">
+# Yes or No, whether to try to automatically extract docstrings from the code
+TryToExtractDocStrings = Yes
+</pre>
+<p>If <tt class="literal"><span class="pre">TryToExtractDocStrings</span></tt> is set then any contiguous block of comment lines found at the start of a module are interpretted as a docstring and added to the class definition. The docstring terminates with the first non-comment line.</p>
+<p>The default is <tt class="literal"><span class="pre">No</span></tt>.</p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>' VB2PY-GlobalSet: General.TryToExtractDocStrings = No<br>    ' This is the documentation for the module<br>    ' This line is also documentation<br>    ' So is this one<br>    ' And this is the last<br><br>Public Name As String<br>Public Age As Single<br>Private ID As Long<br><br>Public Sub checkAge()<br>    If Age = 0 Then Age = 1<br>End Sub<br>'<br>Private Sub setUp()<br>    ID = Rnd()<br>    If ID = 0 Then setUp<br>End Sub<br>' VB2PY-Unset: General.TryToExtractDocStrings<br></pre></td><td class="python-code-cell"><pre><br><br><br>    Name = String()<br>    Age = Single()<br>    ID = Long()<br><br>    def checkAge():<br>        global Age<br>        if Age == 0:<br>            Age = 1<br><br>    def setUp():<br>        global ID<br>        ID = Rnd()<br>        if ID == 0:<br>            setUp()<br><br>    # This is the documentation for the module<br>    # This line is also documentation<br>    # So is this one<br>    # And this is the last<br>    #<br></pre></td></tr></table>
+<p>When the option is <tt class="literal"><span class="pre">Yes</span></tt> docstrings will be created.</p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>' VB2PY-GlobalSet: General.TryToExtractDocStrings = Yes<br>    ' This is the documentation for the module<br>    ' This line is also documentation<br>    ' So is this one<br>    ' And this is the last<br><br>Public Name As String<br>Public Age As Single<br>Private ID As Long<br><br>Public Sub checkAge()<br>    If Age = 0 Then Age = 1<br>End Sub<br>'<br>Private Sub setUp()<br>    ID = Rnd()<br>    If ID = 0 Then setUp<br>End Sub<br>' VB2PY-Unset: General.TryToExtractDocStrings<br></pre></td><td class="python-code-cell"><pre><br><br>    """ This is the documentation for the module<br>     This line is also documentation<br>     So is this one<br>     And this is the last<br>    <br>    """<br><br>    Name = String()<br>    Age = Single()<br>    ID = Long()<br><br>    def checkAge():<br>        global Age<br>        if Age == 0:<br>            Age = 1<br><br>    def setUp():<br>        global ID<br>        ID = Rnd()<br>        if ID == 0:<br>            setUp()<br><br></pre></td></tr></table>
+</div>
+<div class="section" id="reportpartialconversion">
+<h2><a name="reportpartialconversion">ReportPartialConversion</a></h2>
+<p>Syntax: <tt class="literal"><span class="pre">ReportPartialConversion</span> <span class="pre">=</span> <span class="pre">Yes</span> <span class="pre">|</span> <span class="pre">No</span></tt></p>
+<pre class="literal-block">
+# Yes or No, whether to return a partially converted file when an error is found
+ReportPartialConversion = Yes
+</pre>
+<p>This option is used to determine what happens when the conversion fails for some reason. If the option is set to <tt class="literal"><span class="pre">Yes</span></tt> then the conversion will return as much code as it can. If the option is set to <tt class="literal"><span class="pre">No</span></tt> then the conversion will just fail and return nothing at all.</p>
+<p>The default is <tt class="literal"><span class="pre">Yes</span></tt>.</p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br> ' VB2PY-Set: General.ReportPartialConversion = Yes<br>     a = 10<br>     b = 20<br>     c = 30<br>     something that wont convert<br>     d = 40<br>     e = 50<br>' VB2PY-Unset: General.ReportPartialConversion<br></pre></td><td class="python-code-cell"><pre><br><br><br><br>    a = 10<br>    b = 20<br>    c = 30<br>    # VB2PY (ParserError) Parsing error: 0, 'something that wont convert'<br>    # VB2PY (ParserStop) Conversion of VB code halted<br></pre></td></tr></table>
+<p>When the option is <tt class="literal"><span class="pre">No</span></tt> you wont get any output if there is an error.</p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br> ' VB2PY-Set: General.ReportPartialConversion = No<br>     a = 10<br>     b = 20<br>     c = 30<br>     something that wont convert<br>     d = 40<br>     e = 50<br>' VB2PY-Unset: General.ReportPartialConversion<br></pre></td><td class="python-code-cell"><pre><br><br><br><br>    a = 10<br>    b = 20<br>    c = 30<br>    # VB2PY (ParserError) Parsing error: 0, 'something that wont convert'<br>    # VB2PY (ParserStop) Conversion of VB code halted<br></pre></td></tr></table>
+</div>
+<div class="section" id="includedebugcode">
+<h2><a name="includedebugcode">IncludeDebugCode</a></h2>
+<p>Syntax: <tt class="literal"><span class="pre">IncludeDebugCode</span> <span class="pre">=</span> <span class="pre">Yes</span> <span class="pre">|</span> <span class="pre">No</span></tt></p>
+<pre class="literal-block">
+# Yes or No, whether to include debug code in the converted application
+IncludeDebugCode = No
+</pre>
+<p>This option is used to determine whether debug code is included in the converted application. If the option is <tt class="literal"><span class="pre">Yes</span></tt> then a <tt class="literal"><span class="pre">from</span> <span class="pre">vbdebug</span> <span class="pre">import</span> <span class="pre">*</span></tt> will be inserted at the top of each module. <tt class="literal"><span class="pre">vbdebug</span></tt> includes code to access the logger and is required if you need to view the output from <tt class="literal"><span class="pre">Debug.Print</span></tt> statements.</p>
+<p>The default is <tt class="literal"><span class="pre">No</span></tt>.</p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br> ' VB2PY-Set: General.IncludeDebugCode = No<br>     a = 10<br>     b = 20<br>     c = 30<br>' VB2PY-Unset: General.IncludeDebugCode<br></pre></td><td class="python-code-cell"><pre><br><br><br><br>    a = 10<br>    b = 20<br>    c = 30<br></pre></td></tr></table>
+<p>When the option is <tt class="literal"><span class="pre">Yes</span></tt> you get the extra <tt class="literal"><span class="pre">import</span></tt> statement</p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br> ' VB2PY-Set: General.IncludeDebugCode = Yes<br>     a = 10<br>     b = 20<br>     c = 30<br>' VB2PY-Unset: General.IncludeDebugCode<br></pre></td><td class="python-code-cell"><pre><br><br><br><br>    a = 10<br>    b = 20<br>    c = 30<br></pre></td></tr></table>
+</div>
+</div>
+<div class="section" id="functions">
+<h1><a name="functions">Functions</a></h1>
+<p>The list of all <tt class="literal"><span class="pre">Function</span></tt> options is shown in the following table:</p>
+<pre class="literal-block">
+[Functions]
+# Name of variable used in Functions
+ReturnVariableName = _ret             
+# Yes or No, leave at Yes unless good reasons!
+PreInitializeReturnVariable = Yes     
+</pre>
+<div class="section" id="returnvariablename">
+<h2><a name="returnvariablename">ReturnVariableName</a></h2>
+<p>Syntax: <tt class="literal"><span class="pre">ReturnVariableName</span> <span class="pre">=</span> <span class="pre">&lt;string&gt;</span></tt></p>
+<pre class="literal-block">
+# Name of variable used in Functions
+ReturnVariableName = _ret             
+</pre>
+<p>This option allows the return variable name to be specified. No checking is done to ensure that the name does not clash with local or global variables, so care should be taken when selecting a suitable name.</p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>Dim moduleGlobal1, moduleGlobal2<br><br>' VB2PY-GlobalSet: Functions.ReturnVariableName = _MyFunc<br>Function MyFunc(X, Optional Y, Optional Z=20)<br>    Dim subLocal<br>    subLocal = X + Y + Z + moduleGlobal<br>    moduleGlobal2 = moduleGlobal2 + 1<br>    MyFunc = subLocal*10<br>End Function<br>' VB2PY-Unset: Functions.ReturnVariableName <br><br>a = MyFunc(1, 2)<br>a = MyFunc(1, Z:=10)<br></pre></td><td class="python-code-cell"><pre><br><br><br>    moduleGlobal1 = Variant()<br>    moduleGlobal2 = Variant()<br><br>    def MyFunc(X, Y=VBMissingArgument, Z=20):<br>        global moduleGlobal2<br>        _MyFunc = None<br>        subLocal = X + Y + Z + moduleGlobal<br>        moduleGlobal2 = moduleGlobal2 + 1<br>        _MyFunc = subLocal * 10<br>        return _MyFunc<br><br>    a = MyFunc(1, 2)<br>    a = MyFunc(1, Z= 10)<br></pre></td></tr></table>
+</div>
+<div class="section" id="preinitializereturnvariable">
+<h2><a name="preinitializereturnvariable">PreInitializeReturnVariable</a></h2>
+<p>Syntax: <tt class="literal"><span class="pre">PreInitializeReturnVariable</span> <span class="pre">=</span> <span class="pre">Yes</span> <span class="pre">|</span> <span class="pre">No</span></tt></p>
+<pre class="literal-block">
+# Yes or No, leave at Yes unless good reasons!
+PreInitializeReturnVariable = Yes     
+</pre>
+<p>By default the return variable is initialized to <tt class="literal"><span class="pre">None</span></tt> at the start of the function so that an error does not occur in the event that the function returns before the return variable has been assigned to. This option allows this initialization step to be omitted and is safe as long as all return paths from the function include an explicit assignment to the return value variable.</p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>Dim moduleGlobal1, moduleGlobal2<br><br>' VB2PY-GlobalSet: Functions.PreInitializeReturnVariable = Yes<br>Function MyFunc(X, Optional Y, Optional Z=20)<br>    Dim subLocal<br>    subLocal = X + Y + Z + moduleGlobal<br>    moduleGlobal2 = moduleGlobal2 + 1<br>    MyFunc = subLocal*10<br>End Function<br>' VB2PY-Unset: Functions.PreInitializeReturnVariable <br><br>a = MyFunc(1, 2)<br>a = MyFunc(1, Z:=10)<br></pre></td><td class="python-code-cell"><pre><br><br><br>    moduleGlobal1 = Variant()<br>    moduleGlobal2 = Variant()<br><br>    def MyFunc(X, Y=VBMissingArgument, Z=20):<br>        global moduleGlobal2<br>        _ret = None<br>        subLocal = X + Y + Z + moduleGlobal<br>        moduleGlobal2 = moduleGlobal2 + 1<br>        _ret = subLocal * 10<br>        return _ret<br><br>    a = MyFunc(1, 2)<br>    a = MyFunc(1, Z= 10)<br></pre></td></tr></table>
+<p>Compare this with,</p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>Dim moduleGlobal1, moduleGlobal2<br><br>' VB2PY-GlobalSet: Functions.PreInitializeReturnVariable = No<br>Function MyFunc(X, Optional Y, Optional Z=20)<br>    Dim subLocal<br>    subLocal = X + Y + Z + moduleGlobal<br>    moduleGlobal2 = moduleGlobal2 + 1<br>    MyFunc = subLocal*10<br>End Function<br>' VB2PY-Unset: Functions.PreInitializeReturnVariable <br><br>a = MyFunc(1, 2)<br>a = MyFunc(1, Z:=10)<br></pre></td><td class="python-code-cell"><pre><br><br><br>    moduleGlobal1 = Variant()<br>    moduleGlobal2 = Variant()<br><br>    def MyFunc(X, Y=VBMissingArgument, Z=20):<br>        global moduleGlobal2<br>        subLocal = X + Y + Z + moduleGlobal<br>        moduleGlobal2 = moduleGlobal2 + 1<br>        _ret = subLocal * 10<br>        return _ret<br><br>    a = MyFunc(1, 2)<br>    a = MyFunc(1, Z= 10)<br></pre></td></tr></table>
+</div>
+</div>
+<div class="section" id="select">
+<h1><a name="select">Select</a></h1>
+<p>The list of all <tt class="literal"><span class="pre">Select</span></tt> options is shown in the following table:</p>
+<pre class="literal-block">
+[Select]
+# Once or EachTime, how many times to evaluate the case variable  
+EvaluateVariable = Once
+# Name of select variable (only used if EvaluateVariable is Once)
+SelectVariablePrefix = _select
+# Yes or No, use numeric index on select variable (needed if you every have nested Selects and EvaluateVariable = Once)
+UseNumericIndex = Yes
+</pre>
+<div class="section" id="evaluatevariable">
+<h2><a name="evaluatevariable">EvaluateVariable</a></h2>
+<p>Syntax: <tt class="literal"><span class="pre">EvaluateVariable</span> <span class="pre">=</span> <span class="pre">Yes</span> <span class="pre">|</span> <span class="pre">No</span></tt></p>
+<pre class="literal-block">
+# Once or EachTime, how many times to evaluate the case variable  
+EvaluateVariable = Once
+</pre>
+<p>The default behaviour when converting a <tt class="literal"><span class="pre">Select</span></tt> is to evaluate the select expression once at the start of the block. By setting this option to <tt class="literal"><span class="pre">EachTime</span></tt> you can force the expression to be evaluated for each <tt class="literal"><span class="pre">if/elif</span></tt> statement. This generally looks cleaner but can lead to undesired side effects or slow run times depending on how expensive the expression is to calculate.</p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>' VB2PY-Set: Select.EvaluateVariable = Once<br>Select Case Value<br>    Case 1<br>        DoOne<br>    Case 2<br>        DoTwo<br>    Case 3, 4<br>        DoThreeOrFour<br>    Case 5 To 10<br>        DoFiveToTen<br>    Case Else<br>        DoElse<br>End Select<br>' VB2PY-Unset: Select.EvaluateVariable<br></pre></td><td class="python-code-cell"><pre><br><br><br><br>    _select0 = Value<br>    if (_select0 == 1):<br>        DoOne()<br>    elif (_select0 == 2):<br>        DoTwo()<br>    elif (_select0 == 3) or (_select0 == 4):<br>        DoThreeOrFour()<br>    elif (5 <= _select0 <= 10):<br>        DoFiveToTen()<br>    else:<br>        DoElse()<br></pre></td></tr></table>
+<p>Compare this to,</p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>' VB2PY-Set: Select.EvaluateVariable = EachTime<br>Select Case Value<br>    Case 1<br>        DoOne<br>    Case 2<br>        DoTwo<br>    Case 3, 4<br>        DoThreeOrFour<br>    Case 5 To 10<br>        DoFiveToTen<br>    Case Else<br>        DoElse<br>End Select<br>' VB2PY-Unset: Select.EvaluateVariable<br></pre></td><td class="python-code-cell"><pre><br><br><br><br>    if (Value == 1):<br>        DoOne()<br>    elif (Value == 2):<br>        DoTwo()<br>    elif (Value == 3) or (Value == 4):<br>        DoThreeOrFour()<br>    elif (5 <= Value <= 10):<br>        DoFiveToTen()<br>    else:<br>        DoElse()<br></pre></td></tr></table>
+</div>
+<div class="section" id="selectvariableprefix">
+<h2><a name="selectvariableprefix">SelectVariablePrefix</a></h2>
+<p>Syntax: <tt class="literal"><span class="pre">SelectVariablePrefix</span> <span class="pre">=</span> <span class="pre">&lt;string&gt;</span></tt></p>
+<pre class="literal-block">
+# Name of select variable (only used if EvaluateVariable is Once)
+SelectVariablePrefix = _select
+</pre>
+<p>When <a class="reference" href="#evaluatevariable">EvaluateVariable</a> is set to <tt class="literal"><span class="pre">Once</span></tt>, this option determines the prefix used to name the variable used in the select. If <a class="reference" href="#usenumericindex">UseNumericIndex</a> is set to <tt class="literal"><span class="pre">No</span></tt> then this option sets the variable name used, otherwise this is the prefix and the final variable will also include a unique ID number.</p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>' VB2PY-Set: Select.SelectVariablePrefix = selectVariable<br>Select Case Value<br>    Case 1<br>        DoOne<br>    Case 2<br>        DoTwo<br>    Case 3, 4<br>        DoThreeOrFour<br>    Case 5 To 10<br>        DoFiveToTen<br>    Case Else<br>        DoElse<br>End Select<br>' VB2PY-Unset: Select.SelectVariablePrefix<br></pre></td><td class="python-code-cell"><pre><br><br><br><br>    selectVariable2 = Value<br>    if (selectVariable2 == 1):<br>        DoOne()<br>    elif (selectVariable2 == 2):<br>        DoTwo()<br>    elif (selectVariable2 == 3) or (selectVariable2 == 4):<br>        DoThreeOrFour()<br>    elif (5 <= selectVariable2 <= 10):<br>        DoFiveToTen()<br>    else:<br>        DoElse()<br></pre></td></tr></table>
+</div>
+<div class="section" id="usenumericindex">
+<h2><a name="usenumericindex">UseNumericIndex</a></h2>
+<p>Syntax: <tt class="literal"><span class="pre">UseNumericIndex</span> <span class="pre">=</span> <span class="pre">Yes</span> <span class="pre">|</span> <span class="pre">No</span></tt></p>
+<pre class="literal-block">
+# Yes or No, use numeric index on select variable (needed if you every have nested Selects and EvaluateVariable = Once)
+UseNumericIndex = Yes
+</pre>
+<p>When <a class="reference" href="#evaluatevariable">EvaluateVariable</a> is set to <tt class="literal"><span class="pre">Once</span></tt>, this option determines whether a unique ID number is appended to the <a class="reference" href="#selectvariableprefix">SelectVariablePrefix</a> to determine the variable name used to hold the select expression. If used, the index is incremented for each <tt class="literal"><span class="pre">select</span></tt> constuct found. This option is always required to be <tt class="literal"><span class="pre">Yes</span></tt> where the code includes nested <tt class="literal"><span class="pre">Select</span></tt> blocks <em>and</em> <a class="reference" href="#evaluatevariable">EvaluateVariable</a> is set to <tt class="literal"><span class="pre">Once</span></tt>. If neither of these conditions applies then it is safe to set this to <tt class="literal"><span class="pre">No</span></tt></p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>' VB2PY-Set: Select.UseNumericIndex = Yes<br>Select Case Value<br>    Case 1<br>        DoOne<br>    Case 2<br>        DoTwo<br>    Case 3, 4<br>        DoThreeOrFour<br>    Case 5 To 10<br>        DoFiveToTen<br>    Case Else<br>        DoElse<br>End Select<br>' VB2PY-Unset: Select.UseNumericIndex<br></pre></td><td class="python-code-cell"><pre><br><br><br><br>    _select3 = Value<br>    if (_select3 == 1):<br>        DoOne()<br>    elif (_select3 == 2):<br>        DoTwo()<br>    elif (_select3 == 3) or (_select3 == 4):<br>        DoThreeOrFour()<br>    elif (5 <= _select3 <= 10):<br>        DoFiveToTen()<br>    else:<br>        DoElse()<br></pre></td></tr></table>
+<p>Comapre this to,</p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>' VB2PY-Set: Select.UseNumericIndex = No<br>Select Case Value<br>    Case 1<br>        DoOne<br>    Case 2<br>        DoTwo<br>    Case 3, 4<br>        DoThreeOrFour<br>    Case 5 To 10<br>        DoFiveToTen<br>    Case Else<br>        DoElse<br>End Select<br>' VB2PY-Unset: Select.UseNumericIndex<br></pre></td><td class="python-code-cell"><pre><br><br><br><br>    _select = Value<br>    if (_select == 1):<br>        DoOne()<br>    elif (_select == 2):<br>        DoTwo()<br>    elif (_select == 3) or (_select == 4):<br>        DoThreeOrFour()<br>    elif (5 <= _select <= 10):<br>        DoFiveToTen()<br>    else:<br>        DoElse()<br></pre></td></tr></table>
+</div>
+</div>
+<div class="section" id="labels">
+<h1><a name="labels">Labels</a></h1>
+<p>The list of all <tt class="literal"><span class="pre">Labels</span></tt> options is shown in the following table:</p>
+<pre class="literal-block">
+[Labels]
+# Yes or No, ignore labels completely
+IgnoreLabels = Yes
+</pre>
+<div class="section" id="ignorelabels">
+<h2><a name="ignorelabels">IgnoreLabels</a></h2>
+<p>Syntax: <tt class="literal"><span class="pre">IgnoreLabels</span> <span class="pre">=</span> <span class="pre">Yes</span> <span class="pre">|</span> <span class="pre">No</span></tt></p>
+<pre class="literal-block">
+# Yes or No, ignore labels completely
+IgnoreLabels = Yes
+</pre>
+<p>Labels are not supported in vb2Py v0.2. If you have VB code with labels on every line then you will get a huge number of attention markers telling you that the label was not converted. You can silence these warning by setting the <tt class="literal"><span class="pre">IgnoreLabels</span></tt> option to <tt class="literal"><span class="pre">Yes</span></tt>.</p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>' VB2PY-Set: Labels.IgnoreLabels = No<br>    10: a=1<br>    20: b=2<br>    30: c=3<br>' VB2PY-Unset: Labels.IgnoreLabels<br></pre></td><td class="python-code-cell"><pre><br><br><br><br>    # VB2PY (UntranslatedCode) 10:<br>    a = 1<br>    # VB2PY (UntranslatedCode) 20:<br>    b = 2<br>    # VB2PY (UntranslatedCode) 30:<br>    c = 3<br></pre></td></tr></table>
+<p>Comapre this to,</p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>' VB2PY-Set: Labels.IgnoreLabels = Yes<br>    10: a=1<br>    20: b=2<br>    30: c=3<br>' VB2PY-Unset: Labels.IgnoreLabels<br></pre></td><td class="python-code-cell"><pre><br><br><br><br>    a = 1<br>    b = 2<br>    c = 3<br></pre></td></tr></table>
+</div>
+</div>
+<div class="section" id="with">
+<h1><a name="with">With</a></h1>
+<p>The list of all <tt class="literal"><span class="pre">With</span></tt> options is shown in the following table:</p>
+<pre class="literal-block">
+[With]
+# Once or EachTime, how many times to evaluate the with variable  
+EvaluateVariable = Once
+# Name of with variable (only used if EvaluateVariable is Once)
+WithVariablePrefix = _with
+# Yes or No, use numeric index on with variable (needed if you every have nested Withs and EvaluateVariable = Once)
+UseNumericIndex = Yes
+</pre>
+<div class="section" id="with-evaluatevariable">
+<h2><a name="with-evaluatevariable">With EvaluateVariable</a></h2>
+<p>Syntax: <tt class="literal"><span class="pre">EvaluateVariable</span> <span class="pre">=</span> <span class="pre">Yes</span> <span class="pre">|</span> <span class="pre">No</span></tt></p>
+<pre class="literal-block">
+[With]
+# Once or EachTime, how many times to evaluate the with variable  
+</pre>
+<p>The default behaviour is to evaluate the <tt class="literal"><span class="pre">With</span></tt> object once at the start of the block. By setting this option to <tt class="literal"><span class="pre">EachTime</span></tt> you can force the object to be evaluated each time it is required. This generally looks more natural but can lead to undesired side effects or slow run times depending on how expensive <a href="#id2" name="id3"><span class="problematic" id="id3">[1]_</span></a> the object is to calculate.</p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>' VB2PY-Set: With.EvaluateVariable = Once<br>With MyObject<br>    .Height = 10<br>    .Width = .Height * .ScaleFactor<br>End With<br>' VB2PY-Unset: With.EvaluateVariable<br></pre></td><td class="python-code-cell"><pre><br><br><br><br>    _with0 = MyObject<br>    _with0.Height = 10<br>    _with0.Width = _with0.Height * _with0.ScaleFactor<br></pre></td></tr></table>
+<p>Compare this to,</p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>' VB2PY-Set: With.EvaluateVariable = EveryTime<br>With MyObject<br>    .Height = 10<br>    .Width = .Height * .ScaleFactor<br>End With<br>' VB2PY-Unset: With.EvaluateVariable<br></pre></td><td class="python-code-cell"><pre><br><br><br><br>    MyObject.Height = 10<br>    MyObject.Width = MyObject.Height * MyObject.ScaleFactor<br></pre></td></tr></table>
+</div>
+<div class="section" id="withvariableprefix">
+<h2><a name="withvariableprefix">WithVariablePrefix</a></h2>
+<p>Syntax: <tt class="literal"><span class="pre">WithVariablePrefix</span> <span class="pre">=</span> <span class="pre">&lt;string&gt;</span></tt></p>
+<pre class="literal-block">
+# Name of with variable (only used if EvaluateVariable is Once)
+WithVariablePrefix = _select
+</pre>
+<p>When <a class="reference" href="#with-evaluatevariable">With EvaluateVariable</a> is set to <tt class="literal"><span class="pre">Once</span></tt>, this option determines the prefix used to name the variable used in the <tt class="literal"><span class="pre">With</span></tt>. If <a class="reference" href="#with-usenumericindex">With UseNumericIndex</a> is set to <tt class="literal"><span class="pre">No</span></tt> then this option sets the variable name used, otherwise this is the prefix and the final variable will also include a unique ID number.</p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>' VB2PY-Set: With.WithVariablePrefix = withVariable<br>With MyObject<br>    .Height = 10<br>    .Width = .Height * .ScaleFactor<br>End With<br>' VB2PY-Unset: With.WithVariablePrefix<br></pre></td><td class="python-code-cell"><pre><br><br><br><br>    withVariable2 = MyObject<br>    withVariable2.Height = 10<br>    withVariable2.Width = withVariable2.Height * withVariable2.ScaleFactor<br></pre></td></tr></table>
+</div>
+<div class="section" id="with-usenumericindex">
+<h2><a name="with-usenumericindex">With UseNumericIndex</a></h2>
+<p>Syntax: <tt class="literal"><span class="pre">UseNumericIndex</span> <span class="pre">=</span> <span class="pre">Yes</span> <span class="pre">|</span> <span class="pre">No</span></tt></p>
+<pre class="literal-block">
+# Yes or No, use numeric index on select variable (needed if you every have nested Selects and EvaluateVariable = Once)
+UseNumericIndex = Yes
+</pre>
+<p>When <a class="reference" href="#with-evaluatevariable">With EvaluateVariable</a> is set to <tt class="literal"><span class="pre">Once</span></tt>, this option determines whether a unique ID number is appended to the <a class="reference" href="#withvariableprefix">WithVariablePrefix</a> to determine the variable name used to hold the object. If used, the index is incremented for each <tt class="literal"><span class="pre">With</span></tt> constuct found. This option is always required to be <tt class="literal"><span class="pre">Yes</span></tt> where the code includes nested <tt class="literal"><span class="pre">With</span></tt> blocks <em>and</em> <a class="reference" href="#with-evaluatevariable">With EvaluateVariable</a> is set to <tt class="literal"><span class="pre">Once</span></tt>. If neither of these conditions applies then it is safe to set this to <tt class="literal"><span class="pre">No</span></tt></p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>' VB2PY-Set: With.UseNumericIndex = No<br>With MyObject<br>    .Height = 10<br>    .Width = .Height * .ScaleFactor<br>End With<br>' VB2PY-Unset: With.UseNumericIndex<br></pre></td><td class="python-code-cell"><pre><br><br><br><br>    _with = MyObject<br>    _with.Height = 10<br>    _with.Width = _with.Height * _with.ScaleFactor<br></pre></td></tr></table>
+<p>Compare this to,</p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>' VB2PY-Set: With.UseNumericIndex = Yes<br>With MyObject<br>    .Height = 10<br>    .Width = .Height * .ScaleFactor<br>End With<br>' VB2PY-Unset: With.UseNumericIndex<br></pre></td><td class="python-code-cell"><pre><br><br><br><br>    _with4 = MyObject<br>    _with4.Height = 10<br>    _with4.Width = _with4.Height * _with4.ScaleFactor<br></pre></td></tr></table>
+</div>
+</div>
+<div class="section" id="properties">
+<h1><a name="properties">Properties</a></h1>
+<p>The list of all <tt class="literal"><span class="pre">Property</span></tt> options is shown in the following table:</p>
+<pre class="literal-block">
+[Properties]
+# Prefix to add to property Let/Set function name
+LetSetVariablePrefix = set
+# Prefix to add to property Get function name
+GetVariablePrefix = get
+</pre>
+<div class="section" id="letsetvariableprefix">
+<h2><a name="letsetvariableprefix">LetSetVariablePrefix</a></h2>
+<p>Syntax: <tt class="literal"><span class="pre">LetSetVariablePrefix</span> <span class="pre">=</span> <span class="pre">&lt;string&gt;</span></tt></p>
+<pre class="literal-block">
+# Prefix to add to property Let/Set function name
+LetSetVariablePrefix = set
+</pre>
+<p>In class modules where properties are defined, vb2Py creates <tt class="literal"><span class="pre">get</span></tt> and <tt class="literal"><span class="pre">set</span></tt> methods to access and assign to the property. Since VB uses a syntactic form to distinguish between the getters and setters but Python uses different names with the same syntax there is a need to automatically generate a name for the <tt class="literal"><span class="pre">get</span></tt> and <tt class="literal"><span class="pre">set</span></tt> methods. The <tt class="literal"><span class="pre">getter</span></tt> and <tt class="literal"><span class="pre">setter</span></tt> methods are determined by the <a class="reference" href="#letsetvariableprefix">LetSetVariablePrefix</a> and <a class="reference" href="#getvariableprefix">GetVariablePrefix</a> respectively.</p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>' VB2PY-Set: Properties.LetSetVariablePrefix = doSet_<br>Dim mName As String<br>Dim mAge As Single<br><br>Public Property Let Name(Value)<br>    mName = Value<br>End Property<br>'<br>Public Property Get Name()<br>    Name = mName<br>End Property<br><br>' VB2PY-Unset: Properties.LetSetVariablePrefix<br></pre></td><td class="python-code-cell"><pre><br><br>    """"""<br><br>    mName = String()<br>    mAge = Single()<br><br><br>    def setName(Value):<br>        global mName<br>        mName = Value<br><br>    def getName():<br>        global Name<br>        _ret = None<br>        _ret = mName<br>        return _ret<br>    Name = property(fset=setName, fget=getName)<br><br></pre></td></tr></table>
+</div>
+<div class="section" id="getvariableprefix">
+<h2><a name="getvariableprefix">GetVariablePrefix</a></h2>
+<p>Syntax: <tt class="literal"><span class="pre">GetVariablePrefix</span> <span class="pre">=</span> <span class="pre">&lt;string&gt;</span></tt></p>
+<pre class="literal-block">
+# Prefix to add to property Get function name
+GetVariablePrefix = set
+</pre>
+<p>In class modules where properties are defined, vb2Py creates <tt class="literal"><span class="pre">get</span></tt> and <tt class="literal"><span class="pre">set</span></tt> methods to access and assign to the property. Since VB uses a syntactic form to distinguish between the getters and setters but Python uses different names with the same syntax there is a need to automatically generate a name for the <tt class="literal"><span class="pre">get</span></tt> and <tt class="literal"><span class="pre">set</span></tt> methods. The <tt class="literal"><span class="pre">getter</span></tt> and <tt class="literal"><span class="pre">setter</span></tt> methods are determined by the <a class="reference" href="#letsetvariableprefix">LetSetVariablePrefix</a> and <a class="reference" href="#getvariableprefix">GetVariablePrefix</a> respectively.</p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>' VB2PY-Set: Properties.GetVariablePrefix = doGet_<br>Dim mName As String<br>Dim mAge As Single<br><br>Public Property Let Name(Value)<br>    mName = Value<br>End Property<br>'<br>Public Property Get Name()<br>    Name = mName<br>End Property<br><br>' VB2PY-Unset: Properties.GetVariablePrefix<br></pre></td><td class="python-code-cell"><pre><br><br>    """"""<br><br>    mName = String()<br>    mAge = Single()<br><br><br>    def setName(Value):<br>        global mName<br>        mName = Value<br><br>    def getName():<br>        global Name<br>        _ret = None<br>        _ret = mName<br>        return _ret<br>    Name = property(fset=setName, fget=getName)<br><br></pre></td></tr></table>
+</div>
+</div>
+<div class="section" id="classes">
+<h1><a name="classes">Classes</a></h1>
+<p>The list of all <tt class="literal"><span class="pre">Class</span></tt> options is shown in the following table:</p>
+<pre class="literal-block">
+[Classes]
+# Yes or No, whether to use new style classes for all classes
+UseNewStyleClasses = Yes
+</pre>
+<div class="section" id="usenewstyleclasses">
+<h2><a name="usenewstyleclasses">UseNewStyleClasses</a></h2>
+<p>Syntax: <tt class="literal"><span class="pre">UseNewStyleClasses</span> <span class="pre">=</span> <span class="pre">Yes</span> <span class="pre">|</span> <span class="pre">No</span></tt></p>
+<pre class="literal-block">
+# Yes or No, whether to use new style classes for all classes
+UseNewStyleClasses = Yes
+</pre>
+<p>By default, all classes are created as <em>new style</em> Python classes (inheriting from <tt class="literal"><span class="pre">Object</span></tt>). Old style classes can be created by setting the <tt class="literal"><span class="pre">UseNewStyleClasses</span></tt> option to <tt class="literal"><span class="pre">No</span></tt>.</p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>' VB2PY-GlobalSet: Classes.UseNewStyleClasses = Yes<br>Public Name As String<br>Public Age As Single<br>Private ID As Long<br><br>Public Sub checkAge()<br>    If Age = 0 Then Age = 1<br>End Sub<br>'<br>Private Sub setUp()<br>    ID = Rnd()<br>    If ID = 0 Then setUp<br>End Sub<br>' VB2PY-Unset: Classes.UseNewStyleClasses <br></pre></td><td class="python-code-cell"><pre><br><br>class MyClass(Object):<br>        """"""<br><br>        Name = String()<br>        Age = Single()<br>        __ID = Long()<br><br>        def checkAge(self):<br>            if self.Age == 0:<br>                self.Age = 1<br><br>        def __setUp(self):<br>            self.__ID = Rnd()<br>            if self.__ID == 0:<br>                self.__setUp()<br><br></pre></td></tr></table>
+<p>Compare this to,</p>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>' VB2PY-GlobalSet: Classes.UseNewStyleClasses = No<br>Public Name As String<br>Public Age As Single<br>Private ID As Long<br><br>Public Sub checkAge()<br>    If Age = 0 Then Age = 1<br>End Sub<br>'<br>Private Sub setUp()<br>    ID = Rnd()<br>    If ID = 0 Then setUp<br>End Sub<br>' VB2PY-Unset: Classes.UseNewStyleClasses <br></pre></td><td class="python-code-cell"><pre><br><br>class MyClass:<br>        """"""<br><br>        Name = String()<br>        Age = Single()<br>        __ID = Long()<br><br>        def checkAge(self):<br>            if self.Age == 0:<br>                self.Age = 1<br><br>        def __setUp(self):<br>            self.__ID = Rnd()<br>            if self.__ID == 0:<br>                self.__setUp()<br><br></pre></td></tr></table>
+</div>
+</div>
+<div class="system-messages section">
+<h1><a>Docutils System Messages</a></h1>
+<div class="system-message" id="id2">
+<p class="system-message-title">System Message: <a name="id2">ERROR/3</a> (<tt>&lt;string&gt;</tt>, line 845); <em><a href="#id3">backlink</a></em></p>
+Unknown target name: &quot;1&quot;.</div>
+</div>
+</div>
+</body>
+</html>

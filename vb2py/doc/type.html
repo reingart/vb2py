@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.3.0: http://docutils.sourceforge.net/" />
+<title>vb2Py - User Types</title>
+<link rel="stylesheet" href="default.css" type="text/css" />
+</head>
+<body>
+<div class="document" id="vb2py-user-types">
+<h1 class="title">vb2Py - User Types</h1>
+<!-- filename: c:\development\python22\lib\site-packages\vb2py\doc/type.htm -->
+<p>Contents of this page:</p>
+<ul class="simple">
+<li><a class="reference" href="#general">General</a></li>
+<li><a class="reference" href="#default-conversion">Default Conversion</a></li>
+<li><a class="reference" href="#list-of-options">List of Options</a></li>
+</ul>
+<div class="section" id="general">
+<h1><a name="general">General</a></h1>
+<p>VB has the concept of a user <tt class="literal"><span class="pre">Type</span></tt>. A user can define a <tt class="literal"><span class="pre">Type</span></tt> which can then be used to define variables which have one or more <em>properties</em>, each with its own type. The closest Python equivalent is a bare class. VB User <tt class="literal"><span class="pre">Types</span></tt> are converted to bare classes with the appropriate properties. When a user <tt class="literal"><span class="pre">Type</span></tt> is used, an istance of the class is created in the Python code.</p>
+<p>Class properties are defined in an <tt class="literal"><span class="pre">__init__</span></tt> method to avoid having mutable class properties.</p>
+</div>
+<div class="section" id="default-conversion">
+<h1><a name="default-conversion">Default Conversion</a></h1>
+<table style="code-table"><tr><th class="code-header">VB</th><th class="code-header">Python</th></tr><tr><td class="vb-code-cell"><pre><br>Type Point<br>    X As Single<br>    Y As Single<br>End Type<br>'<br>Type Line2D<br>    Start As Point<br>    Finish As Point<br>End Type<br>'<br>Dim p1 As Point, p2 As Point<br>p1.X = 10<br>p1.Y = 20<br>p2.X = 30<br>p3.Y = 40<br>'<br>Dim l1 As Line2D<br>l1.Start = p1<br>l1.Finish = p2<br></pre></td><td class="python-code-cell"><pre><br><br>    """<br>    <br>    """<br><br>    class Point:<br>        def __init__(self):<br>            self.X = Single()<br>            self.Y = Single()<br><br>    class Line2D:<br>        def __init__(self):<br>            self.Start = Point()<br>            self.Finish = Point()<br><br>    p1 = Point()<br>    p2 = Point()<br>    l1 = Line2D()<br><br>    p1.X = 10<br>    p1.Y = 20<br>    p2.X = 30<br>    p3.Y = 40<br>    #<br>    l1.Start = p1<br>    l1.Finish = p2<br></pre></td></tr></table>
+</div>
+<div class="section" id="list-of-options">
+<h1><a name="list-of-options">List of Options</a></h1>
+<p>There are no options specific to the <tt class="literal"><span class="pre">Type</span></tt> statement.</p>
+</div>
+</div>
+</body>
+</html>

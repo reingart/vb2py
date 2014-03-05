@@ -1,0 +1,10 @@
+{'stack': {'backgrounds': [{'components': [],
+                            'menubar': {'menus': [], 'type': 'MenuBar'},
+                            'name': 'Form2',
+                            'position': (4, 30),
+                            'size': (312, 226),
+                            'style': ['resizeable'],
+                            'title': 'Form2',
+                            'type': 'Background'}],
+           'name': 'Template',
+           'type': 'Stack'}}

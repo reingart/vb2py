@@ -1,0 +1,12 @@
+Line 13: Class ComctlLib.ListView of control ListView1 was not a loaded control class.
+Line 30: Class ComctlLib.TreeView of control TreeView1 was not a loaded control class.
+Line 19: The property name _ExtentX in ListView1 is invalid.
+Line 20: The property name _ExtentY in ListView1 is invalid.
+Line 21: The property name LabelWrap in ListView1 is invalid.
+Line 22: The property name HideSelection in ListView1 is invalid.
+Line 23: The property name _Version in ListView1 is invalid.
+Line 28: The property name NumItems in ListView1 is invalid.
+Line 36: The property name _ExtentX in TreeView1 is invalid.
+Line 37: The property name _ExtentY in TreeView1 is invalid.
+Line 38: The property name _Version in TreeView1 is invalid.
+Line 39: The property name Style in TreeView1 is invalid.

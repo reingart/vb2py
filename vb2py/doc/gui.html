@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.3.0: http://docutils.sourceforge.net/" />
+<link rel="stylesheet" href="default.css" type="text/css" />
+</head>
+<body>
+<div class="document">
+<!-- filename: c:\development\python22\lib\site-packages\vb2py\doc/gui.htm -->
+<div class="section" id="gui-usage">
+<h1><a name="gui-usage">GUI Usage</a></h1>
+<ul class="simple">
+<li><a class="reference" href="#converting-entire-projects">Converting Entire Projects</a></li>
+<li><a class="reference" href="#converting-code-fragments">Converting Code Fragments</a></li>
+<li><a class="reference" href="#changing-options">Changing Options</a></li>
+</ul>
+</div>
+<div class="section" id="converting-entire-projects">
+<h1><a name="converting-entire-projects">Converting Entire Projects</a></h1>
+<p>If you installed the <a class="reference" href="installation.html#gui-installation">GUI package</a> and if you have <a class="reference" href="intallation.htm#pythoncard-installation">PythonCard</a> installed then you will be able to use the vb2Py GUI to monitor the conversion procedure. To start the gui, either double click on the <tt class="literal"><span class="pre">vb2pygui.pyw</span></tt> file in your <tt class="literal"><span class="pre">vb2pygui</span></tt> folder of change directory to that folder in a shell and type:</p>
+<pre class="literal-block">
+&gt; python vb2pygui.pyw
+</pre>
+<p>The GUI should start and show the form below.</p>
+<p><img alt="images/sm_guistart.gif" src="images/sm_guistart.gif" /></p>
+<p>See the <a class="reference" href="images/guistart.gif">full startup screen</a></p>
+<p>From the startup screen you would normally click on the <tt class="literal"><span class="pre">File</span> <span class="pre">...</span> <span class="pre">Open</span></tt> menu item (or press <tt class="literal"><span class="pre">CTRL-O</span></tt>). This brings up the open dialog.</p>
+<p><img alt="images/opensmall.gif" src="images/opensmall.gif" /></p>
+<p>See the <a class="reference" href="images/openfull.gif">full open dialog</a></p>
+<p>Using the file selection box you can select the Visual Basic project file (<tt class="literal"><span class="pre">*.vbp</span></tt>) that you want to convert. Note that in version 0.2, you are not able to convert individual files using the GUI. To convert individual files where you do not have a <tt class="literal"><span class="pre">VBP</span></tt> file you need to use the <a class="reference" href="commandline.html">command line</a> version.</p>
+<p>Having selected a file the application will then try to load all the files and modules associated with the project and parse the Visual Basic code and form definitions. You will see the progress in the log window (at the bottom of the screen). When this is complete the tree view (on the left of the screen) will indicate all the files in the project. Clicking on a file in the tree brings up the original VB code and the converted Python version in the two code windows on the right. The Python version is on the bottom.</p>
+<!-- image::images/viewsmall.gif -->
+<p>See the <a class="reference" href="images/viewfull.gif">full code view</a></p>
+<p>To write out the converted files you select the <tt class="literal"><span class="pre">File</span> <span class="pre">...</span> <span class="pre">Save</span></tt> menu item. This brings up a menu selection dialog and asks you to point to a directory. This is where the converted files will be placed. Once you press <tt class="literal"><span class="pre">OK</span></tt> the files will be written and you can then run them in the same way as any other Python programs.</p>
+</div>
+<div class="section" id="converting-code-fragments">
+<h1><a name="converting-code-fragments">Converting Code Fragments</a></h1>
+<p>You can convert code fragments that you write by hand or copy from the clipboard using the VB code window (top right) and the <tt class="literal"><span class="pre">Convert</span> <span class="pre">...</span> <span class="pre">Convert</span> <span class="pre">Active</span></tt> (CTRL-A) menu item.</p>
+<p>For example, type the following VB code into the top right window:</p>
+<pre class="literal-block">
+Sub Scan()
+For i = 0 To 100
+        Select Case i
+                Case 0 To 50
+                        doOneThing i
+                Case Else
+                        doAnotherThing i
+        End Select
+Next i
+End Sub
+</pre>
+<p>and then hit <tt class="literal"><span class="pre">CTRL-A</span></tt>. The code gets converted as below,</p>
+<p><img alt="images/convertactive1.gif" src="images/convertactive1.gif" /></p>
+<p>On the <tt class="literal"><span class="pre">Convert</span></tt> menu, you may have noticed that there were three options,</p>
+<ul class="simple">
+<li>Code module</li>
+<li>Class module</li>
+<li>Form module</li>
+</ul>
+<p>These options determine the <em>context</em> of the conversion, ie. they tell vb2Py where the code you are typing comes from. This is important because some of the conversion depends on whether the code comes from a code, class or form module. For instance, in a cod module all the subroutines are just converted to functions. If the code comes from a class or form module then everything is encapsulated in a class.</p>
+<p>To see this select <tt class="literal"><span class="pre">Convert</span> <span class="pre">...</span> <span class="pre">Class</span> <span class="pre">module</span></tt> from the menu and then hit <tt class="literal"><span class="pre">CTRL-A</span></tt> again. You should get the following view,</p>
+<p><img alt="images/convertactive2.gif" src="images/convertactive2.gif" /></p>
+<p>If you have a large amount of text (for example if you pasted some in from another text editor) then you can just convert a small section of it by using the <tt class="literal"><span class="pre">Convert</span> <span class="pre">...</span> <span class="pre">Convert</span> <span class="pre">selection</span></tt> (<tt class="literal"><span class="pre">CTRL-SHIFT-S</span></tt>) menu option. Select just the <tt class="literal"><span class="pre">Select</span></tt> clause in the above code and then hit <tt class="literal"><span class="pre">CTRL-SHIFT-S</span></tt> to get the following view,</p>
+<p><img alt="images/convertactive3.gif" src="images/convertactive3.gif" /></p>
+<p>Note, that you must be very carefull when choosing this option that you select the enitre <em>block</em> that you are interested in. If you don't select the entire block then vb2Py will not be able to parse the VB code as shown in the following example,</p>
+<p><img alt="images/convertactive4.gif" src="images/convertactive4.gif" /></p>
+<p>Also notice that when you have an incomplete block the parsing will stop at the begining of the incomplete block.</p>
+</div>
+<div class="section" id="changing-options">
+<h1><a name="changing-options">Changing options</a></h1>
+<p>The vb2Py conversion process is controlled by an options file (<tt class="literal"><span class="pre">vb2py.ini</span></tt>) in the main <tt class="literal"><span class="pre">vb2py</span></tt> folder. You can quickly see the result of chaning various options by using the <tt class="literal"><span class="pre">View</span> <span class="pre">...</span> <span class="pre">Options</span></tt> menu item. Selecting this item brings up the Options window.</p>
+<p><img alt="images/optionsfull.gif" src="images/optionsfull.gif" /></p>
+<p>You can edit any of the options as you would in a text editor and then press <tt class="literal"><span class="pre">OK</span></tt> to return to the converter. To see the result of your option change, click on a file in the tree view list or press <tt class="literal"><span class="pre">CTRL-A</span></tt> to convert the current code in the VB window (refer to the <cite>Converting Code Fragments</cite> section for more details).</p>
+<p>If you are changing many options then you may want to use the <tt class="literal"><span class="pre">Apply</span></tt> button from the Options window. This applies the configuration changes without closing the options window. You can click on the main window again to see your changes (you need to select a file from the tree or press <tt class="literal"><span class="pre">CTRL-A</span></tt>) and switch between the Options and Main windows to see how different options change the code.</p>
+<p>As an example, here is the screen after a default conversion of some text (in the context of a Code module),</p>
+<p><img alt="images/convertoptions1.gif" src="images/convertoptions1.gif" /></p>
+<p>Note that the VB comments at the start of the text were converted to a Python docstring since the <tt class="literal"><span class="pre">TryToConvertDocstrings</span></tt> option in vb2Py defaults to <tt class="literal"><span class="pre">Yes</span></tt>. If we now change the option,</p>
+<p><img alt="images/convertoptions2.gif" src="images/convertoptions2.gif" /></p>
+<p>and hit <tt class="literal"><span class="pre">OK</span></tt> and then <tt class="literal"><span class="pre">CTRL-A</span></tt> again, we see that the comments are not converted to a docstring and remain as individual comments.</p>
+<p><img alt="images/convertoptions3.gif" src="images/convertoptions3.gif" /></p>
+</div>
+</div>
+</body>
+</html>

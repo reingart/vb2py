@@ -1,0 +1,12 @@
+Many people contributed and supported the project and each one had valuable input.
+
+Here are just some of the many people who deserve thanks and credit! (please let me know if there is someone missing)
+
+- Jacob Hallén wrote the collection class
+- Kevin Altis provided the positive feedback which drove the initial creation of the project
+- Mike Fletcher helped sort out EBNF problems and offered Simpleparse advice
+- Bengt Richter contributed a pointer class implementation for ByRef argument passing
+- Nils Grotnes wrote the GUI and provided invaluable testing, bug fixes and discussion
+- Alexandr Zamaraev wrote the plugin to convert short-form recordset notation (record!field)
+
+and Jo-Ann, who helped develop and maintain the website, designed the logo's and other artwork and put up with too many late nights!
