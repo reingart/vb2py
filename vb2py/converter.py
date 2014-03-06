@@ -574,10 +574,13 @@ class BaseResource(object):
 
         #
         # Add menu height to form height if it is needed
-        if form._getControlsOfType("Menu"):
+        if not hasattr(form, "HeightModifier"):
+            height_modifier = 0
+        elif form._getControlsOfType("Menu"):
             height_modifier = form.HeightModifier + form.MenuHeight
         else:
             height_modifier = form.HeightModifier
+
 
         d['size'] = (form.ClientWidth/twips_per_pixel, form.ClientHeight/twips_per_pixel+height_modifier)
         d['position'] = (form.ClientLeft/twips_per_pixel, form.ClientTop/twips_per_pixel)
