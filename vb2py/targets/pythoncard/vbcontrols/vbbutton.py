@@ -4,7 +4,7 @@ import vb2py.logger
 log = vb2py.logger.getLogger("VBButton")
 
 from PythonCard.components import button
-from wxPython import wx
+import wx
 import sys
 from PythonCard import event, registry, widget
 

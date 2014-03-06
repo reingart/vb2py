@@ -1,5 +1,5 @@
 from wx import TreeItemData
-from wxPython import wx, stc
+import wx
 import vb2py.custom.comctllib
 
 from vb2py.targets.pythoncard.controlclasses import VBWrapped, VBWidget
@@ -8,7 +8,7 @@ import vb2py.logger
 log = vb2py.logger.getLogger("VBTreeView")
 
 from PythonCard.components import tree
-from wxPython import wx
+import wx
 import sys
 from PythonCard import event, registry, widget
 from vb2py.vbclasses import Collection

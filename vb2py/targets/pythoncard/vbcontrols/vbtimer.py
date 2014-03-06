@@ -4,7 +4,7 @@ import vb2py.logger
 log = vb2py.logger.getLogger("VBTimer")
 
 from PythonCard.components import statictext
-from wxPython import wx
+import wx
 import sys
 from PythonCard import event, registry, widget
 
