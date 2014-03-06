@@ -4,7 +4,7 @@ import sys
 # << Utilities >>
 def rootPath():
     """Return the root path"""
-    return os.path.join(os.path.abspath(__file__).split("vb2py")[0], "vb2py")
+    return os.path.dirname(__file__)
 
 
 def relativePath(path):
